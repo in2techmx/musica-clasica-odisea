@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=28">
+  <link rel="stylesheet" href="styles.css?v=29">
 </head>
 <body id="top">
 
@@ -742,6 +742,62 @@
     </div>
   </section>
 
+  <!-- CAPÍTULO 8: COMENTARIOS & COMUNIDAD -->
+  <section class="section-wrapper" id="comentarios">
+    <div class="section-header">
+      <div class="editorial-badge">✦ Comunidad &amp; Conversación</div>
+      <h3 class="section-title">Comparte tu Obra Favorita o Déjanos un Comentario</h3>
+      <p class="section-desc">
+        ¿Qué sinfonía, nocturno o compositor te marcó? Participa en el foro público (con GitHub vía Utterances)
+        o deja tu recomendación rápida en el muro interactivo.
+      </p>
+    </div>
+
+    <div class="comments-shell">
+      <div class="comments-tabs" role="tablist">
+        <button type="button" class="comments-tab-btn active" data-ctab="public">Comentarios Públicos (GitHub / Utterances)</button>
+        <button type="button" class="comments-tab-btn" data-ctab="quick">Nota Rápida (Sin Registro)</button>
+      </div>
+
+      <!-- TAB 1: Comentarios Públicos Reales (Utterances conectado al repo) -->
+      <div id="ctab-public">
+        <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:1.1rem;">
+          Comentarios públicos persistentes para todos los visitantes, respaldados directamente en
+          <a href="https://github.com/in2techmx/musica-clasica-odisea/issues" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);">in2techmx/musica-clasica-odisea</a>.
+        </p>
+        <div id="utterances-mount">
+          <script src="https://utteranc.es/client.js"
+                  repo="in2techmx/musica-clasica-odisea"
+                  issue-term="pathname"
+                  label="comentarios"
+                  theme="github-dark"
+                  crossorigin="anonymous"
+                  async>
+          </script>
+        </div>
+      </div>
+
+      <!-- TAB 2: Muro Rápido sin registro + opción de enviar al autor -->
+      <div id="ctab-quick" style="display:none;">
+        <form id="quick-comment-form">
+          <div class="comment-form-grid">
+            <input type="text" id="qc-name" class="comment-input" placeholder="Tu nombre o apodo *" maxlength="60" required>
+            <input type="text" id="qc-fav" class="comment-input" placeholder="Compositor u obra favorita (opcional)" maxlength="80">
+          </div>
+          <textarea id="qc-text" class="comment-textarea" placeholder="Escribe tu comentario, duda o recomendación musical..." maxlength="600" required></textarea>
+          <div class="comment-form-actions">
+            <span style="font-size:0.76rem; color:var(--text-muted);">Se guarda al instante en tu navegador y puedes publicarlo también en el foro.</span>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <button type="submit" class="btn-primary" style="padding:0.6rem 1.35rem; font-size:0.82rem;">Publicar Nota</button>
+              <a id="qc-github-link" href="https://github.com/in2techmx/musica-clasica-odisea/issues/new?labels=comentarios&title=Comentario%20en%20Odisea%20Cl%C3%A1sica" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding:0.55rem 1.1rem; font-size:0.8rem;">Enviar al Foro Público ↗</a>
+            </div>
+          </div>
+        </form>
+        <div id="quick-comments-list" class="comments-list"></div>
+      </div>
+    </div>
+  </section>
+
   <!-- DOCK FLOTANTE DE AUDIO EN TIEMPO REAL -->
   <aside class="floating-audio-deck" id="floating-audio-deck" aria-label="Estación de Audio Clásico">
     <div class="deck-info">
@@ -797,6 +853,7 @@
         <ul>
           <li><a href="exponentes.html">Catálogos &amp; Etapas de Maestros</a></li>
           <li><a href="evolucion.html">Museo de Evolución &amp; Instrumentos</a></li>
+          <li><a href="#comentarios">Comentarios &amp; Comunidad</a></li>
           <li><a href="#por-que-escuchar">¿Por qué Escucharla?</a></li>
         </ul>
       </div>
@@ -871,6 +928,113 @@
       window.addEventListener('scroll', () => {
         header.classList.toggle('scrolled', window.scrollY > 40);
       });
+    }
+
+    // Sección de Comentarios (Tabs + Muro Rápido seguro contra XSS)
+    const tabBtns = document.querySelectorAll('[data-ctab]');
+    const tabPublic = document.getElementById('ctab-public');
+    const tabQuick = document.getElementById('ctab-quick');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const target = btn.dataset.ctab;
+        if (tabPublic) tabPublic.style.display = target === 'public' ? 'block' : 'none';
+        if (tabQuick) tabQuick.style.display = target === 'quick' ? 'block' : 'none';
+      });
+    });
+
+    const STORAGE_KEY = 'odisea_clasica_quick_comments_v1';
+    const form = document.getElementById('quick-comment-form');
+    const listEl = document.getElementById('quick-comments-list');
+
+    function loadComments() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        const parsed = raw ? JSON.parse(raw) : [];
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function renderQuickComments() {
+      if (!listEl) return;
+      const items = loadComments();
+      listEl.innerHTML = '';
+      if (items.length === 0) {
+        const empty = document.createElement('div');
+        empty.className = 'comment-empty';
+        empty.textContent = 'Sé el primero en compartir tu obra clásica favorita, una duda o una recomendación de audición.';
+        listEl.appendChild(empty);
+        return;
+      }
+      items.forEach(item => {
+        const card = document.createElement('article');
+        card.className = 'comment-card';
+        const head = document.createElement('div');
+        head.className = 'comment-card-head';
+
+        const left = document.createElement('div');
+        left.style.display = 'flex';
+        left.style.alignItems = 'center';
+        left.style.gap = '0.55rem';
+        left.style.flexWrap = 'wrap';
+
+        const author = document.createElement('span');
+        author.className = 'comment-author';
+        author.textContent = item.name;
+        left.appendChild(author);
+
+        if (item.fav) {
+          const tag = document.createElement('span');
+          tag.className = 'comment-fav-tag';
+          tag.textContent = item.fav;
+          left.appendChild(tag);
+        }
+
+        const date = document.createElement('span');
+        date.className = 'comment-date';
+        date.textContent = item.date;
+
+        head.appendChild(left);
+        head.appendChild(date);
+
+        const body = document.createElement('p');
+        body.className = 'comment-body';
+        body.textContent = item.text;
+
+        card.appendChild(head);
+        card.appendChild(body);
+        listEl.appendChild(card);
+      });
+    }
+
+    if (form) {
+      form.addEventListener('submit', (ev) => {
+        ev.preventDefault();
+        const nameEl = document.getElementById('qc-name');
+        const favEl = document.getElementById('qc-fav');
+        const textEl = document.getElementById('qc-text');
+        const name = (nameEl?.value || '').trim();
+        const fav = (favEl?.value || '').trim();
+        const text = (textEl?.value || '').trim();
+        if (!name || !text) return;
+
+        const items = loadComments();
+        items.unshift({
+          name,
+          fav,
+          text,
+          date: new Date().toLocaleDateString('es-ES', { day: '2-digit', month: 'short', year: 'numeric' })
+        });
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(items.slice(0, 50)));
+        } catch {}
+        form.reset();
+        renderQuickComments();
+      });
+      renderQuickComments();
     }
   })();
 </script>

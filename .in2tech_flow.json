@@ -1,44 +1,44 @@
 {
-  "project_id": "PROJ-MUSICA-CLASICA-ODISEA-V2",
-  "project_name": "musica-clasica-odisea",
-  "project_type": "Portal Didáctico Interactivo & Web Audio Synth (+10,000€ Vanguard Craft)",
+  "project_id": "PROJ-ODISEA-ARTES-ESCULTURA-V1",
+  "project_name": "odisea-artes-escultura",
+  "project_type": "Portal Didáctico Interactivo de Escultura (Odisea de las Artes • Módulo II)",
   "workspace_path": "C:\\Users\\in2te\\.gemini\\antigravity\\scratch\\musica-clasica-odisea",
-  "last_updated": "2026-11-19T12:50:00.000000",
+  "last_updated": "2026-11-19T23:04:00.000Z",
   "status": "COMPLETED",
   "stages": [
     {
       "id": "stage-1",
-      "name": "1. Especificación Funcional & Criterios Gherkin V2",
+      "name": "1. Especificación Funcional & 8 Capítulos de la Escultura",
       "status": "COMPLETED",
-      "description": "5 Historias de Usuario ampliadas: retratos reales, monografía de exponentes y crónicas de historia material.",
+      "description": "Definición de Historias de Usuario: Desmitificación, Macro-Timeline de 30,000 años, Decodificador de Cánones y Fundición, 20 Maestros de la Escultura y Laboratorio Espacial 360°.",
       "responsible": "DD (Director de Desarrollo)"
     },
     {
       "id": "stage-2",
-      "name": "2. Arquitectura de Catálogos & Crónicas Materiales",
+      "name": "2. Arquitectura de Datos & Curaduría de Obras (data-escultura.js)",
       "status": "COMPLETED",
-      "description": "data-music.js con 20 retratos en alta resolución, catalogInfo detallado, periodos creativos con propuesta estética y 9 historias de impacto material.",
+      "description": "Estructuración de datos para 20 escultores cardinales, técnicas (talla, modelado, fundición, ensamble), materiales y casos de estudio históricos.",
       "responsible": "DD & ADS Especialistas"
     },
     {
       "id": "stage-3",
       "name": "3. Ejecución Vanguard Web (+10,000€ Standard)",
       "status": "COMPLETED",
-      "description": "index.html, exponentes.html, styles.css y app.js con retratos reales, dossiers monográficos y capítulo de peste y revoluciones.",
+      "description": "Desarrollo de V1/escultura/index.html, app-escultura.js, visuales de archivo y decodificador interactivo de materiales y proporciones.",
       "responsible": "ADS Frontend & Visual Craft"
     },
     {
       "id": "stage-4",
       "name": "4. Control por 3 Puertas (Gates 1, 2, 3)",
       "status": "COMPLETED",
-      "description": "Gate 1: 12/12 tests deterministas PASS (tests/music-catalog.test.js). Gate 2: CONFORME AS. Gate 3: CONFORME AA.",
+      "description": "Gate 1 (24/24 pruebas automatizadas pasadas), Gate 2 (Seguridad AS conforme), Gate 3 (Auditoría de rigor AA conforme).",
       "responsible": "AS-Security & AA-Auditor"
     },
     {
       "id": "stage-5",
-      "name": "5. Entrega & Despliegue en GitHub Pages",
+      "name": "5. Entrega & Despliegue en el Ecosistema",
       "status": "COMPLETED",
-      "description": "Repositorio sincronizado y desplegado en https://in2techmx.github.io/musica-clasica-odisea/.",
+      "description": "Vinculación con el Hub principal y despliegue en producción en GitHub Pages.",
       "responsible": "FS Guardian (QA)"
     }
   ],
@@ -46,11 +46,11 @@
     {
       "agent_id": "DD",
       "role": "Director de Desarrollo / Orquestador",
-      "status": "COMPLETED"
+      "status": "ACTIVE"
     },
     {
       "agent_id": "ADS-Frontend",
-      "role": "Desarrollador Especialista en Web Craft & Audio",
+      "role": "Desarrollador Especialista en Web Craft",
       "status": "COMPLETED"
     },
     {
@@ -63,5 +63,6 @@
       "role": "Agente Auditor de Trazabilidad (Gate 3)",
       "status": "COMPLETED"
     }
-  ]
+  ],
+  "guardian_conformity": "CONFORME"
 }

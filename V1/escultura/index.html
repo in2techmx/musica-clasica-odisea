@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Odisea de la Escultura — La Conquista del Espacio Tridimensional | IN2TECHMX</title>
+  <meta name="description" content="Una travesía interactiva y didáctica por 30,000 años de escultura: historia, técnicas de talla y fundición a la cera perdida, decodificador de cánones, 20 titanes universales y laboratorio de apreciación espacial 360°.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../app/styles.css?v=43">
+
+  <style>
+    /* Estilos complementarios para la Odisea de la Escultura */
+    .sculpture-hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 1.5rem 5rem;
+      background: 
+        linear-gradient(0deg, #06090f 10%, rgba(6,9,15,0.75) 50%, rgba(6,9,15,0.4) 100%),
+        radial-gradient(ellipse at center, rgba(229,184,92,0.18) 0%, transparent 70%);
+    }
+    .sculpture-hero-inner {
+      max-width: 950px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .sculpture-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.95rem;
+      border-radius: 999px;
+      background: rgba(229, 184, 92, 0.12);
+      border: 1px solid rgba(229, 184, 92, 0.35);
+      color: var(--gold-light);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+    }
+    .sculpture-title {
+      font-family: var(--font-serif-display);
+      font-size: clamp(2.6rem, 5.5vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 80%, var(--gold-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .sculpture-subtitle {
+      font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+      line-height: 1.75;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 800px;
+      margin: 0 auto 2.5rem;
+    }
+    .sculpture-stats {
+      display: inline-flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0.85rem 2rem;
+      background: rgba(15, 23, 42, 0.65);
+      border: 1px solid rgba(229, 184, 92, 0.2);
+      border-radius: 999px;
+      backdrop-filter: blur(12px);
+    }
+    .sculpture-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .sculpture-stat-item strong {
+      color: var(--gold-primary);
+      font-family: var(--font-serif-display);
+      font-size: 1.1rem;
+    }
+
+    /* DECODIFICADOR INTERACTIVO */
+    .decoder-container {
+      max-width: 1050px;
+      margin: 0 auto;
+      background: rgba(11, 15, 23, 0.85);
+      border: 1px solid rgba(229, 184, 92, 0.25);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+    .decoder-selectors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .decoder-select-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      margin-bottom: 0.5rem;
+    }
+    .decoder-select-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+      border-radius: 10px;
+      color: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .decoder-select-control:focus {
+      border-color: var(--gold-light);
+      box-shadow: 0 0 15px rgba(229, 184, 92, 0.3);
+    }
+    .decoder-result-card {
+      background: linear-gradient(135deg, rgba(229, 184, 92, 0.08) 0%, rgba(15, 23, 42, 0.85) 100%);
+      border: 1px solid rgba(229, 184, 92, 0.35);
+      border-radius: 16px;
+      padding: 2rem;
+    }
+    .decoder-result-badge {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold-primary);
+      margin-bottom: 0.4rem;
+    }
+    .decoder-result-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 1.2rem;
+    }
+    .decoder-result-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .decoder-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-light);
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .decoder-result-section p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #cbd5e1;
+      margin: 0;
+    }
+    .decoder-result-footer {
+      border-top: 1px solid rgba(229, 184, 92, 0.2);
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+    }
+    .decoder-example-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #34d399;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .decoder-example-text {
+      font-family: var(--font-serif-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    /* TARJETAS DE TITANES */
+    .titans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.8rem;
+      max-width: 1280px;
+      margin: 2.5rem auto 0;
+    }
+    .titan-card {
+      background: rgba(11, 15, 23, 0.85);
+      border: 1px solid rgba(229, 184, 92, 0.2);
+      border-radius: 16px;
+      padding: 1.8rem;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .titan-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.6), 0 0 25px rgba(229,184,92,0.15);
+    }
+    .titan-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .titan-index {
+      font-family: var(--font-serif-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+    }
+    .titan-era-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(229, 184, 92, 0.12);
+      color: var(--gold-light);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+    }
+    .titan-name {
+      font-family: var(--font-serif-display);
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.2rem;
+    }
+    .titan-years {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .titan-title-epigraph {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gold-light);
+      margin-bottom: 1.2rem;
+      line-height: 1.4;
+    }
+    .titan-details {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 0.85rem;
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    .titan-detail-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .titan-detail-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--gold-primary);
+    }
+    .titan-detail-val {
+      font-size: 0.84rem;
+      color: #e2e8f0;
+    }
+    .titan-summary {
+      font-size: 0.86rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 1.2rem;
+      flex: 1;
+    }
+    .titan-quote {
+      font-size: 0.82rem;
+      font-style: italic;
+      color: #94a3b8;
+      border-left: 2px solid var(--gold-primary);
+      padding-left: 0.8rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* SIMULADOR DE APRECIACIÓN ESPACIAL 360° */
+    .viewing-lab-box {
+      max-width: 950px;
+      margin: 0 auto;
+      background: rgba(11, 15, 23, 0.9);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+    }
+    .lab-visual-stage {
+      width: 220px;
+      height: 220px;
+      margin: 1.5rem auto 2rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 40%, rgba(229,184,92,0.18), rgba(15,23,42,0.9));
+      border: 2px dashed rgba(229, 184, 92, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      box-shadow: 0 0 40px rgba(229, 184, 92, 0.15);
+    }
+    .lab-statue-emblem {
+      font-size: 4.5rem;
+      line-height: 1;
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      filter: drop-shadow(0 10px 20px rgba(0,0,0,0.8));
+    }
+    .lab-slider-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      max-width: 550px;
+      margin: 0 auto 1.8rem;
+    }
+    .lab-angle-slider {
+      flex: 1;
+      -webkit-appearance: none;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.15);
+      outline: none;
+      cursor: pointer;
+    }
+    .lab-angle-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      cursor: pointer;
+      box-shadow: 0 0 12px var(--gold-primary);
+    }
+    .lab-angle-badge {
+      font-family: var(--font-serif-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      min-width: 55px;
+    }
+    .lab-info-panel {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid rgba(229, 184, 92, 0.2);
+      border-radius: 12px;
+      padding: 1.4rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .lab-perspective-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.5rem;
+    }
+    .lab-perspective-desc {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin: 0;
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- BARRA DE PROGRESO DE LECTURA -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- HEADER FIJO CON LOGO TEMPLO Y SELECTOR MULTILINGÜE -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="../../index.html" class="brand-wrapper" title="Volver al Portal Matriz de las Artes">
+        <div class="brand-symbol-wrap">
+          <svg class="brand-symbol-svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9.5L12 4L21 9.5H3Z" fill="rgba(229, 184, 92, 0.25)" stroke="var(--gold-light)"/>
+            <line x1="4" y1="10" x2="20" y2="10" stroke="var(--gold-light)"/>
+            <line x1="6" y1="10" x2="6" y2="18" stroke="var(--gold-light)"/>
+            <line x1="10" y1="10" x2="10" y2="18" stroke="var(--gold-light)"/>
+            <line x1="14" y1="10" x2="14" y2="18" stroke="var(--gold-light)"/>
+            <line x1="18" y1="10" x2="18" y2="18" stroke="var(--gold-light)"/>
+            <line x1="3" y1="18" x2="21" y2="18" stroke="var(--gold-light)"/>
+            <line x1="2" y1="20.5" x2="22" y2="20.5" stroke="var(--gold-light)" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title notranslate">ODISEA DE LA ESCULTURA</span>
+          <span class="brand-badge notranslate">MÓDULO II • IN2TECHMX</span>
+        </div>
+      </a>
+
+      <!-- HAMBURGUESA MÓVIL -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- NAVEGACIÓN CAPÍTULOS -->
+      <nav class="main-nav" id="main-nav">
+
+        <!-- BARRA DE IDIOMA EN MENÚ MÓVIL -->
+        <div class="mobile-lang-bar notranslate">
+          <span class="mobile-lang-title">
+            <svg class="lang-globe-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Idioma / Language
+          </span>
+          <div class="mobile-lang-pills">
+            <button class="mobile-lang-pill active" data-lang="es">🇪🇸 ES</button>
+            <button class="mobile-lang-pill" data-lang="en">🇬🇧 EN</button>
+            <button class="mobile-lang-pill" data-lang="fr">🇫🇷 FR</button>
+            <button class="mobile-lang-pill" data-lang="pt">🇵🇹 PT</button>
+            <button class="mobile-lang-pill" data-lang="ru">🇷🇺 RU</button>
+            <button class="mobile-lang-pill" data-lang="zh-CN">🇨🇳 ZH</button>
+          </div>
+        </div>
+
+        <ul class="nav-chapters">
+          <li class="nav-item"><a href="#fundamentos" class="nav-link">¿Qué es?</a></li>
+          <li class="nav-item"><a href="#timeline" class="nav-link">Timeline</a></li>
+          <li class="nav-item"><a href="#decodificador" class="nav-link">Decodificador</a></li>
+          <li class="nav-item"><a href="#titanes" class="nav-link">20 Titanes</a></li>
+          <li class="nav-item"><a href="#historias" class="nav-link">Historias</a></li>
+          <li class="nav-item"><a href="#laboratorio" class="nav-link">Apreciación 360°</a></li>
+          <li class="nav-item"><a href="../../index.html" class="nav-link" style="color:var(--gold-light);">← Portal Matriz</a></li>
+        </ul>
+      </nav>
+
+      <!-- ACCIONES DERECHA -->
+      <div class="header-right-actions">
+        <!-- SELECTOR MULTILINGÜE -->
+        <div class="lang-selector-wrap" id="lang-selector-wrap">
+          <button class="lang-selector-btn notranslate" id="lang-selector-btn" aria-label="Seleccionar idioma / Select language" aria-expanded="false" title="Cambiar idioma / Switch language">
+            <svg class="lang-globe-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="lang-current-label">ES</span>
+            <svg class="lang-chevron" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="lang-dropdown-menu notranslate" id="lang-dropdown-menu" role="listbox">
+            <button class="lang-opt-btn active" data-lang="es" role="option" aria-selected="true"><span class="lang-name">Español</span> <span class="lang-code">ES</span></button>
+            <button class="lang-opt-btn" data-lang="en" role="option" aria-selected="false"><span class="lang-name">English</span> <span class="lang-code">EN</span></button>
+            <button class="lang-opt-btn" data-lang="fr" role="option" aria-selected="false"><span class="lang-name">Français</span> <span class="lang-code">FR</span></button>
+            <button class="lang-opt-btn" data-lang="pt" role="option" aria-selected="false"><span class="lang-name">Português</span> <span class="lang-code">PT</span></button>
+            <button class="lang-opt-btn" data-lang="ru" role="option" aria-selected="false"><span class="lang-name">Русский</span> <span class="lang-code">RU</span></button>
+            <button class="lang-opt-btn" data-lang="zh-CN" role="option" aria-selected="false"><span class="lang-name">中文</span> <span class="lang-code">ZH</span></button>
+          </div>
+        </div>
+
+        <a href="https://buymeacoffee.com/in2techmx" target="_blank" rel="noopener noreferrer" class="header-bmc-btn" title="Apoyar proyecto · Buy Me a Coffee" aria-label="Apoyar en Buy Me a Coffee">
+          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <span>Apoyar</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION CINEMÁTICA -->
+  <main>
+    <section class="sculpture-hero">
+      <div class="sculpture-hero-inner">
+        <div class="sculpture-kicker">
+          <span>✦</span> Odisea de las Artes • Módulo II • Cero Elitismo
+        </div>
+        <h1 class="sculpture-title">La Conquista de la Masa y el Vacío Tridimensional</h1>
+        <p class="sculpture-subtitle">
+          De las tallas mágicas del Paleolítico al mármol ingrávido de Miguel Ángel, el ilusionismo carnal de Bernini 
+          y la desmaterialización moderna de Giacometti y Chillida. Una guía interactiva para comprender la escultura 
+          desde su materia, su peso y su combate perpetuo contra la gravedad.
+        </p>
+
+        <div class="sculpture-stats">
+          <div class="sculpture-stat-item"><strong>30,000</strong> Años de Historia</div>
+          <div class="sculpture-stat-item"><strong>20</strong> Titanes de la Talla &amp; Fundición</div>
+          <div class="sculpture-stat-item"><strong>4</strong> Procedimientos Técnicos</div>
+          <div class="sculpture-stat-item"><strong>360°</strong> Apreciación Espacial</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 01: LOS FUNDAMENTOS & DESMITIFICACIÓN -->
+    <section class="section-container" id="fundamentos">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 01 • Los Fundamentos</div>
+        <h2 class="section-title">¿Qué es Realmente la Escultura?</h2>
+        <p class="section-desc">
+          <strong>En sentido estricto</strong>, es el arte de modelar, tallar o fundir materias sólidas para crear formas en el espacio real. 
+          <strong>En sentido amplio</strong>, es la dialéctica milenaria entre la masa física, el vacío circundante y la fuerza implacable de la gravedad: 
+          la liberación de la forma que exige ser rodeada físicamente por el espectador para revelar todos sus frentes.
+        </p>
+      </div>
+
+      <!-- Los 3 Pilares -->
+      <div class="pillars-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem; margin-bottom:3rem;">
+        <div class="card-tilt">
+          <div class="card-tilt-inner" style="background:rgba(11,15,23,0.85); border:1px solid rgba(229,184,92,0.2); border-radius:16px; padding:1.8rem;">
+            <span style="font-size:0.75rem; font-weight:800; color:var(--gold-primary); text-transform:uppercase;">Pilar I</span>
+            <h4 style="font-family:var(--font-serif-display); font-size:1.3rem; margin:0.4rem 0 0.6rem; color:#fff;">Masa y Vacío</h4>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+              La escultura no solo esculpe el material sólido: también esculpe el aire que la rodea. El hueco y la oquedad son materia compositiva activa, como demostraron Henry Moore y Barbara Hepworth.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-tilt">
+          <div class="card-tilt-inner" style="background:rgba(11,15,23,0.85); border:1px solid rgba(229,184,92,0.2); border-radius:16px; padding:1.8rem;">
+            <span style="font-size:0.75rem; font-weight:800; color:var(--gold-primary); text-transform:uppercase;">Pilar II</span>
+            <h4 style="font-family:var(--font-serif-display); font-size:1.3rem; margin:0.4rem 0 0.6rem; color:#fff;">La Batalla con la Gravedad</h4>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+              Toda escultura es un cálculo de sustentación: equilibrar toneladas de mármol o bronce sobre dos tobillos sin que la piedra quiebre por cizallamiento. El contrapposto griego nació para vencer esta ley física.
+            </p>
+          </div>
+        </div>
+
+        <div class="card-tilt">
+          <div class="card-tilt-inner" style="background:rgba(11,15,23,0.85); border:1px solid rgba(229,184,92,0.2); border-radius:16px; padding:1.8rem;">
+            <span style="font-size:0.75rem; font-weight:800; color:var(--gold-primary); text-transform:uppercase;">Pilar III</span>
+            <h4 style="font-family:var(--font-serif-display); font-size:1.3rem; margin:0.4rem 0 0.6rem; color:#fff;">La Mirada en 360 Grados</h4>
+            <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+              A diferencia de la pintura o la pantalla, una escultura nunca se agota en un solo plano: cada paso alrededor revela nuevos perfiles, sombras, escorzos y tensiones invisibles desde el frente.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mitos Desmontados -->
+      <div class="myths-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem;">
+        <div class="myth-card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(239,68,68,0.3); border-radius:14px; padding:1.6rem;">
+          <span style="color:#ef4444; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.08em;">Mito Desmontado</span>
+          <h4 style="font-family:var(--font-serif-display); font-size:1.15rem; color:#fff; margin:0.4rem 0 0.6rem;">«Las estatuas clásicas eran blancas e impolutas»</h4>
+          <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.6; margin:0;">
+            <strong>Falso documental:</strong> Estaban vívidamente pintadas con pigmentos chillones (ocre, bermellón, malaquita y oro). La blancura es una fantasía renacentista y neoclásica provocada por el desgaste milenario y limpiezas excesivas.
+          </p>
+        </div>
+
+        <div class="myth-card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(239,68,68,0.3); border-radius:14px; padding:1.6rem;">
+          <span style="color:#ef4444; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.08em;">Mito Desmontado</span>
+          <h4 style="font-family:var(--font-serif-display); font-size:1.15rem; color:#fff; margin:0.4rem 0 0.6rem;">«La escultura es un arte frío, rígido y estático»</h4>
+          <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.6; margin:0;">
+            <strong>Falso documental:</strong> Desde la torsión del contrapposto de Policleto hasta la figura serpentinata de Giambologna y los móviles de Calder, el objetivo del escultor es capturar el movimiento potencial en pleno dinamismo.
+          </p>
+        </div>
+
+        <div class="myth-card" style="background:rgba(15,23,42,0.6); border:1px solid rgba(239,68,68,0.3); border-radius:14px; padding:1.6rem;">
+          <span style="color:#ef4444; font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.08em;">Mito Desmontado</span>
+          <h4 style="font-family:var(--font-serif-display); font-size:1.15rem; color:#fff; margin:0.4rem 0 0.6rem;">«El vaciado en bronce es una simple copia mecánica»</h4>
+          <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.6; margin:0;">
+            <strong>Falso documental:</strong> La fundición a la cera perdida exige modelado de núcleo, conductos de ventilación y verter bronce líquido a más de 1,100 °C con riesgo de explosión. Es una de las hazañas técnicas más complejas de la humanidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 02: TIMELINE HISTÓRICO DE 30,000 AÑOS -->
+    <section class="section-container" id="timeline" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 02 • La Gran Línea Temporal</div>
+        <h2 class="section-title">30,000 Años de Talla, Fuego y Masa</h2>
+        <p class="section-desc">
+          Desde las primeras tallas paleolíticas de fertilidad hasta el hierro forjado contemporáneo de Chillida y la desmaterialización de Calder.
+        </p>
+      </div>
+
+      <div id="sculpture-timeline-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+        <!-- Renderizado dinámico desde data-escultura.js -->
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 03: EL DECODIFICADOR INTERACTIVO -->
+    <section class="section-container" id="decodificador" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 03 • El Laboratorio Técnico</div>
+        <h2 class="section-title">El Decodificador de la Escultura</h2>
+        <p class="section-desc">
+          Combina un procedimiento técnico, un material y un canon estético para decodificar la ecuación física que da vida a una obra tridimensional.
+        </p>
+      </div>
+
+      <div class="decoder-container">
+        <div class="decoder-selectors-grid">
+          <div class="decoder-select-group">
+            <label for="decoder-tech-select">1. Procedimiento Técnico</label>
+            <select id="decoder-tech-select" class="decoder-select-control">
+              <option value="sustractivo">Talla Sustractiva (Quitar materia)</option>
+              <option value="aditivo">Modelado Aditivo (Agregar materia)</option>
+              <option value="fundicion">Fundición a la Cera Perdida (Bronce)</option>
+              <option value="ensamblaje">Ensamblaje, Forja &amp; Cinetismo</option>
+            </select>
+          </div>
+
+          <div class="decoder-select-group">
+            <label for="decoder-mat-select">2. Material Predominante</label>
+            <select id="decoder-mat-select" class="decoder-select-control">
+              <option value="Mármol de Carrara">Mármol de Carrara (Piedra metamórfica)</option>
+              <option value="Bronce">Bronce (Aleación Cobre + Estaño)</option>
+              <option value="Madera de Nogal">Madera de Nogal / Cedro (Orgánico)</option>
+              <option value="Arcilla / Terracota">Arcilla / Terracota cocida</option>
+              <option value="Acero Corten">Acero Corten / Hierro Forjado</option>
+            </select>
+          </div>
+
+          <div class="decoder-select-group">
+            <label for="decoder-canon-select">3. Canon o Principio Estético</label>
+            <select id="decoder-canon-select" class="decoder-select-control">
+              <option value="contrapposto">Contrapposto (Equilibrio en 'S')</option>
+              <option value="serpentinata">Línea Serpentinata (Torsión 360°)</option>
+              <option value="non-finito">Non Finito (Lo inacabado expresivo)</option>
+              <option value="patina">Pátina Química de Oxidación</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="decoder-result-card" class="decoder-result-card">
+          <!-- Renderizado dinámico vía app-escultura.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 04: LOS 20 TITANES DE LA ESCULTURA -->
+    <section class="section-container" id="titanes" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 04 • La Galería Cardinal</div>
+        <h2 class="section-title">Los 20 Titanes de la Escultura</h2>
+        <p class="section-desc">
+          Monografías, técnicas dominadas y obras maestras de las mentes que desafiaron la gravedad y tallaron la memoria de la humanidad.
+        </p>
+
+        <!-- Filtros interactivos -->
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; margin-top:2rem;">
+          <input type="text" id="titan-search-input" placeholder="Buscar por escultor, obra o material..." style="padding:0.6rem 1.2rem; border-radius:999px; background:rgba(15,23,42,0.8); border:1px solid rgba(229,184,92,0.3); color:#fff; font-size:0.85rem; outline:none; min-width:260px;">
+          <select id="titan-era-filter" style="padding:0.6rem 1.2rem; border-radius:999px; background:rgba(15,23,42,0.8); border:1px solid rgba(229,184,92,0.3); color:#fff; font-size:0.85rem; outline:none; cursor:pointer;">
+            <option value="all">Todas las Épocas</option>
+            <option value="grecia-clasica">Grecia Clásica</option>
+            <option value="helenismo">Helenismo</option>
+            <option value="renacimiento">Renacimiento</option>
+            <option value="barroco">Barroco</option>
+            <option value="neoclasicismo-modernidad">Neoclasicismo a Rodin</option>
+            <option value="vanguardias-siglox">Siglo XX &amp; Vanguardias</option>
+          </select>
+          <span id="titans-count-badge" style="display:inline-flex; align-items:center; font-size:0.8rem; font-weight:700; color:var(--gold-primary); padding:0 0.5rem;">20 Maestros</span>
+        </div>
+      </div>
+
+      <div id="titans-sculpture-grid" class="titans-grid">
+        <!-- Renderizado dinámico vía app-escultura.js -->
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 05: HISTORIAS MATERIALES & MITOS -->
+    <section class="section-container" id="historias" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 05 • Crónicas de Taller</div>
+        <h2 class="section-title">La Realidad Material Detrás de la Piedra</h2>
+        <p class="section-desc">
+          Bloques defectuosos, hornos en llamas y la física implacable del taller escultórico.
+        </p>
+      </div>
+
+      <div id="sculpture-stories-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.8rem; max-width:1200px; margin:0 auto;">
+        <!-- Renderizado dinámico vía app-escultura.js -->
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 5B: LABORATORIO DE APRECIACIÓN ESPACIAL 360° -->
+    <section class="section-container" id="laboratorio" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 5B • Laboratorio de Apreciación</div>
+        <h2 class="section-title">Cómo Mirar una Escultura en 360 Grados</h2>
+        <p class="section-desc">
+          Usa el deslizador de ángulo para rodear virtualmente una escultura clásica y descubrir cómo cambia la tensión y la lectura espacial en cada perspectiva.
+        </p>
+      </div>
+
+      <div class="viewing-lab-box">
+        <div class="lab-visual-stage">
+          <div class="lab-statue-emblem" id="lab-statue-wireframe">🗿</div>
+        </div>
+
+        <div class="lab-slider-row">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--gold-primary);">0° Frente</span>
+          <input type="range" id="lab-angle-slider" class="lab-angle-slider" min="0" max="360" value="0">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--gold-primary);">360° Vuelta</span>
+          <span class="lab-angle-badge" id="lab-angle-display">0°</span>
+        </div>
+
+        <div class="lab-info-panel">
+          <h4 class="lab-perspective-title" id="lab-perspective-title">Vista Frontal • Centro de Tensión &amp; Mirada</h4>
+          <p class="lab-perspective-desc" id="lab-perspective-desc">
+            El punto de encuentro inicial. Aprecia la mirada concentrada y el equilibrio de la cabeza sobre el cuello en tensión anatómica.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAPÍTULO 06 & 07: CULTURA VISUAL & GLOSARIO -->
+    <section class="section-container" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 06 &amp; 07 • Diálogo &amp; Fuentes</div>
+        <h2 class="section-title">La Escultura Hoy &amp; Glosario Técnico</h2>
+        <p class="section-desc">
+          Del cine de stop-motion y el modelado 3D digital a la arquitectura deconstructivista contemporánea.
+        </p>
+      </div>
+
+      <div style="max-width:900px; margin:0 auto; background:rgba(11,15,23,0.8); border:1px solid rgba(229,184,92,0.2); border-radius:16px; padding:2rem; line-height:1.7; color:#cbd5e1; font-size:0.92rem;">
+        <h4 style="font-family:var(--font-serif-display); font-size:1.3rem; color:var(--gold-light); margin-top:0;">La Escultura en la Era del CGI y el Espacio Virtual</h4>
+        <p>
+          Lejos de ser un arte obsoleto, la escultura es el cimiento de la industria visual contemporánea: todo el modelado digital de personajes (CGI, animación en ZBrush, impresión 3D) se rige por los principios anatómicos de Policleto y la iluminación de claroscuro de Bernini. Arquitectos como Zaha Hadid y Frank Gehry han demostrado que los edificios del siglo XXI no son cajas rígidas, sino esculturas habitables que dialogan con el viento.
+        </p>
+        <p style="margin-bottom:0; font-size:0.82rem; color:var(--text-muted); border-top:1px solid rgba(255,255,255,0.06); padding-top:1rem;">
+          <strong>Fuentes Académicas de Consulta:</strong> Giorgio Vasari (<em>Las vidas de los más excelentes pintores, escultores y arquitectos</em>, 1550), E. H. Gombrich (<em>Historia del Arte</em>), Rudolf Wittkower (<em>La escultura: procesos y principios</em>) y Rosalind Krauss (<em>Pasajes de la escultura moderna</em>).
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER EDITORIAL UNIFICADO -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.9rem;">
+          <div class="brand-symbol-wrap" style="width:34px; height:34px;">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="var(--gold-light)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9.5L12 4L21 9.5H3Z" fill="rgba(229, 184, 92, 0.25)"/>
+              <line x1="4" y1="10" x2="20" y2="10"/>
+              <line x1="6" y1="10" x2="6" y2="18"/>
+              <line x1="10" y1="10" x2="10" y2="18"/>
+              <line x1="14" y1="10" x2="14" y2="18"/>
+              <line x1="18" y1="10" x2="18" y2="18"/>
+              <line x1="3" y1="18" x2="21" y2="18"/>
+              <line x1="2" y1="20.5" x2="22" y2="20.5" stroke-width="2"/>
+            </svg>
+          </div>
+          <h4 class="notranslate" style="margin:0; font-family:var(--font-serif-display); font-size:1.25rem; color:var(--gold-light);">ODISEA DE LA ESCULTURA</h4>
+        </div>
+        <p>
+          Una plataforma abierta de streaming didáctico e interactivo por los 30,000 años de escultura: materia, gravedad, masa y vacío. Sin muros de pago y con absoluto rigor de archivo.
+        </p>
+        <a href="https://buymeacoffee.com/in2techmx" target="_blank" rel="noopener noreferrer" class="header-bmc-btn" style="display:inline-flex; align-items:center; gap:0.4rem; padding:0.5rem 1rem; border-radius:999px; height:auto; margin-top:1.2rem; text-decoration:none;">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          <span>Apoyar proyecto · Buy Me a Coffee</span>
+        </a>
+      </div>
+
+      <div class="footer-col">
+        <h5>Disciplinas de las Artes</h5>
+        <ul>
+          <li><a href="../app/index.html">1. Música Clásica (Disponible)</a></li>
+          <li><a href="#top">2. Escultura (Módulo II Activo)</a></li>
+          <li><a href="../../index.html#carrete-disciplinas">3. Pintura (Módulo III)</a></li>
+          <li><a href="../../index.html#carrete-disciplinas">4. Literatura (Módulo IV)</a></li>
+          <li><a href="../../index.html#carrete-disciplinas">5. Cine (Módulo V)</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Los 8 Capítulos de la Escultura</h5>
+        <ul>
+          <li><a href="#fundamentos">Capítulo 01 • Masa &amp; Mitos</a></li>
+          <li><a href="#timeline">Capítulo 02 • Timeline 30,000 Años</a></li>
+          <li><a href="#decodificador">Capítulo 03 • El Decodificador</a></li>
+          <li><a href="#titanes">Capítulo 04 • 20 Titanes de la Talla</a></li>
+          <li><a href="#historias">Capítulo 05 • Crónicas de Taller</a></li>
+          <li><a href="#laboratorio">Capítulo 5B • Apreciación 360°</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>© 2026 IN2TECHMX. Diseñado con estándares Vanguard de alta artesanía digital. Licencias de dominio público y Creative Commons.</div>
+      <div style="display:flex; gap:1.2rem;">
+        <a href="../../index.html" style="color:var(--gold-primary); text-decoration:none;">← Volver al Hub Matriz</a>
+        <a href="#top" style="color:var(--text-muted); text-decoration:none;">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="../app/i18n.js?v=43"></script>
+  <script src="data-escultura.js?v=1"></script>
+  <script src="app-escultura.js?v=1"></script>
+  <script>
+    // Control de navegación móvil
+    (function initNav() {
+      const hamburger = document.getElementById('nav-hamburger');
+      const mainNav = document.getElementById('main-nav');
+      if (hamburger && mainNav) {
+        hamburger.addEventListener('click', () => {
+          const isOpen = mainNav.classList.toggle('open');
+          hamburger.classList.toggle('open', isOpen);
+          hamburger.setAttribute('aria-expanded', isOpen);
+        });
+
+        mainNav.querySelectorAll('a').forEach(a => {
+          a.addEventListener('click', () => {
+            mainNav.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

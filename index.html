@@ -521,6 +521,7 @@
       font-size: 0.84rem;
       font-weight: 700;
       color: #ffffff;
+      text-decoration: none;
       transition: color 0.2s ease;
     }
     .stream-card:hover .stream-card-action {
@@ -747,7 +748,7 @@
                 <span class="stream-tag">Decodificador</span>
                 <span class="stream-tag">20 Titanes</span>
               </div>
-              <span class="stream-card-action">Entrar a la Odisea →</span>
+              <a href="V1/app/index.html" class="stream-card-action" onclick="event.stopPropagation()">Entrar a la Odisea →</a>
             </div>
           </div>
 
@@ -756,15 +757,15 @@
             <img src="V1/app/assets/hub/escultura.jpg" alt="Odisea de la Escultura — David de Miguel Ángel" class="stream-card-bg" loading="lazy">
             <div class="stream-card-overlay"></div>
             <div class="stream-card-content">
-              <span class="stream-card-badge next">Próximo Estreno</span>
+              <span class="stream-card-badge live">Disponible Ahora</span>
               <h3 class="stream-card-title">Escultura</h3>
               <p class="stream-card-epigraph">«La conquista de la masa, el vacío tridimensional y la tensión táctil en la piedra.»</p>
               <div class="stream-card-tags">
-                <span class="stream-tag">Contrapposto</span>
-                <span class="stream-tag">Mármol Carrara</span>
-                <span class="stream-tag">Cera Perdida</span>
+                <span class="stream-tag">Lab 360°</span>
+                <span class="stream-tag">Decodificador</span>
+                <span class="stream-tag">20 Titanes</span>
               </div>
-              <span class="stream-card-action">Ver Ficha de Módulo →</span>
+              <a href="V1/escultura/index.html" class="stream-card-action" onclick="event.stopPropagation()">Entrar a la Odisea →</a>
             </div>
           </div>
 
@@ -976,15 +977,15 @@
       },
       escultura: {
         title: "Odisea de la Escultura",
-        kicker: "IN2TECHMX ORIGINAL • PRÓXIMO ESTRENO (EN DESARROLLO)",
-        dotColor: "#fbbf24",
-        match: "99% Coincidencia Cultural",
-        badge: "Módulo II",
+        kicker: "IN2TECHMX ORIGINAL • SERIE CULTURAL DISPONIBLE",
+        dotColor: "#10b981",
+        match: "100% Coincidencia Cultural",
+        badge: "8 Capítulos",
         year: "30,000 Años de Talla y Masa",
         image: "V1/app/assets/hub/escultura.jpg",
         desc: "La conquista del espacio tridimensional: de la Venus de Willendorf al mármol ingrávido de Bernini y las siluetas existenciales de Giacometti. Comprende el contrapposto, la cera perdida y el diálogo de la forma con la gravedad.",
-        playUrl: "#metodo",
-        playText: "Ver Ficha de Módulo II ℹ"
+        playUrl: "V1/escultura/index.html",
+        playText: "Explorar Odisea de la Escultura ▶"
       },
       pintura: {
         title: "Odisea de la Pintura",

@@ -277,7 +277,8 @@
 
       <!-- Filtros por Época -->
       <div class="timeline-filter-bar" id="evo-filter-bar">
-        <button class="timeline-filter-btn active" data-evo-filter="all">Ver las 7 Épocas</button>
+        <button class="timeline-filter-btn active" data-evo-filter="all">Ver Todas (00 – 07)</button>
+        <button class="timeline-filter-btn" data-evo-filter="proto">00. Antesala Proto-Clásica</button>
         <button class="timeline-filter-btn" data-evo-filter="medieval">Medieval</button>
         <button class="timeline-filter-btn" data-evo-filter="renacimiento">Renacimiento</button>
         <button class="timeline-filter-btn" data-evo-filter="barroco">Barroco</button>
@@ -380,6 +381,25 @@
   <script src="audio-synthesizer.js?v=12"></script>
   <script>
     const EVOLUTION_DATA = [
+      {
+        id: "proto",
+        stageLabel: "Etapa 00 · Antesala",
+        name: "Antesala Proto-Clásica (Antigüedad: Grecia, Mesopotamia & Roma)",
+        period: "c. 3000 a.C. – 500 d.C.",
+        accent: "#d97706",
+        motifKey: "gregoriano",
+        subtitle: "¿De dónde da el salto la música clásica? De la matemática de las cuerdas de Pitágoras, la notación alfabética griega, los modos antiguos y el órgano hidráulico de Alejandría — puenteados al Medioevo por el filósofo romano Boecio (c. 500 d.C.).",
+        notationImg: "assets/evolucion/notacion-proto.jpg",
+        notationTitle: "Epitafio de Seikilos (s. I–II d.C.) y Notación Alfabética Griega",
+        notationCaption: "Tallado en una columna de mármol en Turquía, es la pieza musical completa más antigua conservada: usa letras griegas sobre el texto para indicar altura exacta y rayas/puntos para el ritmo.",
+        instrumentImg: "assets/evolucion/inst-proto.jpg",
+        instrumentTitle: "Kithara, Lira Griega y Aulos de Doble Caña",
+        instrumentCaption: "La Kithara era el instrumento profesional de concierto en los festivales griegos (como los Juegos Píticos), mientras el Aulos acompañaba tragedias teatrales y rituales dionisíacos.",
+        notationDetail: "Mucho antes del pentagrama medieval, los sumerios (Himno Hurrita n.º 6, 1400 a.C.) y los griegos ya escribían música con letras y símbolos sobre piedra o papiro. Sin embargo, tras la caída de Roma ese sistema alfabético se perdió en Europa Occidental, obligando al Medioevo a reinventar la notación desde cero.",
+        instrumentsDetail: "Lira y Kithara de 7 a 12 cuerdas pulsadas (origen de la palabra 'lírica'), Aulos (doble oboe), arpas mesopotámicas, trompetas romanas de bronce (buccina, cornu) y percusión ritual.",
+        techDetail: "Dos inventos monumentales: el Monocordio de Pitágoras (c. 530 a.C.), que descubrió las razones matemáticas 2:1 (octava) y 3:2 (quinta), y el Hydraulis de Ctesibio de Alejandría (c. 250 a.C.): el primer instrumento de teclado de la historia humana, impulsado por presión de agua.",
+        languageDetail: "El salto hacia la música clásica ocurrió cuando el filósofo romano Boecio (c. 500 d.C.) tradujo la teoría griega de los 'Modos' (Dórico, Frigio, Lidio, Mixolidio) al latín en 'De Institutione Musica'. La Iglesia heredó esa teoría y la cantilación de la sinagoga hebrea, dando origen al Canto Gregoriano — y mil años después, los florentinos intentaron revivir el teatro griego antiguo e inventaron la Ópera (1600)."
+      },
       {
         id: "medieval",
         name: "Música Medieval",
@@ -519,7 +539,7 @@
             <div class="evo-header-row">
               <div>
                 <span class="editorial-badge" style="margin-bottom:0.35rem; color:${e.accent}; border-color:${e.accent}">
-                  Etapa 0${idx + 1} · ${e.period}
+                  ${e.stageLabel || ("Etapa 0" + idx)} · ${e.period}
                 </span>
                 <h2 class="evo-era-title">${e.name}</h2>
                 <p class="evo-era-subtitle">${e.subtitle}</p>

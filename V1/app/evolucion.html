@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Evolución de la Música: Instrumentos, Partituras, Notación &amp; Tecnología | Odisea Clásica</title>
+  <meta name="description" content="Museo visual interactivo de 1,500 años de evolución musical: instrumentos históricos, partituras y notación, solfeo, tecnología acústica y lenguaje compositivo por época.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=12">
+  <style>
+    .evo-stage-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(229, 184, 92, 0.25);
+      padding: 2.4rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+    .evo-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.8rem;
+      padding-bottom: 1.4rem;
+      border-bottom: 1px solid rgba(229, 184, 92, 0.16);
+    }
+    .evo-era-title {
+      font-family: var(--font-serif-display);
+      font-size: clamp(1.6rem, 3vw, 2.35rem);
+      color: #fff;
+      margin: 0.35rem 0 0.25rem;
+    }
+    .evo-era-subtitle {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      max-width: 720px;
+    }
+    .evo-media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 1.8rem;
+    }
+    .evo-media-frame {
+      position: relative;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(229, 184, 92, 0.28);
+      background: rgba(6, 9, 15, 0.7);
+      display: flex;
+      flex-direction: column;
+    }
+    .evo-media-img-wrap {
+      width: 100%;
+      height: 270px;
+      overflow: hidden;
+      background: #070b13;
+      position: relative;
+    }
+    .evo-media-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.65s var(--transition-smooth);
+    }
+    .evo-media-frame:hover .evo-media-img-wrap img {
+      transform: scale(1.05);
+    }
+    .evo-media-badge {
+      position: absolute;
+      top: 0.85rem;
+      left: 0.85rem;
+      background: rgba(6, 9, 15, 0.84);
+      border: 1px solid rgba(229, 184, 92, 0.45);
+      color: var(--gold-light);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.26rem 0.68rem;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+    .evo-media-caption {
+      padding: 1rem 1.2rem;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .evo-media-caption strong {
+      color: var(--gold-light);
+      display: block;
+      font-size: 0.88rem;
+      margin-bottom: 0.2rem;
+    }
+    .evo-pillars-4 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    .evo-pillar-box {
+      padding: 1.25rem 1.35rem;
+      border-radius: 12px;
+      border: 1px solid rgba(229, 184, 92, 0.16);
+      background: rgba(8, 13, 24, 0.48);
+      backdrop-filter: blur(10px);
+    }
+    .evo-pillar-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .evo-pillar-box p {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .evo-compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.84rem;
+    }
+    .evo-compare-table th {
+      text-align: left;
+      padding: 0.95rem 1rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      border-bottom: 1px solid rgba(229, 184, 92, 0.35);
+    }
+    .evo-compare-table td {
+      padding: 0.95rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--text-secondary);
+      vertical-align: top;
+      line-height: 1.5;
+    }
+    .evo-compare-table tr:hover td {
+      background: rgba(229, 184, 92, 0.06);
+      color: #fff;
+    }
+    @media (max-width: 860px) {
+      .evo-media-grid, .evo-pillars-4 { grid-template-columns: 1fr; }
+      .evo-stage-card { padding: 1.4rem; }
+      .evo-media-img-wrap { height: 220px; }
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.7rem; align-items:center; flex-wrap:wrap;">
+      <a href="index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Catálogos de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 0.95rem; color: var(--gold-light); font-weight: 700;">
+      MUSEO TÉCNICO • EVOLUCIÓN DE LA MÚSICA
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Audio Real MP3">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Live</span>
+    </div>
+  </nav>
+
+  <!-- HERO DE LA PÁGINA -->
+  <section class="section-wrapper hero-section" style="min-height: 52vh; padding-top: 4.5rem; padding-bottom: 3rem;">
+    <div class="hero-content">
+      <div class="editorial-badge">
+        <span>✦</span> Archivo Visual &amp; Técnico • 500 d.C. a la Era Digital
+      </div>
+      <h1 class="hero-title" style="font-size: clamp(2.1rem, 4.4vw, 3.6rem);">
+        Cómo Evolucionó la Música: Instrumentos, Partituras, Notación &amp; Tecnología
+      </h1>
+      <p class="hero-subtitle" style="margin-bottom: 2rem;">
+        Un recorrido visual época por época para entender <strong>cómo se escribía la música</strong>,
+        <strong>qué instrumentos existían</strong>, qué <strong>inventos tecnológicos</strong> transformaron el sonido
+        y cómo nació el lenguaje musical que escuchamos hoy.
+      </p>
+
+      <!-- Filtros por Época -->
+      <div class="timeline-filter-bar" id="evo-filter-bar">
+        <button class="timeline-filter-btn active" data-evo-filter="all">Ver las 7 Épocas</button>
+        <button class="timeline-filter-btn" data-evo-filter="medieval">Medieval</button>
+        <button class="timeline-filter-btn" data-evo-filter="renacimiento">Renacimiento</button>
+        <button class="timeline-filter-btn" data-evo-filter="barroco">Barroco</button>
+        <button class="timeline-filter-btn" data-evo-filter="clasicismo">Clasicismo</button>
+        <button class="timeline-filter-btn" data-evo-filter="romanticismo">Romanticismo</button>
+        <button class="timeline-filter-btn" data-evo-filter="siglo-xx">Siglo XX</button>
+        <button class="timeline-filter-btn" data-evo-filter="contemporanea">Contemporánea</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA CRONOLÓGICA DE LAS 7 ETAPAS -->
+  <section class="section-wrapper" id="evo-stages-container" style="padding-top: 2rem;"></section>
+
+  <!-- TABLA SINÓPTICA COMPARATIVA -->
+  <section class="section-wrapper" style="padding-bottom: 6rem;">
+    <div class="section-header">
+      <div class="editorial-badge">Síntesis Histórica Comparativa</div>
+      <h2 class="section-title">1,500 Años de Progreso Técnico de un Vistazo</h2>
+    </div>
+    <div class="catalog-table-wrap">
+      <table class="evo-compare-table">
+        <thead>
+          <tr>
+            <th>Época</th>
+            <th>Notación &amp; Solfeo</th>
+            <th>Instrumento Emblema</th>
+            <th>Avance Tecnológico</th>
+            <th>Lenguaje Musical</th>
+          </tr>
+        </thead>
+        <tbody id="evo-compare-tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK FLOTANTE DE AUDIO EN TIEMPO REAL -->
+  <aside class="floating-audio-deck" id="floating-audio-deck" aria-label="Estación de Audio Clásico">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Beethoven: Motivo del Destino (5ª Sinfonía)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-autosync" id="deck-autosync-btn" title="Sincronizar audio real MP3 automáticamente con cada época">✦ Auto-Sección: OFF</button>
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir / Pausar">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <a href="#top" class="fab-top" title="Volver arriba (Esc)">↑</a>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>ODISEA DE LA MÚSICA CLÁSICA</h4>
+        <p>Museo visual de evolución organológica, notación, solfeo y tecnología sonora bajo estándar <strong>IN2TECHMX Vanguard Craft</strong>.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Explorar el Portal</h5>
+        <ul>
+          <li><a href="index.html">Odisea Principal</a></li>
+          <li><a href="exponentes.html">Catálogos &amp; Etapas de Maestros</a></li>
+          <li><a href="index.html#guia-audicion">Guía de Audición Gratuita</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Gobernanza IN2TECHMX</h5>
+        <ul>
+          <li><span style="color:#10b981">✓ Gate 1:</span> Tests Deterministas PASS</li>
+          <li><span style="color:#10b981">✓ Gate 2:</span> Seguridad AS Conforme</li>
+          <li><span style="color:#10b981">✓ Gate 3:</span> Auditoría AA Trazable</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 IN2TECHMX — Odisea de la Música Clásica.</div>
+      <div>Atajos: <strong>Espacio</strong> (Play/Pausa) • <strong>Esc</strong> (Volver al Inicio)</div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS MODULARES -->
+  <script src="data-music.js?v=12"></script>
+  <script src="listening-guide.js?v=12"></script>
+  <script src="audio-synthesizer.js?v=12"></script>
+  <script>
+    const EVOLUTION_DATA = [
+      {
+        id: "medieval",
+        name: "Música Medieval",
+        period: "c. 500 – 1400",
+        accent: "#a855f7",
+        motifKey: "hildegarda",
+        subtitle: "De la transmisión oral pura al nacimiento de la escritura musical sobre pergamino y las primeras voces superpuestas.",
+        notationImg: "assets/evolucion/notacion-medieval.jpg",
+        notationTitle: "Neumas, Tetragrama y la Mano Guidoniana",
+        notationCaption: "Guido d'Arezzo trazó 4 líneas de color (tetragrama) y asignó sílabas (Ut-Re-Mi-Fa-Sol-La) a las falanges de la mano para enseñar solfeo visualmente.",
+        instrumentImg: "assets/evolucion/inst-medieval.jpg",
+        instrumentTitle: "Zanfona (Organistrum), Órgano Portativo y Laúd",
+        instrumentCaption: "Instrumentos de sonido continuo y bordón grave diseñados para acompañar cantos litúrgicos y trovadores en abadías y cortes feudales.",
+        notationDetail: "Al principio solo existían 'neumas' sin líneas (simples gestos de dirección). Con el tetragrama de 4 líneas y la notación cuadrada gregoriana, por primera vez la altura exacta de cada nota pudo viajar intacta a través de siglos y países.",
+        instrumentsDetail: "Voz humana a capella como eje central, apoyada por órgano portativo, laúd medieval, fídula (precursora del violín), salterio, chirimía y arpa gótica.",
+        techDetail: "Estandarización de la tinta sobre pergamino de vitela y construcción de catedrales góticas (como Notre-Dame de París), cuya reverberación de 7 segundos dio origen a la polifonía lenta.",
+        languageDetail: "Monodia (una sola melodía libre en modos eclesiásticos) evolucionando hacia el 'Organum' (2 a 4 voces paralelas y cruzadas con modos rítmicos ternarios)."
+      },
+      {
+        id: "renacimiento",
+        name: "El Renacimiento",
+        period: "c. 1400 – 1600",
+        accent: "#10b981",
+        motifKey: "palestrina",
+        subtitle: "La imprenta democratiza las partituras y las voces humanas alcanzan el equilibrio perfecto del contrapunto polifónico.",
+        notationImg: "assets/evolucion/notacion-renacimiento.jpg",
+        notationTitle: "Imprenta Musical de Petrucci (1501) y Notación Mensural",
+        notationCaption: "En Venecia, Ottaviano Petrucci imprimió el 'Odhecaton' con tipos móviles metálicos, usando notación mensural blanca que fijaba con precisión la duración de cada nota.",
+        instrumentImg: "assets/evolucion/inst-renacimiento.jpg",
+        instrumentTitle: "Familia de Violas da Gamba, Laúd y Sacabuche",
+        instrumentCaption: "Los instrumentos se construían en 'consorts' (familias completas desde soprano hasta bajo) buscando un timbre homogéneo, dulce y similar a un coro humano.",
+        notationDetail: "Consolidación del pentagrama de 5 líneas y de la notación mensural blanca (longas, breves, semibreves y mínimas). Aún no existían las barras de compás modernas; cada cantante leía su propio libro de parte ('partbook').",
+        instrumentsDetail: "Viola da gamba con trastes de tripa, laúd renacentista de múltiples órdenes, flauta dulce, sacabuche (trombón antiguo) y virginal/clavecín temprano.",
+        techDetail: "Invención de la imprenta musical de tipos móviles (Venecia, 1501), que permitió difundir las misas de Josquin des Prez y Palestrina por toda Europa en meses en lugar de décadas.",
+        languageDetail: "Contrapunto imitativo a 4–8 voces independientes en equilibrio democrático. Nacimiento del madrigal profano y del 'madrigalismo' (pintar con notas palabras como 'cielo', 'caer' o 'suspiro')."
+      },
+      {
+        id: "barroco",
+        name: "El Barroco",
+        period: "c. 1600 – 1750",
+        accent: "#e5b85c",
+        motifKey: "bach-toccata",
+        subtitle: "Nace la tonalidad moderna (Mayor/Menor), la orquesta con violines Stradivarius y el sistema de afinación que todavía usamos hoy.",
+        notationImg: "assets/evolucion/notacion-barroco.jpg",
+        notationTitle: "Bajo Cifrado (Bajo Continuo) y Compases Modernos",
+        notationCaption: "El compositor escribía la melodía y una línea de bajo con números ('cifrado') que indicaban al clavecinista u organista qué acordes improvisar en tiempo real.",
+        instrumentImg: "assets/evolucion/inst-barroco.jpg",
+        instrumentTitle: "Violines Stradivarius de Cremona y Gran Órgano Tubular",
+        instrumentCaption: "Antonio Stradivari perfeccionó la acústica del violín en Cremona, mientras los constructores alemanes creaban órganos monumentales de varios teclados y pedalera.",
+        notationDetail: "Se adoptan las barras de compás modernas, las indicaciones de tempo en italiano (Allegro, Adagio, Presto) y el Bajo Continuo, ancestro directo del cifrado de acordes que hoy usan el jazz y el pop.",
+        instrumentsDetail: "Violín barroco (cuerdas de tripa), violonchelo, clavecín, órgano de tubos, oboe, fagot y trompeta natural sin válvulas.",
+        techDetail: "El 'Temperamento Bien Temperado / Igual': dividió la octava en 12 semitonos equilibrados, permitiendo a Bach modular libremente por las 24 tonalidades mayores y menores sin desafinar el instrumento.",
+        languageDetail: "Tonalidad funcional (tensión dominante → resolución tónica), bajo continuo, fuga contrapuntística, nacimiento de la Ópera en Florencia y del Concierto solista (Vivaldi)."
+      },
+      {
+        id: "clasicismo",
+        name: "El Clasicismo",
+        period: "c. 1750 – 1820",
+        accent: "#38bdf8",
+        motifKey: "mozart-nachtmusik",
+        subtitle: "Claridad arquitectónica de la Ilustración: nace el piano moderno, la forma Sonata y la orquesta sinfónica estandarizada.",
+        notationImg: "assets/evolucion/notacion-clasicismo.jpg",
+        notationTitle: "Partitura Orquestal Completa con Dinámicas Precisas",
+        notationCaption: "Desaparece la improvisación del bajo continuo: cada instrumento recibe su línea exacta con matices graduados (pp, p, mf, f, crescendo y diminuendo).",
+        instrumentImg: "assets/evolucion/inst-clasicismo.jpg",
+        instrumentTitle: "El Fortepiano (Cristofori) y la Invención del Clarinete",
+        instrumentCaption: "El mecanismo de martillos del fortepiano permitió por primera vez tocar suave (piano) y fuerte (forte) según la fuerza de los dedos, destronando al clavecín.",
+        notationDetail: "La partitura se vuelve completamente prescriptiva: articulaciones exactas (staccato, legato, sforzando), indicaciones de fraseo y formato de partitura general para director de orquesta.",
+        instrumentsDetail: "Fortepiano, clarinete (recién perfeccionado y adorado por Mozart), cuarteto de cuerdas moderno (2 violines, viola y violonchelo) y sección de maderas y metales en pares.",
+        techDetail: "El escape doble y martillos recubiertos de cuero en el fortepiano + el arco moderno de violín de François Tourte (1785), que multiplicó la potencia y agilidad de las cuerdas.",
+        languageDetail: "Melodía acompañada clara y simétrica, arquitectura de 'Forma Sonata' (Exposición → Desarrollo → Recapitulación), nacimiento formal de la Sinfonía en 4 movimientos y del Cuarteto de Cuerdas."
+      },
+      {
+        id: "romanticismo",
+        name: "El Romanticismo",
+        period: "c. 1815 – 1910",
+        accent: "#f43f5e",
+        motifKey: "chopin-nocturne",
+        subtitle: "La Revolución Industrial forja pianos de acero y metales de válvulas; la orquesta crece a más de 100 músicos al servicio de la pasión.",
+        notationImg: "assets/evolucion/notacion-romanticismo.jpg",
+        notationTitle: "Cromatismo Extremo, Rubato y Partituras Monumentales",
+        notationCaption: "Las partituras de Beethoven, Chopin, Wagner y Mahler se llenan de indicaciones psicológicas ('appassionato', 'doloroso'), alteraciones cromáticas y plantillas orquestales colosales.",
+        instrumentImg: "assets/evolucion/inst-romanticismo.jpg",
+        instrumentTitle: "Piano de Cola con Arpa de Hierro Fundido y Metales de Válvulas",
+        instrumentCaption: "La metalurgia industrial permitió tensar cuerdas de acero a 20 toneladas de presión dentro de un bastidor de hierro fundido, creando el sonido atronador del piano de concierto.",
+        notationDetail: "Uso sistemático del metrónomo de Mälzel (Beethoven fue el primero en anotar BPM exactos), indicaciones expresivas de 'rubato' (tiempo flexible) y técnicas extendidas en la partitura.",
+        instrumentsDetail: "Piano de cola moderno de 88 teclas, trompas y trompetas con válvulas (permitiendo tocar todas las notas cromáticas), tuba, arpa de doble pedal y saxofón (Adolphe Sax, 1846).",
+        techDetail: "Fundición de hierro para arpas de piano, válvulas rotatorias/pistones en metales, sistema Boehm de llaves para flautas y clarinetes, y construcción de grandes salas públicas de concierto.",
+        languageDetail: "Emancipación emocional, armonía cromática llevada al límite (Acorde de Tristán), el 'Leitmotiv' wagneriano (temas asociados a personajes), el Poema Sinfónico y el nacionalismo folclórico."
+      },
+      {
+        id: "siglo-xx",
+        name: "Siglo XX & Vanguardias",
+        period: "c. 1890 – 1975",
+        accent: "#06b6d4",
+        motifKey: "stravinsky-rite",
+        subtitle: "Ruptura total de la tonalidad, revolución rítmica, nacimiento de la grabación sonora y los primeros instrumentos electrónicos.",
+        notationImg: "assets/evolucion/notacion-siglo-xx.jpg",
+        notationTitle: "Notación Gráfica, Dodecafonismo y Polirritmia",
+        notationCaption: "Cuando el pentagrama tradicional ya no basta para representar clústeres, microtonos o azar, los compositores crean partituras visuales, matrices de 12 tonos y compases cambiantes.",
+        instrumentImg: "assets/evolucion/inst-siglo-xx.jpg",
+        instrumentTitle: "Theremin (1920), Ondas Martenot y Cinta Magnética",
+        instrumentCaption: "Por primera vez en la historia humana se genera música sin cuerdas ni aire: electricidad pura, antenas electromagnéticas y cintas grabadas cortadas y empalmadas en estudio.",
+        notationDetail: "Aparecen compases irregulares cambiantes en cada barra (Stravinsky), el 'Sprechstimme' (canto hablado de Schoenberg), microtonos (cuartos de tono) y la notación gráfica experimental (Penderecki, Cage).",
+        instrumentsDetail: "Orquesta ampliada con percusión masiva (xilófono, marimba, celesta), piano preparado, Theremin, Ondas Martenot, magnetófonos de cinta y primeros sintetizadores analógicos.",
+        techDetail: "Invención del fonógrafo, el micrófono eléctrico, la radio, la cinta magnética (Música Concreta de Pierre Schaeffer) y los primeros estudios de música electrónica (Colonia y París).",
+        languageDetail: "Impresionismo tímbrico (Debussy), politonalidad y ritmo primitivista (Stravinsky), atonalidad y serialismo dodecafónico (Schoenberg), música aleatoria (John Cage) y música espectral."
+      },
+      {
+        id: "contemporanea",
+        name: "Era Contemporánea & Digital",
+        period: "1975 – Hoy",
+        accent: "#f59e0b",
+        motifKey: "glass-minimalism",
+        subtitle: "Convergencia total entre la gran orquesta sinfónica, el minimalismo hipnótico, los sintetizadores modulares y la producción digital.",
+        notationImg: "assets/evolucion/notacion-contemporanea.jpg",
+        notationTitle: "DAWs, Protocolo MIDI, Espectrogramas y Partitura Digital",
+        notationCaption: "Hoy conviven software de edición de partituras (Dorico, Sibelius) con estaciones de audio digital (DAWs), espectrogramas en tiempo real y sincronización por código de tiempo para cine y videojuegos.",
+        instrumentImg: "assets/evolucion/inst-contemporanea.jpg",
+        instrumentTitle: "Sintetizador Modular Moog y Orquesta Híbrida Moderna",
+        instrumentCaption: "Los compositores actuales combinan secciones de 90 músicos acústicos con sintetizadores modulares, bibliotecas sampleadas y procesamiento espacial envolvente (Dolby Atmos).",
+        notationDetail: "Notación híbrida que integra partituras tradicionales para orquesta en vivo con pistas sincronizadas ('click track'), control MIDI, automatizaciones electrónicas y algoritmos generativos.",
+        instrumentsDetail: "Orquesta sinfónica contemporánea fusionada con sintetizadores modulares (Moog, Eurorack), instrumentos étnicos globales, samplers orquestales y procesadores digitales en vivo.",
+        techDetail: "Protocolo MIDI (1983), audio digital PCM, estaciones DAW, modelado físico acústico, audio espacial 3D y música adaptativa interactiva para cine (John Williams, Hans Zimmer) y videojuegos.",
+        languageDetail: "Minimalismo repetitivo y modular (Philip Glass, Steve Reich), minimalismo sacro 'Tintinnabuli' (Arvo Pärt), neoclasicismo cinematográfico (Max Richter) y poliestilismo sin fronteras."
+      }
+    ];
+
+    (function renderEvolutionMuseum() {
+      const container = document.getElementById("evo-stages-container");
+      const tbody = document.getElementById("evo-compare-tbody");
+      if (!container || !tbody) return;
+
+      container.innerHTML = EVOLUTION_DATA.map((e, idx) => `
+        <article class="evo-stage-card card-tilt era-entry" data-era-id="${e.id}" style="--card-accent:${e.accent}">
+          <div class="card-tilt-inner">
+            <div class="evo-header-row">
+              <div>
+                <span class="editorial-badge" style="margin-bottom:0.35rem; color:${e.accent}; border-color:${e.accent}">
+                  Etapa 0${idx + 1} · ${e.period}
+                </span>
+                <h2 class="evo-era-title">${e.name}</h2>
+                <p class="evo-era-subtitle">${e.subtitle}</p>
+              </div>
+              <button class="btn-audio-motif" data-motif="${e.motifKey}">
+                <span>▶</span> Escuchar Sonido Real de esta Época
+              </button>
+            </div>
+
+            <div class="evo-media-grid">
+              <figure class="evo-media-frame">
+                <div class="evo-media-img-wrap">
+                  <img src="${e.notationImg}" alt="${e.notationTitle}" loading="lazy">
+                  <span class="evo-media-badge">Partitura &amp; Notación</span>
+                </div>
+                <figcaption class="evo-media-caption">
+                  <strong>${e.notationTitle}</strong>
+                  ${e.notationCaption}
+                </figcaption>
+              </figure>
+
+              <figure class="evo-media-frame">
+                <div class="evo-media-img-wrap">
+                  <img src="${e.instrumentImg}" alt="${e.instrumentTitle}" loading="lazy">
+                  <span class="evo-media-badge">Instrumentos &amp; Tecnología</span>
+                </div>
+                <figcaption class="evo-media-caption">
+                  <strong>${e.instrumentTitle}</strong>
+                  ${e.instrumentCaption}
+                </figcaption>
+              </figure>
+            </div>
+
+            <div class="evo-pillars-4">
+              <div class="evo-pillar-box">
+                <div class="evo-pillar-label">Notación &amp; Solfeo</div>
+                <p>${e.notationDetail}</p>
+              </div>
+              <div class="evo-pillar-box">
+                <div class="evo-pillar-label">Instrumentos de la Época</div>
+                <p>${e.instrumentsDetail}</p>
+              </div>
+              <div class="evo-pillar-box">
+                <div class="evo-pillar-label">Avance Tecnológico &amp; Acústico</div>
+                <p>${e.techDetail}</p>
+              </div>
+              <div class="evo-pillar-box">
+                <div class="evo-pillar-label">Lenguaje Musical &amp; Composición</div>
+                <p>${e.languageDetail}</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      `).join("");
+
+      tbody.innerHTML = EVOLUTION_DATA.map(e => `
+        <tr>
+          <td><strong style="color:${e.accent}">${e.name}</strong><br><span style="font-size:0.74rem; color:var(--text-muted)">${e.period}</span></td>
+          <td>${e.notationTitle}</td>
+          <td>${e.instrumentTitle}</td>
+          <td>${e.techDetail.split(".")[0]}.</td>
+          <td>${e.languageDetail.split(".")[0]}.</td>
+        </tr>
+      `).join("");
+
+      // Filtros interactivos
+      const filterBtns = document.querySelectorAll("[data-evo-filter]");
+      filterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          filterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const f = btn.dataset.evoFilter;
+          container.querySelectorAll(".evo-stage-card").forEach(card => {
+            card.style.display = (f === "all" || card.dataset.eraId === f) ? "block" : "none";
+          });
+        });
+      });
+    })();
+  </script>
+  <script src="app.js?v=12"></script>
+</body>
+</html>

@@ -3,361 +3,539 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odisea de las Artes — La Enciclopedia Didáctica Interactiva | IN2TECHMX</title>
-  <meta name="description" content="Una travesía interactiva y libre por las grandes disciplinas del arte humano: música clásica, escultura, pintura, literatura y cine. Misma fórmula pedagógica en 8 capítulos, iconografía histórica y cero elitismo.">
+  <title>Odisea de las Artes — Streaming Didáctico Cultural | IN2TECHMX</title>
+  <meta name="description" content="Una plataforma de streaming didáctico e interactivo por las grandes disciplinas del arte humano: música, escultura, pintura, literatura y cine. Curaduría cinematográfica, iconografía histórica y cero elitismo.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="V1/app/styles.css?v=42">
+
   <style>
-    /* Estilos específicos de la Landing Page Maestra (Hub de las Artes) */
-    .hub-hero {
-      padding: 7rem 1.5rem 4rem;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    /* ==========================================================================
+       NETFLIX-STYLE STREAMING CINEMATIC PORTAL
+       ========================================================================== */
+
+    :root {
+      --netflix-red: #e50914;
+      --gold-stream: #e5b85c;
+      --gold-glow: rgba(229, 184, 92, 0.35);
+      --card-bg-dark: #0b0f17;
     }
-    .hub-badge {
+
+    body {
+      background-color: #06090f;
+      color: #f1f5f9;
+      font-family: var(--font-sans);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* HEADER STREAMING */
+    .stream-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 70px;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      padding: 0 3rem;
+      background: linear-gradient(180deg, rgba(6, 9, 15, 0.95) 0%, rgba(6, 9, 15, 0.75) 70%, transparent 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      transition: background 0.3s ease;
+    }
+    .stream-header.scrolled {
+      background: rgba(6, 9, 15, 0.98);
+      border-bottom: 1px solid rgba(229, 184, 92, 0.2);
+    }
+    .stream-header-inner {
+      width: 100%;
+      max-width: 1700px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .stream-brand-group {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+    }
+    .stream-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+    .stream-logo-main {
+      font-family: var(--font-serif-display);
+      font-size: 1.45rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 80%, var(--gold-primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.1;
+    }
+    .stream-logo-sub {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+    }
+    .stream-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .stream-nav-link {
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      cursor: pointer;
+    }
+    .stream-nav-link:hover,
+    .stream-nav-link.active {
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* BILLBOARD HERO (PORTADA ESTILO STREAMING) */
+    .stream-billboard {
+      position: relative;
+      height: 82vh;
+      min-height: 600px;
+      max-height: 850px;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 4rem 6rem;
+      background-size: cover;
+      background-position: center 30%;
+      transition: background-image 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .stream-billboard-overlay {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(0deg, #06090f 8%, rgba(6, 9, 15, 0.8) 45%, rgba(6, 9, 15, 0.3) 100%),
+        linear-gradient(90deg, #06090f 0%, rgba(6, 9, 15, 0.88) 42%, transparent 100%);
+      pointer-events: none;
+    }
+    .stream-billboard-content {
+      position: relative;
+      z-index: 2;
+      max-width: 780px;
+    }
+    .stream-kicker {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.35rem 0.95rem;
-      background: rgba(229, 184, 92, 0.1);
-      border: 1px solid rgba(229, 184, 92, 0.35);
-      border-radius: 999px;
-      color: var(--gold-light);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 1.8rem;
+      color: var(--gold-light);
+      margin-bottom: 1.2rem;
     }
-    .hub-title {
+    .stream-kicker-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+    }
+    .stream-hero-title {
       font-family: var(--font-serif-display);
-      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
-      font-weight: 700;
-      line-height: 1.15;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 800;
+      line-height: 1.08;
       letter-spacing: -0.02em;
-      max-width: 1000px;
-      margin: 0 auto 1.5rem;
-      background: linear-gradient(135deg, #ffffff 30%, var(--gold-light) 75%, var(--gold-primary) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      margin: 0 0 1rem;
+      color: #ffffff;
+      text-shadow: 0 8px 30px rgba(0, 0, 0, 0.9);
     }
-    .hub-subtitle {
-      font-size: clamp(1.05rem, 2vw, 1.25rem);
-      line-height: 1.75;
-      color: var(--text-secondary);
-      font-weight: 300;
-      max-width: 820px;
-      margin: 0 auto 2.5rem;
-    }
-    .hub-stats-bar {
-      display: inline-flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 2rem;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(229, 184, 92, 0.2);
-      border-radius: 16px;
-      backdrop-filter: blur(12px);
-      margin-bottom: 2rem;
-    }
-    .hub-stat-item {
+    .stream-meta-row {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
       align-items: center;
+      gap: 0.85rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      margin-bottom: 1.3rem;
     }
-    .hub-stat-num {
+    .stream-meta-match {
+      color: #34d399;
+      font-weight: 800;
+    }
+    .stream-meta-badge {
+      padding: 0.15rem 0.45rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 4px;
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .stream-hero-desc {
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      line-height: 1.68;
+      color: #cbd5e1;
+      font-weight: 300;
+      margin-bottom: 2rem;
+      max-width: 680px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    .stream-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.1rem;
+    }
+    .btn-stream-play {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.85rem 2rem;
+      background: #ffffff;
+      color: #0b0f17;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.22s ease;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    }
+    .btn-stream-play:hover {
+      background: var(--gold-light);
+      color: #06090f;
+      transform: scale(1.04);
+      box-shadow: 0 8px 30px rgba(229, 184, 92, 0.4);
+    }
+    .btn-stream-play svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+    .btn-stream-info {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.85rem 1.8rem;
+      background: rgba(148, 163, 184, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      backdrop-filter: blur(8px);
+      transition: all 0.22s ease;
+    }
+    .btn-stream-info:hover {
+      background: rgba(148, 163, 184, 0.35);
+      border-color: #ffffff;
+      transform: scale(1.04);
+    }
+
+    /* CONTENEDOR DE CARRETES (ROWS / REELS) */
+    .stream-reels-container {
+      position: relative;
+      margin-top: -3.5rem;
+      z-index: 10;
+      padding-bottom: 6rem;
+    }
+    .stream-row {
+      margin-bottom: 4rem;
+      padding: 0 3.5rem;
+    }
+    .stream-row-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.2rem;
+    }
+    .stream-row-title {
       font-family: var(--font-serif-display);
       font-size: 1.7rem;
       font-weight: 700;
-      color: var(--gold-primary);
-      line-height: 1.2;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+      margin: 0;
     }
-    .hub-stat-label {
-      font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
+    .stream-row-subtitle {
+      font-size: 0.84rem;
       color: var(--text-muted);
-      font-weight: 600;
+      font-weight: 400;
     }
-    .hub-disciplines-section {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 2rem 1.5rem 6rem;
-    }
-    .hub-section-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
-    .hub-tiles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 2rem;
-    }
-    .art-tile {
-      background: rgba(11, 15, 23, 0.85);
-      border: 1px solid rgba(229, 184, 92, 0.2);
-      border-radius: 20px;
-      padding: 2.2rem;
+
+    /* CARRETE HORIZONTAL CON EFECTO HOVER EXPANDIBLE */
+    .stream-reel-wrap {
       position: relative;
+    }
+    .stream-reel-scroll {
+      display: flex;
+      gap: 1.4rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      padding: 1.5rem 0.5rem 2.5rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .stream-reel-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* FLECHAS DE NAVEGACIÓN DEL CARRETE */
+    .stream-reel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: calc(100% - 4rem);
+      background: rgba(6, 9, 15, 0.75);
+      border: 1px solid rgba(229, 184, 92, 0.25);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 20;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+      transition: all 0.25s ease;
+      opacity: 0;
+    }
+    .stream-reel-wrap:hover .stream-reel-arrow {
+      opacity: 1;
+    }
+    .stream-reel-arrow:hover {
+      background: rgba(229, 184, 92, 0.25);
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      transform: translateY(-50%) scale(1.05);
+    }
+    .stream-reel-arrow.left { left: -1.2rem; }
+    .stream-reel-arrow.right { right: -1.2rem; }
+
+    /* TARJETA CINEMÁTICA DEL CARRETE (NETFLIX POSTER) */
+    .stream-card {
+      flex: 0 0 340px;
+      height: 480px;
+      scroll-snap-align: start;
+      position: relative;
+      border-radius: 16px;
       overflow: hidden;
+      cursor: pointer;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0b0f17;
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+      text-decoration: none;
       display: flex;
       flex-direction: column;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+      justify-content: flex-end;
     }
-    .art-tile:hover {
-      transform: translateY(-6px);
-      border-color: rgba(229, 184, 92, 0.55);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 25px rgba(229, 184, 92, 0.18);
+    .stream-card:hover,
+    .stream-card.selected {
+      transform: scale(1.05) translateY(-8px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 35px rgba(229, 184, 92, 0.35);
+      z-index: 15;
     }
-    .art-tile.active-live {
-      border-color: rgba(45, 122, 79, 0.6);
-      background: linear-gradient(180deg, rgba(11, 15, 23, 0.9) 0%, rgba(20, 35, 25, 0.4) 100%);
+    .stream-card-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.6s ease;
     }
-    .art-tile.active-live:hover {
-      border-color: #34d399;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7), 0 0 25px rgba(52, 211, 153, 0.25);
+    .stream-card:hover .stream-card-bg {
+      transform: scale(1.08);
     }
-    .art-tile.next-focus {
-      border-color: rgba(229, 184, 92, 0.5);
-      background: linear-gradient(180deg, rgba(11, 15, 23, 0.9) 0%, rgba(35, 28, 15, 0.45) 100%);
+    .stream-card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, #0b0f17 12%, rgba(11, 15, 23, 0.85) 45%, rgba(11, 15, 23, 0.15) 100%);
+      pointer-events: none;
     }
-    .art-tile-top {
+    .stream-card-content {
+      position: relative;
+      z-index: 2;
+      padding: 1.8rem;
+    }
+    .stream-card-badge {
+      display: inline-block;
+      padding: 0.22rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .stream-card-badge.live {
+      background: #10b981;
+      color: #06090f;
+    }
+    .stream-card-badge.next {
+      background: var(--gold-primary);
+      color: #06090f;
+    }
+    .stream-card-badge.planned {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      backdrop-filter: blur(4px);
+    }
+    .stream-card-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.4rem;
+      line-height: 1.15;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    .stream-card-epigraph {
+      font-size: 0.84rem;
+      color: var(--gold-light);
+      font-style: italic;
+      margin: 0 0 0.8rem;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .stream-card-tags {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
     }
-    .art-tile-icon {
-      font-size: 2.6rem;
-      line-height: 1;
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.5));
+    .stream-tag {
+      font-size: 0.68rem;
+      color: #cbd5e1;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
     }
-    .art-status-pill {
+    .stream-card-action {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .art-status-pill.live {
-      background: rgba(16, 185, 129, 0.15);
-      border: 1px solid rgba(16, 185, 129, 0.5);
-      color: #34d399;
-    }
-    .art-status-pill.next {
-      background: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.5);
-      color: #fbbf24;
-    }
-    .art-status-pill.planned {
-      background: rgba(148, 163, 184, 0.1);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      color: #94a3b8;
-    }
-    .art-tile-title {
-      font-family: var(--font-serif-display);
-      font-size: 1.85rem;
+      font-size: 0.84rem;
       font-weight: 700;
       color: #ffffff;
-      margin-bottom: 0.6rem;
-      line-height: 1.25;
+      transition: color 0.2s ease;
     }
-    .art-tile-epigraph {
-      font-size: 0.95rem;
-      line-height: 1.6;
+    .stream-card:hover .stream-card-action {
       color: var(--gold-light);
-      font-style: italic;
-      margin-bottom: 1.2rem;
-      opacity: 0.9;
-    }
-    .art-tile-desc {
-      font-size: 0.9rem;
-      line-height: 1.65;
-      color: var(--text-secondary);
-      margin-bottom: 1.5rem;
-      flex: 1;
-    }
-    .art-features-list {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding-top: 1rem;
-    }
-    .art-features-list li {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .art-features-list li span.dot {
-      color: var(--gold-primary);
-      font-weight: 700;
-    }
-    .art-cta-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.85rem 1.4rem;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      cursor: pointer;
-      text-align: center;
-    }
-    .art-cta-btn.btn-live {
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: #ffffff;
-      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
-      border: 1px solid rgba(52, 211, 153, 0.5);
-    }
-    .art-cta-btn.btn-live:hover {
-      background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
-    }
-    .art-cta-btn.btn-next {
-      background: rgba(229, 184, 92, 0.12);
-      border: 1px solid rgba(229, 184, 92, 0.4);
-      color: var(--gold-light);
-    }
-    .art-cta-btn.btn-next:hover {
-      background: rgba(229, 184, 92, 0.22);
-      border-color: var(--gold-primary);
-      transform: translateY(-2px);
-    }
-    .art-cta-btn.btn-planned {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-muted);
-      cursor: default;
     }
 
-    /* Sección de la Matriz Didáctica */
-    .matrix-section {
-      background: radial-gradient(ellipse at center, rgba(30, 41, 59, 0.4) 0%, rgba(6, 9, 15, 0.95) 100%);
-      border-top: 1px solid rgba(229, 184, 92, 0.15);
-      border-bottom: 1px solid rgba(229, 184, 92, 0.15);
-      padding: 5rem 1.5rem;
+    /* FILA 2: LOS 8 CAPÍTULOS DE LA MATRIZ (EPISODIOS DIDÁCTICOS) */
+    .stream-episodes-scroll {
+      display: flex;
+      gap: 1.2rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 1rem 0.5rem 2rem;
+      scrollbar-width: none;
     }
-    .matrix-container {
-      max-width: 1100px;
-      margin: 0 auto;
+    .stream-episodes-scroll::-webkit-scrollbar { display: none; }
+    .stream-episode-card {
+      flex: 0 0 280px;
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(229, 184, 92, 0.18);
+      border-radius: 12px;
+      padding: 1.5rem;
+      scroll-snap-align: start;
+      transition: all 0.25s ease;
     }
-    .matrix-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.5rem;
+    .stream-episode-card:hover {
+      background: rgba(15, 23, 42, 0.85);
+      border-color: var(--gold-primary);
+      transform: translateY(-4px);
     }
-    .matrix-card {
-      background: rgba(11, 15, 23, 0.7);
-      border: 1px solid rgba(229, 184, 92, 0.15);
-      border-radius: 14px;
-      padding: 1.4rem;
-    }
-    .matrix-num {
-      font-size: 0.75rem;
-      font-weight: 700;
+    .stream-ep-num {
+      font-size: 0.72rem;
+      font-weight: 800;
       color: var(--gold-primary);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.4rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.35rem;
     }
-    .matrix-name {
+    .stream-ep-title {
       font-family: var(--font-serif-display);
       font-size: 1.15rem;
-      font-weight: 600;
+      font-weight: 700;
       color: #ffffff;
-      margin-bottom: 0.5rem;
+      margin: 0 0 0.5rem;
     }
-    .matrix-text {
+    .stream-ep-desc {
       font-size: 0.82rem;
-      color: var(--text-secondary);
-      line-height: 1.55;
+      color: #94a3b8;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* RESPONSIVE MÓVIL */
+    @media (max-width: 900px) {
+      .stream-header {
+        padding: 0 1.2rem;
+      }
+      .stream-nav-links {
+        display: none;
+      }
+      .stream-billboard {
+        height: 75vh;
+        padding: 0 1.5rem 3.5rem;
+      }
+      .stream-row {
+        padding: 0 1.2rem;
+      }
+      .stream-card {
+        flex: 0 0 280px;
+        height: 400px;
+      }
+      .stream-reel-arrow {
+        display: none;
+      }
     }
   </style>
 </head>
 <body id="top">
 
-  <!-- HEADER DE LA ODISEA DE LAS ARTES -->
-  <header class="site-header" id="site-header">
-    <div class="header-container">
+  <!-- BARRA DE PROGRESO DE LECTURA -->
+  <div id="scroll-progress-bar"></div>
 
-      <!-- MARCA -->
-      <a href="#top" class="brand-wrapper">
-        <div class="brand-symbol-wrap">
-          <span class="brand-symbol">🏛️</span>
-        </div>
-        <div class="brand-text">
-          <span class="brand-title notranslate">ODISEA DE LAS ARTES</span>
-          <span class="brand-badge notranslate">por IN2TECHMX</span>
-        </div>
-      </a>
-
-      <!-- HAMBURGUESA MÓVIL -->
-      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-
-      <!-- NAV PRINCIPAL -->
-      <nav class="main-nav" id="main-nav">
-
-        <!-- BARRA DE IDIOMA EN MENÚ MÓVIL -->
-        <div class="mobile-lang-bar notranslate">
-          <span class="mobile-lang-title">
-            <svg class="lang-globe-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Idioma / Language
-          </span>
-          <div class="mobile-lang-pills">
-            <button class="mobile-lang-pill active" data-lang="es">🇪🇸 ES</button>
-            <button class="mobile-lang-pill" data-lang="en">🇬🇧 EN</button>
-            <button class="mobile-lang-pill" data-lang="fr">🇫🇷 FR</button>
-            <button class="mobile-lang-pill" data-lang="pt">🇵🇹 PT</button>
-            <button class="mobile-lang-pill" data-lang="ru">🇷🇺 RU</button>
-            <button class="mobile-lang-pill" data-lang="zh-CN">🇨🇳 ZH</button>
-          </div>
-        </div>
-
-        <ul class="nav-chapters">
-          <li class="nav-item">
-            <a href="V1/app/index.html" class="nav-link">🎵 Música</a>
-          </li>
-          <li class="nav-item">
-            <a href="#disciplinas" class="nav-link">🗿 Escultura</a>
-          </li>
-          <li class="nav-item">
-            <a href="#disciplinas" class="nav-link">🎨 Pintura</a>
-          </li>
-          <li class="nav-item">
-            <a href="#disciplinas" class="nav-link">📚 Literatura</a>
-          </li>
-          <li class="nav-item">
-            <a href="#disciplinas" class="nav-link">🎬 Cine</a>
-          </li>
-          <li class="nav-item">
-            <a href="#metodo" class="nav-link">🏛️ El Método</a>
-          </li>
+  <!-- HEADER STREAMING FIJO CON SELECTOR MULTILINGÜE -->
+  <header class="stream-header" id="site-header">
+    <div class="stream-header-inner">
+      <div class="stream-brand-group">
+        <a href="#top" class="stream-logo">
+          <span class="stream-logo-main notranslate">ODISEA DE LAS ARTES</span>
+          <span class="stream-logo-sub notranslate">IN2TECHMX STREAMING HUB</span>
+        </a>
+        <ul class="stream-nav-links">
+          <li><span class="stream-nav-link active" onclick="selectDiscipline('musica')">Música Clásica</span></li>
+          <li><span class="stream-nav-link" onclick="selectDiscipline('escultura')">Escultura</span></li>
+          <li><span class="stream-nav-link" onclick="selectDiscipline('pintura')">Pintura</span></li>
+          <li><span class="stream-nav-link" onclick="selectDiscipline('literatura')">Literatura</span></li>
+          <li><span class="stream-nav-link" onclick="selectDiscipline('cine')">Cine</span></li>
+          <li><a href="#metodo" class="stream-nav-link">La Matriz Didáctica</a></li>
         </ul>
-      </nav>
+      </div>
 
-      <!-- ACCIONES DERECHA: SELECTOR IDIOMAS + BMC -->
       <div class="header-right-actions">
         <!-- SELECTOR MULTILINGÜE -->
         <div class="lang-selector-wrap" id="lang-selector-wrap">
@@ -400,246 +578,231 @@
           <span>Apoyar</span>
         </a>
       </div>
-
     </div>
   </header>
 
-  <!-- HERO SECTION PRINCIPAL -->
-  <main>
-    <section class="hub-hero">
-      <div class="hub-badge">
-        <span>✦</span> Ecosistema Didáctico Universal • Cero Elitismo • Rigor de Archivo
+  <!-- BILLBOARD HERO CINEMÁTICO (DINÁMICO) -->
+  <section class="stream-billboard" id="stream-billboard" style="background-image: url('V1/app/assets/hub/musica.jpg');">
+    <div class="stream-billboard-overlay"></div>
+    <div class="stream-billboard-content">
+      <div class="stream-kicker">
+        <span class="stream-kicker-dot" id="billboard-dot"></span>
+        <span id="billboard-kicker">IN2TECHMX ORIGINAL • SERIE CULTURAL DISPONIBLE</span>
       </div>
-      <h1 class="hub-title">El Universo de las Artes Humanas, Simplificado.</h1>
-      <p class="hub-subtitle">
-        Una travesía interactiva y libre por los cinco grandes pilares de la creatividad universal: 
-        <strong>Música, Escultura, Pintura, Literatura y Cine</strong>. 
-        Misma arquitectura pedagógica rigurosa: desmitificación, cronología viva, decodificador de técnicas, 
-        galería de titanes cardinales y laboratorios de apreciación en capas.
+      <h1 class="stream-hero-title" id="billboard-title">Odisea Musical</h1>
+      <div class="stream-meta-row">
+        <span class="stream-meta-match" id="billboard-match">100% Coincidencia Cultural</span>
+        <span class="stream-meta-badge" id="billboard-badge">8 Capítulos</span>
+        <span class="stream-meta-badge">Web Audio en Vivo</span>
+        <span class="stream-meta-badge">4K Archivo</span>
+        <span id="billboard-year">1,500 Años de Historia</span>
+      </div>
+      <p class="stream-hero-desc" id="billboard-desc">
+        La arquitectura sonora desmitificada: desde el canto llano medieval hasta las monumentales sinfonías de Beethoven y las bandas sonoras galácticas del cine contemporáneo. Decodifica partituras y escucha motivos en vivo con sintetizador integrado.
       </p>
+      <div class="stream-cta-group">
+        <a href="V1/app/index.html" class="btn-stream-play" id="billboard-play-btn">
+          <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          <span id="billboard-play-text">Explorar Odisea Musical</span>
+        </a>
+        <a href="#metodo" class="btn-stream-info">
+          <span>ℹ La Matriz de 8 Capítulos</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-      <div class="hub-stats-bar">
-        <div class="hub-stat-item">
-          <span class="hub-stat-num">5</span>
-          <span class="hub-stat-label">Disciplinas Maestras</span>
+  <!-- SECCIÓN DE CARRETES ESTILO STREAMING -->
+  <main class="stream-reels-container">
+
+    <!-- FILA 1: EL CARRETE DE LAS 5 DISCIPLINAS ARTÍSTICAS -->
+    <section class="stream-row" id="carrete-disciplinas">
+      <div class="stream-row-header">
+        <h2 class="stream-row-title">Disciplinas de la Creación Humana</h2>
+        <span class="stream-row-subtitle">Desliza el carrete o haz clic en cualquier obra para actualizar el escaparate</span>
+      </div>
+
+      <div class="stream-reel-wrap">
+        <button class="stream-reel-arrow left" onclick="scrollReel('disciplines-scroll', -400)" aria-label="Desplazar a la izquierda">‹</button>
+        
+        <div class="stream-reel-scroll" id="disciplines-scroll">
+
+          <!-- CARD 1: MÚSICA -->
+          <div class="stream-card selected" onclick="selectDiscipline('musica')" data-disc="musica">
+            <img src="V1/app/assets/hub/musica.jpg" alt="Odisea Musical — Sala de Conciertos Filarmónica" class="stream-card-bg" loading="lazy">
+            <div class="stream-card-overlay"></div>
+            <div class="stream-card-content">
+              <span class="stream-card-badge live">Disponible Ahora</span>
+              <h3 class="stream-card-title">Música Clásica</h3>
+              <p class="stream-card-epigraph">«Arquitectura sonora donde el intelecto y la pasión visceral se encuentran en comunión.»</p>
+              <div class="stream-card-tags">
+                <span class="stream-tag">Web Audio API</span>
+                <span class="stream-tag">Decodificador</span>
+                <span class="stream-tag">20 Titanes</span>
+              </div>
+              <span class="stream-card-action">Entrar a la Odisea →</span>
+            </div>
+          </div>
+
+          <!-- CARD 2: ESCULTURA -->
+          <div class="stream-card" onclick="selectDiscipline('escultura')" data-disc="escultura">
+            <img src="V1/app/assets/hub/escultura.jpg" alt="Odisea de la Escultura — David de Miguel Ángel" class="stream-card-bg" loading="lazy">
+            <div class="stream-card-overlay"></div>
+            <div class="stream-card-content">
+              <span class="stream-card-badge next">Próximo Estreno</span>
+              <h3 class="stream-card-title">Escultura</h3>
+              <p class="stream-card-epigraph">«La conquista de la masa, el vacío tridimensional y la tensión táctil en la piedra.»</p>
+              <div class="stream-card-tags">
+                <span class="stream-tag">Contrapposto</span>
+                <span class="stream-tag">Mármol Carrara</span>
+                <span class="stream-tag">Cera Perdida</span>
+              </div>
+              <span class="stream-card-action">Ver Ficha de Módulo →</span>
+            </div>
+          </div>
+
+          <!-- CARD 3: PINTURA -->
+          <div class="stream-card" onclick="selectDiscipline('pintura')" data-disc="pintura">
+            <img src="V1/app/assets/hub/pintura.jpg" alt="Odisea de la Pintura — Mona Lisa Da Vinci" class="stream-card-bg" loading="lazy">
+            <div class="stream-card-overlay"></div>
+            <div class="stream-card-content">
+              <span class="stream-card-badge planned">Módulo III</span>
+              <h3 class="stream-card-title">Pintura</h3>
+              <p class="stream-card-epigraph">«La conquista del plano bidimensional a través de la luz, el pigmento y la perspectiva.»</p>
+              <div class="stream-card-tags">
+                <span class="stream-tag">Claroscuro</span>
+                <span class="stream-tag">Sfumato</span>
+                <span class="stream-tag">Veladuras</span>
+              </div>
+              <span class="stream-card-action">Ver Esquema →</span>
+            </div>
+          </div>
+
+          <!-- CARD 4: LITERATURA -->
+          <div class="stream-card" onclick="selectDiscipline('literatura')" data-disc="literatura">
+            <img src="V1/app/assets/hub/literatura.jpg" alt="Odisea Literaria — Long Room Biblioteca Trinity College Dublín" class="stream-card-bg" loading="lazy">
+            <div class="stream-card-overlay"></div>
+            <div class="stream-card-content">
+              <span class="stream-card-badge planned">Módulo IV</span>
+              <h3 class="stream-card-title">Literatura</h3>
+              <p class="stream-card-epigraph">«La tecnología de la conciencia humana: arquitectura verbal y polifonía narrativa.»</p>
+              <div class="stream-card-tags">
+                <span class="stream-tag">Prosodia</span>
+                <span class="stream-tag">Polifonía</span>
+                <span class="stream-tag">Subtexto</span>
+              </div>
+              <span class="stream-card-action">Ver Esquema →</span>
+            </div>
+          </div>
+
+          <!-- CARD 5: CINE -->
+          <div class="stream-card" onclick="selectDiscipline('cine')" data-disc="cine">
+            <img src="V1/app/assets/hub/cine.jpg" alt="Odisea del Cine — Charlie Chaplin The Kid 1921" class="stream-card-bg" loading="lazy">
+            <div class="stream-card-overlay"></div>
+            <div class="stream-card-content">
+              <span class="stream-card-badge planned">Módulo V</span>
+              <h3 class="stream-card-title">Cine</h3>
+              <p class="stream-card-epigraph">«La escultura del tiempo en veinticuatro cuadros por segundo y el choque dialéctico del montaje.»</p>
+              <div class="stream-card-tags">
+                <span class="stream-tag">Puesta en Escena</span>
+                <span class="stream-tag">Montaje Dialéctico</span>
+                <span class="stream-tag">Ópticas</span>
+              </div>
+              <span class="stream-card-action">Ver Esquema →</span>
+            </div>
+          </div>
+
         </div>
-        <div class="hub-stat-item">
-          <span class="hub-stat-num">8</span>
-          <span class="hub-stat-label">Capítulos por Odisea</span>
-        </div>
-        <div class="hub-stat-item">
-          <span class="hub-stat-num">100+</span>
-          <span class="hub-stat-label">Titanes de la Historia</span>
-        </div>
-        <div class="hub-stat-item">
-          <span class="hub-stat-num">100%</span>
-          <span class="hub-stat-label">Libre y Sin Muros de Pago</span>
-        </div>
+
+        <button class="stream-reel-arrow right" onclick="scrollReel('disciplines-scroll', 400)" aria-label="Desplazar a la derecha">›</button>
       </div>
     </section>
 
-    <!-- PARRILLA DE DISCIPLINAS (TILES INTERACTIVOS) -->
-    <section class="hub-disciplines-section" id="disciplinas">
-      <div class="hub-section-header">
-        <div class="editorial-badge">Atlas de la Creación Humana</div>
-        <h2 class="section-title">Elige tu Expedición Artística</h2>
-        <p class="section-desc">
-          Cada disciplina es un portal autónomo diseñado bajo los mismos estándares de artesanía digital: 
-          interactividad en tiempo real, iconografía de archivo y cero complacencia.
-        </p>
+    <!-- FILA 2: LOS 8 CAPÍTULOS DE LA MATRIZ DIDÁCTICA -->
+    <section class="stream-row" id="metodo">
+      <div class="stream-row-header">
+        <h2 class="stream-row-title">La Matriz Didáctica en 8 Capítulos</h2>
+        <span class="stream-row-subtitle">La arquitectura pedagógica que comparten todas las disciplinas del portal</span>
       </div>
 
-      <div class="hub-tiles-grid">
+      <div class="stream-reel-wrap">
+        <button class="stream-reel-arrow left" onclick="scrollReel('episodes-scroll', -320)" aria-label="Desplazar a la izquierda">‹</button>
+        
+        <div class="stream-episodes-scroll" id="episodes-scroll">
 
-        <!-- TILE 1: MÚSICA CLÁSICA (DISPONIBLE) -->
-        <article class="art-tile active-live">
-          <div class="art-tile-top">
-            <span class="art-tile-icon">🎵</span>
-            <span class="art-status-pill live">● Disponible en Producción</span>
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 01</div>
+            <h4 class="stream-ep-title">Los Fundamentos</h4>
+            <p class="stream-ep-desc">Desmitificación de prejuicios elitistas. Definición operativa en sentido estricto y amplio.</p>
           </div>
-          <h3 class="art-tile-title">Odisea Musical</h3>
-          <p class="art-tile-epigraph">«La arquitectura sonora donde el intelecto y la pasión se encuentran en perfecta comunión.»</p>
-          <p class="art-tile-desc">
-            Desde el canto llano gregoriano hasta las monumentales bandas sonoras contemporáneas. Decodifica números de opus, tonalidades y formas mientras escuchas motivos sintetizados en vivo.
-          </p>
-          <ul class="art-features-list">
-            <li><span class="dot">✦</span> 8 Capítulos pedagógicos completos</li>
-            <li><span class="dot">✦</span> Sintetizador Web Audio API &amp; Atajo Alt+P</li>
-            <li><span class="dot">✦</span> Decodificador dinámico de partituras</li>
-            <li><span class="dot">✦</span> 20 Titanes con iconografía histórica fidedigna</li>
-            <li><span class="dot">✦</span> Laboratorio de Escucha Guiada en Capas</li>
-          </ul>
-          <a href="V1/app/index.html" class="art-cta-btn btn-live">
-            <span>Explorar Odisea Musical</span>
-            <span>→</span>
-          </a>
-        </article>
 
-        <!-- TILE 2: ESCULTURA (PRÓXIMO LANZAMIENTO) -->
-        <article class="art-tile next-focus">
-          <div class="art-tile-top">
-            <span class="art-tile-icon">🗿</span>
-            <span class="art-status-pill next">★ Próximo Módulo • En Desarrollo</span>
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 02</div>
+            <h4 class="stream-ep-title">Timeline Histórico</h4>
+            <p class="stream-ep-desc">Macro-cronología viva desde los orígenes rituales de la humanidad hasta la vanguardia contemporánea.</p>
           </div>
-          <h3 class="art-tile-title">Odisea de la Escultura</h3>
-          <p class="art-tile-epigraph">«La liberación de la forma aprisionada en la piedra: masa, vacío y tensión táctil.»</p>
-          <p class="art-tile-desc">
-            De la Venus de Willendorf al mármol ingrávido de Bernini y las siluetas existenciales de Giacometti. Comprende el contrapposto, la cera perdida y el diálogo del cuerpo con la gravedad.
-          </p>
-          <ul class="art-features-list">
-            <li><span class="dot">✦</span> Desmitificación: ¿Por qué la escultura no es solo bulto?</li>
-            <li><span class="dot">✦</span> Decodificador de Cánones, Tallas &amp; Fundición</li>
-            <li><span class="dot">✦</span> 20 Maestros: Policleto, Miguel Ángel, Rodin, Claudel...</li>
-            <li><span class="dot">✦</span> Laboratorio de Apreciación Espacial 360°</li>
-          </ul>
-          <a href="#metodo" class="art-cta-btn btn-next">
-            <span>Ficha Técnica &amp; Enfoque Didáctico</span>
-            <span>↓</span>
-          </a>
-        </article>
 
-        <!-- TILE 3: PINTURA (EN PLANIFICACIÓN) -->
-        <article class="art-tile">
-          <div class="art-tile-top">
-            <span class="art-tile-icon">🎨</span>
-            <span class="art-status-pill planned">En Planificación</span>
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 03</div>
+            <h4 class="stream-ep-title">El Decodificador</h4>
+            <p class="stream-ep-desc">La piedra roseta técnica: nomenclatura, herramientas, cánones, catálogos y formatos explicados.</p>
           </div>
-          <h3 class="art-tile-title">Odisea de la Pintura</h3>
-          <p class="art-tile-epigraph">«La conquista del plano bidimensional a través de la luz, el pigmento y la perspectiva.»</p>
-          <p class="art-tile-desc">
-            Del fresco medieval y el sfumato renacentista al estallido del color impresionista y la abstracción moderna. La ciencia detrás de la composición visual y las líneas de fuga.
-          </p>
-          <ul class="art-features-list">
-            <li><span class="dot">✦</span> Decodificador de Claroscuro, Veladuras &amp; Pigmentos</li>
-            <li><span class="dot">✦</span> De Giotto y Caravaggio a Velázquez y Monet</li>
-            <li><span class="dot">✦</span> Laboratorio de Desglose de Composición y Puntos Focales</li>
-          </ul>
-          <span class="art-cta-btn btn-planned">Módulo III • En Hoja de Ruta</span>
-        </article>
 
-        <!-- TILE 4: LITERATURA (EN PLANIFICACIÓN) -->
-        <article class="art-tile">
-          <div class="art-tile-top">
-            <span class="art-tile-icon">📚</span>
-            <span class="art-status-pill planned">En Planificación</span>
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 04</div>
+            <h4 class="stream-ep-title">Los Titanes Cardinales</h4>
+            <p class="stream-ep-desc">Galería de figuras universales con iconografía histórica fidedigna, etapas creativas y obras cumbre.</p>
           </div>
-          <h3 class="art-tile-title">Odisea Literaria</h3>
-          <p class="art-tile-epigraph">«La tecnología de la conciencia humana: arquitectura verbal y polifonía narrativa.»</p>
-          <p class="art-tile-desc">
-            De las tablillas de Gilgamesh y la tragedia ática al Siglo de Oro, la novela polifónica y la poesía de vanguardia. Cómo la palabra escrita construye la empatía humana.
-          </p>
-          <ul class="art-features-list">
-            <li><span class="dot">✦</span> Decodificador de Métrica, Tropos &amp; Voces Narrativas</li>
-            <li><span class="dot">✦</span> De Homero y Cervantes a Shakespeare, Woolf y Borges</li>
-            <li><span class="dot">✦</span> Laboratorio de Cata de Textos y Subtexto</li>
-          </ul>
-          <span class="art-cta-btn btn-planned">Módulo IV • En Hoja de Ruta</span>
-        </article>
 
-        <!-- TILE 5: CINE (EN PLANIFICACIÓN) -->
-        <article class="art-tile">
-          <div class="art-tile-top">
-            <span class="art-tile-icon">🎬</span>
-            <span class="art-status-pill planned">En Planificación</span>
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 05</div>
+            <h4 class="stream-ep-title">Historias &amp; Contexto</h4>
+            <p class="stream-ep-desc">La realidad material detrás de las obras: guerras, revoluciones y distinción entre hecho y mito.</p>
           </div>
-          <h3 class="art-tile-title">Odisea del Cine</h3>
-          <p class="art-tile-epigraph">«La escultura del tiempo en veinticuatro cuadros por segundo y el choque dialéctico del montaje.»</p>
-          <p class="art-tile-desc">
-            Del cinematógrafo de los Lumière y los trucajes de Méliès a la puesta en escena de Welles, Kurosawa y Kubrick. La gramática del lenguaje audiovisual decodificada plano a plano.
-          </p>
-          <ul class="art-features-list">
-            <li><span class="dot">✦</span> Decodificador de Ópticas, Planos, Fuera de Campo &amp; Montaje</li>
-            <li><span class="dot">✦</span> Pioneros &amp; Autores: Chaplin, Hitchcock, Tarkovski, Bergman</li>
-            <li><span class="dot">✦</span> Laboratorio de Desglose Secuencial y Sonido Diegético</li>
-          </ul>
-          <span class="art-cta-btn btn-planned">Módulo V • En Hoja de Ruta</span>
-        </article>
 
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 5B</div>
+            <h4 class="stream-ep-title">Laboratorio de Apreciación</h4>
+            <p class="stream-ep-desc">Guía de experimentación activa en capas: cómo desglosar una obra con mirada crítica profunda.</p>
+          </div>
+
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 06</div>
+            <h4 class="stream-ep-title">Cultura Contemporánea</h4>
+            <p class="stream-ep-desc">Conexión con el presente: cómo los grandes códigos clásicos moldean el diseño y los medios actuales.</p>
+          </div>
+
+          <div class="stream-episode-card">
+            <div class="stream-ep-num">Capítulo 07</div>
+            <h4 class="stream-ep-title">Glosario &amp; Filosofía</h4>
+            <p class="stream-ep-desc">Léxico musicológico y artístico riguroso, atribuciones de dominio público y reflexión humanista.</p>
+          </div>
+
+        </div>
+
+        <button class="stream-reel-arrow right" onclick="scrollReel('episodes-scroll', 320)" aria-label="Desplazar a la derecha">›</button>
       </div>
     </section>
 
-    <!-- SECCIÓN: EL MÉTODO DE LA ODISEA (LOS 8 CAPÍTULOS MATRIZ) -->
-    <section class="matrix-section" id="metodo">
-      <div class="matrix-container">
-        <div class="hub-section-header">
-          <div class="editorial-badge">Metodología Didáctica Unificada</div>
-          <h2 class="section-title">La Matriz de los 8 Capítulos</h2>
-          <p class="section-desc">
-            Cada disciplina en el ecosistema responde a una misma estructura pedagógica probada. 
-            No hay dispersión ni artículos inconexos: el lector domina el arte desde el primer contacto.
-          </p>
-        </div>
-
-        <div class="matrix-grid">
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 01</div>
-            <h4 class="matrix-name">Los Fundamentos</h4>
-            <p class="matrix-text">Desmitificación de prejuicios elitistas. Definición operativa en sentido estricto y amplio.</p>
-          </div>
-
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 02</div>
-            <h4 class="matrix-name">Timeline Histórico</h4>
-            <p class="matrix-text">Macro-cronología viva desde los orígenes rituales hasta la vanguardia contemporánea.</p>
-          </div>
-
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 03</div>
-            <h4 class="matrix-name">El Decodificador</h4>
-            <p class="matrix-text">La piedra roseta técnica: nomenclatura, herramientas, cánones, catálogos y formatos explicados.</p>
-          </div>
-
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 04</div>
-            <h4 class="matrix-name">Los Titanes Cardinales</h4>
-            <p class="matrix-text">Monografías de figuras universales con iconografía histórica auténtica y obras cumbre.</p>
-          </div>
-
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 05</div>
-            <h4 class="matrix-name">Historias &amp; Contexto</h4>
-            <p class="matrix-text">La realidad material detrás de las obras: pandemias, revoluciones y distinción entre hecho y mito.</p>
-          </div>
-
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 5B</div>
-            <h4 class="matrix-name">Laboratorio de Apreciación</h4>
-            <p class="matrix-text">Guía de experimentación activa en capas: cómo desglosar una obra con mirada crítica.</p>
-          </div>
-
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 06</div>
-            <h4 class="matrix-name">Cultura Contemporánea</h4>
-            <p class="matrix-text">Conexión con el presente: cómo las grandes técnicas maestras moldean el diseño y los medios actuales.</p>
-          </div>
-
-          <div class="matrix-card">
-            <div class="matrix-num">Capítulo 07</div>
-            <h4 class="matrix-name">Glosario &amp; Filosofía</h4>
-            <p class="matrix-text">Léxico musicológico y artístico riguroso, atribuciones de dominio público y reflexión humanista.</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <!-- FOOTER EDITORIAL -->
+  <!-- FOOTER EDITORIAL STREAMING -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-brand">
         <span class="footer-symbol">🏛️</span>
         <span class="footer-title notranslate">ODISEA DE LAS ARTES</span>
-        <span class="footer-badge notranslate">Ecosistema Abierto IN2TECHMX</span>
+        <span class="footer-badge notranslate">Streaming Didáctico Abierto • IN2TECHMX</span>
       </div>
       <p class="footer-motto">
         Construyendo la infraestructura cultural abierta del siglo XXI. Sin algoritmos de retención, sin muros de pago y con absoluto rigor histórico.
       </p>
       <div class="footer-links">
         <a href="V1/app/index.html">Música Clásica</a>
-        <a href="#disciplinas">Escultura</a>
-        <a href="#disciplinas">Pintura</a>
-        <a href="#disciplinas">Literatura</a>
-        <a href="#disciplinas">Cine</a>
+        <a href="#carrete-disciplinas" onclick="selectDiscipline('escultura')">Escultura</a>
+        <a href="#carrete-disciplinas" onclick="selectDiscipline('pintura')">Pintura</a>
+        <a href="#carrete-disciplinas" onclick="selectDiscipline('literatura')">Literatura</a>
+        <a href="#carrete-disciplinas" onclick="selectDiscipline('cine')">Cine</a>
         <a href="https://github.com/in2techmx/musica-clasica-odisea" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
       </div>
       <p class="footer-copy">
@@ -650,27 +813,125 @@
 
   <!-- SCRIPT MULTILINGÜE -->
   <script src="V1/app/i18n.js?v=42"></script>
-  <script>
-    // Control de navegación móvil
-    (function initMobileNav() {
-      const hamburger = document.getElementById('nav-hamburger');
-      const mainNav = document.getElementById('main-nav');
-      if (hamburger && mainNav) {
-        hamburger.addEventListener('click', () => {
-          const isOpen = mainNav.classList.toggle('open');
-          hamburger.classList.toggle('open', isOpen);
-          hamburger.setAttribute('aria-expanded', isOpen);
-        });
 
-        mainNav.querySelectorAll('a').forEach(a => {
-          a.addEventListener('click', () => {
-            mainNav.classList.remove('open');
-            hamburger.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
-          });
-        });
+  <!-- LÓGICA INTERACTIVA DEL STREAMING HUB (BILLBOARD DINÁMICO & CARRETE) -->
+  <script>
+    const DISCIPLINES_DATA = {
+      musica: {
+        title: "Odisea Musical",
+        kicker: "IN2TECHMX ORIGINAL • SERIE CULTURAL DISPONIBLE",
+        dotColor: "#10b981",
+        match: "100% Coincidencia Cultural",
+        badge: "8 Capítulos",
+        year: "1,500 Años de Historia",
+        image: "V1/app/assets/hub/musica.jpg",
+        desc: "La arquitectura sonora desmitificada: desde el canto llano medieval hasta las monumentales sinfonías de Beethoven y las bandas sonoras galácticas del cine contemporáneo. Decodifica partituras y escucha motivos en vivo con sintetizador integrado.",
+        playUrl: "V1/app/index.html",
+        playText: "Explorar Odisea Musical ▶"
+      },
+      escultura: {
+        title: "Odisea de la Escultura",
+        kicker: "IN2TECHMX ORIGINAL • PRÓXIMO ESTRENO (EN DESARROLLO)",
+        dotColor: "#fbbf24",
+        match: "99% Coincidencia Cultural",
+        badge: "Módulo II",
+        year: "30,000 Años de Talla y Masa",
+        image: "V1/app/assets/hub/escultura.jpg",
+        desc: "La conquista del espacio tridimensional: de la Venus de Willendorf al mármol ingrávido de Bernini y las siluetas existenciales de Giacometti. Comprende el contrapposto, la cera perdida y el diálogo de la forma con la gravedad.",
+        playUrl: "#metodo",
+        playText: "Ver Ficha de Módulo II ℹ"
+      },
+      pintura: {
+        title: "Odisea de la Pintura",
+        kicker: "IN2TECHMX ORIGINAL • MÓDULO III EN PLANIFICACIÓN",
+        dotColor: "#94a3b8",
+        match: "98% Coincidencia Cultural",
+        badge: "Módulo III",
+        year: "De Altamira al Expresionismo",
+        image: "V1/app/assets/hub/pintura.jpg",
+        desc: "La conquista del plano bidimensional a través de la luz, el pigmento y la perspectiva cónica. Del fresco medieval y el sfumato de Da Vinci al claroscuro dramático de Caravaggio y el estallido moderno.",
+        playUrl: "#metodo",
+        playText: "Ver Esquema de Pintura ℹ"
+      },
+      literatura: {
+        title: "Odisea Literaria",
+        kicker: "IN2TECHMX ORIGINAL • MÓDULO IV EN PLANIFICACIÓN",
+        dotColor: "#94a3b8",
+        match: "98% Coincidencia Cultural",
+        badge: "Módulo IV",
+        year: "De Gilgamesh a la Posmodernidad",
+        image: "V1/app/assets/hub/literatura.jpg",
+        desc: "La tecnología de la conciencia humana: arquitectura verbal y polifonía narrativa. De las epopeyas homéricas y el Siglo de Oro a la novela polifónica de Dostoievski y las vanguardias de Woolf y Borges.",
+        playUrl: "#metodo",
+        playText: "Ver Esquema de Literatura ℹ"
+      },
+      cine: {
+        title: "Odisea del Cine",
+        kicker: "IN2TECHMX ORIGINAL • MÓDULO V EN PLANIFICACIÓN",
+        dotColor: "#94a3b8",
+        match: "97% Coincidencia Cultural",
+        badge: "Módulo V",
+        year: "1895 – El Presente Digital",
+        image: "V1/app/assets/hub/cine.jpg",
+        desc: "La escultura del tiempo en veinticuatro cuadros por segundo y el choque dialéctico del montaje. Del cinematógrafo de los Lumière y los trucajes de Méliès a la maestría visual de Kubrick, Kurosawa y Tarkovski.",
+        playUrl: "#metodo",
+        playText: "Ver Esquema de Cine ℹ"
       }
-    })();
+    };
+
+    function selectDiscipline(key) {
+      const data = DISCIPLINES_DATA[key];
+      if (!data) return;
+
+      // Actualizar tarjeta seleccionada en el carrete
+      document.querySelectorAll('.stream-card').forEach(c => {
+        c.classList.toggle('selected', c.dataset.disc === key);
+      });
+
+      // Actualizar links de navegación
+      document.querySelectorAll('.stream-nav-link').forEach(l => {
+        l.classList.toggle('active', l.textContent.toLowerCase().includes(key));
+      });
+
+      // Actualizar Billboard
+      const billboard = document.getElementById('stream-billboard');
+      billboard.style.backgroundImage = `url('${data.image}')`;
+
+      document.getElementById('billboard-kicker').textContent = data.kicker;
+      document.getElementById('billboard-dot').style.background = data.dotColor;
+      document.getElementById('billboard-dot').style.boxShadow = `0 0 10px ${data.dotColor}`;
+      document.getElementById('billboard-title').textContent = data.title;
+      document.getElementById('billboard-match').textContent = data.match;
+      document.getElementById('billboard-badge').textContent = data.badge;
+      document.getElementById('billboard-year').textContent = data.year;
+      document.getElementById('billboard-desc').textContent = data.desc;
+
+      const playBtn = document.getElementById('billboard-play-btn');
+      playBtn.href = data.playUrl;
+      document.getElementById('billboard-play-text').textContent = data.playText;
+
+      // Scroll suave hacia el billboard si el usuario estaba abajo
+      if (window.scrollY > 400) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function scrollReel(id, offset) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollBy({ left: offset, behavior: 'smooth' });
+      }
+    }
+
+    // Efecto de scroll en header
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('site-header');
+      if (window.scrollY > 60) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
   </script>
 </body>
 </html>

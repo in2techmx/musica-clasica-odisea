@@ -18,6 +18,7 @@ class ClassicalSynthesizer {
 
     // Grabaciones orquestales y acústicas reales en formato MP3 (200 audio/mpeg verificadas)
     this.REAL_MP3_TRACKS = {
+      "proto-grecia": "https://archive.org/download/AncientGreekMusic_201512/Ancient%20Greek%20Music.mp3",
       "beethoven-5th": "https://archive.org/download/LudwigVanBeethovenSymphonyNo.5Op.67I.AllegroConBrioFromAustinPowersGoldmember/Ludwig%20van%20Beethoven%20-%20Symphony%20No.%205%2C%20Op.%2067%2C%20I.%20Allegro%20con%20brio%20(From%20Austin%20Powers%2C%20Goldmember).mp3",
       "vivaldi-primavera": "https://archive.org/download/LeQuattroStagioni/01ViolinConcertoInEMajorRv269spring-I.Allegro.mp3",
       "bach-toccata": "https://archive.org/download/GoldbergVariationsBWV988/Goldberg%20Variations%2C%20BWV%20988%20-%2001.%20Aria.mp3",
@@ -25,7 +26,7 @@ class ClassicalSynthesizer {
       "chopin-nocturne": "https://archive.org/download/FredericChopinBalladeNo.1InGMinorOp.23FromThePianist/Frederic%20Chopin%20-%20Ballade%20No.%201%20in%20G%20minor%2C%20Op.%2023%20(From%20The%20Pianist).mp3",
       "debussy-clair": "https://archive.org/download/Debussy_Prelude_a_l_apres_midi_d_un_faune/Prelude_a_l_apres_midi_d_un_faune.mp3",
       "gregoriano": "https://archive.org/download/lp_a-treasury-of-gregorian-chant-vol-iii_monks-of-the-abbey-of-st-thomas/disc1/01.01.%20Introit%20For%20The%201st%20Sunday%20In%20Advent%20(Mode%208)%3B%20Hymn%20For%20Christmas%20Vespers%20(Mode%201)%3B%20Offertory%20For%20The%202nd%20Sunday%20After%20Epiphany%20(Mode%201).mp3",
-      "hildegarda": "https://archive.org/download/lp_a-treasury-of-gregorian-chant-vol-iii_monks-of-the-abbey-of-st-thomas/disc1/01.01.%20Introit%20For%20The%201st%20Sunday%20In%20Advent%20(Mode%208)%3B%20Hymn%20For%20Christmas%20Vespers%20(Mode%201)%3B%20Offertory%20For%20The%202nd%20Sunday%20After%20Epiphany%20(Mode%201).mp3",
+      "hildegarda": "https://archive.org/download/HildegardVonBingenCanticlesOfEcstasy/Hildegard%20von%20Bingen%20-%20Canticles%20Of%20Ecstasy.mp3",
       "organum": "https://archive.org/download/lp_music-at-notre-dame-1200-1375-notre-dame-m_guillaume-de-machaut-protin-alfred-deller/disc1/01.01.%20Kyrie.mp3",
       "palestrina": "https://archive.org/download/MissaPapaeMarcelli/MissaPapaeMarcelli-I.Kyrie.mp3",
       "josquin": "https://archive.org/download/MissaPapaeMarcelli/MissaPapaeMarcelli-I.Kyrie.mp3",
@@ -55,6 +56,21 @@ class ClassicalSynthesizer {
 
     // Biblioteca de motivos melódicos clásicos auténticos
     this.MOTIFS = {
+      "proto-grecia": {
+        title: "Antigua Grecia: Música con Lira & Epitafio de Seikilos",
+        era: "Antesala Proto-Clásica (Antigüedad)",
+        tempo: 78,
+        instrument: "piano",
+        notes: [
+          { pitch: "C4", dur: 0.7, delay: 0.0 },
+          { pitch: "G4", dur: 0.7, delay: 0.75 },
+          { pitch: "A4", dur: 0.5, delay: 1.5 },
+          { pitch: "G4", dur: 0.9, delay: 2.05 },
+          { pitch: "F4", dur: 0.6, delay: 3.0 },
+          { pitch: "E4", dur: 0.9, delay: 3.65 }
+        ]
+      },
+
       "beethoven-5th": {
         title: "Beethoven: Motivo del Destino (5ª Sinfonía)",
         era: "Romanticismo / Clasicismo tardío",

@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const SECTION_MOTIF_MAP = {
     "hero": "beethoven-5th",
+    "proto": "proto-grecia",
     "que-es": "vivaldi-primavera",
     "medieval": "hildegarda",
     "renacimiento": "palestrina",

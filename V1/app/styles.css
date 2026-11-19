@@ -475,7 +475,8 @@ body::before {
     max-height: calc(100vh - 68px);
     overflow-y: auto;
   }
-  .main-nav.open { display: block; }
+  .main-nav.open { display: block !important; z-index: 9999; }
+  .main-nav.open .nav-chapters { display: flex !important; }
   .nav-chapters {
     flex-direction: column;
     align-items: stretch;
@@ -2189,9 +2190,6 @@ body::before {
 }
 
 @media (max-width: 768px) {
-  .nav-chapters {
-    display: none;
-  }
   .floating-audio-deck {
     width: 95vw;
     padding: 0.6rem 1rem;

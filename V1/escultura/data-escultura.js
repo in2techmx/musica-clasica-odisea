@@ -772,19 +772,19 @@ const ESCULTURA_DATA = {
   },
   {
     "id": "brancusi-beso",
-    "title": "La Puerta del Beso (Poarta Sărutului)",
+    "title": "La Columna del Infinito (Coloana Infinitului)",
     "artist": "Constantin Brâncuși",
     "artistId": "brancusi",
     "era": "vanguardias",
     "eraCategory": "moderno",
-    "year": "1937–1938",
-    "material": "Piedra travertino tallada directamente",
-    "technique": "Talla directa monumental y síntesis geométrica",
-    "dimensions": "5.13 × 6.45 × 1.69 metros",
-    "location": "Parque Central, Târgu Jiu, Rumanía",
-    "image": "assets/obras/brancusi-beso.jpg?v=4",
-    "highlight": "La reducción del abrazo humano a un arco triunfal de geometría sagrada.",
-    "curatorialNote": "Parte del conjunto monumental en homenaje a los héroes de la Primera Guerra Mundial. Brâncuși sintetizó el motivo de sus primeros 'Besos' en dos mitades circulares grabadas sobre las columnas de travertino, unidas en un abrazo eterno que transforma el amor en arquitectura pública."
+    "year": "1938",
+    "material": "Hierro fundido revestido de latón",
+    "technique": "Ensamblaje modular rítmico de 17 módulos romboidales",
+    "dimensions": "29.33 metros de altura",
+    "location": "Târgu Jiu, Rumanía",
+    "image": "assets/obras/brancusi-beso.jpg?v=5",
+    "highlight": "El eje vertical infinito que conecta la tierra con el cielo en ritmo geométrico puro.",
+    "curatorialNote": "Obra cumbre de la escultura moderna. Brâncuși apiló módulos romboidales idénticos inspirados en los pilares tradicionales rumanos de madera, creando un tótem minimalista de casi 30 metros que parece prolongarse eternamente hacia el firmamento."
   },
   {
     "id": "calder-flamingo",

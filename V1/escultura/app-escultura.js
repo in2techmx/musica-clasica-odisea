@@ -30,7 +30,7 @@
     const container = document.getElementById('sculpture-timeline-container');
     if (!container) return;
 
-    container.innerHTML = DATA.eras.map((era, index) => `
+    container.innerHTML = DATA.eras.map((era) => `
       <div class="era-card card-tilt" data-era="${era.id}">
         <div class="card-tilt-inner">
           <div class="era-badge" style="background:${era.color}22; color:${era.color}; border:1px solid ${era.color}55;">
@@ -95,7 +95,127 @@
     updateDecoder();
   }
 
-  // 4. RENDERIZADO Y FILTRADO DE LOS 20 TITANES
+  // 4. GALERÍA DE OBRAS MAESTRAS ESCULTÓRICAS (ALTA RESOLUCIÓN)
+  let currentModalIndex = 0;
+  let activeGalleryList = DATA.galleryMasterpieces || [];
+
+  function initGallery() {
+    const grid = document.getElementById('sculpture-gallery-grid');
+    const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+    if (!grid) return;
+
+    function renderCards(list) {
+      if (!list || list.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column: 1/-1; text-align:center; padding:3rem; color:var(--text-muted);">
+            No hay obras registradas para este filtro.
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = list.map((item, idx) => `
+        <article class="gallery-card card-tilt" data-id="${item.id}" onclick="window.openSculptureModal(${idx})">
+          <div class="card-tilt-inner">
+            <div class="gallery-card-thumb">
+              <img src="${item.image}" alt="${item.title} — ${item.artist}" class="gallery-card-img" loading="lazy">
+              <span class="gallery-card-era-badge">${item.year}</span>
+            </div>
+            <div class="gallery-card-body">
+              <span class="gallery-card-category">${item.material}</span>
+              <h3 class="gallery-card-title">${item.title}</h3>
+              <p class="gallery-card-artist">${item.artist}</p>
+              <p class="gallery-card-location">📍 ${item.location}</p>
+              <p class="gallery-card-highlight">«${item.highlight}»</p>
+              <span class="gallery-card-action">Inspeccionar Obra 🔍</span>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        if (filter === 'all') {
+          activeGalleryList = DATA.galleryMasterpieces;
+        } else {
+          activeGalleryList = DATA.galleryMasterpieces.filter(item => item.eraCategory === filter);
+        }
+        renderCards(activeGalleryList);
+      });
+    });
+
+    renderCards(activeGalleryList);
+  }
+
+  // MODAL / LIGHTBOX DE DETALLE
+  function initGalleryModal() {
+    const modal = document.getElementById('sculpture-modal');
+    const overlay = document.getElementById('modal-overlay');
+    const closeBtn = document.getElementById('modal-close-btn');
+    const prevBtn = document.getElementById('modal-prev-btn');
+    const nextBtn = document.getElementById('modal-next-btn');
+
+    if (!modal) return;
+
+    function updateModalContent(index) {
+      if (index < 0) index = activeGalleryList.length - 1;
+      if (index >= activeGalleryList.length) index = 0;
+      currentModalIndex = index;
+
+      const item = activeGalleryList[index];
+      if (!item) return;
+
+      document.getElementById('modal-img').src = item.image;
+      document.getElementById('modal-img').alt = `${item.title} — ${item.artist}`;
+      document.getElementById('modal-era-badge').textContent = (item.eraCategory || 'ESCULTURA').toUpperCase();
+      document.getElementById('modal-title').textContent = item.title;
+      document.getElementById('modal-artist').textContent = `${item.artist} • ${item.year}`;
+      document.getElementById('modal-highlight').textContent = item.highlight;
+      document.getElementById('modal-material').textContent = item.material;
+      document.getElementById('modal-tech').textContent = item.technique;
+      document.getElementById('modal-dimensions').textContent = item.dimensions;
+      document.getElementById('modal-location').textContent = item.location;
+      document.getElementById('modal-curatorial-note').textContent = item.curatorialNote;
+      document.getElementById('modal-counter').textContent = `${index + 1} de ${activeGalleryList.length}`;
+    }
+
+    window.openSculptureModal = function(index) {
+      updateModalContent(index);
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
+
+    if (prevBtn) prevBtn.addEventListener('click', () => {
+      updateModalContent(currentModalIndex - 1);
+    });
+
+    if (nextBtn) nextBtn.addEventListener('click', () => {
+      updateModalContent(currentModalIndex + 1);
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft') updateModalContent(currentModalIndex - 1);
+      if (e.key === 'ArrowRight') updateModalContent(currentModalIndex + 1);
+    });
+  }
+
+  // 5. RENDERIZADO Y FILTRADO DE LOS 20 TITANES (CON FOTOS DE SUS OBRAS)
   function initTitans() {
     const grid = document.getElementById('titans-sculpture-grid');
     const searchInput = document.getElementById('titan-search-input');
@@ -123,6 +243,14 @@
               <span class="titan-index">#${String(idx + 1).padStart(2, '0')}</span>
               <span class="titan-era-badge">${titan.eraName}</span>
             </div>
+
+            ${titan.image ? `
+              <div class="titan-thumb-wrap">
+                <img src="${titan.image}" alt="${titan.masterpiece} — ${titan.name}" class="titan-thumb-img" loading="lazy">
+                <span class="titan-thumb-badge">Obra Cumbre</span>
+              </div>
+            ` : ''}
+
             <h3 class="titan-name">${titan.name}</h3>
             <span class="titan-years">${titan.years}</span>
             <p class="titan-title-epigraph">${titan.title}</p>
@@ -172,7 +300,7 @@
     renderList(DATA.titans);
   }
 
-  // 5. LABORATORIO DE APRECIACIÓN ESPACIAL 360° (SIMULADOR DE PERSPECTIVA)
+  // 6. LABORATORIO DE APRECIACIÓN ESPACIAL 360° (SIMULADOR DE PERSPECTIVA)
   function initViewingLab() {
     const slider = document.getElementById('lab-angle-slider');
     const angleText = document.getElementById('lab-angle-display');
@@ -229,7 +357,7 @@
     });
   }
 
-  // 6. HISTORIAS & CRÓNICAS MATERIALES
+  // 7. HISTORIAS & CRÓNICAS MATERIALES
   function renderStories() {
     const container = document.getElementById('sculpture-stories-grid');
     if (!container) return;
@@ -246,15 +374,17 @@
     `).join('');
   }
 
-  // 7. INICIALIZACIÓN GLOBAL
+  // 8. INICIALIZACIÓN GLOBAL
   document.addEventListener('DOMContentLoaded', () => {
     initProgressBar();
     renderTimeline();
     initDecoder();
+    initGallery();
+    initGalleryModal();
     initTitans();
     initViewingLab();
     renderStories();
-    console.log('Odisea de la Escultura inicializada con éxito.');
+    console.log('Odisea de la Escultura: Galería y Módulos inicializados con éxito.');
   });
 
 })();

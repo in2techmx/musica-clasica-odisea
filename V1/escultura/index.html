@@ -387,6 +387,408 @@
       line-height: 1.6;
       margin: 0;
     }
+  
+    /* GALERÍA DE OBRAS MAESTRAS */
+    .gallery-filter-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin: 0 auto 3rem;
+      max-width: 1100px;
+    }
+    .gallery-filter-btn {
+      padding: 0.5rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(229, 184, 92, 0.25);
+      color: #cbd5e1;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      user-select: none;
+    }
+    .gallery-filter-btn:hover {
+      background: rgba(229, 184, 92, 0.15);
+      border-color: var(--gold-light);
+      color: #ffffff;
+    }
+    .gallery-filter-btn.active {
+      background: var(--gold-primary);
+      border-color: var(--gold-light);
+      color: #06090f;
+      font-weight: 700;
+      box-shadow: 0 0 16px rgba(229, 184, 92, 0.35);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+    .gallery-card {
+      background: rgba(11, 15, 23, 0.88);
+      border: 1px solid rgba(229, 184, 92, 0.22);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .gallery-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(229, 184, 92, 0.25);
+    }
+    .gallery-card-thumb {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      overflow: hidden;
+      background: #06090f;
+    }
+    .gallery-card-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.6s ease;
+    }
+    .gallery-card:hover .gallery-card-img {
+      transform: scale(1.08);
+    }
+    .gallery-card-era-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(6, 9, 15, 0.85);
+      border: 1px solid rgba(229, 184, 92, 0.4);
+      color: var(--gold-light);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+    .gallery-card-body {
+      padding: 1.4rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .gallery-card-category {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      margin-bottom: 0.35rem;
+    }
+    .gallery-card-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 0.25rem;
+    }
+    .gallery-card-artist {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+    .gallery-card-location {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-bottom: 0.85rem;
+    }
+    .gallery-card-highlight {
+      font-size: 0.82rem;
+      color: #cbd5e1;
+      font-style: italic;
+      line-height: 1.45;
+      border-left: 2px solid var(--gold-primary);
+      padding-left: 0.65rem;
+      margin: 0 0 1.1rem;
+    }
+    .gallery-card-action {
+      margin-top: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .gallery-card:hover .gallery-card-action {
+      color: var(--gold-light);
+    }
+
+    /* MINIATURAS EN TARJETAS DE TITANES */
+    .titan-thumb-wrap {
+      position: relative;
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(229, 184, 92, 0.25);
+      background: #06090f;
+    }
+    .titan-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      transition: transform 0.5s ease;
+    }
+    .titan-card:hover .titan-thumb-img {
+      transform: scale(1.08);
+    }
+    .titan-thumb-badge {
+      position: absolute;
+      bottom: 0.6rem;
+      left: 0.6rem;
+      background: rgba(6, 9, 15, 0.85);
+      border: 1px solid rgba(229, 184, 92, 0.35);
+      color: var(--gold-light);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+
+    /* MODAL / LIGHTBOX DE ALTA RESOLUCIÓN */
+    .sculpture-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .sculpture-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sculpture-modal-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(4, 7, 12, 0.92);
+      backdrop-filter: blur(14px);
+    }
+    .sculpture-modal-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1150px;
+      max-height: 90vh;
+      background: #0b0f17;
+      border: 1px solid rgba(229, 184, 92, 0.35);
+      border-radius: 20px;
+      overflow-y: auto;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.95), 0 0 50px rgba(229, 184, 92, 0.25);
+    }
+    .sculpture-modal-close {
+      position: absolute;
+      top: 1.2rem;
+      right: 1.2rem;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+      color: #ffffff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+    .sculpture-modal-close:hover {
+      background: var(--gold-primary);
+      color: #06090f;
+      transform: rotate(90deg);
+    }
+    .sculpture-modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 2.2rem;
+      padding: 2.5rem;
+    }
+    .modal-media-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .modal-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #04060a;
+      border: 1px solid rgba(229, 184, 92, 0.2);
+    }
+    .modal-large-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+    .modal-image-watermark {
+      position: absolute;
+      bottom: 0.8rem;
+      left: 0.8rem;
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.12em;
+      pointer-events: none;
+    }
+    .modal-nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    .modal-nav-arrow {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+      color: #ffffff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .modal-nav-arrow:hover {
+      background: var(--gold-primary);
+      color: #06090f;
+    }
+    .modal-nav-count {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .modal-info-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .modal-era-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--gold-primary);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .modal-title {
+      font-family: var(--font-serif-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.15;
+    }
+    .modal-artist {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin: 0;
+    }
+    .modal-highlight-box {
+      background: rgba(229, 184, 92, 0.08);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+      border-left: 4px solid var(--gold-primary);
+      border-radius: 8px;
+      padding: 1rem 1.2rem;
+    }
+    .modal-highlight-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      margin-bottom: 0.3rem;
+    }
+    .modal-highlight-text {
+      font-family: var(--font-serif-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.45;
+    }
+    .modal-specs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 10px;
+      padding: 1.1rem;
+    }
+    .modal-spec-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--gold-primary);
+      margin-bottom: 0.15rem;
+    }
+    .modal-spec-val {
+      font-size: 0.85rem;
+      color: #ffffff;
+      font-weight: 500;
+    }
+    .modal-curatorial-label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-light);
+      margin-bottom: 0.4rem;
+    }
+    .modal-curatorial-p {
+      font-size: 0.92rem;
+      line-height: 1.65;
+      color: #cbd5e1;
+      margin: 0;
+    }
+    @media (max-width: 860px) {
+      .sculpture-modal-body {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+        gap: 1.5rem;
+      }
+      .modal-image-wrap {
+        height: 350px;
+      }
+      .modal-title {
+        font-size: 1.7rem;
+      }
+      .modal-specs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body id="top">
@@ -444,6 +846,7 @@
           <li class="nav-item"><a href="#fundamentos" class="nav-link">¿Qué es?</a></li>
           <li class="nav-item"><a href="#timeline" class="nav-link">Timeline</a></li>
           <li class="nav-item"><a href="#decodificador" class="nav-link">Decodificador</a></li>
+          <li class="nav-item"><a href="#galeria" class="nav-link" style="color:var(--gold-light); font-weight:700;">Galería Obras</a></li>
           <li class="nav-item"><a href="#titanes" class="nav-link">20 Titanes</a></li>
           <li class="nav-item"><a href="#historias" class="nav-link">Historias</a></li>
           <li class="nav-item"><a href="#laboratorio" class="nav-link">Apreciación 360°</a></li>
@@ -646,6 +1049,31 @@
     </section>
 
     <!-- CAPÍTULO 04: LOS 20 TITANES DE LA ESCULTURA -->
+    
+    <!-- CAPÍTULO 03B: GALERÍA DE OBRAS MAESTRAS (ALTA RESOLUCIÓN) -->
+    <section class="section-container" id="galeria" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
+      <div class="section-header">
+        <div class="editorial-badge">Capítulo 03B • Pinacoteca &amp; Escultura Universal</div>
+        <h2 class="editorial-title">Galería de Obras Maestras</h2>
+        <p class="editorial-sub">21 hitos cardinales capturados en alta resolución: del mármol ingrávido y la fundición a la cera perdida a las vanguardias contemporáneas. Haz clic en cualquier obra para inspeccionar su cálculo de masa, luz y detalle curatorial.</p>
+      </div>
+
+      <!-- BARRA DE FILTROS DE LA GALERÍA -->
+      <div class="gallery-filter-wrap">
+        <button class="gallery-filter-btn active" data-filter="all">Todas las Obras (21)</button>
+        <button class="gallery-filter-btn" data-filter="antigua">Grecia &amp; Roma Clásica</button>
+        <button class="gallery-filter-btn" data-filter="renacimiento">Renacimiento &amp; Manierismo</button>
+        <button class="gallery-filter-btn" data-filter="barroco">Barroco Triunfal</button>
+        <button class="gallery-filter-btn" data-filter="neoclasico">Neoclasicismo &amp; S. XIX</button>
+        <button class="gallery-filter-btn" data-filter="moderno">Vanguardias &amp; Contemporáneo</button>
+      </div>
+
+      <!-- GRID DE TARJETAS DE LA GALERÍA -->
+      <div class="gallery-grid" id="sculpture-gallery-grid">
+        <!-- Renderizado dinámicamente por app-escultura.js -->
+      </div>
+    </section>
+
     <section class="section-container" id="titanes" style="border-top:1px solid rgba(229,184,92,0.15); padding-top:5rem;">
       <div class="section-header">
         <div class="editorial-badge">Capítulo 04 • La Galería Cardinal</div>
@@ -803,6 +1231,64 @@
       </div>
     </div>
   </footer>
+
+  
+  <!-- MODAL / LIGHTBOX DE INSPECCIÓN DE OBRA CUMBRE -->
+  <div id="sculpture-modal" class="sculpture-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="sculpture-modal-overlay" id="modal-overlay"></div>
+    <div class="sculpture-modal-content">
+      <button class="sculpture-modal-close" id="modal-close-btn" aria-label="Cerrar modal">✕</button>
+      
+      <div class="sculpture-modal-body">
+        <div class="modal-media-col">
+          <div class="modal-image-wrap">
+            <img id="modal-img" src="" alt="" class="modal-large-img">
+            <div class="modal-image-watermark">IN2TECHMX • ARCHIVO HISTÓRICO</div>
+          </div>
+          <div class="modal-nav-bar">
+            <button class="modal-nav-arrow" id="modal-prev-btn" aria-label="Obra anterior">‹ Anterior</button>
+            <span class="modal-nav-count" id="modal-counter">1 de 21</span>
+            <button class="modal-nav-arrow" id="modal-next-btn" aria-label="Siguiente obra">Siguiente ›</button>
+          </div>
+        </div>
+
+        <div class="modal-info-col">
+          <div class="modal-era-badge" id="modal-era-badge">RENACIMIENTO</div>
+          <h3 class="modal-title" id="modal-title">David</h3>
+          <p class="modal-artist" id="modal-artist">Miguel Ángel Buonarroti • 1501–1504</p>
+          
+          <div class="modal-highlight-box">
+            <span class="modal-highlight-label">Hito Espacial &amp; Clave de Apreciación:</span>
+            <p class="modal-highlight-text" id="modal-highlight"></p>
+          </div>
+
+          <div class="modal-specs-grid">
+            <div class="modal-spec-item">
+              <span class="modal-spec-label">Material:</span>
+              <span class="modal-spec-val" id="modal-material"></span>
+            </div>
+            <div class="modal-spec-item">
+              <span class="modal-spec-label">Técnica:</span>
+              <span class="modal-spec-val" id="modal-tech"></span>
+            </div>
+            <div class="modal-spec-item">
+              <span class="modal-spec-label">Dimensiones:</span>
+              <span class="modal-spec-val" id="modal-dimensions"></span>
+            </div>
+            <div class="modal-spec-item">
+              <span class="modal-spec-label">Ubicación Actual:</span>
+              <span class="modal-spec-val" id="modal-location"></span>
+            </div>
+          </div>
+
+          <div class="modal-curatorial-block">
+            <span class="modal-curatorial-label">Análisis Curatorial &amp; Tensión Gravitatoria:</span>
+            <p class="modal-curatorial-p" id="modal-curatorial-note"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- SCRIPTS -->
   <script src="../app/i18n.js?v=43"></script>

@@ -412,7 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   <div class="lg-work-actions">
                     <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ YouTube</a>
                     <a href="${w.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="btn-spotify-listen">♫ Spotify</a>
-                    <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎧 Audio Libre (Archive)</a>
+                    <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎧 ${w.freeLabel}</a>
                   </div>
                 </div>
               `).join("")}
@@ -625,7 +625,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="lg-work-actions">
                   <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ YouTube</a>
                   <a href="${w.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="btn-spotify-listen">♫ Spotify</a>
-                  <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎧 Audio Libre (Archive)</a>
+                  <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎧 ${w.freeLabel}</a>
                 </div>
               </div>
             `).join("")}

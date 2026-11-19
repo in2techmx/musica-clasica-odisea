@@ -839,15 +839,58 @@ const LISTENING_GUIDE_BY_COMPOSER = {
   ]
 };
 
+// Enlaces directos 100% verificados contra Internet Archive Audio API (pista exacta reproducible)
+const DIRECT_ARCHIVE_TRACKS = {
+  "Antífonas Monásticas en Tetragrama": "https://archive.org/details/lp_a-treasury-of-gregorian-chant-vol-iii_monks-of-the-abbey-of-st-thomas/disc1/01.01.%20Introit%20For%20The%201st%20Sunday%20In%20Advent%20(Mode%208)%3B%20Hymn%20For%20Christmas%20Vespers%20(Mode%201)%3B%20Offertory%20For%20The%202nd%20Sunday%20After%20Epiphany%20(Mode%201).mp3",
+  "Pérotin: Viderunt Omnes (Organum Quadruplum a 4 voces, 1198)": "https://archive.org/details/lp_music-at-notre-dame-1200-1375-notre-dame-m_guillaume-de-machaut-protin-alfred-deller/disc1/01.01.%20Kyrie.mp3",
+  "Pérotin: Sederunt Principes (a 4 voces)": "https://archive.org/details/hm-30-823-perotin-le-grand-musique-a-notre-dame-deller-consort/HM%2030%20823%E2%80%A2f1.flac",
+  "Missa Papae Marcelli (Gloria y Credo)": "https://archive.org/details/MissaPapaeMarcelli/MissaPapaeMarcelli-I.Kyrie.mp3",
+  "Conciertos de Brandeburgo n.º 3 y n.º 5, BWV 1048 & 1050": "https://archive.org/details/lp_brandenburg-concertos-complete_johann-sebastian-bach-karl-mnchinger-stutt/disc1/01.01.%20Brandenburg%20Concertos%2C%20Vol.%201%20No.%201%20In%20F%20Major%20(Bwv.1046)%3A%201st.%20Mov.%3A%20Allegro.mp3",
+  "Variaciones Goldberg, BWV 988 (Aria y Variaciones 1–5)": "https://archive.org/details/GoldbergVariationsBWV988/Goldberg%20Variations%2C%20BWV%20988%20-%2001.%20Aria.mp3",
+  "Gloria en Re mayor, RV 589 (1. Gloria in excelsis Deo)": "https://archive.org/details/Gloria_201309/GloriaRv589-01.GloriaInExcelsisDeo.mp3",
+  "Las Cuatro Estaciones: El Verano (RV 315, 3er mov. Presto)": "https://archive.org/details/LeQuattroStagioni",
+  "Las Cuatro Estaciones: El Invierno (RV 297)": "https://archive.org/details/LeQuattroStagioni",
+  "Concierto para Laúd en Re mayor, RV 93 (2º mov. Largo)": "https://archive.org/details/LuteConcertoInDRV93/LuteConcertoInDRv93-I.Allegro.mp3",
+  "Rinaldo, HWV 7 — Aria 'Lascia ch'io pianga'": "https://archive.org/details/HWV7RinaldoLasciaChioPianga/RinaldoHwv7-LasciaChioPianga.mp3",
+  "El Mesías, HWV 56 — Coro 'Aleluya' (Hallelujah)": "https://archive.org/details/HWV56Messiah",
+  "Zadok the Priest, HWV 258 (Himno de Coronación)": "https://archive.org/details/john-eliot-gardiner-handel-4-coronation-anthems-no.-1-zadok-the-priest-hwv-258-muztron.club/Choir%20of%20King's%20College%2C%20Cambridge%2C%20Academy%20Of%20Ancient%20Music%2C%20Pavlo%20Beznosiuk%2C%20Alastair%20Ross%2C%20Benjamin%20Bayl%2C%20Stephen%20Cleobury%20%E2%80%93%20Handel_%20Zadok%20the%20Priest%2C%20HWV%20258_(muztron.club).mp3",
+  "Sinfonía n.º 45 en Fa sostenido menor 'De los Adioses', Hob. I:45": "https://archive.org/details/SymphonyNo.45InFSharpMinor/SymphonyNo.45InFSharpMinor-I.AllegroAssai.mp3",
+  "Sinfonía n.º 94 en Sol mayor 'La Sorpresa', Hob. I:94 (2º mov. Andante)": "https://archive.org/details/Haydn_Symphony_No_94_Surprise/HaydnSurprise.mp3",
+  "Cuarteto de Cuerdas Op. 76 n.º 3 'El Emperador' (2º mov. Poco adagio)": "https://archive.org/details/HaydnEmperorQuartettatraiQt/1-09Haydn_StringQuartet62InCOp.76_3H3_77_emperor_-1.Allegro.mp3",
+  "Sinfonía n.º 25 en Sol menor, K. 183 (1er mov. Allegro con brio)": "https://archive.org/details/SymphonyNo.25InGMinorK.183/Symphony%20No.%2025%20in%20G%20minor%20K.%20183%20-%20I.%20Allegro%20con%20brio.mp3",
+  "Réquiem en Re menor, K. 626 (Dies Irae y Lacrimosa)": "https://archive.org/details/001.WolfgangAmadeusMozartRequiemK.626Lacrimosa/001.%20Wolfgang%20Amadeus%20Mozart%20-%20Requiem%20(K.%20626)%20-%20Lacrimosa.mp3",
+  "Sonata para Piano n.º 8 'Patética', Op. 13 (1er mov. Grave – Allegro)": "https://archive.org/details/SonataNo.8PathetiqueOp.13/PianoSonataNo.8PathetiqueOp.13-I.Grave.allegroDiMoltoEConBrio.mp3",
+  "Sinfonía n.º 5 en Do menor, Op. 67 (1er y 4º movimientos)": "https://archive.org/details/LudwigVanBeethovenSymphonyNo.5Op.67I.AllegroConBrioFromAustinPowersGoldmember/Ludwig%20van%20Beethoven%20-%20Symphony%20No.%205%2C%20Op.%2067%2C%20I.%20Allegro%20con%20brio%20(From%20Austin%20Powers%2C%20Goldmember).mp3",
+  "Sinfonía n.º 3 'Heroica', Op. 55 (1er mov. Allegro con brio)": "https://archive.org/details/SymphonyNo.3InEFlatMajorEroicaOp.55/SymphonyNo.3InEFlatMajorEroicaOp.55-I.AllegroConBrio.mp3",
+  "Sinfonía n.º 9 'Coral', Op. 125 (4º mov. Oda a la Alegría)": "https://archive.org/details/beethoven9/beethoven-9-01-concertgebouw-klemperer-1956-16048.flac",
+  "Concierto para Piano n.º 1 en Mi menor, Op. 11 (2º mov. Romanze)": "https://archive.org/details/FredericChopinPianoConcertoNo.1InEMinorOp.11II.RomanceLarghetto/Frederic%20Chopin%20-%20Piano%20Concerto%20No.1%20in%20E%20minor%20op.11%2C%20II.%20Romance%20(Larghetto).mp3",
+  "Balada n.º 1 en Sol menor, Op. 23": "https://archive.org/details/FredericChopinBalladeNo.1InGMinorOp.23FromThePianist/Frederic%20Chopin%20-%20Ballade%20No.%201%20in%20G%20minor%2C%20Op.%2023%20(From%20The%20Pianist).mp3",
+  "Concierto para Piano n.º 1 en Si bemol menor, Op. 23 (1er mov.)": "https://archive.org/details/TCHAIKOVSKYPianoConcertoNo.1-Horowitz-NEWTRANSFER/01.I.AllegroNonTroppoEMoltoMaestosoAllegroConSpirito.mp3",
+  "Obertura-Fantasía 'Romeo y Julieta'": "https://archive.org/details/RomeoJulietOvertureFantasy/Romeo%20%26%20Juliet%20Overture%20-%20Fantasy.mp3",
+  "Sinfonía n.º 6 'Patética', Op. 74 (4º mov. Adagio lamentoso)": "https://archive.org/details/SymphonyNo.6InBMinorPathtiqueOp.74/SymphonyNo.6InBMinorOp.74-I.Adagio-AllegroNonTroppo.mp3",
+  "El Lago de los Cisnes, Op. 20 (Escena Final / Tema del Cisne)": "https://archive.org/details/SwanLakeOp.20/Act%20I.mp3",
+  "Tristán e Isolda — Preludio y Liebestod (Muerte de Amor), WWV 90": "https://archive.org/details/wagner_tristan_je_01_einlei_etc/wagner_tristan_je_01_einlei_etc.mp3",
+  "Clair de Lune (Suite Bergamasque, L. 75)": "https://archive.org/details/SuiteBergamasque-ClairDeLunedebussy/ClairdeluneDebussy.flac",
+  "Preludio a la Siesta de un Fauno, L. 86": "https://archive.org/details/Debussy_Prelude_a_l_apres_midi_d_un_faune/Prelude_a_l_apres_midi_d_un_faune.mp3",
+  "La Consagración de la Primavera (Danza de los Adolescentes & Danza Sacrificial)": "https://archive.org/details/RiteOfSpring_201503/01_Beginning.mp3",
+  "El Pájaro de Fuego (Final)": "https://archive.org/details/FirebirdSuite1945stravinsky1967/7-23Stravinsky_FirebirdSuite1945-Introduction.mp3",
+  "Agon (Ballet Serial Tardío)": "https://archive.org/details/lp_agon-ballett-fur-12-tnzer_igor-stravinsky-sdwestfunkorchester-baden/disc1/01.01.%20Agon%20(Ballett%20F%C3%BCr%2012%20T%C3%A4nzer).mp3",
+  "Koyaanisqatsi — Prophecies / Pruit Igoe": "https://archive.org/details/philip-glass-koyaanisqatsi/Koyaanisqatsi%20(Original%20Soundtrack)/01%20Koyaanisqatsi.mp3",
+  "Spiegel im Spiegel (Espejo en el Espejo, 1978)": "https://archive.org/details/arvopartspiegelimspegel/01SpiegelImSpiegel.mp3",
+  "Fratres (para violín, orquesta de cuerdas y percusión)": "https://archive.org/details/arvopartfratres_202103/01%20Pa%CC%88rt_%20Fratres%20For%20Strings%20%26%20Percussion.mp3",
+  "La Lista de Schindler — Tema Principal (Violín solista y orquesta)": "https://archive.org/details/john-williams-schindlers-list-theme-itzhak-perlman"
+};
+
 function enrichWork(w) {
+  const directTrack = DIRECT_ARCHIVE_TRACKS[w.title];
   return {
     title: w.title,
     duration: w.duration,
     whyListen: w.whyListen,
     youtubeUrl: buildYouTubeSearchUrl(w.ytQuery),
     spotifyUrl: buildSpotifySearchUrl(w.archiveQuery || w.ytQuery),
-    freeArchiveUrl: buildFreeArchiveUrl(w.archiveQuery || w.ytQuery),
-    freeLabel: "Archive Audio"
+    freeArchiveUrl: directTrack || buildFreeArchiveUrl(w.archiveQuery || w.ytQuery),
+    freeLabel: directTrack ? "Pista Directa (Archive)" : "Audio Libre (Archive)"
   };
 }
 

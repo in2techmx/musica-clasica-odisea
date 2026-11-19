@@ -342,12 +342,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (assembledMeaningEl) {
-        const statusBadge = realMatch
-          ? `<div style="display:inline-block; margin-bottom:0.65rem; padding:0.25rem 0.75rem; border-radius:999px; background:rgba(16,185,129,0.16); border:1px solid rgba(16,185,129,0.5); color:#a7f3d0; font-size:0.74rem; font-weight:700;">✓ Obra Histórica Real Verificada (${realMatch.cat})</div><br><span style="color:var(--gold-light);">${realMatch.note}</span><br><br>`
-          : `<div style="display:inline-block; margin-bottom:0.65rem; padding:0.25rem 0.75rem; border-radius:999px; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.45); color:#fde68a; font-size:0.74rem; font-weight:700;">🧪 Combinación Didáctica Simulada (Para practicar lectura de títulos)</div><br><span style="color:var(--text-muted); font-size:0.84rem;">${COMPOSER_REALITY_HINTS[composerKey] || ""}</span><br><br>`;
+        const contextualNote = realMatch
+          ? `<span style="color:var(--gold-light);">${realMatch.note}</span><br><br>`
+          : `<span style="color:var(--text-muted); font-size:0.84rem;"><em>Combinación didáctica para practicar lectura de títulos.</em> ${COMPOSER_REALITY_HINTS[composerKey] || ""}</span><br><br>`;
 
         assembledMeaningEl.innerHTML = `
-          ${statusBadge}
+          ${contextualNote}
           <strong>Lectura de sus 4 elementos:</strong>
           Forma musical <strong>${genre}</strong> · Número de serie <strong>n.º ${number}</strong> ·
           Tonalidad <strong>${key}</strong> · Sistema de catalogación <strong>${compData.tag}</strong>.

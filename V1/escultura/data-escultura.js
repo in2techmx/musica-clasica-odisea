@@ -772,19 +772,19 @@ const ESCULTURA_DATA = {
   },
   {
     "id": "brancusi-beso",
-    "title": "El Beso (Le Baiser)",
+    "title": "La Puerta del Beso (Poarta Sărutului)",
     "artist": "Constantin Brâncuși",
     "artistId": "brancusi",
     "era": "vanguardias",
     "eraCategory": "moderno",
-    "year": "1908–1910",
-    "material": "Piedra caliza tallada directamente",
-    "technique": "Talla directa primitiva y síntesis geométrica",
-    "dimensions": "89 cm de altura",
-    "location": "Cementerio de Montparnasse / Musée d'Art Moderne, París",
+    "year": "1937–1938",
+    "material": "Piedra travertino tallada directamente",
+    "technique": "Talla directa monumental y síntesis geométrica",
+    "dimensions": "5.13 × 6.45 × 1.69 metros",
+    "location": "Parque Central, Târgu Jiu, Rumanía",
     "image": "assets/obras/brancusi-beso.jpg",
-    "highlight": "La reducción de la forma a su esencia geológica más pura y ancestral.",
-    "curatorialNote": "Tras abandonar el taller de Rodin declarando que 'nada grande crece a la sombra de los grandes árboles', Brâncuși abandonó el modelado en arcilla y regresó a la talla directa en piedra. Dos amantes se abrazan simétricamente hasta fundirse en un único bloque cúbico, fundando la escultura abstracta y minimalista moderna."
+    "highlight": "La reducción del abrazo humano a un arco triunfal de geometría sagrada.",
+    "curatorialNote": "Parte del conjunto monumental en homenaje a los héroes de la Primera Guerra Mundial. Brâncuși sintetizó el motivo de sus primeros 'Besos' en dos mitades circulares grabadas sobre las columnas de travertino, unidas en un abrazo eterno que transforma el amor en arquitectura pública."
   },
   {
     "id": "giacometti-caminante",

@@ -43,7 +43,7 @@ const LISTENING_GUIDE_BY_COMPOSER = {
       {
         title: "Demostración de la Mano Guidoniana y Hexacordos",
         duration: "~5 min",
-        whyListen: "Observa cómo Guido convirtió la palma de la mano en el primer mapa visual interactivo para leer música a primera vista.",
+        whyListen: "Observa cómo la tradición pedagógica de los hexacordos de Guido dio origen al mapa visual de la mano para entonar intervalos a primera vista.",
         ytQuery: "Guidonian hand solmization demonstration early music",
         archiveQuery: "Guido d'Arezzo Micrologus",
         freeLabel: "IMSLP",
@@ -188,7 +188,7 @@ const LISTENING_GUIDE_BY_COMPOSER = {
       {
         title: "Missa Papae Marcelli (Gloria y Credo)",
         duration: "~14 min",
-        whyListen: "La misa que salvó a la polifonía en el Concilio de Trento: escucha cómo el texto latino se entiende con total claridad pese a sonar a 6 voces.",
+        whyListen: "Obra asociada por la leyenda posterior al Concilio de Trento: escucha cómo el texto latino se entiende con total claridad pese a sonar a 6 voces.",
         ytQuery: "Palestrina Missa Papae Marcelli Tallis Scholars",
         archiveQuery: "Palestrina Missa Papae Marcelli",
         freeLabel: "IMSLP",
@@ -651,7 +651,7 @@ const LISTENING_GUIDE_BY_COMPOSER = {
       {
         title: "La Consagración de la Primavera (Danza de los Adolescentes & Danza Sacrificial)",
         duration: "~9 min",
-        whyListen: "El estreno que provocó un motín en París (1913): acordes politonales martillados con acentos irregulares que liberaron al ritmo para siempre.",
+        whyListen: "El estreno que provocó un tumulto histórico en París (1913): acordes politonales martillados con acentos irregulares que transformaron el ritmo moderno.",
         ytQuery: "Stravinsky Rite of Spring London Symphony Orchestra",
         archiveQuery: "Stravinsky Rite of Spring",
         freeLabel: "IMSLP",

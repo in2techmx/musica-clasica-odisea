@@ -69,28 +69,28 @@ const MUSIC_DATA = {
           role: "El Padre de la Notación Musical",
           initials: "GA",
           image: "assets/portraits/guido-darezzo.jpg",
-          whyExponent: "Sin él, la música occidental no podría leerse ni transmitirse en el tiempo. Inventó el sistema de 4 líneas y bautizó las notas musicales (Ut-Re-Mi-Fa-Sol-La) extrayendo las sílabas del himno 'Ut queant laxis' a San Juan Bautista.",
+          whyExponent: "Monje benedictino y teórico musical cuya reforma pedagógica transformó la transmisión de la música occidental. Sistematizó el tetragrama de 4 líneas con claves y bautizó las seis sílabas del hexacordo (Ut-Re-Mi-Fa-Sol-La) extrayendo las primeras sílabas de cada hemistiquio del himno 'Ut queant laxis' a San Juan Bautista.",
           milestones: [
-            "Creó la 'Mano Guidoniana', el primer sistema pedagógico mnemotécnico visual para enseñar solfeo y entonación.",
-            "Permitió que los cantantes aprendieran una obra polifónica en pocos días en vez de meses de memorización auditiva."
+            "Sentó las bases del sistema de solmisación por hexacordos del que surgió la 'Mano Guidoniana' (recurso mnemotécnico documentado en manuscritos poco después de su muerte y asociado a su tradición pedagógica).",
+            "Permitió que los cantores aprendieran un canto litúrgico desconocido en pocos días de lectura visual (como expuso en su 'Epistola de ignoto cantu'), en vez de años de memorización exclusivamente oral."
           ],
-          masterpiece: "Micrologus (Tratado fundacional de pedagogía musical)",
+          masterpiece: "Micrologus (c. 1026, tratado de teoría y pedagogía musical)",
           motifKey: "gregoriano",
           catalogInfo: {
             systemName: "Tratados Manuscritos Medievales",
-            structure: "Codificado en códices monásticos de Pomposa y Arezzo. Sus tratados no llevaban número de opus sino títulos latinos preservados por la Iglesia.",
-            keyWorks: ["Micrologus de disciplina artis musicae (c. 1026)", "Regulae rhythmicae", "Prologus in Antiphonarium"]
+            structure: "Codificado en códices monásticos de Pomposa y Arezzo. Sus cuatro escritos principales no llevaban número de opus sino títulos latinos preservados en copias manuscritas.",
+            keyWorks: ["Micrologus de disciplina artis musicae (c. 1026)", "Prologus in Antiphonarium", "Regulae rhythmicae", "Epistola de ignoto cantu"]
           },
           periods: [
             {
               name: "Etapa Monástica en Pomposa (c. 1013–1025)",
-              focus: "Observación de la frustración de los monjes al memorizar cánticos durante diez años. Desarrolla las primeras líneas de color (amarillo para Do, rojo para Fa).",
-              proposal: "La notación debe ser espacial y visual: notas más agudas deben colocarse físicamente más arriba en la página."
+              focus: "Observación de la dificultad de los monjes al memorizar el repertorio litúrgico por vía oral. Desarrolla la notación diastemática sobre líneas y espacios con líneas de color (amarillo para Ut/Do, rojo para Fa).",
+              proposal: "La notación debe fijar con exactitud los intervalos: cada línea y cada espacio representan una altura precisa."
             },
             {
               name: "Etapa de Madurez en Arezzo y Audiencia Papal (1025–1050)",
-              focus: "Bajo la protección del obispo Teobaldo escribe el 'Micrologus' y es invitado por el Papa Juan XIX a Roma para demostrar la eficacia de su método pedagógico.",
-              proposal: "Universalización del método de solfeo silábico y la Mano Guidoniana para cualquier coro de la cristiandad."
+              focus: "Bajo el mecenazgo del obispo Teobaldo de Arezzo redacta el 'Micrologus' (que incluye capítulos sobre el organum polifónico temprano) y presenta su antifonario ante el papa Juan XIX en Roma.",
+              proposal: "Didáctica de la solmisación silábica (Ut-Re-Mi-Fa-Sol-La) para entonar melodías a primera vista sin depender de un maestro cantor."
             }
           ]
         },
@@ -101,28 +101,28 @@ const MUSIC_DATA = {
           role: "La Mística Visionaria del Canto Sacro",
           initials: "HB",
           image: "assets/portraits/hildegarda-von-bingen.jpg",
-          whyExponent: "Abadesa, científica, teóloga y polímata del Sacro Imperio. Rompió los estrechos límites del canto gregoriano masculino con melodías que abarcan más de dos octavas y un lirismo poético extático.",
+          whyExponent: "Abadesa benedictina, naturalista, teóloga y polímata renana. Expandió el ámbito habitual del canto llano monódico con melodías de gran amplitud interválica (que a menudo superan las dos octavas), melismas expresivos y una poesía litúrgica de intensa imaginería simbólica.",
           milestones: [
-            "Primera compositora de la historia europea cuya biografía, textos e identidad autoral se conservan documentados.",
-            "Creó 'Ordo Virtutum' (c. 1151), el drama musical sacro más antiguo que se conserva con música y letra completas."
+            "Primera compositora de la tradición latina occidental con una amplia obra musical conservada y biografía ampliamente documentada (precedida en el ámbito bizantino oriental por Casia de Constantinopla en el siglo IX).",
+            "Compuso 'Ordo Virtutum' (c. 1151), el drama litúrgico moral más antiguo conservado con música y texto completos."
           ],
-          masterpiece: "Symphonia armonie celestium revelationum",
+          masterpiece: "Symphonia armonie celestium revelationum / Ordo Virtutum",
           motifKey: "hildegarda",
           catalogInfo: {
-            systemName: "Códice de Rupertsberg & Códice de Dendermonde",
-            structure: "Sus más de 70 cantos litúrgicos y secuencias están recopilados en dos manuscritos iluminados del siglo XII sin numeración moderna.",
-            keyWorks: ["Ordo Virtutum (Drama litúrgico moral)", "O viridissima virga", "O virtus Sapientiae"]
+            systemName: "Códice de Dendermonde & Riesencodex (Wiesbaden)",
+            structure: "Sus 77 cantos litúrgicos (antífonas, responsorios, secuencias e himnos) y el drama 'Ordo Virtutum' se conservan principalmente en dos manuscritos del siglo XII supervisados en su scriptorium.",
+            keyWorks: ["Ordo Virtutum (c. 1151, drama litúrgico moral)", "O viridissima virga", "O virtus Sapientiae", "Columba aspexit"]
           },
           periods: [
             {
               name: "Etapa del Monasterio de Disibodenberg (1112–1150)",
-              focus: "Vida claustral estricta y primeras visiones místicas que plasma en su texto 'Scivias'. Comienza a escribir secuencias y antífonas de devoción mariana.",
-              proposal: "La música es el único recuerdo que el alma humana conserva del estado de gracia previo a la expulsión del Paraíso."
+              focus: "Vida claustral en comunidad benedictina y redacción de su primera gran obra visionaria, 'Scivias' (1141–1151), cuya sección final ya incluye textos líricos y una versión temprana de 'Ordo Virtutum'.",
+              proposal: "La música ('symphonia') como reminiscencia sonora de la armonía espiritual previa a la caída de Adán."
             },
             {
               name: "Etapa del Convento de Rupertsberg (1150–1179)",
-              focus: "Funda su propio monasterio independiente para mujeres en Bingen. Compone el ciclo 'Symphonia' con audaces giros melódicos ascendentes.",
-              proposal: "La voz femenina como vehículo cósmico de la 'Viriditas' (la fuerza vivificante y floreciente de la Creación divina)."
+              focus: "Funda su propio monasterio femenino en Rupertsberg (cerca de Bingen) y más tarde el de Eibingen. Reúne su ciclo 'Symphonia armonie celestium revelationum'.",
+              proposal: "El canto litúrgico como expresión de la 'Viriditas' (el verdor o energía vivificante de la Creación)."
             }
           ]
         },
@@ -130,31 +130,31 @@ const MUSIC_DATA = {
           id: "leonin-perotin",
           name: "Léonin & Pérotin (Escuela de Notre Dame)",
           years: "c. 1150 – 1220",
-          role: "Los Pioneros de la Polifonía Compleja",
+          role: "Los Pioneros de la Polifonía de Notre Dame",
           initials: "LP",
           image: "assets/portraits/leonin-perotin.jpg",
-          whyExponent: "Transformaron el canto llano monódico en una catedral sonora de varias voces sincronizadas rítmicamente con los modos métricos grecolatinos.",
+          whyExponent: "Primeros grandes maestros de nombre conocido (transmitidos por el teórico inglés conocido como Anónimo IV) vinculados a la Catedral de Notre Dame de París. Desarrollaron la polifonía medida mediante el sistema de los seis modos rítmicos (patrones ternarios cuyos nombres —trocaico, yámbico, dactílico— se tomaron por analogía de la métrica poética clásica).",
           milestones: [
-            "Crearon el monumental 'Magnus Liber Organi' (Gran Libro del Órgano).",
-            "Pérotin compuso los primeros 'organa quadrupla' (a 4 voces simultáneas) conocidos en la historia occidental ('Viderunt Omnes' y 'Sederunt Principes')."
+            "Compilaron y ampliaron el 'Magnus Liber Organi' ('Gran Libro de Organum', es decir, de polifonía litúrgica para el gradual y el antifonario, no para el instrumento órgano).",
+            "Pérotin compuso los primeros 'organa quadrupla' (obras polifónicas a 4 voces) documentados en Occidente: 'Viderunt Omnes' (1198) y 'Sederunt Principes' (1199)."
           ],
-          masterpiece: "Viderunt Omnes (Pérotin, 1198)",
+          masterpiece: "Viderunt Omnes (Pérotin, c. 1198)",
           motifKey: "organum",
           catalogInfo: {
-            systemName: "Magnus Liber Organi (Gran Libro de Notre Dame)",
-            structure: "Recopilación gótica de piezas litúrgicas para la Catedral de París clasificadas por festivales religiosos.",
-            keyWorks: ["Viderunt Omnes (a 4 voces)", "Sederunt Principes (a 4 voces)", "Alleluia Pascha Nostrum"]
+            systemName: "Magnus Liber Organi (Códices F, W1 y W2)",
+            structure: "Repertorio polifónico de la Catedral de París conservado en manuscritos del siglo XIII (como el Pluteo 29.1 de la Biblioteca Medicea Laurenziana de Florencia).",
+            keyWorks: ["Viderunt Omnes (organum quadruplum)", "Sederunt Principes (organum quadruplum)", "Alleluia Nativitas (organum triplum)", "Viderunt Omnes (organum duplum de Léonin)"]
           },
           periods: [
             {
-              name: "Época de Léonin (c. 1150–1180): El Organum a Dos Voces",
-              focus: "Establecimiento de las partes polifónicas del rito litúrgico de la nueva catedral gótica de París mediante el 'organum purum'.",
-              proposal: "Contrastar un bajo pedal eterno (cantus firmus) con una voz superior rápida y ricamente ornamentada (duplum)."
+              name: "Época de Léonin (fl. c. 1150–1190): El Organum Duplum",
+              focus: "Descrito por Anónimo IV como 'optimus organista' (el mejor compositor de organa). Compone polifonía a dos voces para las fiestas del calendario litúrgico de la nueva catedral gótica de París.",
+              proposal: "Alternar pasajes de 'organum purum' (notas tenidas en el tenor bajo una voz superior florida) con secciones medidas de 'discantus'."
             },
             {
-              name: "Época de Pérotin (c. 1180–1220): El Triplum y Quadruplum",
-              focus: "Revisión y expansión del Magnus Liber. Invención de la métrica rítmica estricta con compases ternarios que evocaban la Santísima Trinidad.",
-              proposal: "La polifonía a cuatro voces como equivalente acústico de las bóvedas de crucería y los vitrales luminosos de Notre Dame."
+              name: "Época de Pérotin (fl. c. 1190–1220): Tripla, Quadrupla y Clausulae",
+              focus: "Llamado 'optimus discantor'. abrevia y moderniza el Magnus Liber añadiendo cláusulas de discanto medido y expandiendo la textura a tres ('triplum') y cuatro voces ('quadruplum').",
+              proposal: "Coordinación rítmica precisa de tres voces superiores en patrones modales ternarios sobre las notas prolongadas del canto gregoriano en el tenor."
             }
           ]
         }
@@ -166,71 +166,71 @@ const MUSIC_DATA = {
       period: "c. 1400 – 1600",
       accent: "#10b981",
       tagline: "El humanismo, la divina proporción sonora y el contrapunto modal",
-      context: "El redescubrimiento del arte clásico grecorromano, la invención de la imprenta musical en Venecia por Ottaviano Petrucci (1501) y la reforma protestante provocan una revolución cultural. La música busca la belleza terrenal, la claridad de la palabra y el equilibrio de las voces.",
-      breakthrough: "Perfeccionamiento del contrapunto imitativo (las voces se imitan una a otra con gracia armónica) y nacimiento del madrigal polifónico.",
-      instruments: "Laúd renacentista, viola da gamba, sacabuche (trombón arcaico), clavecín primitivo, flauta dulce.",
+      context: "El redescubrimiento del pensamiento clásico grecorromano, la aparición de la primera imprenta de polifonía con tipos móviles en Venecia por Ottaviano Petrucci (1501), la Reforma protestante y la Contrarreforma transforman la vida musical europea. La composición busca el equilibrio entre voces, la consonancia imperfecta (terceras y sextas) y la expresión del texto.",
+      breakthrough: "Consolidación del contrapunto imitativo continuo entre todas las voces y florecimiento de la misa cíclica, el motete y el madrigal.",
+      instruments: "Laúd renacentista, viola da gamba, sacabuche (antecesor del trombón), virginal, cornetto, flauta dulce.",
       exponents: [
         {
           id: "josquin-des-prez",
           name: "Josquin des Prez",
-          years: "c. 1450 – 1521",
-          role: "El Miguel Ángel de la Música",
+          years: "c. 1450/1455 – 1521",
+          role: "El Maestro Franco-Flamenco del Humanismo Musical",
           initials: "JD",
           image: "assets/portraits/josquin-des-prez.jpg",
-          whyExponent: "Considerado unánimemente por sus contemporáneos (incluyendo Martín Lutero y los papas de Roma) como el genio supremo de su era. Lutero proclamó: 'Josquin es el amo de las notas; ellas hacen lo que él quiere; los demás músicos hacen lo que las notas quieren'.",
+          whyExponent: "Celebrado por humanistas y teóricos del siglo XVI (como Heinrich Glarean, Baldassare Castiglione y Martín Lutero) como la cumbre de su generación. Lutero escribió sobre él: 'Josquin es el amo de las notas, que han de hacer lo que él quiere; los demás maestros de canto han de hacer lo que las notas quieren'.",
           milestones: [
-            "Fue el primer compositor cuya fama internacional se propagó a escala continental gracias a la imprenta musical.",
-            "Inventó el estilo de contrapunto imitativo con claridad retórica que se convirtió en el canon del Renacimiento."
+            "Su prestigio se difundió por toda Europa gracias a la imprenta: Ottaviano Petrucci le dedicó tres volúmenes monográficos de misas (1502, 1505 y 1514).",
+            "Llevó a su madurez el contrapunto imitativo por pares de voces (heredado de Dufay, Busnois y Ockeghem), uniéndolo a una declamación retórica transparente del texto."
           ],
-          masterpiece: "Missa Pange Lingua / Ave Maria... Virgo Serena",
+          masterpiece: "Missa Pange Lingua (c. 1515, impresa en 1539) / Ave Maria... Virgo Serena",
           motifKey: "josquin",
           catalogInfo: {
-            systemName: "Edición Petrucci (Misse Josquin, 1502)",
-            structure: "Petrucci dedicó a Josquin los tres primeros libros monográficos de misas impresas de la historia.",
-            keyWorks: ["Missa Pange Lingua", "Missa L'homme armé", "Ave Maria... Virgo Serena", "Mille Regretz (Canción del Emperador Carlos V)"]
+            systemName: "New Josquin Edition (NJE) & Impresos de Petrucci",
+            structure: "La edición crítica moderna (NJE, 30 vols.) depuró numerosas atribuciones póstumas del siglo XVI, autenticando cerca de 18 misas, unos 50 motetes y alrededor de 65 chansons.",
+            keyWorks: ["Ave Maria... Virgo Serena (c. 1485)", "Missa L'homme armé super voces musicales", "Missa Hercules Dux Ferrariae", "Missa Pange Lingua", "Mille Regretz (atrib. tradicional, canción favorita de Carlos V)"]
           },
           periods: [
             {
-              name: "Periodo Franco-Flamenco e Itinerancia Italiana (1475–1500)",
-              focus: "Trabaja en la corte ducal de los Sforza en Milán y en el coro de la Capilla Sixtina en Roma. Fusión de la complejidad contrapuntística flamenca con la calidez melódica italiana.",
-              proposal: "La música debe conmover el corazón humano antes que limitarse a ser un acertijo intelectual para matemáticos."
+              name: "Etapa Franco-Flamenca e Italiana (c. 1477–1504)",
+              focus: "Documentado en Aix-en-Provence, Milán, la Capilla Papal en Roma y durante un año (1503–1504) como maestro de capilla del duque Hércules I de Este en Ferrara.",
+              proposal: "Síntesis del artificio contrapuntístico franco-flamenco con la claridad armónica y silábica de las laude y frottole italianas."
             },
             {
-              name: "Periodo de Madurez en Ferrara y Condé-sur-l'Escaut (1500–1521)",
-              focus: "Maestro de capilla para Hércules de Este en Ferrara. Compone sus misas de madurez y sus conmovedoras chansons seculares.",
-              proposal: "Alineación de cada sílaba poética con una declamación musical natural y uso del simbolismo retórico del dolor."
+              name: "Etapa Final como Preboste en Condé-sur-l'Escaut (1504–1521)",
+              focus: "Se retira como preboste de la colegiata de Notre-Dame en Condé-sur-l'Escaut, donde compone obras de extraordinaria economía y hondura como la 'Missa Pange Lingua'.",
+              proposal: "La misa paráfrasis donde el himno gregoriano impregna libremente todas las voces en imitación continua."
             }
           ]
         },
         {
           id: "palestrina",
           name: "Giovanni Pierluigi da Palestrina",
-          years: "1525 – 1594",
-          role: "El Salvador de la Polifonía Sacra",
+          years: "c. 1525 – 1594",
+          role: "El Maestro del Contrapunto Romano y la Polifonía Sacra",
           initials: "GP",
           image: "assets/portraits/palestrina.jpg",
-          whyExponent: "Fijó el ideal supremo de pureza polifónica vocal. Durante el Concilio de Trento los prelados católicos amenazaron con prohibir la polifonía por considerarla confusa; su 'Missa Papae Marcelli' demostró que el texto en latín podía escucharse con total transparencia y devoción.",
+          whyExponent: "Representante arquetípico de la Escuela Romana del siglo XVI. Aunque la historiografía moderna ha demostrado que es una leyenda tardía que el Concilio de Trento quisiera prohibir la polifonía y que su 'Missa Papae Marcelli' la 'salvara' por sí sola, su estilo de curvas melódicas equilibradas y dicción diáfana encarnó el ideal litúrgico postridentino.",
           milestones: [
-            "Estableció el estándar de contrapunto riguroso más estudiado en todos los conservatorios de la historia.",
-            "Equilibrio absoluto entre disonancias pasajeras cuidadosamente resueltas y consonancias luminosas."
+            "Su tratamiento riguroso de los intervalos y de la preparación y resolución de las disonancias fue codificado por Johann Joseph Fux en 'Gradus ad Parnassum' (1725) como base de la enseñanza académica del contrapunto.",
+            "Compuso 104 misas comprobadas, más de 375 motetes y 68 ofertorios, convirtiéndose en el modelo oficial de la polifonía vaticana."
           ],
-          masterpiece: "Missa Papae Marcelli (1567)",
+          masterpiece: "Missa Papae Marcelli (compuesta c. 1562, publicada en 1567)",
           motifKey: "palestrina",
           catalogInfo: {
-            systemName: "Haberl & Casimiri Palestrina-Gesamtausgabe",
-            structure: "Catálogo monumental de 33 volúmenes que recopila 105 misas, más de 300 motetes y 140 madrigales.",
-            keyWorks: ["Missa Papae Marcelli", "Motete Sicut Cervus", "Stabat Mater a 8 voces", "Missa Brevis"]
+            systemName: "Haberl (33 vols., 1862–1907) & Casimiri (34 vols., 1939–1987)",
+            structure: "Ediciones completas que recopilan sus 12 libros de misas publicados en vida y póstumos, junto con sus motetes, himnos, lamentaciones y madrigales.",
+            keyWorks: ["Missa Papae Marcelli (1567)", "Motete Sicut Cervus", "Canticum Canticorum (29 motetes sobre el Cantar de los Cantares, 1584)", "Stabat Mater a 8 voces", "Missa Brevis"]
           },
           periods: [
             {
-              name: "Periodo Romano Temprano y Capilla Giulia (1551–1565)",
-              focus: "Maestro de coro en la Basílica de San Pedro bajo el pontificado de Julio III. Publicación de su primer libro de misas.",
-              proposal: "Depuración de cualquier melodía profana o ruidosamente secular en el culto sagrado."
+              name: "Etapa de Palestrina, Capilla Giulia y San Juan de Letrán (1544–1566)",
+              focus: "Organista en su ciudad natal y maestro de capilla en Roma bajo el papa Julio III (a quien dedica su Primer Libro de Misas en 1554), San Juan de Letrán y Santa María la Mayor.",
+              proposal: "Equilibrio entre el contrapunto franco-flamenco y una textura luminosa que prioriza la inteligibilidad del texto litúrgico."
             },
             {
-              name: "Periodo de la Contrarreforma y Madurez (1565–1594)",
-              focus: "Composición de la Missa Papae Marcelli y dirección de la música del Vaticano hasta su muerte, siendo llamado 'Príncipe de la Música'.",
-              proposal: "La textura homofónica y el contrapunto suave como oración contemplativa donde la música no compite con la divinidad sino que la refleja."
+              name: "Segunda Etapa en la Capilla Giulia y Madurez Romana (1571–1594)",
+              focus: "Regresa como maestro de la Capilla Giulia en la Basílica de San Pedro hasta su muerte, supervisando además junto a Annibale Zoilo la revisión del canto gregoriano ('Editio Medicea').",
+              proposal: "Polifonía a capela de movimiento conjunto suave, donde todo salto melódico se compensa inmediatamente en dirección contraria."
             }
           ]
         }
@@ -242,44 +242,44 @@ const MUSIC_DATA = {
       period: "c. 1600 – 1750",
       accent: "#e5b85c",
       tagline: "El claroscuro del drama, el bajo continuo y la arquitectura de la fuga",
-      context: "La devastación de la Guerra de los Treinta Años (1618–1648), el florecimiento de las cortes absolutistas (Luis XIV en Versalles) y la Revolución Científica de Galileo y Newton. La música adopta el contraste dinámico violento (forte/piano), la ornamentación virtuosa y la emoción teatral extrema.",
-      breakthrough: "Invención de la Ópera, fijación de la armonía tonal (escalas Mayores y Menores), y el bajo continuo como motor rítmico-armónico.",
-      instruments: "Clavecín, órgano de tubos barroco, violín barroco, laúd tiorba, oboe barroco.",
+      context: "De la Camerata Florentina y la Guerra de los Treinta Años (1618–1648) al esplendor de las cortes europeas y las ciudades mercantiles como Venecia, Hamburgo y Leipzig. La música adopta la doctrina de los afectos ('Affektenlehre'), el contraste dinámico y el virtuosismo vocal e instrumental.",
+      breakthrough: "Nacimiento de la ópera y el oratorio, consolidación de la tonalidad funcional (mayor/menor), el bajo continuo y el concierto solista.",
+      instruments: "Clavecín, órgano barroco, violín y violonchelo barrocos, tiorba, viola da gamba, oboe y trompeta natural.",
       exponents: [
         {
           id: "bach",
           name: "Johann Sebastian Bach",
           years: "1685 – 1750",
-          role: "La Cumbre Matemática y Espiritual de la Música",
+          role: "La Cumbre del Contrapunto y la Síntesis Barroca",
           initials: "JSB",
           image: "assets/portraits/bach.jpg",
-          whyExponent: "El arquitecto supremo. Tomó todas las formas musicales de Europa (la fuga germánica, el concierto italiano, la suite de danzas francesa) y las llevó a una perfección estructural, riqueza armónica y hondura metafísica nunca superadas.",
+          whyExponent: "Sintetizó y llevó a su máxima complejidad las principales tradiciones europeas de su tiempo —el contrapunto y la tradición orgánica alemana, la claridad formal del concierto italiano y la estilización rítmica de la suite francesa— con un dominio inigualado de la armonía y la polifonía.",
           milestones: [
-            "Demostró con 'El Clave Bien Temperado' que se podía componer en las 24 tonalidades mayores y menores afinando por temperamento igual.",
-            "Llevó el contrapunto a su límite abstracto en 'El Arte de la Fuga' y 'La Ofrenda Musical'."
+            "Con los dos libros de 'El Clave Bien Temperado' (1722 y c. 1742) demostró el potencial expresivo de las 24 tonalidades mayores y menores empleando 'buenos temperamentos' (afinaciones circulantes que permitían modular a cualquier tonalidad conservando el color propio de cada una, distintas del temperamento igual matemático moderno).",
+            "Llevó la escritura polifónica a su cima especulativa en sus ciclos tardíos: las 'Variaciones Goldberg', 'La Ofrenda Musical' y 'El Arte de la Fuga'."
           ],
-          masterpiece: "Toccata y Fuga en Re menor (BWV 565) / Pasión según San Mateo (BWV 244)",
+          masterpiece: "Pasión según San Mateo (BWV 244) / El Clave Bien Temperado (BWV 846–893)",
           motifKey: "bach-toccata",
           catalogInfo: {
             systemName: "BWV (Bach-Werke-Verzeichnis)",
-            structure: "Creado por Wolfgang Schmieder en 1950. Organizado temáticamente: BWV 1–224 (Cantatas), 225–249 (Obras corales magnas), 525–771 (Órgano), 1041–1065 (Conciertos orquestales).",
-            keyWorks: ["BWV 565 (Toccata y Fuga)", "BWV 846-893 (El Clave Bien Temperado)", "BWV 1046-1051 (Conciertos de Brandeburgo)", "BWV 244 (Pasión según San Mateo)"]
+            structure: "Publicado por Wolfgang Schmieder en 1950 (edición revisada BWV³ en 2022). Organizado temáticamente y no cronológicamente: BWV 1–224 (Cantatas), 225–249 (Motetes, Misas y Pasiones), 525–771 (Órgano), 772–994 (Teclado), 1001–1080 (Cámara, Orquesta y Contrapunto tardío).",
+            keyWorks: ["BWV 244 (Pasión según San Mateo)", "BWV 232 (Misa en Si menor)", "BWV 846–893 (El Clave Bien Temperado I y II)", "BWV 1046–1051 (Conciertos de Brandeburgo)", "BWV 565 (Toccata y Fuga en Re menor, obra célebre cuya autoría original ha sido debatida por la musicología moderna)"]
           },
           periods: [
             {
-              name: "Periodo de Weimar (1708–1717): El Maestro del Órgano",
-              focus: "Organista de la corte ducal. Descubre los conciertos de Vivaldi y los transcribe al teclado, aprendiendo la concisión temática italiana. Compone sus grandes tocatas, preludios y fugas de órgano.",
-              proposal: "El órgano de tubos como el universo concentrado: polifonía monumental impulsada por pedales y contrapunto denso."
+              name: "Etapa de Arnstadt, Mühlhausen y Weimar (1703–1717): El Virtuoso del Órgano",
+              focus: "Organista y Konzertmeister en la corte ducal de Weimar. Transcribe al teclado conciertos de Vivaldi y Marcello, asimilando la forma del ritornello italiano, y compone gran parte de su obra para órgano.",
+              proposal: "Fusión de la polifonía orgánica del norte y centro de Alemania (Buxtehude, Pachelbel) con la proporción formal italiana."
             },
             {
-              name: "Periodo de Cöthen (1717–1723): La Explosión Instrumental",
-              focus: "Al servicio del príncipe Leopold de Anhalt-Cöthen, devoto calvinista que no requería música sacra. Bach compone música de cámara pura.",
-              proposal: "Conciertos de Brandeburgo, Suites para Violonchelo solo y Sonatas y Partitas para violín: elevar los instrumentos solistas a polifonías completas."
+              name: "Etapa de Cöthen (1717–1723): Maestro de Capilla e Instrumentalismo",
+              focus: "Kapellmeister del príncipe Leopold de Anhalt-Cöthen. Dado que la corte era calvinista y no empleaba música litúrgica figurada, Bach se concentra en la música instrumental y pedagógica.",
+              proposal: "Polifonía latente en instrumentos melódicos sin acompañamiento (Sonatas y Partitas para violín solo, Suites para violonchelo solo) y combinación policromática en los seis Conciertos de Brandeburgo."
             },
             {
-              name: "Periodo de Leipzig (1723–1750): El Cantor de Santo Tomás",
-              focus: "Director musical de las cuatro iglesias principales de Leipzig. Obligado a componer una cantata litúrgica por semana. Hacia el final de su vida se vuelve solitario e incomprendido.",
-              proposal: "La Pasión según San Mateo, la Misa en Si menor y El Arte de la Fuga: síntesis de fe luterana, proporción pitagórica y especulación teórica eterna."
+              name: "Etapa de Leipzig (1723–1750): Thomaskantor y Ciclos Especulativos",
+              focus: "Cantor de la escuela de Santo Tomás y director musical de las iglesias de Leipzig; dirige además desde 1729 el Collegium Musicum en la cafetería Zimmermann. Compone varios ciclos anuales de cantatas, las dos Pasiones conservadas y sus sumas contrapuntísticas finales.",
+              proposal: "Integración de la teología luterana, la retórica musical y la arquitectura contrapuntística exhaustiva ('Misa en Si menor', 'El Arte de la Fuga')."
             }
           ]
         },
@@ -287,36 +287,36 @@ const MUSIC_DATA = {
           id: "vivaldi",
           name: "Antonio Vivaldi",
           years: "1678 – 1741",
-          role: "El Cura Rojo y el Maestro del Concierto Solista",
+          role: "El Cura Rojo y el Gran Impulsor del Concierto Solista",
           initials: "AV",
           image: "assets/portraits/vivaldi.jpg",
-          whyExponent: "Sacerdote y virtuoso del violín veneciano. Fijó para siempre la estructura del concierto clásico en tres movimientos (Rápido - Lento - Rápido) e inventó la música descriptiva cinematográfica.",
+          whyExponent: "Sacerdote veneciano ('Il Prete Rosso') y virtuoso del violín. Consolidó el modelo barroco del concierto solista en tres movimientos (Rápido – Lento – Rápido, desarrollado a partir de Torelli y Albinoni) y la forma con 'ritornello', ejerciendo una influencia decisiva en toda Europa, incluido J. S. Bach.",
           milestones: [
-            "Compuso más de 500 conciertos, estableciendo la técnica del 'ritornello' (estribillo orquestal que dialoga con el virtuosismo del solista).",
-            "Pintó sonoras tormentas, cantos de pájaros y fuegos invernales en 'Las Cuatro Estaciones'."
+            "Se conservan más de 500 conciertos suyos (unos 230 para violín, además de fagot, violonchelo, oboe, flauta y mandolina), junto con más de 40 óperas y abundante música sacra.",
+            "Hito de la música programática barroca con 'Las Cuatro Estaciones' (1725), cuyos cuatro conciertos van acompañados de sonetos explicativos que describen tormentas, aves, pastores y paisajes helados."
           ],
-          masterpiece: "Las Cuatro Estaciones (Op. 8, RV 269/315/293/297)",
+          masterpiece: "Las Cuatro Estaciones (Op. 8 n.º 1–4, RV 269/315/293/297) / Gloria en Re mayor (RV 589)",
           motifKey: "vivaldi-primavera",
           catalogInfo: {
             systemName: "RV (Ryom-Verzeichnis)",
-            structure: "Publicado en 1973 por el musicólogo danés Peter Ryom. Reemplazó los catálogos imperfectos de Pincherle y Fanna ordenando sistemáticamente por género e instrumentación.",
-            keyWorks: ["RV 269 (La Primavera, Op. 8 n.º 1)", "RV 315 (El Verano, Op. 8 n.º 2)", "RV 589 (Gloria en Re mayor)", "RV 522 (Concierto para dos violines en La menor)"]
+            structure: "Publicado en 1973 (y ampliado en 2007/2018) por el musicólogo danés Peter Ryom, sustituyendo las numeraciones parciales de Pincherle, Fanna y Ricordi mediante una clasificación por género e instrumentación.",
+            keyWorks: ["RV 269, 315, 293, 297 (Las Cuatro Estaciones, Op. 8 n.º 1–4)", "Op. 3 (L'estro armonico, 12 conciertos)", "RV 589 (Gloria en Re mayor)", "RV 522 (Concierto para dos violines en La menor)"]
           },
           periods: [
             {
-              name: "Periodo del Ospedale della Pietà en Venecia (1703–1715)",
-              focus: "Profesor de violín en un hospicio para niñas huérfanas de Venecia, convirtiendo a su orquesta femenina en una de las más célebres de Europa.",
-              proposal: "La energía rítmica implacable, ataques de arco agresivos y melodías solistas acrobáticas."
+              name: "Etapa del Ospedale della Pietà y 'L'estro armonico' (1703–1717)",
+              focus: "Maestro de violín y luego 'Maestro de' Concerti' en el Pio Ospedale della Pietà de Venecia. La publicación en Ámsterdam de su Op. 3 ('L'estro armonico', 1711) lo proyecta a la fama europea.",
+              proposal: "Claridad incisiva del ritornello orquestal alternado con episodios solistas de gran vigor rítmico y virtuosismo."
             },
             {
-              name: "Periodo de Fama Europea e Il Cimento dell'Armonia (1716–1730)",
-              focus: "Publicación de sus colecciones Op. 3 (L'estro armonico) y Op. 8 (Las Cuatro Estaciones), que fascinaron a toda Europa e inspiraron a Bach.",
-              proposal: "Música programática basada en sonetos poéticos: la partitura imita ruidos de la naturaleza y emociones físicas tangibles."
+              name: "Etapa de Mantua, Empresas Operísticas e 'Il cimento' (1718–1730)",
+              focus: "Sirve en Mantua al príncipe Felipe de Hesse-Darmstadt, viaja a Roma y publica en 1725 'Il cimento dell'armonia e dell'inventione' Op. 8 (que abre con 'Las Cuatro Estaciones'), mientras actúa como compositor y empresario de ópera.",
+              proposal: "Colorido tímbrico descriptivo y transferencia del dramatismo vocal de la ópera veneciana al concierto instrumental."
             },
             {
-              name: "Periodo Tardío y Declive en Viena (1730–1741)",
-              focus: "Viajes de producción operística. El gusto del público cambia hacia el estilo galante; Vivaldi muere en la pobreza en Viena.",
-              proposal: "Dramatismo operístico veneciano aplicado a los conciertos de instrumentos de viento (fagot, oboe, flauta)."
+              name: "Etapa Tardía y Viaje a Viena (1731–1741)",
+              focus: "Continúa suministrando conciertos por correo al Ospedale della Pietà y montando óperas en Italia y Europa central. En 1740 se traslada a Viena buscando el favor imperial, pero la muerte de Carlos VI precipita su declive económico y fallece allí en julio de 1741.",
+              proposal: "Incorporación de inflexiones preclásicas galantes en sus últimos conciertos y arias operísticas."
             }
           ]
         },
@@ -324,31 +324,36 @@ const MUSIC_DATA = {
           id: "handel",
           name: "George Frideric Händel",
           years: "1685 – 1759",
-          role: "El Titán del Drama Coral y la Épica Orquestal",
+          role: "El Titán de la Ópera Seria y del Oratorio Dramático Inglés",
           initials: "GFH",
           image: "assets/portraits/handel.jpg",
-          whyExponent: "Compositor cosmopolita (alemán educado en Italia y nacionalizado británico). Inventó el oratorio en lengua inglesa y creó algunas de las melodías corales más triunfales y universales jamás concebidas.",
+          whyExponent: "Compositor cosmopolita del Barroco tardío: nacido en Halle (Sajonia), formado en la ópera y el concierto en Italia y naturalizado súbdito británico en Londres en 1727. Dominó la ópera seria italiana y creó el género del oratorio dramático en lengua inglesa.",
           milestones: [
-            "Creó el 'Aleluya' del Mesías, donde por tradición real los monarcas y el público se ponen de pie.",
-            "Pionero del espectáculo orquestal masivo al aire libre ('Música Acuática' para barcazas reales en el Támesis)."
+            "Compuso en 1741 el oratorio 'El Mesías' (estrenado en Dublín en 1742); la costumbre de ponerse de pie durante su coro 'Hallelujah' se asocia a una tradición histórica atribuida al rey Jorge II en el estreno londinense de 1743 (documentada en testimonios de la década de 1780).",
+            "Creó monumentos del ceremonial orquestal barroco como la 'Música Acuática' (interpretada en el Támesis en 1717), la 'Música para los Reales Fuegos de Artificio' (1749) y el himno de coronación 'Zadok the Priest' (1727)."
           ],
-          masterpiece: "El Mesías (HWV 56) / Música Acuática (HWV 348–350)",
+          masterpiece: "El Mesías (HWV 56) / Julio César en Egipto (HWV 17) / Música Acuática (HWV 348–350)",
           motifKey: "handel-hallelujah",
           catalogInfo: {
             systemName: "HWV (Händel-Werke-Verzeichnis)",
-            structure: "Compilado por Bernd Baselt entre 1978 y 1986. Divide las obras en: HWV 1–42 (Óperas), 43–100 (Oratorios y odas), 312–425 (Música orquestal y de cámara).",
-            keyWorks: ["HWV 56 (El Mesías)", "HWV 348-350 (Música Acuática)", "HWV 351 (Música para los Reales Fuegos de Artificio)", "HWV 258 (Zadok the Priest - Himno de Coronación)"]
+            structure: "Compilado por Bernd Baselt entre 1978 y 1986 en tres volúmenes temáticos: HWV 1–42 (Óperas), HWV 43–76 (Oratorios, odas y serenatas), HWV 77–256 (Cantatas y música vocal) y HWV 287–612 (Música orquestal, de cámara y teclado).",
+            keyWorks: ["HWV 56 (El Mesías)", "HWV 17 (Giulio Cesare in Egitto)", "HWV 348–350 (Música Acuática)", "HWV 351 (Música para los Reales Fuegos de Artificio)", "HWV 258 (Zadok the Priest)"]
           },
           periods: [
             {
-              name: "Etapa Italiana y Conquista de Londres con la Ópera (1706–1728)",
-              focus: "Triunfa en Roma y Florencia con la ópera seria italiana. Se instala en Londres y funda la Royal Academy of Music.",
-              proposal: "El aria da capo italiana como espectáculo de virtuosismo vocal extremo (castrati y primadonnas)."
+              name: "Etapa de Halle, Hamburgo e Italia (1702–1710)",
+              focus: "Se inicia en la ópera de Hamburgo y viaja a Florencia, Roma, Nápoles y Venecia (1706–1710), donde entabla contacto con Corelli, Alessandro y Domenico Scarlatti y triunfa con 'Agrippina'.",
+              proposal: "Asimilación del bel canto italiano y del estilo concertante de Corelli."
             },
             {
-              name: "Invención del Oratorio Inglés y Reinversión Creativa (1732–1759)",
-              focus: "Tras la bancarrota de las compañías de ópera italiana, Händel abandona el teatro en italiano y crea el oratorio dramático bíblico en inglés.",
-              proposal: "El coro monumental del pueblo como protagonista ético de la historia ('El Mesías', 'Judas Macabeo')."
+              name: "Auge de la Ópera Seria Italiana en Londres (1711–1737)",
+              focus: "Se establece en Londres con 'Rinaldo' (1711) y dirige la Royal Academy of Music, componiendo obras maestras de la ópera seria ('Giulio Cesare', 'Rodelinda', 'Alcina') para grandes voces como Senesino, Cuzzoni y Bordoni.",
+              proposal: "El aria da capo como retrato psicológico de gran aliento dramático y riqueza orquestal."
+            },
+            {
+              name: "Era del Oratorio Inglés y Consagración Nacional (1738–1759)",
+              focus: "Ante el desgaste financiero de las compañías de ópera italiana y el cambio de gusto del público londinense, vuelca su creatividad en el oratorio en inglés ('Saúl', 'Israel en Egipto', 'El Mesías', 'Sansón', 'Teodora', 'Jefté').",
+              proposal: "Síntesis del drama teatral italiano, la tradición coral anglicana (Purcell) y la polifonía germánica, dando al coro un papel dramático central."
             }
           ]
         }
@@ -359,40 +364,40 @@ const MUSIC_DATA = {
       name: "El Clasicismo",
       period: "c. 1730/1750 – 1820",
       accent: "#38bdf8",
-      tagline: "La Ilustración: Belleza, claridad simétrica y la forma sonata",
-      context: "La Ilustración de Voltaire, Kant y Rousseau, el auge de la burguesía y el racionalismo científico. Se rechaza la pesadez del contrapunto barroco en favor de melodías limpias, transparentes y estructuradas con elegancia geométrica.",
-      breakthrough: "Invención de la Forma Sonata (exposición, desarrollo, reexposición) y consolidación de la orquesta sinfónica clásica moderna.",
-      instruments: "El fortepiano (ancestro del piano moderno), clarinete (incorporado a la orquesta), cuarteto de cuerdas clásico.",
+      tagline: "La Ilustración: proporción, claridad formal y el drama de la forma sonata",
+      context: "El Siglo de las Luces, la Enciclopedia, el auge de los conciertos públicos por suscripción en Londres, París y Viena, y el paso del sistema cortesano a un mercado editorial y burgués en expansión. Frente a la densidad polifónica del Barroco tardío, se privilegia la melodía articulada con acompañamiento claro y el contraste dramático interno.",
+      breakthrough: "Consolidación de la Forma Sonata (exposición bitemática o polarización tonal, desarrollo y reexposición) y del esquema clásico de la sinfonía, la sonata y el cuarteto de cuerdas.",
+      instruments: "Fortepiano (con mecanismo de macillos capaz de gradaciones dinámicas), clarinete integrado a la orquesta, cuarteto de cuerdas estandarizado.",
       exponents: [
         {
           id: "haydn",
           name: "Joseph Haydn",
           years: "1732 – 1809",
-          role: "El Padre de la Sinfonía y del Cuarteto de Cuerdas",
+          role: "El Arquitecto de la Sinfonía y del Cuarteto de Cuerdas",
           initials: "JH",
           image: "assets/portraits/haydn.jpg",
-          whyExponent: "Trabajó tres décadas aislado en el palacio campestre de los príncipes Esterházy, lo que según sus propias palabras le 'obligó a ser original'. Construyó los cimientos de la sinfonía moderna y fue maestro y amigo de Mozart y profesor de Beethoven.",
+          whyExponent: "Trabajó durante casi tres décadas como Kapellmeister de los príncipes Esterházy, aislamiento relativo que, según recordó a su biógrafo Georg August Griesinger, le permitió experimentar y lo 'forzó a ser original'. Aunque no inventó la sinfonía ni el cuarteto desde cero, estableció su arquitectura clásica de referencia; fue amigo cercano y referente admirado por Mozart (quien le dedicó seis cuartetos) y tutor del joven Beethoven en Viena.",
           milestones: [
-            "Compuso 106 sinfonías y 68 cuartetos de cuerda, definiendo la estructura clásica canónica en 4 movimientos.",
-            "Dotó a la música de ingenio cómico, sorpresas teatrales e infinita humanidad."
+            "Su catálogo reúne 104 sinfonías numeradas tradicionalmente (más la Sinfonía Concertante y las sinfonías tempranas 'A' y 'B', sumando 107 obras en el grupo Hob. I) y 68 cuartetos de cuerda.",
+            "Perfeccionó el desarrollo temático-motívico (construir movimientos enteros a partir de células breves) e integró el humor, el silencio sorpresivo y la expresividad popular en la alta arquitectura sinfónica."
           ],
-          masterpiece: "Sinfonía n.º 94 'La Sorpresa' (Hob. I:94) / Cuartetos Op. 76",
+          masterpiece: "Sinfonía n.º 94 'La Sorpresa' (Hob. I:94) / Cuartetos Op. 76 / La Creación (Hob. XXI:2)",
           motifKey: "haydn-surprise",
           catalogInfo: {
             systemName: "Hob. (Hoboken-Verzeichnis)",
-            structure: "Creado por Anthony van Hoboken en 1957. Ordenado por categorías temáticas en números romanos: Hob. I (Sinfonías 1-108), Hob. III (Cuartetos de cuerda), Hob. XVI (Sonatas para piano).",
-            keyWorks: ["Hob. I:94 (Sinfonía de la Sorpresa)", "Hob. I:104 (Sinfonía Londres)", "Hob. III:77 (Cuarteto Emperador)", "Hob. XXI:2 (El Oratorio La Creación)"]
+            structure: "Compilado por el musicólogo neerlandés Anthony van Hoboken (3 vols., 1957–1978). Organizado por géneros en números romanos: Hob. I (Sinfonías), Hob. III (Cuartetos de cuerda), Hob. XVI (Sonatas para teclado), Hob. XXI (Oratorios) y Hob. XXII (Misas).",
+            keyWorks: ["Hob. I:94 (Sinfonía n.º 94 'La Sorpresa')", "Hob. I:104 (Sinfonía n.º 104 'Londres')", "Hob. III:77 (Cuarteto Op. 76 n.º 3 'Emperador')", "Hob. XXI:2 (Oratorio 'La Creación')"]
           },
           periods: [
             {
-              name: "Etapa Esterházy Temprana y 'Sturm und Drang' (1761–1779)",
-              focus: "Al servicio del príncipe Nicolás el Magnífico en Hungría. Explora la experimentación emocional del movimiento 'Tempestad y Empuje' en modo menor.",
-              proposal: "La sonata como diálogo dramático y el cuarteto de cuerdas como cuatro caballeros sabios conversando entre sí."
+              name: "Etapa de Eisenstadt, Esterháza y el 'Sturm und Drang' (1761–1779)",
+              focus: "Al servicio de los príncipes Paul Anton y Nikolaus Esterházy. Dirige orquesta, música de cámara y teatro de ópera; hacia 1768–1772 compone obras de intensa tensión dramática en modo menor (como la Sinfonía n.º 45 'De los adioses' y los Cuartetos Op. 20).",
+              proposal: "Emancipación de las cuatro voces del cuarteto de cuerdas y cohesión orgánica de la forma sonata."
             },
             {
-              name: "Etapa de Madurez y Sinfonías de Londres (1780–1809)",
-              focus: "Liberado de sus obligaciones feudales, viaja a Londres como celebridad internacional invitado por Salomon. Compone sus 12 sinfonías londinenses y el oratorio 'La Creación'.",
-              proposal: "La música orquestal como entretenimiento público de masas con humor, clímax dinámicos y majestuosidad humanista."
+              name: "Etapa de Difusión Europea, París y Londres (1780–1809)",
+              focus: "Su nuevo contrato de 1779 le permite publicar libremente por toda Europa (Sinfonías de París, 1785–1786). Tras la muerte del príncipe Nikolaus en 1790, realiza dos triunfales estancias en Londres (1791–1792 y 1794–1795) invitado por Johann Peter Salomon, y culmina en Viena con sus seis últimas misas y los oratorios 'La Creación' y 'Las Estaciones'.",
+              proposal: "Síntesis entre ciencia contrapuntística, claridad melódica accesible al gran público y monumentalidad coral."
             }
           ]
         },
@@ -400,36 +405,36 @@ const MUSIC_DATA = {
           id: "mozart",
           name: "Wolfgang Amadeus Mozart",
           years: "1756 – 1791",
-          role: "El Genio Melódico Insuperable de la Humanidad",
+          role: "La Síntesis Suprema del Clasicismo Vienés",
           initials: "WAM",
           image: "assets/portraits/mozart.jpg",
-          whyExponent: "Niño prodigio que componía a los 5 años y dominó todos los géneros existentes (ópera, sinfonía, concierto para piano, música sacra y de cámara) con una fluidez melódica perfecta que parecía fluir sin esfuerzo humano.",
+          whyExponent: "Formado desde la infancia en recorridos por las principales cortes y centros musicales de Europa, Mozart asimiló los estilos italiano, francés y germánico para llevar a su plenitud todos los géneros de su época: la ópera (seria, buffa y singspiel), el concierto para piano, la sinfonía, el cuarteto y el quinteto de cuerdas, y la música sacra.",
           milestones: [
-            "Revolucionó la ópera convirtiéndola en un estudio psicológico de pasiones y dilemas humanos reales ('Las Bodas de Fígaro', 'Don Giovanni').",
-            "Creó el modelo arquetípico del Concierto para Piano solista dialogando con la orquesta."
+            "Transformó la dramaturgia operística dotando a sus personajes de profundidad psicológica y conjuntos vocales donde la acción avanza en tiempo real ('Las bodas de Fígaro', 'Don Giovanni', 'Così fan tutte', 'La flauta mágica').",
+            "Con sus 27 conciertos para piano (especialmente la serie vienesa desde 1784) elevó el género a un diálogo sinfónico y dramático de igual a igual entre solista y orquesta."
           ],
-          masterpiece: "Serenata n.º 13 'Eine kleine Nachtmusik' (K. 525) / Requiem en Re menor (K. 626)",
+          masterpiece: "Serenata n.º 13 'Eine kleine Nachtmusik' (K. 525) / Don Giovanni (K. 527) / Réquiem en Re menor (K. 626)",
           motifKey: "mozart-nachtmusik",
           catalogInfo: {
             systemName: "K. o KV (Köchel-Verzeichnis)",
-            structure: "Creado por el botánico austríaco Ludwig von Köchel en 1862. Orden cronológico estricto desde K. 1 (minueto compuesto a los 5 años) hasta K. 626 (el Requiem inconcluso).",
-            keyWorks: ["K. 525 (Eine kleine Nachtmusik)", "K. 466 (Concierto para piano n.º 20 en Re menor)", "K. 551 (Sinfonía n.º 41 'Júpiter')", "K. 626 (Requiem en Re menor)"]
+            structure: "Creado por Ludwig von Köchel en 1862 (y actualizado hasta su 9.ª edición oficial, KV 2024). Ordena cronológicamente más de 600 composiciones desde sus primeras piezas de teclado a los 5 años (K. 1a–1d) hasta el 'Réquiem' inconcluso (K. 626).",
+            keyWorks: ["K. 525 (Serenata 'Eine kleine Nachtmusik')", "K. 466 (Concierto para piano n.º 20 en Re menor)", "K. 492 (Las bodas de Fígaro)", "K. 551 (Sinfonía n.º 41 'Júpiter')", "K. 626 (Réquiem en Re menor, completado por F. X. Süssmayr)"]
           },
           periods: [
             {
-              name: "Etapa de Juventud e Itinerancia Europea (1762–1773)",
-              focus: "Giras infantiles exhibido por su padre Leopold ante las cortes de París, Londres y Roma. Asimilación instantánea de todos los estilos europeos.",
-              proposal: "El virtuosismo instrumental temprano puesto al servicio del encanto melódico transparente."
+              name: "Etapa de Formación y Viajes Europeos (1761–1773)",
+              focus: "Giras junto a su padre Leopold y su hermana Nannerl por Múnich, Viena, París, Londres e Italia. Conoce a Johann Christian Bach en Londres y al padre Martini en Bolonia.",
+              proposal: "Asimilación temprana del estilo galante, la sinfonía italiana de tres movimientos y la escritura vocal operística."
             },
             {
-              name: "Periodo de Salzburgo y Rebelión contra el Arzobispo (1773–1781)",
-              focus: "Encerrado en el régimen provinciano de Salzburgo al servicio del autoritario Arzobispo Colloredo. Rompe con su patrón con una patada en el trasero y huye a Viena como artista independiente.",
-              proposal: "Conciertos de violín y ópera 'Idomeneo': el estilo clásico adquiere vigor dramático y libertad expresiva."
+              name: "Etapa de Salzburgo, Mannheim/París e 'Idomeneo' (1773–1781)",
+              focus: "Músico en la corte del príncipe-arzobispo Hieronymus von Colloredo en Salzburgo. Viaja a Mannheim y París (1777–1778, donde muere su madre) y estrena 'Idomeneo' en Múnich (1781). En junio de 1781 rompe definitivamente con el servicio arzobispal —siendo expulsado literalmente de un puntapié por el chambelán conde Karl von Arco— y se instala en Viena.",
+              proposal: "Expansión orquestal (inspirada en la escuela de Mannheim) y madurez de los conciertos para violín y la Sinfonía Concertante K. 364."
             },
             {
-              name: "Madurez en Viena y Trascendencia Final (1781–1791)",
-              focus: "Matrimonio con Constanze Weber. Década febril de conciertos por suscripción, sus tres grandes óperas con libreto de Da Ponte, la Sinfonía Júpiter y el misterioso Requiem de encargo.",
-              proposal: "Psicología operística profunda: el claroscuro donde la risa y la tragedia coexisten en el mismo compás armónico."
+              name: "Década de Viena (1781–1791): Independencia, Óperas y Obra Tardía",
+              focus: "Actúa en Viena como pianista, docente y compositor por suscripción y encargo. Estudia los manuscritos de J. S. Bach y Händel en el salón del barón Gottfried van Swieten, dedica seis cuartetos a Haydn y colabora con el libretista Lorenzo Da Ponte.",
+              proposal: "Fusión del equilibrio clásico con el contrapunto aprendido de Bach (culminando en el final fugado de la Sinfonía 'Júpiter' K. 551) y el claroscuro dramático de sus últimas obras."
             }
           ]
         }
@@ -440,45 +445,45 @@ const MUSIC_DATA = {
       name: "El Romanticismo",
       period: "c. 1815 – 1910",
       accent: "#f43f5e",
-      tagline: "El fuego interior: pasión desenfrenada, el héroe y la tragedia",
-      context: "Revolución Francesa, guerras napoleónicas y Revolución Industrial. Las ciudades se llenan de fábricas de carbón y humo. El artista rechaza la frialdad mecanicista burguesa y se proclama un héroe solitario que expresa su dolor íntimo, su amor imposible y el misterio abisal de la naturaleza.",
-      breakthrough: "Expansión orquestal masiva (trombones, tubas, arpas, percusión colosal), el Poema Sinfónico, el virtuosismo instrumental de solistas y el cromatismo armónico libre.",
-      instruments: "Piano de concierto moderno de cola de hierro, tuba, corno inglés, contrafagot, celesta.",
+      tagline: "El fuego interior: subjetividad, expansión sinfónica y drama poético",
+      context: "De la Europa postnapoleónica y la Revolución Industrial al surgimiento de los estados nacionales y las grandes salas públicas de concierto. El compositor deja atrás la condición de servidor cortesano para concebirse como artista autónomo; la música se vincula estrechamente con la literatura, la naturaleza, la identidad nacional y la introspección psicológica.",
+      breakthrough: "Ampliación de las formas clásicas, nacimiento del Lied romántico, la pieza lírica breve para piano, el Poema Sinfónico, el drama musical continuo y la expansión tímbrica y armónica de la orquesta.",
+      instruments: "Piano moderno con bastidor de hierro fundido, maderas con sistemas mecánicos de llaves (Boehm), trompas y trompetas de válvulas, tuba, corno inglés, arpa de doble movimiento.",
       exponents: [
         {
           id: "beethoven",
           name: "Ludwig van Beethoven",
           years: "1770 – 1827",
-          role: "El Titán que Rompió las Reglas del Mundo",
+          role: "El Titán entre el Clasicismo Vienés y la Era Romántica",
           initials: "LvB",
           image: "assets/portraits/beethoven.jpg",
-          whyExponent: "El puente monumental entre el Clasicismo y el Romanticismo. A pesar de quedarse completamente sordo a los 30 años, canalizó su sufrimiento en obras revolucionarias de una fuerza ética y cósmica sin precedentes.",
+          whyExponent: "Figura bisagra de la historia musical occidental. Partiendo de las formas clásicas de Haydn y Mozart, expandió sus proporciones, su tensión motívica y su carga expresiva hasta abrir el camino al siglo XIX. Su pérdida auditiva —cuyos primeros síntomas aparecieron hacia los 26–28 años (finales de la década de 1790) y que derivó en sordera prácticamente total hacia 1814–1818— coincidió con una radicalización formal sin precedentes.",
           milestones: [
-            "Con la 3ª Sinfonía ('Heroica') rompió el clasicismo duplicando la duración tradicional de una sinfonía.",
-            "Con la 9ª Sinfonía incorporó por primera vez la voz humana y un coro en una sinfonía monumental ('Oda a la Alegría')."
+            "Con la 3.ª Sinfonía 'Heroica' (Op. 55, 1803–1804) transformó la escala dramática y arquitectónica del género sinfónico.",
+            "Con la 9.ª Sinfonía (Op. 125, 1824) integró por primera vez voces solistas y coro en una sinfonía del gran canon repertorial ('Oda a la Alegría' de Schiller; si bien existían antecedentes aislados como la 'Schlacht-Sinfonie' de Peter von Winter de 1814)."
           ],
-          masterpiece: "Sinfonía n.º 5 en Do menor (Op. 67) / Sinfonía n.º 9 (Op. 125)",
+          masterpiece: "Sinfonía n.º 5 en Do menor (Op. 67) / Sinfonía n.º 9 (Op. 125) / Cuartetos tardíos (Op. 127–135)",
           motifKey: "beethoven-5th",
           catalogInfo: {
-            systemName: "Opus (Op.) & WoO (Werk ohne Opuszahl)",
-            structure: "Sus 138 obras principales con número de Opus publicadas en vida o póstumas, más el catálogo WoO (Kinsky-Halm 1955) para 205 obras sin opus comercial (ej. Para Elisa WoO 59).",
-            keyWorks: ["Op. 55 (3ª Sinfonía Heroica)", "Op. 67 (5ª Sinfonía)", "Op. 125 (9ª Sinfonía Coral)", "Op. 27 n.º 2 (Sonata Claro de Luna)", "WoO 59 (Para Elisa)"]
+            systemName: "Opus (Op. 1–138) & Catálogos WoO (Kinsky-Halm) / Hess / Biamonti",
+            structure: "138 números de Opus publicados en vida o póstumamente, complementados en 1955 por el catálogo Kinsky-Halm de 205 'Obras sin número de Opus' (WoO, Werk ohne Opuszahl), como 'Para Elisa' (WoO 59).",
+            keyWorks: ["Op. 55 (Sinfonía n.º 3 'Heroica')", "Op. 67 (Sinfonía n.º 5 en Do menor)", "Op. 125 (Sinfonía n.º 9 'Coral')", "Op. 123 (Missa Solemnis)", "Op. 131 (Cuarteto de cuerdas n.º 14 en Do sostenido menor)"]
           },
           periods: [
             {
-              name: "Primer Periodo Clásico de Viena (1792–1802)",
-              focus: "Estudia con Haydn. Se establece como el pianista improvisador más temible de los salones aristocráticos. Compone sus primeros cuartetos Op. 18 y la 1ª y 2ª Sinfonías.",
-              proposal: "Maestría de la forma sonata clásica heredada de Mozart y Haydn, pero con una densidad motívica y agresividad dinámica ya personales."
+              name: "Primer Periodo: Bonn y Afianzamiento en Viena (1770–1802)",
+              focus: "Se traslada de Bonn a Viena en 1792 para estudiar con Haydn (y contrapunto con Albrechtsberger). Destaca como pianista e improvisador y publica sus primeras sonatas para piano (incluida la 'Patética' Op. 13), los Cuartetos Op. 18 y las Sinfonías 1.ª y 2.ª.",
+              proposal: "Asimilación del molde clásico vienés con contrastes dinámicos bruscos ('sforzandi') y energía rítmica incisiva."
             },
             {
-              name: "Segundo Periodo Heroico (1803–1814)",
-              focus: "Crisis del 'Testamento de Heiligenstadt' (confiesa su desesperación por la sordera irreversible y decide no suicidarse para cumplir su destino artístico).",
-              proposal: "La música como lucha épica contra el destino: de la oscuridad de Do menor a la luz triunfal de Do mayor (Sinfonías 3ª, 5ª, 7ª, Concierto Emperador)."
+              name: "Segundo Periodo ('Heroico', 1802–1812)",
+              focus: "Tras la crisis reflejada en el 'Testamento de Heiligenstadt' (octubre de 1802), inaugura una nueva vía compositiva con las Sinfonías 3.ª a 8.ª, la ópera 'Fidelio', el Concierto para violín, los Conciertos para piano 4.º y 5.º y los Cuartetos 'Razumovsky' Op. 59.",
+              proposal: "Desarrollo orgánico extremo a partir de células motívicas breves y trayectorias dramáticas de la tensión al triunfo."
             },
             {
-              name: "Tercer Periodo Trascendente y Tardío (1815–1827)",
-              focus: "Sordera total y aislamiento absoluto del mundo exterior. Compone en su mente la Missa Solemnis, la Novena Sinfonía y sus últimos cuartetos de cuerda.",
-              proposal: "Disolución de las formas clásicas en polifonía mística, variación infinita y visión profética del siglo XX (los Cuartetos tardíos y la Gran Fuga Op. 133)."
+              name: "Tercer Periodo (Tardío, 1813–1827)",
+              focus: "En medio de una sordera ya profunda —comunicándose con sus visitantes mediante cuadernos de conversación—, compone las últimas cinco sonatas para piano (Op. 101, 106 'Hammerklavier', 109, 110 y 111), las 'Variaciones Diabelli', la 'Missa Solemnis', la 9.ª Sinfonía y los cinco últimos cuartetos de cuerda con la 'Gran Fuga' Op. 133.",
+              proposal: "Síntesis de variación trascendental, polifonía fugada, lirismo contemplativo y experimentación formal que anticipa la modernidad."
             }
           ]
         },
@@ -486,31 +491,31 @@ const MUSIC_DATA = {
           id: "chopin",
           name: "Frédéric Chopin",
           years: "1810 – 1849",
-          role: "El Poeta del Piano y el Alma del Rubato",
+          role: "El Poeta del Piano Romántico",
           initials: "FC",
           image: "assets/portraits/chopin.jpg",
-          whyExponent: "Consagró su genio casi exclusivamente al piano. Creó una técnica expresiva ('tempo rubato': flexibilidad del tiempo musical como el latido orgánico de un corazón) y una poesía melancólica ligada al drama del exilio de su Polonia natal.",
+          whyExponent: "Nacido cerca de Varsovia de madre polaca y padre francés, centró casi toda su producción en el piano. Exploró a fondo las posibilidades de resonancia del pedal, la ornamentación inspirada en el bel canto italiano y el uso expresivo del 'tempo rubato' (práctica ya documentada desde el siglo XVIII por Tosi y Mozart, que Chopin convirtió en sello poético de flexibilidad melódica sobre un acompañamiento de pulso estable).",
           milestones: [
-            "Elevó danzas populares de resistencia nacional como la Mazurka y la Polonesa a la cúspide de la alta cultura.",
-            "Reinventó los Estudios de piano (Op. 10 y Op. 25), fundiendo el virtuosismo técnico con la poesía más desgarradora."
+            "Transformó danzas polacas como la mazurka y la polonesa en formas de concierto de profunda sofisticación armónica e identidad cultural.",
+            "Con sus 24 Estudios (Op. 10 y Op. 25), sus cuatro Baladas y sus 24 Preludios (Op. 28) unió la innovación técnica pianística con una audaz armonía cromática."
           ],
-          masterpiece: "Nocturno en Mi bemol mayor (Op. 9 n.º 2) / Balada n.º 1 en Sol menor (Op. 23)",
+          masterpiece: "Balada n.º 1 en Sol menor (Op. 23) / 24 Preludios (Op. 28) / Nocturno en Mi bemol mayor (Op. 9 n.º 2)",
           motifKey: "chopin-nocturne",
           catalogInfo: {
-            systemName: "Opus & Catálogos Brown (B.) / Kobylańska (KK)",
-            structure: "Obras con Opus comercial (Op. 1 al 65 en vida, Op. 66 al 74 póstumas de Fontana) y catálogos de manuscritos tempranos de Maurice Brown y Krystyna Kobylańska.",
-            keyWorks: ["Op. 9 (Nocturnos)", "Op. 10 y 25 (Estudios para piano)", "Op. 23 (Balada n.º 1)", "Op. 28 (24 Preludios)", "Op. 53 (Polonesa Heroica)"]
+            systemName: "Opus (Op. 1–65 en vida; Op. 66–74 póstumos) & Catálogos Brown (B.) / Kobylańska (KK) / Chomiński (CT)",
+            structure: "65 números de Opus publicados en vida, 9 publicados póstumamente por Julian Fontana, y obras sin opus catalogadas por Maurice J. E. Brown y Krystyna Kobylańska.",
+            keyWorks: ["Op. 9 y Op. 27 (Nocturnos)", "Op. 10 y Op. 25 (Estudios)", "Op. 23 (Balada n.º 1 en Sol menor)", "Op. 28 (24 Preludios)", "Op. 35 y Op. 58 (Sonatas para piano n.º 2 y n.º 3)"]
           },
           periods: [
             {
-              name: "Periodo Polaco de Juventud en Varsovia (1810–1830)",
-              focus: "Estudios en el Conservatorio de Varsovia. Asimilación del folclore rural polaco y del estilo brillante para piano. Compone sus dos Conciertos para Piano antes de partir a los 20 años.",
-              proposal: "Lirismo vocal del bel canto italiano transportado a las teclas del piano con acento patrio polaco."
+              name: "Etapa de Formación en Varsovia (1810–1830)",
+              focus: "Estudia con Wojciech Żywny y Józef Elsner en Varsovia. Asimila el folclore de Mazovia, la ópera italiana y el estilo brillante (Hummel, Field), y compone sus dos Conciertos para piano antes de dejar Polonia en noviembre de 1830.",
+              proposal: "Canto instrumental ornamentado y virtuosismo juvenil con raíces en las danzas polacas."
             },
             {
-              name: "Periodo Parisino y Relación con George Sand (1831–1849)",
-              focus: "Llega a París tras el aplastamiento ruso del levantamiento de Varsovia. Rechaza los grandes auditorios ruidosos en favor de los salones íntimos. Acosado por la tuberculosis compone sus baladas, scherzos y nocturnos.",
-              proposal: "El piano como confidencia íntima: el rubato (elasticidad del tiempo), disonancias cromáticas y melancolía trágica (el concepto polaco de 'Żal')."
+              name: "Etapa de París, Mallorca y Nohant (1831–1849)",
+              focus: "Establecido en París tras el aplastamiento del Levantamiento de Noviembre en Polonia, prefiere la enseñanza y los salones selectos (como la sala Pleyel) a los recitales masivos. Durante sus años junto a la escritora George Sand (1838–1847, con estancias en Valldemossa y Nohant) compone la mayoría de sus obras maestras de madurez.",
+              proposal: "Cromatismo armónico refinado, polifonía interna del teclado y reinvención de la balada, el scherzo, el nocturno y la barcarola."
             }
           ]
         },
@@ -518,31 +523,31 @@ const MUSIC_DATA = {
           id: "tchaikovsky",
           name: "Piotr Ilich Chaikovski",
           years: "1840 – 1893",
-          role: "El Maestro del Drama Emocional y el Ballet Universal",
+          role: "El Maestro del Lirismo Sinfónico y del Ballet Dramático",
           initials: "PIT",
           image: "assets/portraits/tchaikovsky.jpg",
-          whyExponent: "El compositor ruso más universal. Su capacidad para crear melodías arrebatadoras de desgarro interior y orquestaciones con una desgarradora carga emocional lo convirtieron en un fenómeno mundial.",
+          whyExponent: "Primer compositor ruso formado profesionalmente en el recién fundado Conservatorio de San Petersburgo (bajo Anton Rubinstein) cuya obra conquistó de inmediato las salas de Europa y América. Unió la arquitectura sinfónica occidental con el temperamento melódico y rítmico ruso y un dominio magistral del color orquestal.",
           milestones: [
-            "Revolucionó el ballet elevándolo de mero acompañamiento bailable a drama sinfónico serio ('El Lago de los Cisnes', 'El Cascanueces', 'La Bella Durmiente').",
-            "Compuso la Sinfonía n.º 6 'Patética', una de las despedidas musicales más estremecedoras de la historia."
+            "Renovó la música de ballet dándole continuidad sinfónica y riqueza dramática en su trilogía 'El lago de los cisnes' (1877), 'La bella durmiente' (1890) y 'El cascanueces' (1892).",
+            "Compuso seis sinfonías numeradas (culminando en la 6.ª Sinfonía 'Patética', Op. 74, estrenada nueve días antes de su muerte en 1893), conciertos de referencia y óperas como 'Eugenio Oneguin' y 'La dama de picas'."
           ],
-          masterpiece: "Sinfonía n.º 6 'Patética' (Op. 74) / Concierto para Piano n.º 1 (Op. 23)",
+          masterpiece: "Sinfonía n.º 6 'Patética' (Op. 74) / Concierto para piano n.º 1 (Op. 23) / El lago de los cisnes (Op. 20)",
           motifKey: "tchaikovsky-swan",
           catalogInfo: {
-            systemName: "Opus & Catálogo ČW (Vaidman-Korabelnikova)",
-            structure: "Opus 1 al 80 con catalogación temática oficial del Museo Chaikovski de Klin.",
-            keyWorks: ["Op. 23 (Concierto para piano n.º 1)", "Op. 74 (Sinfonía n.º 6 Patética)", "Op. 20 (El Lago de los Cisnes)", "Op. 71 (El Cascanueces)"]
+            systemName: "Opus (Op. 1–80) & Catálogo ČW (Čajkovskij-Werkverzeichnis, Vaidman-Korabelnikova)",
+            structure: "80 números de Opus junto con obras sin opus (como la obertura 'Romeo y Julieta') sistematizadas en el catálogo temático ČW del Museo Estatal de Klin (2006).",
+            keyWorks: ["Op. 20 (El lago de los cisnes)", "Op. 23 (Concierto para piano n.º 1)", "Op. 24 (Ópera Eugenio Oneguin)", "Op. 35 (Concierto para violín)", "Op. 74 (Sinfonía n.º 6 'Patética')"]
           },
           periods: [
             {
               name: "Etapa del Conservatorio de Moscú (1866–1877)",
-              focus: "Profesor de armonía. Lucha con su orientación sexual en la Rusia imperial. Compone el Concierto para piano n.º 1 y el ballet 'El Lago de los Cisnes'.",
-              proposal: "Fusión del romanticismo sinfónico occidental europeo con el lirismo folclórico ruso y la pasión melódica desbordada."
+              focus: "Profesor de teoría y armonía en Moscú. Entabla diálogo y debate estético con el 'Grupo de los Cinco' (Balákirev) y compone la obertura-fantasía 'Romeo y Julieta', sus tres primeras sinfonías, el Concierto para piano n.º 1 y 'El lago de los cisnes'.",
+              proposal: "Integración de la técnica formal germánica y francesa con giros modales y melódicos de la tradición rusa."
             },
             {
-              name: "Madurez Internacional y Mecenazgo de Nadezhda von Meck (1878–1893)",
-              focus: "Pensión económica que le permite dedicarse a componer sin dar clases, con la condición de no verse jamás en persona con su mecenas. Compone sus sinfonías 4ª, 5ª y 6ª.",
-              proposal: "El tema del 'Fatum' (el destino implacable) que aplasta la felicidad terrenal, culminando en el réquiem laico de la Sinfonía Patética."
+              name: "Etapa de Mecenazgo de Nadezhda von Meck y Madurez (1877–1893)",
+              focus: "Tras la crisis personal de 1877, recibe durante trece años el apoyo financiero de Nadezhda von Meck (con quien mantiene una célebre correspondencia epistolar sin encontrarse en persona). Viaja como director invitado por Europa y Estados Unidos (inaugurando el Carnegie Hall en 1891) y compone sus Sinfonías 4.ª, 5.ª y 6.ª.",
+              proposal: "Sinfonismo dramático articulado en torno a temas cíclicos y un tratamiento virtuoso de las maderas, metales y cuerdas."
             }
           ]
         },
@@ -550,36 +555,36 @@ const MUSIC_DATA = {
           id: "wagner",
           name: "Richard Wagner",
           years: "1813 – 1883",
-          role: "El Revolucionario de la Obra de Arte Total (Gesamtkunstwerk)",
+          role: "El Reformador del Drama Musical (Gesamtkunstwerk)",
           initials: "RW",
           image: "assets/portraits/wagner.jpg",
-          whyExponent: "Figura gigantesca y polémica que transformó para siempre el teatro y la música occidental. Diseñó su propio teatro en Bayreuth y concibió el drama musical como la fusión indivisible de poesía, escenografía, mito y música continua sin arias separadas.",
+          whyExponent: "Compositor, director y autor de sus propios libretos que transformó el teatro lírico y el lenguaje armónico del siglo XIX. Concibió el drama musical como una 'obra de arte total' ('Gesamtkunstwerk') donde poesía, música, escena y arquitectura teatral (materializada en el Festspielhaus de Bayreuth, inaugurado en 1876) se funden en una corriente sinfónica continua sin división en arias y recitativos cerrados.",
           milestones: [
-            "Desarrolló el sistema del 'Leitmotiv' (motivo conductor que identifica a un personaje, objeto o emoción), técnica que usan hoy todos los compositores de cine como John Williams.",
-            "Con el 'Acorde de Tristán' (1859) abrió una disonancia que no se resolvía, empujando la música hacia la atonalidad del siglo XX."
+            "Sistematizó a escala monumental el uso dramático del 'Leitmotiv' (motivo conductor asociado a personajes, objetos, ideas o estados psicológicos, con antecedentes en Weber o Berlioz), técnica que influyó decisivamente en la ópera posterior y en la música cinematográfica.",
+            "Con el cromatismo y la suspensión de resoluciones de 'Tristán e Isolda' (compuesta entre 1857 y 1859; estrenada en Múnich en 1865) llevó la tonalidad funcional a una tensión extrema que abrió el camino a la música del siglo XX."
           ],
-          masterpiece: "El Anillo del Nibelungo (Ciclo de 4 óperas) / Tristán e Isolda",
+          masterpiece: "El anillo del nibelungo (tetralogía, WWV 86) / Tristán e Isolda (WWV 90)",
           motifKey: "wagner-valkyrie",
           catalogInfo: {
             systemName: "WWV (Wagner-Werk-Verzeichnis)",
-            structure: "Compilado por John Deathridge, Martin Geck y Egon Voss en 1986. Contiene 113 obras cronológicas.",
-            keyWorks: ["WWV 86 (El Anillo del Nibelungo)", "WWV 90 (Tristán e Isolda)", "WWV 96 (Los Maestros Cantores de Núremberg)", "WWV 111 (Parsifal)"]
+            structure: "Compilado por John Deathridge, Martin Geck y Egon Voss en 1986. Ordena cronológicamente 113 obras musicales (sin utilizar números de Opus tradicionales).",
+            keyWorks: ["WWV 70 (Tannhäuser)", "WWV 75 (Lohengrin)", "WWV 86A–D (El anillo del nibelungo: El oro del Rin, La valquiria, Sigfrido, El ocaso de los dioses)", "WWV 90 (Tristán e Isolda)", "WWV 96 (Los maestros cantores de Núremberg)", "WWV 111 (Parsifal)"]
           },
           periods: [
             {
-              name: "Periodo Romántico Revolucionario en Dresde (1840–1849)",
-              focus: "Director de la ópera de Dresde. Participa activamente en el levantamiento revolucionario de 1849, lo que le obliga a huir de Alemania como criminal buscado.",
-              proposal: "Óperas románticas de transición ('El Holandés Errante', 'Tannhäuser', 'Lohengrin'): superación paulatina de la ópera de números cerrados."
+              name: "Etapa de Dresde y la Ópera Romántica Alemana (1842–1849)",
+              focus: "Kapellmeister de la corte de Sajonia en Dresde, donde estrena 'Rienzi', 'El holandés errante' y 'Tannhäuser' y concluye 'Lohengrin'. Su participación en la insurrección de mayo de 1849 en Dresde provoca una orden de captura y su huida a Suiza.",
+              proposal: "Transición desde la ópera romántica por escenas hacia una mayor continuidad dramática y temática."
             },
             {
-              name: "Periodo del Exilio Suizo y 'Tristán e Isolda' (1849–1864)",
-              focus: "Escribe sus ensayos teóricos ('Ópera y Drama') y redacta el poema del Anillo del Nibelungo. Amor prohibido con Mathilde Wesendonck.",
-              proposal: "El cromatismo infinito y la melodía sin fin: los acordes no se resuelven, reflejando el anhelo erótico inextinguible."
+              name: "Etapa del Exilio en Zúrich y 'Tristán e Isolda' (1849–1864)",
+              focus: "Escribe sus ensayos teóricos ('El arte y la revolución', 'La obra de arte del futuro', 'Ópera y drama'), redacta el poema completo de 'El anillo del nibelungo', inicia su composición y escribe 'Tristán e Isolda'.",
+              proposal: "La 'melodía infinita' y el entramado sinfónico de motivos conductores donde la orquesta comenta el subtexto psicológico del drama."
             },
             {
-              name: "Periodo de Bayreuth y el Rey Luis II de Baviera (1864–1883)",
-              focus: "Financiado por el monarca bávaro construye el Festspielhaus de Bayreuth con foso de orquesta invisible. Estreno de la Tetralogía completa y 'Parsifal'.",
-              proposal: "La orquesta oculta como el inconsciente freudiano del drama que guía psicológicamente la acción mitológica."
+              name: "Etapa de Luis II de Baviera y el Festival de Bayreuth (1864–1883)",
+              focus: "Bajo el mecenazgo del rey Luis II de Baviera estrena en Múnich 'Tristán e Isolda' (1865) y 'Los maestros cantores' (1868), y levanta el teatro de Bayreuth con foso orquestal cubierto para el estreno integral del 'Anillo' (1876) y de 'Parsifal' (1882).",
+              proposal: "Acústica inmersiva con foso oculto y culminación de la tetralogía mítica y del drama sacro tardío."
             }
           ]
         }
@@ -590,40 +595,40 @@ const MUSIC_DATA = {
       name: "Siglo XX y Modernismo",
       period: "c. 1890 – 1975",
       accent: "#06b6d4",
-      tagline: "La explosión del color, la ruptura del ritmo y la era atonal",
-      context: "Guerras mundiales, trincheras con gas mostaza, psicoanálisis de Freud, teoría de la relatividad de Einstein, cine e industrialización. Los compositores sienten que la tonalidad tradicional se agotó y buscan nuevos lenguajes radicales: el color tímbrico, el dodecafonismo y la violencia rítmica.",
-      breakthrough: "Impresionismo tímbrico, abolición de la tonalidad jerárquica (Atonalismo), invención del Dodecafonismo serial y polirritmias brutales.",
-      instruments: "Ondas Martenot, sintetizadores tempranos, percusión expandida (yunques, sirenas), orquesta de cámara recortada.",
+      tagline: "La emancipación del timbre, el ritmo asimétrico y la pluralidad de lenguajes",
+      context: "Las dos guerras mundiales, la vanguardia artística (simbolismo, expresionismo, cubismo), el nacimiento de la grabación fonográfica, la radio y el cine transforman radicalmente la cultura sonora. En vez de un único estilo dominante, el siglo XX despliega múltiples caminos simultáneos: impresionismo, neoclasicismo, nacionalismos modernos, atonalismo libre, dodecafonismo y música electrónica.",
+      breakthrough: "Disolución o replanteamiento de la jerarquía tonal tradicional, protagonismo estructural del timbre y de la percusión, polirritmias, métrica cambiante y método dodecafónico.",
+      instruments: "Percusión sinfónica ampliada, piano preparado, Ondas Martenot, cinta magnética y primeros sintetizadores analógicos.",
       exponents: [
         {
           id: "debussy",
           name: "Claude Debussy",
           years: "1862 – 1918",
-          role: "El Pintor del Sonido y la Luz Impresionista",
+          role: "El Renovador del Color Armónico y la Textura Moderna",
           initials: "CD",
           image: "assets/portraits/debussy.jpg",
-          whyExponent: "Francés rebelde que rompió la tiranía de la armonía germánica. En lugar de tensar acordes hacia una tónica obligada, trataba a cada acorde como un color pictórico libre, utilizando escalas de tonos enteros y pentatónicas exóticas.",
+          whyExponent: "Aunque él mismo rechazaba la etiqueta de 'impresionista' y se sentía más cercano a los poetas simbolistas (Mallarmé, Verlaine), abrió las puertas de la música del siglo XX al liberar a la armonía francesa del modelo de desarrollo sinfónico germánico. Empleó escalas modales, pentatónicas, de tonos enteros y acordes paralelos valorados por su sonoridad y color propios.",
           milestones: [
-            "Con el 'Preludio a la Siesta de un Fauno' (1894), Pierre Boulez dijo que 'la música moderna despertó'.",
-            "Creó texturas orquestales donde el agua, la niebla y la noche se perciben de forma casi táctil ('La Mer')."
+            "Con su 'Preludio a la siesta de un fauno' (1894, inspirado en la égloga de Mallarmé), obra que Pierre Boulez señaló como el despertar de la música moderna, colocó el timbre de la flauta y la fluidez rítmica en el centro de la forma.",
+            "Transformó la escritura para piano ('Preludios', 'Estampas', 'Imágenes'), la ópera ('Pelléas et Mélisande', 1902) y el poema orquestal ('Nocturnos', 'La Mer', 1905)."
           ],
-          masterpiece: "Clair de Lune (Suite Bergamasque) / La Mer",
+          masterpiece: "Preludio a la siesta de un fauno (L. 86) / La Mer (L. 109) / Clair de Lune (Suite bergamasque, L. 75)",
           motifKey: "debussy-clair",
           catalogInfo: {
             systemName: "L. (Catálogo Lesure)",
-            structure: "Compilado por François Lesure en 1977 y revisado en 2001. Contiene 141 obras catalogadas cronológicamente.",
-            keyWorks: ["L. 75 (Suite Bergamasque con Clair de Lune)", "L. 86 (Preludio a la Siesta de un Fauno)", "L. 109 (La Mer)", "L. 100 (Ópera Pelléas et Mélisande)"]
+            structure: "Catalogado cronológicamente por el musicólogo francés François Lesure en 1977 (numeración original L. 1–141, revisada en 2001/2003).",
+            keyWorks: ["L. 75 (Suite bergamasque, que incluye 'Clair de lune')", "L. 86 (Prélude à l'après-midi d'un faune)", "L. 88 (Ópera Pelléas et Mélisande)", "L. 109 (La Mer, tres bocetos sinfónicos)", "L. 117 y L. 123 (Preludios para piano, Libros I y II)"]
           },
           periods: [
             {
-              name: "Periodo Bohemio y Fascinación Oriental (1884–1894)",
-              focus: "Gana el Premio de Roma. Visita la Exposición Universal de París de 1889 donde escucha el Gamelán de Java. Adopta las escalas pentatónicas.",
-              proposal: "Liberación del acorde: el acorde no necesita resolver en una tónica; existe como timbre y luz en el espacio."
+              name: "Etapa del Premio de Roma y los Círculos Simbolistas (1884–1894)",
+              focus: "Gana el Prix de Rome en 1884. A su regreso a París frecuenta las tertulias de Stéphane Mallarmé, asiste a Bayreuth (admirando y luego distanciándose de Wagner) y escucha el gamelán javanés en la Exposición Universal de París de 1889.",
+              proposal: "Armonía no funcional donde los acordes de séptima y novena se desplazan sin obligación de resolver según las reglas escolásticas."
             },
             {
-              name: "Periodo de Plenitud Simbólica e Impresionista (1894–1918)",
-              focus: "Estreno de 'Pelléas et Mélisande' y de los bocetos sinfónicos 'La Mer'. Enfrenta el cáncer terminal mientras la Primera Guerra Mundial bombardea París.",
-              proposal: "El sonido líquido y la evaporación de las formas geométricas rígidas en favor de un flujo temporal continuo."
+              name: "Madurez Orquestal, Pianística y Sonatas Tardías (1895–1918)",
+              focus: "Estrena 'Pelléas et Mélisande' (1902), 'La Mer' (1905), 'Ibéria' y sus colecciones para piano. Durante la Primera Guerra Mundial, ya enfermo de cáncer, firma sus tres últimas sonatas de cámara como 'Claude Debussy, musicien français'.",
+              proposal: "De la pincelada tímbrica y rítmica sutil de sus obras sinfónicas a la concisión neoclásica de sus sonatas de 1915–1917."
             }
           ]
         },
@@ -631,36 +636,36 @@ const MUSIC_DATA = {
           id: "stravinsky",
           name: "Ígor Stravinski",
           years: "1882 – 1971",
-          role: "El Camaleón del Ritmo que Provocó un Motín",
+          role: "El Renovador del Ritmo y las Formas del Siglo XX",
           initials: "IS",
           image: "assets/portraits/stravinsky.jpg",
-          whyExponent: "Compositor ruso cuya versatilidad marcó las tres grandes olas del siglo XX (Rusa primigenia, Neoclásica y Serial). Puso al ritmo en el trono principal de la música moderna.",
+          whyExponent: "Compositor ruso (nacionalizado francés en 1934 y estadounidense en 1945) cuya trayectoria atravesó y definió tres grandes corrientes del siglo XX: el primitivismo y colorido ruso de sus ballets para Diáguilev, el neoclasicismo de entreguerras y el serialismo tardío. Revolucionó la métrica occidental mediante acentos desplazados, ostinatos y polirritmias.",
           milestones: [
-            "El estreno de 'La Consagración de la Primavera' en París (1913) provocó peleas a golpes en la platea debido a sus acordes disonantes percusivos y compases cambiantes.",
-            "Inspiró el neoclasicismo y transformó para siempre la rítmica del jazz y del rock progresivo."
+            "El estreno escénico de 'La consagración de la primavera' en el Théâtre des Champs-Élysées de París (29 de mayo de 1913), con coreografía de Vaslav Nijinski y dirección de Pierre Monteux, provocó un célebre tumulto de gritos, silbidos y discusiones en la sala antes de consagrarse como hito rítmico y orquestal de la modernidad.",
+            "Lideró durante tres décadas la estética neoclásica ('Pulcinella', 'Sinfonía de los Salmos', 'The Rake's Progress') y en la década de 1950 adoptó de forma personal la escritura serial."
           ],
-          masterpiece: "La Consagración de la Primavera / El Pájaro de Fuego",
+          masterpiece: "La consagración de la primavera (1913) / Petrushka (1911) / Sinfonía de los Salmos (1930)",
           motifKey: "stravinsky-rite",
           catalogInfo: {
-            systemName: "Catálogo White (E.W. White)",
-            structure: "Catalogado por Eric Walter White en 1966 cronológicamente con más de 100 obras maestras.",
-            keyWorks: ["El Pájaro de Fuego (1910)", "Petrushka (1911)", "La Consagración de la Primavera (1913)", "Sinfonía de los Salmos (1930)"]
+            systemName: "Catálogo Kirchmeyer (K.) & Catálogo White",
+            structure: "Sistematizado cronológicamente por Eric Walter White (1966/1979) y en el catálogo académico K. de Helmut Kirchmeyer (2002, K. 1 a K. 112).",
+            keyWorks: ["K. 10 (El pájaro de fuego, 1910)", "K. 12 (Petrushka, 1911)", "K. 15 (La consagración de la primavera, 1913)", "K. 34 (Pulcinella, 1920)", "K. 52 (Sinfonía de los Salmos, 1930)"]
           },
           periods: [
             {
-              name: "Periodo Ruso de los Ballets Rusos de Diáguilev (1910–1919)",
-              focus: "Colaboración en París con Serguéi Diáguilev. Invención de un lenguaje bárbaro, politonal y de compases asimétricos violentos.",
-              proposal: "El ritmo como energía primaria destructiva que derriba la complacencia burguesa anterior a la Gran Guerra."
+              name: "Periodo Ruso y los Ballets Rusos de Diáguilev (1908–1919)",
+              focus: "Discípulo de Nikolái Rimski-Kórsakov en San Petersburgo, es invitado por Serguéi Diáguilev a París, donde estrena 'El pájaro de fuego', 'Petrushka', 'La consagración de la primavera', 'Las bodas' e 'Historia del soldado'.",
+              proposal: "Yuxtaposición de bloques sonoros, armonías politonales u octatónicas y células rítmicas asimétricas."
             },
             {
-              name: "Periodo Neoclásico (1920–1951)",
-              focus: "Exilio en Suiza y Francia. Regreso irónico a las formas de Bach, Pergolesi y Mozart ('Pulcinella', 'Oedipus Rex').",
-              proposal: "La música no expresa nada salvo a sí misma: sobriedad formal, orquestas reducidas y artesanía anti-romántica."
+              name: "Periodo Neoclásico en Francia y Estados Unidos (1920–1951)",
+              focus: "Reinterpreta formas, texturas y gestos del Barroco y del Clasicismo (Bach, Pergolesi, Mozart) con distanciamiento moderno y claridad instrumental en obras como el 'Octeto', 'Oedipus Rex', 'Apollon musagète', la 'Sinfonía en tres movimientos' y 'The Rake's Progress'.",
+              proposal: "Objetividad constructiva y equilibrio formal frente al pathos expresionista."
             },
             {
-              name: "Periodo Serial y Americano en Hollywood (1952–1971)",
-              focus: "Instalado en Los Ángeles entabla amistad con Aldous Huxley y Robert Craft. Adopta tardíamente el método dodecafónico de Schoenberg.",
-              proposal: "Serialismo austero aplicado a temas sacros y elegías espirituales ('Canticum Sacrum', 'Requiem Canticles')."
+              name: "Periodo Serial Tardío (1952–1971)",
+              focus: "Instalado en California y en estrecha colaboración con el director Robert Craft, estudia la obra de Anton Webern e integra técnicas seriales y dodecafónicas en 'Canticum Sacrum', 'Agon', 'Threni' y 'Requiem Canticles'.",
+              proposal: "Síntesis austera entre el rigor contrapuntístico serial y su inconfundible articulación rítmica y ritual."
             }
           ]
         },
@@ -668,36 +673,36 @@ const MUSIC_DATA = {
           id: "schoenberg",
           name: "Arnold Schönberg",
           years: "1874 – 1951",
-          role: "El Demoledor de la Tonalidad y Padre del Dodecafonismo",
+          role: "El Teórico de la Emancipación de la Disonancia y el Dodecafonismo",
           initials: "AS",
           image: "assets/portraits/schoenberg.jpg",
-          whyExponent: "Creador de la Segunda Escuela de Viena. Al sentir que el cromatismo post-wagneriano había agotado la jerarquía tonal, 'emancipó la disonancia' e inventó el método de composición con 12 notas de igual jerarquía.",
+          whyExponent: "Figura central de la Segunda Escuela de Viena junto a sus discípulos directos Alban Berg y Anton Webern. Convencido de que el cromatismo poswagneriano había disuelto las funciones tonales clásicas, postuló hacia 1908 la 'emancipación de la disonancia' (atonalismo libre) y a principios de la década de 1920 formuló el 'método de composición con doce sonidos relacionados únicamente entre sí' (dodecafonismo).",
           milestones: [
-            "Sustituyó la escala mayor/menor por la serie dodecafónica (original, retrógrada, inversión e inversión retrógrada).",
-            "Exiliado por el nazismo en Estados Unidos como profesor de John Cage y referente ético del siglo XX."
+            "Desarrolló la serie dodecafónica (en sus cuatro formas: original, retrógrada, inversión e inversión retrógrada) como principio ordenador alternativo a la tonalidad.",
+            "Influyó profundamente en la pedagogía y el pensamiento musical del siglo XX, tanto en Europa (Berg, Webern, Eisler) como durante su exilio en Estados Unidos desde 1933 (donde enseñó en USC y UCLA y tuvo entre sus alumnos a John Cage y Lou Harrison)."
           ],
-          masterpiece: "Pierrot Lunaire (Op. 21) / Variaciones para Orquesta (Op. 31)",
+          masterpiece: "La noche transfigurada (Op. 4) / Pierrot Lunaire (Op. 21) / Variaciones para orquesta (Op. 31)",
           motifKey: "schoenberg-12tone",
           catalogInfo: {
-            systemName: "Opus (Op. 1 al 50) & Rufer Verzeichnis",
-            structure: "50 números de opus oficiales más composiciones sin opus recopiladas por Josef Rufer.",
-            keyWorks: ["Op. 4 (La Noche Transfigurada)", "Op. 11 (Tres Piezas para piano atonal)", "Op. 21 (Pierrot Lunaire)", "Op. 25 (Suite para piano dodecafónica)"]
+            systemName: "Opus (Op. 1–50) & Catálogo Rufer",
+            structure: "50 obras publicadas con número de Opus más composiciones sin opus (como los 'Gurrelieder') y obras inconclusas ('Moisés y Aarón') catalogadas por Josef Rufer en 1959.",
+            keyWorks: ["Op. 4 (Verklärte Nacht / La noche transfigurada, 1899)", "Op. 11 (Tres piezas para piano, 1909)", "Op. 21 (Pierrot Lunaire, 1912)", "Op. 25 (Suite para piano, 1921–1923)", "Op. 31 (Variaciones para orquesta, 1928)", "Op. 46 (Un superviviente de Varsovia, 1947)"]
           },
           periods: [
             {
-              name: "Periodo Post-Romántico Tonal Tardío (1897–1907)",
-              focus: "Influido por Brahms y Wagner. Compone obras con un cromatismo extremo al borde del abismo tonal ('Verklärte Nacht').",
-              proposal: "Empujar la armonía funcional hasta su máxima saturación emocional."
+              name: "Etapa Posromántica y Tonal Tardía (1897–1907)",
+              focus: "Partiendo de la síntesis entre la variación desarrollante de Brahms y la armonía cromática de Wagner, compone el sexteto 'La noche transfigurada' (Op. 4), 'Pelleas und Melisande' (Op. 5), el Cuarteto n.º 1 (Op. 7) y los monumentales 'Gurrelieder'.",
+              proposal: "Polifonía densa y cromatismo continuo llevado hasta el límite de la tonalidad."
             },
             {
-              name: "Periodo Atonal Libre y Expresionista (1908–1920)",
-              focus: "Rompe con la tónica. Amistad con Wassily Kandinsky y el grupo 'Der Blaue Reiter'. Invención del 'Sprechgesang' (canto hablado).",
-              proposal: "La disonancia no necesita resolución: debe plasmar las angustias y pesadillas del inconsciente freudiano."
+              name: "Etapa Atonal Libre y Expresionista (1908–1920)",
+              focus: "En diálogo con el expresionismo pictórico (entabla amistad y correspondencia con Wassily Kandinsky), prescinde del centro tonal en el final del Cuarteto n.º 2 (Op. 10), las 'Tres piezas para piano' (Op. 11), 'Erwartung' (Op. 17) y 'Pierrot Lunaire' (Op. 21, donde emplea el 'Sprechstimme' o voz hablada-entonada).",
+              proposal: "Expresión directa de estados psicológicos extremos sin resolución consonante tradicional."
             },
             {
-              name: "Periodo Dodecafónico Serial y Exilio en EE.UU. (1921–1951)",
-              focus: "Invención del método de composición con 12 notas. Huye de Berlín ante la persecución nazi en 1933 y enseña en Los Ángeles (UCLA).",
-              proposal: "Democracia estricta de las 12 notas: ninguna nota puede repetirse antes de que las otras once hayan sonado en la serie."
+              name: "Etapa Dodecafónica y Exilio en Estados Unidos (1921–1951)",
+              focus: "Sistematiza el método de los doce tonos en la 'Suite para piano' Op. 25 y las 'Variaciones para orquesta' Op. 31. Destituido de la Academia de las Artes de Berlín por el régimen nazi en 1933, se exilia en Los Ángeles, donde alterna obras dodecafónicas con partituras que reintegran referencias tonales y temáticas judías ('Kol Nidre', 'Un superviviente de Varsovia').",
+              proposal: "Cohesión motívica integral mediante la serie de doce sonidos aplicada a formas clásicas y dramáticas."
             }
           ]
         }
@@ -706,42 +711,42 @@ const MUSIC_DATA = {
     {
       id: "contemporanea",
       name: "Contemporánea & Actualidad",
-      period: "1975 – Presente",
+      period: "c. 1975 – Presente",
       accent: "#f59e0b",
-      tagline: "El Minimalismo, la épica del cine y el nuevo misticismo sonoro",
-      context: "La era digital, globalización y sociedad multimedia. Tras la aridez del serialismo hipercomplejo de posguerra, los compositores reconectan con la emoción pública a través de la repetición hipnótica, la serenidad meditativa y la música cinematográfica.",
-      breakthrough: "Minimalismo (estructuras repetitivas y desfases temporales), Minimalismo Sagrado (espiritualidad y silencio), y la orquesta sinfónica como reina indiscutible del cine y videojuegos.",
-      instruments: "Orquesta sinfónica hibridada con diseño sonoro digital, sintetizadores modulares, cellos procesados por pedales DSP.",
+      tagline: "El minimalismo, el misticismo coral, la pluralidad posmoderna y el sinfonismo cinematográfico",
+      context: "Tras las vanguardias seriales y experimentales de mediados del siglo XX, las últimas décadas se caracterizan por una amplia coexistencia de estéticas: el minimalismo y posminimalismo estadounidense, la nueva simplicidad y el minimalismo sacro europeo, el espectralismo, la creación electroacústica y el auge global de la música sinfónica para el cine y los medios audiovisuales.",
+      breakthrough: "Procesos repetitivos y aditivos (minimalismo), técnica 'tintinnabuli' y retorno a la consonancia modal, poliestilismo e integración de la gran orquesta con tecnologías de producción digital.",
+      instruments: "Orquesta sinfónica expandida, conjuntos amplificados (sintetizadores y vientos), electrónica en tiempo real y diseño sonoro híbrido.",
       exponents: [
         {
           id: "philip-glass",
           name: "Philip Glass",
           years: "1937 – Presente",
-          role: "El Arquitecto del Minimalismo Hipnótico",
+          role: "El Pionero del Minimalismo de Procesos Aditivos",
           initials: "PG",
           image: "assets/portraits/philip-glass.jpg",
-          whyExponent: "Uno de los compositores vivos más influyentes de la historia. Despojó a la música de desarrollos dramáticos tradicionales para construir catedrales de arpegios repetitivos que evolucionan milimétricamente.",
+          whyExponent: "Junto a La Monte Young, Terry Riley y Steve Reich, fue uno de los padres del minimalismo estadounidense (aunque él prefiere describir su obra como 'música con estructuras repetitivas'). Sustituyó el desarrollo dialéctico tradicional por módulos armónicos y ciclos rítmicos aditivos de transformación gradual.",
           milestones: [
-            "Revolucionó la ópera contemporánea con 'Einstein on the Beach' (1976).",
-            "Puente directo entre la música clásica, el rock experimental (David Bowie, Brian Eno) y el cine ('Koyaanisqatsi', 'Las Horas')."
+            "Renovó el teatro musical contemporáneo con su trilogía de 'óperas retrato': 'Einstein on the Beach' (1976, junto a Robert Wilson), 'Satyagraha' (1980) y 'Akhnaten' (1983).",
+            "Tendió puentes duraderos entre las salas de concierto, el cine ('Koyaanisqatsi' de Godfrey Reggio, 'Mishima', 'Kundun', 'Las Horas') y las artes escénicas."
           ],
-          masterpiece: "Metamorphosis / Glassworks",
+          masterpiece: "Einstein on the Beach (1976) / Glassworks (1981) / Koyaanisqatsi (1982)",
           motifKey: "glass-minimalism",
           catalogInfo: {
-            systemName: "Dunvagen Music Publishers Catalog",
-            structure: "Más de 14 sinfonías, 30 óperas y decenas de conciertos para solista organizados por fecha y encargo.",
-            keyWorks: ["Glassworks (1981)", "Einstein on the Beach (1976)", "Metamorphosis I-V (1988)", "Banda sonora de Las Horas (2002)"]
+            systemName: "Catálogo Dunvagen Music Publishers",
+            structure: "Comprende más de 25 óperas y obras de teatro musical, 14 sinfonías, más de una docena de conciertos (entre ellos su Concierto para violín n.º 1), cuartetos de cuerda, estudios para piano y bandas sonoras.",
+            keyWorks: ["Einstein on the Beach (1976)", "Satyagraha (1980)", "Glassworks (1981)", "Koyaanisqatsi (1982)", "Concierto para violín n.º 1 (1987)", "Metamorphosis I–V (1988)"]
           },
           periods: [
             {
-              name: "Periodo Minimalista Radical en Nueva York (1967–1976)",
-              focus: "Estudios con Nadia Boulanger y transcripciones para Ravi Shankar. Conduce taxis y trabaja de fontanero mientras funda el Philip Glass Ensemble.",
-              proposal: "Estructuras rítmicas aditivas de la música india aplicadas a tríadas occidentales repetidas sin modulación tradicional."
+              name: "Etapa de Formación y Minimalismo Radical en Nueva York (1964–1976)",
+              focus: "Tras estudiar en Juilliard, se forma en París con Nadia Boulanger y colabora con el sitarista Ravi Shankar transcribiendo su música, lo que le revela la estructura aditiva de los ritmos indios ('tala'). En 1968 funda en Nueva York el Philip Glass Ensemble mientras se gana la vida en oficios manuales.",
+              proposal: "Procesos aditivos y sustractivos estrictos ('Music in Twelve Parts') ejecutados por órganos eléctricos, vientos y voces amplificadas."
             },
             {
-              name: "Periodo Sinfónico y Cinematográfico de Masas (1980–Presente)",
-              focus: "Firma con Sony Classical. Compone para Hollywood, teatro experimental y las salas de concierto más prestigiosas del mundo.",
-              proposal: "El tiempo circular hipnótico como viaje de introspección ante la velocidad alienante del siglo XXI."
+              name: "Etapa Operística, Sinfónica y Cinematográfica (1976–Presente)",
+              focus: "A partir de 'Einstein on the Beach' (presentada en Aviñón y en el Metropolitan Opera) lleva su lenguaje a las compañías de ópera internacionales, a la orquesta sinfónica y al cine.",
+              proposal: "Integración de ciclos arpegiados y progresiones armónicas modales/tonales dentro de la gran arquitectura operística y sinfónica."
             }
           ]
         },
@@ -749,31 +754,31 @@ const MUSIC_DATA = {
           id: "arvo-part",
           name: "Arvo Pärt",
           years: "1935 – Presente",
-          role: "El Místico del Silencio y la Técnica Tintinnabuli",
+          role: "El Creador de la Técnica Tintinnabuli y la Polifonía Contemplativa",
           initials: "AP",
           image: "assets/portraits/arvo-part.jpg",
-          whyExponent: "Compositor estonio que inventó un estilo radicalmente despojado llamado 'tintinnabuli' (como el tañido de pequeñas campanas). Su música transmite una paz y trascendencia casi celestial en medio del ruido contemporáneo.",
+          whyExponent: "Compositor estonio que en 1976 dio a conocer un lenguaje compositivo propio denominado 'tintinnabuli' (del latín 'tintinnabulum', campanilla). Inspirado en el canto llano, la polifonía medieval y la espiritualidad ortodoxa, su música articula una extrema economía de medios donde el silencio y la resonancia adquieren valor estructural.",
           milestones: [
-            "El compositor clásico vivo más interpretado en todo el planeta durante una década consecutiva.",
-            "Demostró que una sola tríada mayor y dos notas en silencio pueden emocionar más que cien instrumentos a máxima potencia."
+            "De acuerdo con las estadísticas anuales de programación mundial de Bachtrack, fue el compositor vivo más interpretado en salas de concierto del mundo durante ocho años consecutivos (2011–2018) y se ha mantenido de forma constante en los primeros puestos junto a John Williams.",
+            "Sus obras de 1976–1978 ('Für Alina', 'Fratres', 'Cantus in Memoriam Benjamin Britten', 'Tabula Rasa' y 'Spiegel im Spiegel') se convirtieron en referentes del repertorio coral e instrumental contemporáneo."
           ],
-          masterpiece: "Spiegel im Spiegel (1978) / Für Alina",
+          masterpiece: "Tabula Rasa (1977) / Spiegel im Spiegel (1978) / Für Alina (1976)",
           motifKey: "part-tintinnabuli",
           catalogInfo: {
-            systemName: "Universal Edition Arvo Pärt Archive",
-            structure: "Publicado por Universal Edition en Viena y conservado en el Centro Arvo Pärt de Laulasmaa, Estonia.",
-            keyWorks: ["Für Alina (1976)", "Fratres (1977)", "Cantus in Memoriam Benjamin Britten (1977)", "Spiegel im Spiegel (1978)"]
+            systemName: "Catálogo Universal Edition & Arvo Pärt Centre (Laulasmaa)",
+            structure: "Editado por Universal Edition (Viena) y documentado en el archivo del Arvo Pärt Centre en Estonia. Abarca cuatro sinfonías, grandes obras corales-orquestales y música de cámara.",
+            keyWorks: ["Für Alina (1976)", "Cantus in Memoriam Benjamin Britten (1977)", "Fratres (1977)", "Tabula Rasa (1977)", "Spiegel im Spiegel (1978)", "Passio (1982)", "Kanons Pokajanen (1997)"]
           },
           periods: [
             {
-              name: "Periodo Vanguardista y Conflicto con la Censura Soviética (1958–1968)",
-              focus: "Compositor de la radio estonia bajo el régimen de la URSS. Experimenta con el serialismo y el collage ('Nekrolog', 'Credo'). Suspensión por motivos religiosos.",
-              proposal: "La crisis de la vanguardia disonante que conduce a un callejón sin salida espiritual."
+              name: "Etapa Neoclásica, Serial y de Collage en la Estonia Soviética (1958–1968)",
+              focus: "Trabaja como ingeniero de sonido en la radio estonia en Tallin. Compone las primeras obras dodecafónicas de Estonia ('Nekrolog', 1960) y piezas de collage barroco-vanguardista que culminan en 'Credo' (1968), obra que suscita fricciones con la censura oficial soviética.",
+              proposal: "Contraste dramático entre bloques seriales disonantes y citas de J. S. Bach."
             },
             {
-              name: "Silencio Creativo y Nacimiento del Tintinnabuli (1968–Presente)",
-              focus: "Ocho años de silencio casi total estudiando el canto gregoriano medieval y la polifonía francoflamenca. Emerge en 1976 con 'Für Alina'.",
-              proposal: "La voz de campana (tríada pura) combinada con una línea melódica que camina paso a paso: '1 + 1 = 1'."
+              name: "Retiro, Estudio de la Música Antigua y Nacimiento del 'Tintinnabuli' (1968–Presente)",
+              focus: "Atraviesa casi ocho años de retiro compositivo estudiando el canto gregoriano, la Escuela de Notre Dame y la polifonía franco-flamenca. En 1976 presenta 'Für Alina' y en 1980 emigra con su familia a Viena y luego a Berlín, antes de regresar a Estonia en la década de 2000.",
+              proposal: "Unión de dos voces indisociables ('1 + 1 = 1'): una voz melódica que avanza por grados conjuntos diatónicos y una voz 'tintinnabuli' que recorre las tres notas de la tríada tónica."
             }
           ]
         },
@@ -781,31 +786,31 @@ const MUSIC_DATA = {
           id: "john-williams",
           name: "John Williams",
           years: "1932 – Presente",
-          role: "El Heredero Directo de la Gran Tradición Sinfónica",
+          role: "El Gran Continuador del Sinfonismo Dramático en el Cine",
           initials: "JW",
           image: "assets/portraits/john-williams.jpg",
-          whyExponent: "El compositor más escuchado y premiado de la historia del cine (54 nominaciones al Óscar). Mantuvo viva la orquesta sinfónica post-romántica de Wagner, Holst y Chaikovski en el corazón de miles de millones de personas de todas las edades.",
+          whyExponent: "Compositor, director y pianista estadounidense que revitalizó la gran orquesta sinfónica de tradición posromántica y moderna (heredera de Wagner, Chaikovski, Holst, Elgar, Prokófiev y Korngold) en el cine contemporáneo, acercando el lenguaje orquestal a audiencias globales de múltiples generaciones y sumando 54 nominaciones a los premios Óscar (con 5 estatuillas).",
           milestones: [
-            "Uso magistral del Leitmotiv wagneriano en Star Wars, Indiana Jones, Jurassic Park, E.T. y Harry Potter.",
-            "Hizo que tres generaciones completas reconozcan de inmediato un intervalo de segunda menor (Tiburón) o un acorde de cuarta heroica."
+            "Desarrolló extensos catálogos de 'Leitmotive' (motivos conductores) con transformaciones armónicas y orquestales a lo largo de sagas cinematográficas como 'Star Wars', 'Indiana Jones', 'Superman', 'Jurassic Park' y 'Harry Potter'.",
+            "Su colaboración de cinco décadas con Steven Spielberg (desde 'The Sugarland Express' en 1974 y 'Tiburón' en 1975 hasta 'La lista de Schindler' y 'The Fabelmans') redefinió la narrativa sinfónica audiovisual, además de su labor como director titular de la Boston Pops Orchestra (1980–1993)."
           ],
-          masterpiece: "Suite de Star Wars / La Lista de Schindler / Jurassic Park",
+          masterpiece: "Star Wars (1977) / La lista de Schindler (1993) / Encuentros cercanos del tercer tipo (1977)",
           motifKey: "williams-theme",
           catalogInfo: {
-            systemName: "Catalog of Film Scores & Concert Works",
-            structure: "Más de 120 bandas sonoras sinfónicas, además de conciertos de concierto para violín, violonchelo, trompeta y tuba.",
-            keyWorks: ["Star Wars Suite (1977)", "La Lista de Schindler (Tema para violín solista, 1993)", "Jurassic Park (1993)", "Concierto para Violonchelo y Orquesta (1994)"]
+            systemName: "Catálogo de Bandas Sonoras & Obras de Concierto (Hal Leonard)",
+            structure: "Más de 100 partituras cinematográficas, cuatro temas olímpicos oficiales y un amplio catálogo de obras de sala (dos conciertos para violín, conciertos para violonchelo, flauta, oboe, clarinete, fagot, trompeta, trompa, tuba, arpa y piano).",
+            keyWorks: ["Tiburón / Jaws (1975)", "Star Wars (1977)", "Superman (1978)", "E.T. el extraterrestre (1982)", "La lista de Schindler (1993)", "Concierto para violonchelo y orquesta (1994)", "Concierto para violín n.º 2 (2021)"]
           },
           periods: [
             {
-              name: "Periodo Jazzístico y Televisión Temprana (1956–1973)",
-              focus: "Pianista de jazz en Nueva York ('Little Johnny Love') y compositor para series televisivas en Hollywood ('Lost in Space', 'The Time Tunnel').",
-              proposal: "Oficio orquestal vertiginoso, contrapunto dramático y conocimiento íntimo de los metales de Hollywood."
+              name: "Etapa de Formación, Jazz y Televisión en Hollywood (1956–1973)",
+              focus: "Estudia en UCLA (con Mario Castelnuovo-Tedesco) y piano en Juilliard (con Rosina Lhévinne). Trabaja como pianista de sesión en Hollywood (con Henry Mancini, Alfred Newman y Franz Waxman), compone para series televisivas ('Lost in Space') y gana su primer Óscar como adaptador musical de 'El violinista en el tejado' (1971).",
+              proposal: "Dominio versátil del jazz sinfónico, la orquestación de estudio y el contrapunto dramático."
             },
             {
-              name: "La Era de Oro con Steven Spielberg y George Lucas (1974–Presente)",
-              focus: "Rescate de la gran orquesta sinfónica de 90 músicos cuando el cine de los 70 solo usaba sintetizadores o rock. Dirección de la Boston Pops Orchestra.",
-              proposal: "El Leitmotiv como arquitectura emocional invisible que une escenas visuales y personajes en mitologías universales."
+              name: "Renacimiento del Sinfonismo Cinematográfico y Obra de Sala (1974–Presente)",
+              focus: "En una década de 1970 en la que Hollywood tendía a las bandas sonoras pop o minimalistas, recupera con 'Jaws' (1975) y 'Star Wars' (1977, grabada con la Orquesta Sinfónica de Londres) la gran plantilla sinfónica, alternando el cine con la dirección de las principales orquestas del mundo.",
+              proposal: "Arquitectura leitmotívica, virtuosismo de los metales y escritura concertante tanto en la pantalla como en el repertorio de concierto."
             }
           ]
         }

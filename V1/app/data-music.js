@@ -45,7 +45,7 @@ const MUSIC_DATA = {
       {
         icon: "⏳",
         title: "Desarrollo Temático en el Tiempo",
-        desc: "La música pop suele basarse en estrofa-estribillo de 3 minutos. La música clásica toma un motivo de 4 notas (como el inicio de la 5ª de Beethoven) y lo transforma durante 35 minutos en un viaje heroico completo."
+        desc: "Muchas formas clásicas desarrollan una idea breve a lo largo de varios minutos: toman un motivo de 4 notas (como el inicio de la 5.ª de Beethoven) y lo transforman a lo largo de un movimiento completo."
       }
     ]
   },
@@ -71,7 +71,7 @@ const MUSIC_DATA = {
           image: "assets/portraits/guido-darezzo.jpg",
           whyExponent: "Monje benedictino y teórico musical cuya reforma pedagógica transformó la transmisión de la música occidental. Sistematizó el tetragrama de 4 líneas con claves y bautizó las seis sílabas del hexacordo (Ut-Re-Mi-Fa-Sol-La) extrayendo las primeras sílabas de cada hemistiquio del himno 'Ut queant laxis' a San Juan Bautista.",
           milestones: [
-            "Sentó las bases del sistema de solmisación por hexacordos del que surgió la 'Mano Guidoniana' (recurso mnemotécnico documentado en manuscritos poco después de su muerte y asociado a su tradición pedagógica).",
+            "Sentó las bases de la solmisación por hexacordos; la célebre 'Mano Guidoniana' (recurso mnemotécnico documentado en manuscritos posteriores a su muerte) se atribuye a su tradición pedagógica y no a Guido mismo.",
             "Permitió que los cantores aprendieran un canto litúrgico desconocido en pocos días de lectura visual (como expuso en su 'Epistola de ignoto cantu'), en vez de años de memorización exclusivamente oral."
           ],
           masterpiece: "Micrologus (c. 1026, tratado de teoría y pedagogía musical)",
@@ -378,7 +378,7 @@ const MUSIC_DATA = {
           image: "assets/portraits/haydn.jpg",
           whyExponent: "Trabajó durante casi tres décadas como Kapellmeister de los príncipes Esterházy, aislamiento relativo que, según recordó a su biógrafo Georg August Griesinger, le permitió experimentar y lo 'forzó a ser original'. Aunque no inventó la sinfonía ni el cuarteto desde cero, estableció su arquitectura clásica de referencia; fue amigo cercano y referente admirado por Mozart (quien le dedicó seis cuartetos) y tutor del joven Beethoven en Viena.",
           milestones: [
-            "Su catálogo reúne 104 sinfonías numeradas tradicionalmente (más la Sinfonía Concertante y las sinfonías tempranas 'A' y 'B', sumando 107 obras en el grupo Hob. I) y 68 cuartetos de cuerda.",
+            "Su catálogo reúne 104 sinfonías numeradas tradicionalmente, más las dos sinfonías tempranas sin número conocidas como 'A' (Hob. I:107) y 'B' (Hob. I:108) —para un total de 106 sinfonías, además de la Sinfonía Concertante Hob. I:105—, junto con 68 cuartetos de cuerda.",
             "Perfeccionó el desarrollo temático-motívico (construir movimientos enteros a partir de células breves) e integró el humor, el silencio sorpresivo y la expresividad popular en la alta arquitectura sinfónica."
           ],
           masterpiece: "Sinfonía n.º 94 'La Sorpresa' (Hob. I:94) / Cuartetos Op. 76 / La Creación (Hob. XXI:2)",
@@ -428,7 +428,7 @@ const MUSIC_DATA = {
             },
             {
               name: "Etapa de Salzburgo, Mannheim/París e 'Idomeneo' (1773–1781)",
-              focus: "Músico en la corte del príncipe-arzobispo Hieronymus von Colloredo en Salzburgo. Viaja a Mannheim y París (1777–1778, donde muere su madre) y estrena 'Idomeneo' en Múnich (1781). En junio de 1781 rompe definitivamente con el servicio arzobispal —siendo expulsado literalmente de un puntapié por el chambelán conde Karl von Arco— y se instala en Viena.",
+              focus: "Músico en la corte del príncipe-arzobispo Hieronymus von Colloredo en Salzburgo. Viaja a Mannheim y París (1777–1778, donde muere su madre) y estrena 'Idomeneo' en Múnich (1781). En junio de 1781 rompe definitivamente con el servicio arzobispal —siendo expulsado literalmente de un puntapié por el conde Karl von Arco, mayordomo mayor (Oberstküchenmeister) de la corte de Colloredo— y se instala en Viena.",
               proposal: "Expansión orquestal (inspirada en la escuela de Mannheim) y madurez de los conciertos para violín y la Sinfonía Concertante K. 364."
             },
             {
@@ -648,7 +648,7 @@ const MUSIC_DATA = {
           motifKey: "stravinsky-rite",
           catalogInfo: {
             systemName: "Catálogo Kirchmeyer (K.) & Catálogo White",
-            structure: "Sistematizado cronológicamente por Eric Walter White (1966/1979) y en el catálogo académico K. de Helmut Kirchmeyer (2002, K. 1 a K. 112).",
+            structure: "Sistematizado por Eric Walter White (1966/1979) y en el catálogo académico K. de Helmut Kirchmeyer ('Kommentiertes Verzeichnis der Werke und Werkausgaben Igor Strawinskys bis 1971', Sächsische Akademie der Wissenschaften zu Leipzig / S. Hirzel Verlag, 2002; edición digital en kcatalog.org).",
             keyWorks: ["K. 10 (El pájaro de fuego, 1910)", "K. 12 (Petrushka, 1911)", "K. 15 (La consagración de la primavera, 1913)", "K. 34 (Pulcinella, 1920)", "K. 52 (Sinfonía de los Salmos, 1930)"]
           },
           periods: [
@@ -696,7 +696,7 @@ const MUSIC_DATA = {
             },
             {
               name: "Etapa Atonal Libre y Expresionista (1908–1920)",
-              focus: "En diálogo con el expresionismo pictórico (entabla amistad y correspondencia con Wassily Kandinsky), prescinde del centro tonal en el final del Cuarteto n.º 2 (Op. 10), las 'Tres piezas para piano' (Op. 11), 'Erwartung' (Op. 17) y 'Pierrot Lunaire' (Op. 21, donde emplea el 'Sprechstimme' o voz hablada-entonada).",
+              focus: "En diálogo con el expresionismo pictórico (entabla amistad y correspondencia con Wassily Kandinsky), prescinde del centro tonal en el final del Cuarteto n.º 2 (Op. 10), las 'Tres piezas para piano' (Op. 11), 'Erwartung' (Op. 17) y 'Pierrot Lunaire' (Op. 21, donde indica en la partitura una 'Sprechmelodie' ejecutada por una 'Sprechstimme' o voz hablada, técnica conocida como 'Sprechgesang').",
               proposal: "Expresión directa de estados psicológicos extremos sin resolución consonante tradicional."
             },
             {
@@ -759,7 +759,7 @@ const MUSIC_DATA = {
           image: "assets/portraits/arvo-part.jpg",
           whyExponent: "Compositor estonio que en 1976 dio a conocer un lenguaje compositivo propio denominado 'tintinnabuli' (del latín 'tintinnabulum', campanilla). Inspirado en el canto llano, la polifonía medieval y la espiritualidad ortodoxa, su música articula una extrema economía de medios donde el silencio y la resonancia adquieren valor estructural.",
           milestones: [
-            "De acuerdo con las estadísticas anuales de programación mundial de Bachtrack, fue el compositor vivo más interpretado en salas de concierto del mundo durante ocho años consecutivos (2011–2018) y se ha mantenido de forma constante en los primeros puestos junto a John Williams.",
+            "De acuerdo con las estadísticas anuales de programación mundial de Bachtrack, fue el compositor vivo más interpretado del mundo durante ocho años consecutivos entre 2011 y 2018; tras ese periodo ininterrumpido volvió a ocupar el primer lugar en 2022 y el segundo en 2019 y 2023 (años en que John Williams encabezó la lista; en 2020–2021 no hubo ranking anual por la pandemia).",
             "Sus obras de 1976–1978 ('Für Alina', 'Fratres', 'Cantus in Memoriam Benjamin Britten', 'Tabula Rasa' y 'Spiegel im Spiegel') se convirtieron en referentes del repertorio coral e instrumental contemporáneo."
           ],
           masterpiece: "Tabula Rasa (1977) / Spiegel im Spiegel (1978) / Für Alina (1976)",
@@ -1068,7 +1068,7 @@ const MUSIC_DATA = {
         name: "Catálogo Kirchmeyer",
         assignedTo: "Ígor Stravinski",
         creator: "Helmut Kirchmeyer (2002)",
-        originReason: "Stravinski tampoco numeró sus obras con Opus; el catálogo académico de Kirchmeyer (abreviado K.) clasifica cronológicamente sus 112 composiciones y arreglos."
+        originReason: "Stravinski no numeró sus obras con Opus; el catálogo académico de Kirchmeyer ('Kommentiertes Verzeichnis der Werke und Werkausgaben Igor Strawinskys bis 1971', Sächsische Akademie der Wissenschaften zu Leipzig / S. Hirzel Verlag, 2002; kcatalog.org) clasifica cronológicamente sus composiciones y ediciones."
       }
     ],
 
@@ -1124,9 +1124,9 @@ const MUSIC_DATA = {
   // BRÚJULA PARA PRINCIPIANTES
   beginnerCompass: [
     {
-      mood: "⚡ Necesito Energía Máxima y Motivación",
+      mood: "⚡ Energía e Impulso Rítmico",
       piece: "Beethoven - Sinfonía n.º 7 (4º Movimiento: Allegro con brio)",
-      why: "Llamada por Wagner 'la apoteosis de la danza'. Una avalancha rítmica imparable que te subirá la adrenalina más que 3 tazas de café espresso."
+      why: "Llamada por Wagner 'la apoteosis de la danza'. Su pulso rítmico continuo en compás binario transmite una vitalidad inmediata desde el primer compás."
     },
     {
       mood: "🧠 Concentración para Trabajar o Estudiar",
@@ -1136,12 +1136,12 @@ const MUSIC_DATA = {
     {
       mood: "🌌 Paz Nocturna, Descompresión y Calma",
       piece: "Claude Debussy - Clair de Lune",
-      why: "Un remanso de terciopelo sonoro. Notas como gotas de luz de luna que disuelven el estrés del día sin prisas."
+      why: "Un remanso de terciopelo sonoro. Sus acordes arpegiados y tempo flexible invitan a una escucha pausada al final del día."
     },
     {
-      mood: "🎬 Pasión Cinematográfica y Épica",
-      piece: "Gustav Holst - Los Planetas ('Marte, el Portador de la Guerra')",
-      why: "La obra que inspiró directamente la música de Star Wars y Gladiador. Ritmo en 5/4 amenazante y metales apocalípticos."
+      mood: "🕯️ Contemplación y Serenidad",
+      piece: "Arvo Pärt - Spiegel im Spiegel (1978)",
+      why: "Técnica tintinnabuli para violín (o violonchelo/viola) y piano: los arpegios triádicos del piano acompañan las escalas diatónicas lentas de la cuerda creando una atmósfera de gran serenidad contemplativa."
     }
   ]
 };

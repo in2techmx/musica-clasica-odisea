@@ -707,7 +707,7 @@ const LISTENING_GUIDE_BY_COMPOSER = {
       {
         title: "Pierrot Lunaire, Op. 21 (Selección)",
         duration: "~10 min",
-        whyListen: "Descubre el 'Sprechstimme' (canto hablado): una pesadilla expresionista lunar sin tonalidad fija que suena a cine de terror psicológico.",
+        whyListen: "Descubre la 'Sprechmelodie' para 'Sprechstimme' (voz hablada, técnica llamada 'Sprechgesang' en el prefacio de Schönberg): expresionismo lunar sin centro tonal fijo.",
         ytQuery: "Schoenberg Pierrot Lunaire Op 21",
         archiveQuery: "Schoenberg Pierrot Lunaire Op.21",
         freeLabel: "IMSLP",

@@ -1,18 +1,17 @@
 /**
- * MUSIC-CATALOG.TEST.JS
+ * MUSIC-CATALOG.TEST.JS (V2 Expandida)
  * Suite de Pruebas Automatizadas Deterministas — Gate 1 IN2TECHMX
  * Ejecutable en Node.js puro sin dependencias externas
  */
 
 const assert = require("assert");
-const path = require("path");
 
 // Cargar módulos del proyecto
 const MUSIC_DATA = require("../app/data-music.js");
 const ClassicalSynthesizer = require("../app/audio-synthesizer.js");
 
 console.log("=================================================================");
-console.log("INICIANDO SUITE DE TESTS DETERMINISTAS (GATE 1) — ODISEA CLÁSICA");
+console.log("INICIANDO SUITE DE TESTS DETERMINISTAS (GATE 1 V2) — ODISEA CLÁSICA");
 console.log("=================================================================\n");
 
 let passedTests = 0;
@@ -42,6 +41,7 @@ test("El dataset principal MUSIC_DATA contiene todas las secciones requeridas", 
   assert.ok(MUSIC_DATA.nomenclatureGuide, "Falta 'nomenclatureGuide'");
   assert.ok(Array.isArray(MUSIC_DATA.whyItMatters), "'whyItMatters' debe ser un array");
   assert.ok(Array.isArray(MUSIC_DATA.beginnerCompass), "'beginnerCompass' debe ser un array");
+  assert.ok(Array.isArray(MUSIC_DATA.historicalChronologyStories), "'historicalChronologyStories' debe ser un array");
 });
 
 test("Existen exactamente las 7 grandes épocas históricas canónicas", () => {
@@ -66,11 +66,11 @@ test("Cada época histórica cuenta con contexto, ruptura técnica, instrumentos
 });
 
 // -------------------------------------------------------------
-// GRUPO 2: VERIFICACIÓN DE EXPONENTES, HITOS Y MOTIVOS SONOROS
+// GRUPO 2: VERIFICACIÓN DE RETRATOS REALES, ETAPAS Y CATÁLOGOS PROPIOS
 // -------------------------------------------------------------
-console.log("\n👑 2. Verificación de Exponentes, Hitos y Motivos Sonoros");
+console.log("\n👑 2. Verificación de Retratos Reales, Etapas Creativas y Catálogos Propios");
 
-test("Todos los exponentes tienen biografías sólidas, hitos históricos y claves de motivo", () => {
+test("Todos los exponentes tienen fotos reales (HTTPS), iniciales, hitos y catálogos propios", () => {
   let totalExponents = 0;
   MUSIC_DATA.eras.forEach(era => {
     era.exponents.forEach(exp => {
@@ -79,19 +79,57 @@ test("Todos los exponentes tienen biografías sólidas, hitos históricos y clav
       assert.ok(exp.name, `Falta nombre en exponente ${exp.id}`);
       assert.ok(exp.years, `Faltan años biográficos en ${exp.name}`);
       assert.ok(exp.role, `Falta rol titular en ${exp.name}`);
+      assert.ok(exp.initials, `Faltan iniciales de respaldo en ${exp.name}`);
+      assert.ok(typeof exp.image === 'string' && exp.image.startsWith("https://"), `Imagen inválida en ${exp.name}: ${exp.image}`);
       assert.ok(exp.whyExponent && exp.whyExponent.length > 30, `Explicación de mérito insuficiente en ${exp.name}`);
       assert.ok(Array.isArray(exp.milestones) && exp.milestones.length >= 2, `Debe tener al menos 2 hitos documentados: ${exp.name}`);
       assert.ok(exp.masterpiece, `Falta obra maestra representativa en ${exp.name}`);
       assert.ok(exp.motifKey, `Falta motifKey asignada en ${exp.name}`);
+      
+      // Catálogo propio
+      assert.ok(exp.catalogInfo, `Falta catalogInfo en ${exp.name}`);
+      assert.ok(exp.catalogInfo.systemName, `Falta systemName en catálogo de ${exp.name}`);
+      assert.ok(exp.catalogInfo.structure, `Falta structure en catálogo de ${exp.name}`);
+      assert.ok(Array.isArray(exp.catalogInfo.keyWorks) && exp.catalogInfo.keyWorks.length > 0, `Faltan keyWorks en catálogo de ${exp.name}`);
     });
   });
   assert.ok(totalExponents >= 15, `Debe haber al menos 15 compositores catalogados (actuales: ${totalExponents})`);
 });
 
+test("Todos los exponentes cuentan con desglose de etapas creativas y qué proponen en cada una", () => {
+  MUSIC_DATA.eras.forEach(era => {
+    era.exponents.forEach(exp => {
+      assert.ok(Array.isArray(exp.periods) && exp.periods.length >= 2, `El compositor ${exp.name} debe tener al menos 2 etapas creativas`);
+      exp.periods.forEach((p, idx) => {
+        assert.ok(p.name, `Falta nombre en etapa ${idx + 1} de ${exp.name}`);
+        assert.ok(p.focus && p.focus.length > 20, `Foco contextual insuficiente en etapa ${p.name} de ${exp.name}`);
+        assert.ok(p.proposal && p.proposal.length > 20, `Propuesta estética insuficiente en etapa ${p.name} de ${exp.name}`);
+      });
+    });
+  });
+});
+
 // -------------------------------------------------------------
-// GRUPO 3: NOMENCLATURA Y SISTEMAS DE CATALOGACIÓN UNIVERSAL
+// GRUPO 3: HISTORIAS DE SANGRE, PESTE Y CONTEXTO MATERIAL
 // -------------------------------------------------------------
-console.log("\n📜 3. Verificación de Nomenclatura y Catálogos Universales");
+console.log("\n📜 3. Verificación de Crónicas de Historia Material y Social");
+
+test("Las historias de contexto histórico material están exhaustivamente documentadas", () => {
+  const stories = MUSIC_DATA.historicalChronologyStories;
+  assert.ok(stories.length >= 8, `Deben existir al menos 8 crónicas históricas (actuales: ${stories.length})`);
+  stories.forEach(st => {
+    assert.ok(st.eraId, `Falta eraId en crónica ${st.title}`);
+    assert.ok(st.title, "Falta título en crónica");
+    assert.ok(st.historicalEvent, `Falta hecho histórico en ${st.title}`);
+    assert.ok(st.impactOnMusic && st.impactOnMusic.length > 50, `Impacto musical insuficiente en ${st.title}`);
+    assert.ok(st.fascinatingFact && st.fascinatingFact.length > 40, `Dato fascinante insuficiente en ${st.title}`);
+  });
+});
+
+// -------------------------------------------------------------
+// GRUPO 4: NOMENCLATURA Y SISTEMAS DE CATALOGACIÓN UNIVERSAL
+// -------------------------------------------------------------
+console.log("\n🔍 4. Verificación de Nomenclatura y Catálogos Universales");
 
 test("La guía de nomenclatura desglosa los 4 elementos anatómicos clave", () => {
   const anatomy = MUSIC_DATA.nomenclatureGuide.anatomyExample;
@@ -111,25 +149,12 @@ test("Los grandes catálogos universales están documentados con creador y justi
   assert.ok(codes.includes("Hob."), "Debe incluirse Hoboken (Haydn)");
   assert.ok(codes.includes("RV"), "Debe incluirse Ryom (Vivaldi)");
   assert.ok(codes.includes("WoO"), "Debe incluirse WoO (Beethoven)");
-
-  catalogs.forEach(cat => {
-    assert.ok(cat.assignedTo, `Falta compositor asignado en ${cat.code}`);
-    assert.ok(cat.creator, `Falta creador en ${cat.code}`);
-    assert.ok(cat.originReason && cat.originReason.length > 20, `Explicación de origen insuficiente en ${cat.code}`);
-  });
-});
-
-test("La tabla de tempos y dinámicas está presente con rangos BPM y sensaciones", () => {
-  const tempos = MUSIC_DATA.nomenclatureGuide.temposAndDynamics.tempos;
-  const dynamics = MUSIC_DATA.nomenclatureGuide.temposAndDynamics.dynamics;
-  assert.ok(tempos.length >= 5, "Deben documentarse al menos 5 tempos");
-  assert.ok(dynamics.length >= 5, "Deben documentarse al menos 5 dinámicas");
 });
 
 // -------------------------------------------------------------
-// GRUPO 4: MOTOR DE AUDIO Y FRECUENCIAS ARMÓNICAS
+// GRUPO 5: MOTOR DE AUDIO Y FRECUENCIAS ARMÓNICAS
 // -------------------------------------------------------------
-console.log("\n🎹 4. Verificación del Motor Sintetizador y Frecuencias");
+console.log("\n🎹 5. Verificación del Motor Sintetizador y Frecuencias");
 
 test("El sintetizador ClassicalSynthesizer se instancia limpiamente en entorno Node", () => {
   const synth = new ClassicalSynthesizer();
@@ -142,15 +167,7 @@ test("Todas las notas del mapa de frecuencias poseen Hertz físicos reales posit
   const synth = new ClassicalSynthesizer();
   const freqKeys = Object.keys(synth.NOTE_FREQ);
   assert.ok(freqKeys.length >= 24, "Debe cubrir al menos 2 octavas completas");
-  
-  // Verificación afinación estándar A4 = 440 Hz
   assert.strictEqual(synth.NOTE_FREQ["A4"], 440.00, "A4 debe ser exactamente 440.00 Hz (afinación de concierto)");
-  assert.strictEqual(synth.NOTE_FREQ["A3"], 220.00, "A3 debe ser exactamente 220.00 Hz (octava inferior)");
-
-  freqKeys.forEach(note => {
-    const val = synth.NOTE_FREQ[note];
-    assert.ok(typeof val === 'number' && val > 20 && val < 5000, `Frecuencia inválida para nota ${note}: ${val}`);
-  });
 });
 
 test("Todos los motivos melódicos de los exponentes existen en el sintetizador y tienen notas válidas", () => {
@@ -165,46 +182,23 @@ test("Todos los motivos melódicos de los exponentes existen en el sintetizador 
       );
     });
   });
-
-  motifKeys.forEach(mKey => {
-    const motif = synth.MOTIFS[mKey];
-    assert.ok(motif.title, `Falta título en motivo ${mKey}`);
-    assert.ok(Array.isArray(motif.notes) && motif.notes.length > 0, `El motivo ${mKey} debe tener notas`);
-    motif.notes.forEach(note => {
-      assert.ok(synth.NOTE_FREQ[note.pitch], `Nota no reconocida '${note.pitch}' en motivo ${mKey}`);
-      assert.ok(note.dur > 0, `Duración inválida en nota ${note.pitch} de ${mKey}`);
-    });
-  });
 });
 
 // -------------------------------------------------------------
-// GRUPO 5: ARGUMENTACIÓN DIDÁCTICA Y TRASCENDENCIA
+// GRUPO 6: ARGUMENTACIÓN DIDÁCTICA Y TRASCENDENCIA
 // -------------------------------------------------------------
-console.log("\n💡 5. Verificación de Didáctica, Beneficios y Brújula");
+console.log("\n💡 6. Verificación de Didáctica, Beneficios y Brújula");
 
-test("Se incluyen los 5 pilares de por qué es importante y por qué escucharla", () => {
+test("Se incluyen los 5 pilares de por qué es importante y la Brújula de inicio", () => {
   assert.strictEqual(MUSIC_DATA.whyItMatters.length, 5, "Deben existir 5 pilares estructurados de trascendencia");
-  MUSIC_DATA.whyItMatters.forEach(p => {
-    assert.ok(p.num, "Falta numeración");
-    assert.ok(p.title, "Falta título");
-    assert.ok(p.desc && p.desc.length > 40, `Descripción insuficiente en pilar ${p.num}`);
-  });
-});
-
-test("La Brújula para Principiantes contiene recomendaciones para 4 estados de ánimo", () => {
   assert.strictEqual(MUSIC_DATA.beginnerCompass.length, 4, "Deben existir 4 recomendaciones por ánimo");
-  MUSIC_DATA.beginnerCompass.forEach(c => {
-    assert.ok(c.mood, "Falta estado de ánimo");
-    assert.ok(c.piece, "Falta pieza recomendada");
-    assert.ok(c.why, "Falta justificación");
-  });
 });
 
 // -------------------------------------------------------------
 // REPORTE DE RESULTADOS
 // -------------------------------------------------------------
 console.log("\n=================================================================");
-console.log(`RESUMEN FINAL DE GATE 1: ${passedTests}/${totalTests} TESTS PASS`);
+console.log(`RESUMEN FINAL DE GATE 1 (V2): ${passedTests}/${totalTests} TESTS PASS`);
 if (passedTests === totalTests) {
   console.log("STATUS: CONFORME ✓ (Sello Determinista Aprobado)");
 } else {

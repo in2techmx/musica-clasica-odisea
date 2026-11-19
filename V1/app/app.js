@@ -1,24 +1,26 @@
 /**
- * APP.JS
+ * APP.JS (V2 Expandida)
  * Ecosistema IN2TECHMX - Odisea de la Música Clásica
  * Controlador interactivo de vanguardia (+10,000€ Vanguard Craft)
- * Incluye: 3D Tilt & Magnetic Spotlight, Decodificador en Vivo, Timeline Dinámico y Motor de Audio.
+ * Gestiona: Retratos Reales, Catálogos Propios, Etapas Creativas,
+ * Crónicas de Historia Material, 3D Tilt y Motor de Audio.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   // Instancia del Sintetizador Orquestal
   const synth = new ClassicalSynthesizer();
 
-  // Elementos de la interfaz
+  // Elementos comunes de la interfaz
   const progressBar = document.getElementById("scroll-progress-bar");
   const navLinks = document.querySelectorAll(".nav-link");
   const timelineContainer = document.getElementById("timeline-container");
   const timelineFilterButtons = document.querySelectorAll(".timeline-filter-btn");
   const titansContainer = document.getElementById("titans-container");
   const catalogsGrid = document.getElementById("catalogs-grid");
+  const historyStoriesContainer = document.getElementById("history-stories-container");
+  const mastersFullContainer = document.getElementById("masters-full-container");
 
   // Elementos del Dock de Audio Flotante
-  const audioDeck = document.getElementById("floating-audio-deck");
   const deckTitle = document.getElementById("deck-track-title");
   const deckStatus = document.getElementById("deck-status-label");
   const deckPlayBtn = document.getElementById("deck-play-btn");
@@ -28,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const visualizerCanvas = document.getElementById("audio-visualizer");
   const canvasCtx = visualizerCanvas ? visualizerCanvas.getContext("2d") : null;
 
-  // Estado del reproductor
   let currentPlayingMotif = "beethoven-5th";
 
   // ==========================================================================
@@ -36,36 +37,40 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   window.addEventListener("scroll", () => {
     const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = (window.scrollY / totalScroll) * 100;
+    const progress = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
     if (progressBar) {
       progressBar.style.width = `${Math.min(100, Math.max(0, progress))}%`;
     }
   });
 
   const sections = document.querySelectorAll("section[id]");
-  const observerOptions = { root: null, rootMargin: "-20% 0px -70% 0px", threshold: 0 };
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute("id");
-        navLinks.forEach(link => {
-          if (link.getAttribute("href") === `#${id}`) {
-            link.classList.add("active");
-          } else {
-            link.classList.remove("active");
-          }
-        });
-      }
-    });
-  }, observerOptions);
+  if (sections.length > 0) {
+    const observerOptions = { root: null, rootMargin: "-20% 0px -70% 0px", threshold: 0 };
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute("id");
+          navLinks.forEach(link => {
+            if (link.getAttribute("href") === `#${id}`) {
+              link.classList.add("active");
+            } else if (!link.classList.contains("nav-link-special")) {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
+    }, observerOptions);
 
-  sections.forEach(sec => sectionObserver.observe(sec));
+    sections.forEach(sec => sectionObserver.observe(sec));
+  }
 
   // ==========================================================================
   // 2. 3D TILT & MAGNETIC SPOTLIGHT (ESTÁNDAR RODRI GONZÁLEZ)
   // ==========================================================================
   function initTiltAndSpotlight() {
-    const tiltElements = document.querySelectorAll(".card-tilt, .catalog-card, .titan-card, .why-card, .compass-item");
+    const tiltElements = document.querySelectorAll(
+      ".card-tilt, .catalog-card, .titan-card, .why-card, .compass-item, .story-card, .master-composer-card, .master-period-card"
+    );
 
     tiltElements.forEach(el => {
       el.addEventListener("mousemove", (e) => {
@@ -73,11 +78,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
 
-        // Variables CSS para el resplandor magnético
         el.style.setProperty("--mouse-x", `${x}px`);
         el.style.setProperty("--mouse-y", `${y}px`);
 
-        // Rotación 3D armónica y suave (-1 a +1 escalado)
         const deltaX = (x - rect.width / 2) / (rect.width / 2);
         const deltaY = (y - rect.height / 2) / (rect.height / 2);
 
@@ -94,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // 3. RENDERIZADO DEL TIMELINE HISTÓRICO
+  // 3. RENDERIZADO DEL TIMELINE HISTÓRICO CON RETRATOS REALES
   // ==========================================================================
   function renderTimeline() {
     if (!timelineContainer || !MUSIC_DATA.eras) return;
@@ -109,7 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
       let exponentsHtml = era.exponents.map(exp => `
         <div class="exponent-pill">
           <div class="exponent-header">
-            <span class="exponent-avatar">${exp.avatar}</span>
+            <div class="exponent-portrait-box">
+              <img src="${exp.image}" alt="${exp.name}" class="exponent-portrait-img" loading="lazy"
+                   onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'exponent-portrait-fallback\\'>${exp.initials}</div>'">
+            </div>
             <div>
               <div class="exponent-name">${exp.name}</div>
               <span class="exponent-role">${exp.role} (${exp.years})</span>
@@ -199,7 +205,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const assembledTitleEl = document.getElementById("assembled-title");
     const assembledMeaningEl = document.getElementById("assembled-meaning");
 
-    // Relación compositor -> sistema de catálogo correspondiente
     const COMPOSER_CATALOGS = {
       "beethoven": { name: "Ludwig van Beethoven", cat: "Op.", numRange: "Op. 67", tag: "Opus" },
       "bach": { name: "Johann Sebastian Bach", cat: "BWV", numRange: "BWV 1048", tag: "Bach-Werke-Verzeichnis" },
@@ -242,10 +247,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // 5. RENDERIZADO DE CATÁLOGOS UNIVERSALES Y TITANES
+  // 5. RENDERIZADO DE TITANES CON RETRATOS REALES
   // ==========================================================================
   function renderCatalogsAndTitans() {
-    // Render de Catálogos
     if (catalogsGrid && MUSIC_DATA.nomenclatureGuide) {
       catalogsGrid.innerHTML = MUSIC_DATA.nomenclatureGuide.catalogSystems.map(cat => `
         <div class="catalog-card card-tilt">
@@ -257,7 +261,6 @@ document.addEventListener("DOMContentLoaded", () => {
       `).join("");
     }
 
-    // Render de Titanes
     if (titansContainer && MUSIC_DATA.eras) {
       let allTitans = [];
       MUSIC_DATA.eras.forEach(e => {
@@ -270,7 +273,10 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="titan-card card-tilt" style="--card-accent: ${titan.eraAccent}">
           <div class="card-tilt-inner">
             <div class="titan-top">
-              <div class="titan-icon-box">${titan.avatar}</div>
+              <div class="exponent-portrait-box">
+                <img src="${titan.image}" alt="${titan.name}" class="exponent-portrait-img" loading="lazy"
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'exponent-portrait-fallback\\'>${titan.initials}</div>'">
+              </div>
               <div>
                 <h4 class="titan-name">${titan.name}</h4>
                 <div class="titan-dates">${titan.years} • <span style="color:${titan.eraAccent}">${titan.eraName}</span></div>
@@ -304,10 +310,131 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // 6. MOTOR DE AUDIO Y VISUALIZADOR EN TIEMPO REAL
+  // 6. RENDERIZADO DE HISTORIAS DE SANGRE, PESTE Y REVOLUCIONES
+  // ==========================================================================
+  function renderHistoryStories() {
+    if (!historyStoriesContainer || !MUSIC_DATA.historicalChronologyStories) return;
+
+    historyStoriesContainer.innerHTML = MUSIC_DATA.historicalChronologyStories.map(story => `
+      <div class="story-card card-tilt">
+        <div class="card-tilt-inner">
+          <div class="story-badge-row">
+            <span class="story-era-badge">${story.eraId.toUpperCase()}</span>
+            <span class="story-event-tag">Hecho Histórico Real</span>
+          </div>
+
+          <h4 class="story-title">${story.title}</h4>
+          <div class="story-historical-event">📌 ${story.historicalEvent}</div>
+          <p class="story-impact">${story.impactOnMusic}</p>
+
+          <div class="story-fact-box">
+            <strong>¿Sabías que...?</strong>
+            ${story.fascinatingFact}
+          </div>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  // ==========================================================================
+  // 7. RENDERIZADO DE LA VISTA MONOGRÁFICA DE EXPONENTES (EXPONENTES.HTML)
+  // ==========================================================================
+  function renderMastersFullPage() {
+    if (!mastersFullContainer || !MUSIC_DATA.eras) return;
+    mastersFullContainer.innerHTML = "";
+
+    MUSIC_DATA.eras.forEach(era => {
+      era.exponents.forEach(master => {
+        const card = document.createElement("article");
+        card.className = "master-composer-card card-tilt";
+        card.dataset.eraId = era.id;
+        card.style.setProperty("--card-accent", era.accent);
+
+        let periodsHtml = master.periods ? master.periods.map((p, idx) => `
+          <div class="master-period-card">
+            <div class="period-name">Etapa ${idx + 1}: ${p.name}</div>
+            <p class="period-focus"><strong>Contexto de Vida:</strong> ${p.focus}</p>
+            <div class="period-proposal-box">
+              <strong>¿Qué propone en esta etapa?</strong><br>
+              ${p.proposal}
+            </div>
+          </div>
+        `).join("") : `<p style="color:var(--text-muted)">Etapas integradas en manuscritos litúrgicos.</p>`;
+
+        card.innerHTML = `
+          <div class="card-tilt-inner">
+            <div class="master-header">
+              <div class="master-big-portrait">
+                <img src="${master.image}" alt="${master.name}" loading="lazy"
+                     onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'exponent-portrait-fallback\\' style=\\'font-size:2rem\\'>${master.initials}</div>'">
+              </div>
+              <div class="master-title-box">
+                <span class="editorial-badge" style="margin-bottom:0.4rem; color:${era.accent}; border-color:${era.accent}">${era.name.toUpperCase()} (${era.period})</span>
+                <h3>${master.name}</h3>
+                <div class="master-meta-row">
+                  <span>${master.years}</span> • 
+                  <strong style="color:var(--gold-primary)">${master.role}</strong>
+                </div>
+                <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.55; max-width:850px;">
+                  ${master.whyExponent}
+                </p>
+                <div style="margin-top:1rem;">
+                  <button class="btn-audio-motif" data-motif="${master.motifKey}">
+                    <span>▶</span> Escuchar Motivo Orquestal (${master.masterpiece.split("/")[0].trim()})
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Catálogo Propio del Compositor -->
+            <div class="master-catalog-section">
+              <h5>📚 Catálogo Propio: ${master.catalogInfo ? master.catalogInfo.systemName : 'Catálogo Histórico'}</h5>
+              <p style="font-size:0.88rem; color:#cbd5e1; line-height:1.55; margin-bottom:0.8rem;">
+                ${master.catalogInfo ? master.catalogInfo.structure : 'Obras catalogadas en códices manuscritos monásticos.'}
+              </p>
+              <div style="font-size:0.82rem; color:var(--gold-light);">
+                <strong>Obras Maestras Canónicas:</strong> 
+                ${master.catalogInfo ? master.catalogInfo.keyWorks.join(" • ") : master.masterpiece}
+              </div>
+            </div>
+
+            <!-- Etapas de su Obra y Qué Propone en Cada Una -->
+            <h5 style="font-family:var(--font-serif-display); font-size:1.15rem; color:#ffffff; margin-bottom:0.6rem;">
+              Etapas Creativas y Evolución de su Pensamiento Musical
+            </h5>
+            <div class="master-periods-grid">
+              ${periodsHtml}
+            </div>
+          </div>
+        `;
+
+        mastersFullContainer.appendChild(card);
+      });
+    });
+
+    // Filtros por época en la página de exponentes
+    timelineFilterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        timelineFilterButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        const filter = btn.dataset.filter;
+
+        const cards = mastersFullContainer.querySelectorAll(".master-composer-card");
+        cards.forEach(c => {
+          if (filter === "all" || c.dataset.eraId === filter) {
+            c.style.display = "block";
+          } else {
+            c.style.display = "none";
+          }
+        });
+      });
+    });
+  }
+
+  // ==========================================================================
+  // 8. MOTOR DE AUDIO Y VISUALIZADOR EN TIEMPO REAL
   // ==========================================================================
   function setupAudioInteractivity() {
-    // Callbacks de estado del sintetizador
     synth.onStateChange = ({ isPlaying, motifId, motif }) => {
       if (isPlaying && motif) {
         currentPlayingMotif = motifId;
@@ -322,7 +449,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // Botones de reproducción de motivos en tarjetas
     document.addEventListener("click", (e) => {
       const btn = e.target.closest(".btn-audio-motif");
       if (btn) {
@@ -333,7 +459,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Control de reproducción en el Dock
     if (deckPlayBtn) {
       deckPlayBtn.addEventListener("click", () => {
         if (synth.isPlaying) {
@@ -355,12 +480,11 @@ document.addEventListener("DOMContentLoaded", () => {
         if (synth.isPlaying) {
           synth.stop();
         } else {
-          synth.playMotif("beethoven-5th");
+          synth.playMotif(currentPlayingMotif || "beethoven-5th");
         }
       });
     }
 
-    // Atajos de teclado para accesibilidad
     window.addEventListener("keydown", (e) => {
       if (e.code === "Space" && e.target.tagName !== "INPUT" && e.target.tagName !== "SELECT") {
         e.preventDefault();
@@ -374,7 +498,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Animación del visualizador de audio en Canvas
     function drawVisualizer() {
       requestAnimationFrame(drawVisualizer);
       if (!visualizerCanvas || !canvasCtx) return;
@@ -390,7 +513,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         for (let i = 0; i < data.length; i++) {
           const barHeight = (data[i] / 255) * height;
-          
           const gradient = canvasCtx.createLinearGradient(0, height, 0, 0);
           gradient.addColorStop(0, "#d4af37");
           gradient.addColorStop(1, "#fef08a");
@@ -400,7 +522,6 @@ document.addEventListener("DOMContentLoaded", () => {
           x += barWidth;
         }
       } else {
-        // Línea en reposo
         canvasCtx.fillStyle = "rgba(229, 184, 92, 0.25)";
         canvasCtx.fillRect(0, height / 2 - 1, width, 2);
       }
@@ -410,11 +531,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
-  // INICIALIZACIÓN COMPLETA
+  // INICIALIZACIÓN
   // ==========================================================================
   renderTimeline();
   initDecoder();
   renderCatalogsAndTitans();
+  renderHistoryStories();
+  renderMastersFullPage();
   initTiltAndSpotlight();
   setupAudioInteractivity();
 });

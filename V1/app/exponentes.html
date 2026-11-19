@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los Grandes Maestros: Catálogos, Etapas & Pensamiento Musical | IN2TECHMX</title>
+  <meta name="description" content="Guía monográfica exhaustiva de los titanes de la música clásica: sus catálogos propios, sus etapas creativas, qué proponían en cada periodo y su legado universal.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+  <!-- BARRA DE PROGRESO DE LECTURA SUPERIOR -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- BANNER DE NAVEGACIÓN Y RETORNO A PORTALES -->
+  <nav class="section-nav-banner">
+    <a href="index.html" class="btn-back-portal">
+      <span>‹</span> Volver a la Odisea Principal
+    </a>
+    <div style="font-family: var(--font-serif-display); font-size: 0.95rem; color: var(--gold-light); font-weight: 700;">
+      LOS GRANDES MAESTROS • CATÁLOGOS & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis Orquestal">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- SECCIÓN HERO DE LA MONOGRAFÍA -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 3rem;">
+    <div class="section-header">
+      <div class="editorial-badge">Dossier Monográfico de Autores • IN2TECHMX</div>
+      <h2 class="section-title">Los Máximos Exponentes y sus Universos Creativos</h2>
+      <p class="section-desc">
+        Ningún gran compositor nació sabiendo su estilo final ni escribió la misma música toda su vida. 
+        Aquí exploramos a fondo a cada titán: cómo funciona su <strong>catálogo propio</strong>, 
+        cuáles fueron las <strong>etapas de su evolución artística</strong> y qué <strong>propuesta filosófica y técnica</strong> defendía en cada una.
+      </p>
+    </div>
+
+    <!-- Barra de Filtros por Época -->
+    <div class="timeline-filter-bar" style="margin-bottom: 2.5rem;">
+      <button class="timeline-filter-btn active" data-filter="all">Todos los Maestros</button>
+      <button class="timeline-filter-btn" data-filter="medieval">Medieval</button>
+      <button class="timeline-filter-btn" data-filter="renacimiento">Renacimiento</button>
+      <button class="timeline-filter-btn" data-filter="barroco">Barroco</button>
+      <button class="timeline-filter-btn" data-filter="clasicismo">Clasicismo</button>
+      <button class="timeline-filter-btn" data-filter="romanticismo">Romanticismo</button>
+      <button class="timeline-filter-btn" data-filter="siglo-xx">Siglo XX</button>
+      <button class="timeline-filter-btn" data-filter="contemporanea">Contemporánea</button>
+    </div>
+
+    <!-- Contenedor Maestro de Fichas de Exponentes -->
+    <div id="masters-full-container">
+      <!-- Se genera dinámicamente mediante app.js a partir de MUSIC_DATA -->
+    </div>
+  </section>
+
+  <!-- DOCK FLOTANTE DE AUDIO EN TIEMPO REAL -->
+  <aside class="floating-audio-deck" id="floating-audio-deck" aria-label="Estación de Audio Clásico">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Beethoven: Motivo del Destino (5ª Sinfonía)</div>
+      </div>
+    </div>
+
+    <!-- Visualizador de Espectro Canvas -->
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir / Pausar">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <!-- BOTÓN FLOTANTE PARA SUBIR AL TOPE (FAB) -->
+  <a href="#top" class="fab-top" title="Volver arriba (Esc)">↑</a>
+
+  <!-- FOOTER EDITORIAL -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h4>ODISEA DE LA MÚSICA CLÁSICA</h4>
+        <p>
+          Portal monográfico de compositores, catálogos universales y análisis de etapas creativas. 
+          Desarrollado bajo el estándar <strong>IN2TECHMX Vanguard Web Craft (+10,000€ Standard)</strong>.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h5>Navegación Rápida</h5>
+        <ul>
+          <li><a href="index.html#que-es">¿Qué es la Música Clásica?</a></li>
+          <li><a href="index.html#timeline">Gran Timeline Histórico</a></li>
+          <li><a href="index.html#nomenclatura">Nomenclatura y Catálogos</a></li>
+          <li><a href="index.html#historias">Música, Peste y Revoluciones</a></li>
+          <li><a href="index.html#por-que-escuchar">¿Por qué Escucharla?</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h5>Gobernanza IN2TECHMX</h5>
+        <ul>
+          <li><span style="color:#10b981">✓ Gate 1:</span> Tests Deterministas PASS</li>
+          <li><span style="color:#10b981">✓ Gate 2:</span> Seguridad AS Conforme</li>
+          <li><span style="color:#10b981">✓ Gate 3:</span> Auditoría AA Trazable</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; 2026 IN2TECHMX — Odisea de la Música Clásica. Todos los derechos reservados.</div>
+      <div>Atajos: <strong>Espacio</strong> (Pausar/Reproducir) • <strong>Esc</strong> (Volver al Inicio)</div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS MODULARES -->
+  <script src="data-music.js"></script>
+  <script src="audio-synthesizer.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

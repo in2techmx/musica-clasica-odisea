@@ -1,44 +1,44 @@
 {
-  "project_id": "PROJ-MUSICA-CLASICA-ODISEA-V1",
+  "project_id": "PROJ-MUSICA-CLASICA-ODISEA-V2",
   "project_name": "musica-clasica-odisea",
   "project_type": "Portal Didáctico Interactivo & Web Audio Synth (+10,000€ Vanguard Craft)",
   "workspace_path": "C:\\Users\\in2te\\.gemini\\antigravity\\scratch\\musica-clasica-odisea",
-  "last_updated": "2026-11-19T12:00:00.000000",
+  "last_updated": "2026-11-19T12:50:00.000000",
   "status": "COMPLETED",
   "stages": [
     {
       "id": "stage-1",
-      "name": "1. Especificación Funcional & Criterios Gherkin",
+      "name": "1. Especificación Funcional & Criterios Gherkin V2",
       "status": "COMPLETED",
-      "description": "5 Historias de Usuario (HU-01 a HU-05) documentadas con formato Gherkin, cubriendo definición, timeline, nomenclatura, exponentes y neurociencia.",
+      "description": "5 Historias de Usuario ampliadas: retratos reales, monografía de exponentes y crónicas de historia material.",
       "responsible": "DD (Director de Desarrollo)"
     },
     {
       "id": "stage-2",
-      "name": "2. Arquitectura Musicológica & Contratos de Interfaz",
+      "name": "2. Arquitectura de Catálogos & Crónicas Materiales",
       "status": "COMPLETED",
-      "description": "data-music.js y audio-synthesizer.js con 7 épocas históricas, 7 catálogos universales, afinación en temperamento igual y motivos sintetizados.",
+      "description": "data-music.js con 20 retratos en alta resolución, catalogInfo detallado, periodos creativos con propuesta estética y 9 historias de impacto material.",
       "responsible": "DD & ADS Especialistas"
     },
     {
       "id": "stage-3",
       "name": "3. Ejecución Vanguard Web (+10,000€ Standard)",
       "status": "COMPLETED",
-      "description": "index.html, styles.css y app.js con 3D tilt, magnetic spotlight, scroll-driven progress bar, decodificador interactivo y dock de audio con canvas.",
+      "description": "index.html, exponentes.html, styles.css y app.js con retratos reales, dossiers monográficos y capítulo de peste y revoluciones.",
       "responsible": "ADS Frontend & Visual Craft"
     },
     {
       "id": "stage-4",
       "name": "4. Control por 3 Puertas (Gates 1, 2, 3)",
       "status": "COMPLETED",
-      "description": "Gate 1: 12/12 tests deterministas PASS (tests/music-catalog.test.js). Gate 2: CONFORME AS (SECURITY_GATE2.md). Gate 3: CONFORME AA (AUDIT_GATE3.md).",
+      "description": "Gate 1: 12/12 tests deterministas PASS (tests/music-catalog.test.js). Gate 2: CONFORME AS. Gate 3: CONFORME AA.",
       "responsible": "AS-Security & AA-Auditor"
     },
     {
       "id": "stage-5",
-      "name": "5. Entrega & Sello de Conformidad",
+      "name": "5. Entrega & Despliegue en GitHub Pages",
       "status": "COMPLETED",
-      "description": "Proyecto listo para apertura directa en navegador o servidor local.",
+      "description": "Repositorio sincronizado y desplegado en https://in2techmx.github.io/musica-clasica-odisea/.",
       "responsible": "FS Guardian (QA)"
     }
   ],

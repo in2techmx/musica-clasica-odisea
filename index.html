@@ -37,19 +37,20 @@
       top: 0;
       left: 0;
       right: 0;
-      height: 70px;
+      height: 72px;
       z-index: 2000;
       display: flex;
       align-items: center;
-      padding: 0 3rem;
-      background: linear-gradient(180deg, rgba(6, 9, 15, 0.95) 0%, rgba(6, 9, 15, 0.75) 70%, transparent 100%);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      transition: background 0.3s ease;
+      padding: 0 2.5rem;
+      background: linear-gradient(180deg, rgba(6, 9, 15, 0.98) 0%, rgba(6, 9, 15, 0.85) 70%, transparent 100%);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
     .stream-header.scrolled {
       background: rgba(6, 9, 15, 0.98);
-      border-bottom: 1px solid rgba(229, 184, 92, 0.2);
+      border-bottom: 1px solid rgba(229, 184, 92, 0.22);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
     }
     .stream-header-inner {
       width: 100%;
@@ -58,57 +59,109 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1.5rem;
     }
     .stream-brand-group {
       display: flex;
       align-items: center;
-      gap: 2.5rem;
+      gap: 2rem;
+      flex-shrink: 0;
     }
     .stream-logo {
       display: flex;
       flex-direction: column;
       text-decoration: none;
+      flex-shrink: 0;
+      white-space: nowrap;
     }
     .stream-logo-main {
       font-family: var(--font-serif-display);
-      font-size: 1.45rem;
+      font-size: 1.35rem;
       font-weight: 900;
       letter-spacing: 0.08em;
       background: linear-gradient(135deg, #ffffff 40%, var(--gold-light) 80%, var(--gold-primary) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       line-height: 1.1;
+      white-space: nowrap;
     }
     .stream-logo-sub {
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       font-weight: 700;
       letter-spacing: 0.18em;
       color: var(--gold-primary);
       text-transform: uppercase;
+      white-space: nowrap;
     }
     .stream-nav-links {
       display: flex;
       align-items: center;
-      gap: 1.6rem;
+      gap: 1.25rem;
       list-style: none;
       padding: 0;
       margin: 0;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .stream-nav-links li {
+      flex-shrink: 0;
+      white-space: nowrap;
+      display: inline-block;
     }
     .stream-nav-link {
       color: #94a3b8;
       text-decoration: none;
       font-size: 0.88rem;
       font-weight: 500;
-      transition: color 0.2s ease;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
       cursor: pointer;
+      display: inline-block;
+      user-select: none;
     }
-    .stream-nav-link:hover,
-    .stream-nav-link.active {
+    .stream-nav-link:hover {
       color: #ffffff;
-      font-weight: 600;
+      background: rgba(255, 255, 255, 0.06);
+    }
+    .stream-nav-link.active {
+      color: var(--gold-light);
+      font-weight: 700;
+      background: rgba(229, 184, 92, 0.14);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+    }
+    .header-right-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      flex-shrink: 0;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    @media (max-width: 1100px) {
+      .stream-header {
+        padding: 0 1.5rem;
+      }
+      .stream-brand-group {
+        gap: 1.2rem;
+      }
+      .stream-nav-links {
+        gap: 0.5rem;
+      }
+      .stream-nav-link {
+        font-size: 0.82rem;
+        padding: 0.3rem 0.5rem;
+      }
+    }
+    @media (max-width: 860px) {
+      .stream-nav-links {
+        display: none;
+      }
     }
 
-    /* BILLBOARD HERO (PORTADA ESTILO STREAMING) */
+        /* BILLBOARD HERO (PORTADA ESTILO STREAMING) */
     .stream-billboard {
       position: relative;
       height: 82vh;
@@ -545,7 +598,6 @@
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path>
             </svg>
-            <span class="lang-current-flag">🇪🇸</span>
             <span class="lang-current-label">ES</span>
             <svg class="lang-chevron" viewBox="0 0 10 6" fill="none">
               <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -553,22 +605,22 @@
           </button>
           <div class="lang-dropdown-menu notranslate" id="lang-dropdown-menu" role="listbox">
             <button class="lang-opt-btn active" data-lang="es" role="option" aria-selected="true">
-              <span class="lang-flag">🇪🇸</span> <span class="lang-name">Español</span> <span class="lang-code">ES</span>
+              <span class="lang-name">Español</span> <span class="lang-code">ES</span>
             </button>
             <button class="lang-opt-btn" data-lang="en" role="option" aria-selected="false">
-              <span class="lang-flag">🇬🇧</span> <span class="lang-name">English</span> <span class="lang-code">EN</span>
+              <span class="lang-name">English</span> <span class="lang-code">EN</span>
             </button>
             <button class="lang-opt-btn" data-lang="fr" role="option" aria-selected="false">
-              <span class="lang-flag">🇫🇷</span> <span class="lang-name">Français</span> <span class="lang-code">FR</span>
+              <span class="lang-name">Français</span> <span class="lang-code">FR</span>
             </button>
             <button class="lang-opt-btn" data-lang="pt" role="option" aria-selected="false">
-              <span class="lang-flag">🇵🇹</span> <span class="lang-name">Português</span> <span class="lang-code">PT</span>
+              <span class="lang-name">Português</span> <span class="lang-code">PT</span>
             </button>
             <button class="lang-opt-btn" data-lang="ru" role="option" aria-selected="false">
-              <span class="lang-flag">🇷🇺</span> <span class="lang-name">Русский</span> <span class="lang-code">RU</span>
+              <span class="lang-name">Русский</span> <span class="lang-code">RU</span>
             </button>
             <button class="lang-opt-btn" data-lang="zh-CN" role="option" aria-selected="false">
-              <span class="lang-flag">🇨🇳</span> <span class="lang-name">中文</span> <span class="lang-code">ZH</span>
+              <span class="lang-name">中文</span> <span class="lang-code">ZH</span>
             </button>
           </div>
         </div>

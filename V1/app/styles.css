@@ -2989,3 +2989,123 @@ p, h1, h2, h3, h4, h5, h6, li, td, .raw-piece-title, .assembled-title {
     gap: 0.6rem;
   }
 }
+
+
+/* ==========================================================================
+   PERFECCIÓN MÓVIL (<= 768px): ANCHO COMPLETO, 1 COLUMNA Y DOCK SIN SOLAPES
+   ========================================================================== */
+@media (max-width: 768px) {
+  .section-wrapper {
+    padding-left: 0.9rem !important;
+    padding-right: 0.9rem !important;
+  }
+
+  /* Timeline a ancho completo en móvil */
+  .timeline-spine,
+  .era-node-dot {
+    display: none !important;
+  }
+
+  .timeline-container {
+    padding-left: 0 !important;
+  }
+
+  .era-entry {
+    padding-left: 0 !important;
+    margin-bottom: 1.8rem !important;
+  }
+
+  .era-card,
+  .card-tilt,
+  .titan-card,
+  .story-card,
+  .why-card,
+  .myth-card,
+  .master-composer-card {
+    padding: 1.25rem !important;
+  }
+
+  .era-desc-grid,
+  .era-exponents-list,
+  .anatomy-breakdown,
+  .hero-quick-stats,
+  .evo-media-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.9rem !important;
+  }
+
+  .era-badge-row {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .era-title {
+    font-size: 1.55rem !important;
+  }
+
+  /* Dock de audio móvil en 2 filas limpias: título arriba, controles abajo */
+  .floating-audio-deck {
+    bottom: 0.75rem !important;
+    left: 0.75rem !important;
+    right: 0.75rem !important;
+    transform: none !important;
+    width: auto !important;
+    max-width: none !important;
+    border-radius: 16px !important;
+    padding: 0.65rem 0.85rem !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 0.5rem !important;
+  }
+
+  .floating-audio-deck .deck-info {
+    width: 100%;
+    min-width: 0;
+    gap: 0.55rem;
+  }
+
+  .floating-audio-deck .deck-icon-badge {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .floating-audio-deck .deck-text-box {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .floating-audio-deck .deck-status-label {
+    font-size: 0.58rem;
+  }
+
+  .floating-audio-deck .deck-track-title {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .floating-audio-deck .deck-controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .btn-deck-autosync {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.66rem;
+    padding: 0.42rem 0.6rem;
+  }
+
+  .fab-top {
+    bottom: 7.4rem !important;
+    right: 0.85rem !important;
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -2636,101 +2636,78 @@ body::before {
   color: var(--gold-primary);
 }
 
-.pillar-art-thumb {
-  position: relative;
-  width: 100%;
-  height: 185px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-  border: 1px solid rgba(229, 184, 92, 0.28);
-  background: #0b111e;
-}
-
-.pillar-art-thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-  filter: brightness(0.95) contrast(1.05);
-  transition: transform 0.6s var(--transition-smooth), filter 0.4s ease;
-}
-
-.pillar-art-thumb::after {
-  content: "";
+/* Fondo fotográfico translúcido integrado en todo el tile (Pilares & Timeline) */
+.pillar-bg-layer,
+.era-card-banner {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(6, 9, 15, 0.02) 0%, rgba(6, 9, 15, 0.08) 65%, rgba(6, 9, 15, 0.52) 100%);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  z-index: 0;
   pointer-events: none;
 }
 
-.card-tilt:hover .pillar-art-thumb img {
-  transform: scale(1.06);
-  filter: brightness(1.03) contrast(1.07);
-}
-
-.pillar-art-tag {
-  position: absolute;
-  left: 0.75rem;
-  bottom: 0.65rem;
-  z-index: 2;
-  font-size: 0.64rem;
-  font-weight: 700;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  background: rgba(6, 9, 15, 0.78);
-  border: 1px solid rgba(229, 184, 92, 0.35);
-  padding: 0.2rem 0.55rem;
-  border-radius: 999px;
-  backdrop-filter: blur(8px);
-}
-
-/* Banner visual de época integrado en cada tarjeta del Timeline */
-.era-card-banner {
-  position: relative;
-  width: calc(100% + 4.4rem);
-  margin: -2.2rem -2.2rem 1.8rem;
-  height: 290px;
-  overflow: hidden;
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  border-bottom: 1px solid rgba(229, 184, 92, 0.22);
-}
-
+.pillar-bg-layer img,
 .era-card-banner img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 30%;
   display: block;
-  filter: brightness(0.95) contrast(1.06);
-  transition: transform 0.7s var(--transition-smooth), filter 0.4s ease;
+  opacity: 0.36;
+  filter: saturate(0.95) contrast(1.08);
+  transition: transform 0.8s var(--transition-smooth), opacity 0.45s ease;
 }
 
+.card-tilt:hover .pillar-bg-layer img,
 .era-card:hover .era-card-banner img {
-  transform: scale(1.04);
-  filter: brightness(1.03) contrast(1.08);
+  transform: scale(1.045);
+  opacity: 0.48;
 }
 
+.pillar-bg-layer::after,
 .era-card-banner::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(6, 9, 15, 0.02) 0%, rgba(6, 9, 15, 0.08) 68%, rgba(11, 17, 30, 0.88) 100%);
+  background:
+    radial-gradient(ellipse at 50% 18%, rgba(8, 13, 24, 0.25) 0%, rgba(8, 13, 24, 0.72) 65%, rgba(8, 13, 24, 0.9) 100%),
+    linear-gradient(180deg, rgba(8, 13, 24, 0.38) 0%, rgba(8, 13, 24, 0.72) 48%, rgba(8, 13, 24, 0.92) 100%);
   pointer-events: none;
+}
+
+.era-card,
+.pillars-grid .card-tilt {
+  position: relative;
+  overflow: hidden;
+}
+
+.era-card .card-tilt-inner > *:not(.era-card-banner),
+.pillars-grid .card-tilt-inner > *:not(.pillar-bg-layer) {
+  position: relative;
+  z-index: 2;
+}
+
+.pillar-art-tag {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(6, 9, 15, 0.72);
+  border: 1px solid rgba(229, 184, 92, 0.35);
+  padding: 0.24rem 0.65rem;
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
 }
 
 .compass-mood-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-}
-
-@media (max-width: 768px) {
-  .era-card-banner {
-    width: calc(100% + 3rem);
-    margin: -1.5rem -1.5rem 1.2rem;
-    height: 200px;
-  }
 }

@@ -9,8 +9,8 @@
 :root {
   --bg-deep: #06090f;
   --bg-surface: #0b111e;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-hover: rgba(22, 33, 54, 0.9);
+  --bg-card: rgba(10, 16, 30, 0.48);
+  --bg-card-hover: rgba(16, 25, 44, 0.62);
   
   --gold-primary: #e5b85c;
   --gold-light: #fef3c7;
@@ -2710,4 +2710,51 @@ body::before {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
+}
+
+
+/* ==========================================================================
+   GLASSMORPHISM TRANSLÚCIDO GLOBAL PARA TODOS LOS TILES (DEJA VER EL FONDO)
+   ========================================================================== */
+.card-tilt,
+.era-card,
+.myth-card,
+.interactive-decoder,
+.catalog-card,
+.titan-card,
+.story-card,
+.why-card,
+.compass-box,
+.portal-exponents-banner,
+.lg-spotlight-panel,
+.hub-composer-card,
+.master-composer-card,
+.catalog-table-wrap {
+  background: rgba(9, 14, 26, 0.48) !important;
+  backdrop-filter: blur(14px) saturate(145%);
+  -webkit-backdrop-filter: blur(14px) saturate(145%);
+  border-color: rgba(229, 184, 92, 0.22);
+}
+
+.card-tilt:hover,
+.era-card:hover,
+.catalog-card:hover,
+.titan-card:hover,
+.story-card:hover,
+.why-card:hover,
+.hub-composer-card:hover {
+  background: rgba(13, 20, 36, 0.58) !important;
+}
+
+.lg-stage-card,
+.compass-item,
+.anatomy-part,
+.master-period-card,
+.exponent-pill,
+.era-desc-item,
+.lg-work-item,
+.master-catalog-section {
+  background: rgba(8, 13, 24, 0.42) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }

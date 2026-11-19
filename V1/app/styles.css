@@ -2758,3 +2758,35 @@ body::before {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
+
+/* Botón Auto-Sync Banda Sonora por Sección en el Dock de Audio */
+.btn-deck-autosync {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.4rem 0.78rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(229, 184, 92, 0.32);
+  color: var(--text-secondary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s ease;
+  font-family: var(--font-sans);
+}
+
+.btn-deck-autosync:hover {
+  border-color: var(--gold-primary);
+  color: #fff;
+}
+
+.btn-deck-autosync.active {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: #10b981;
+  color: #a7f3d0;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.32);
+}

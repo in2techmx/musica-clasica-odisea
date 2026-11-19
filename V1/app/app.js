@@ -30,12 +30,54 @@ document.addEventListener("DOMContentLoaded", () => {
   const deckStatus = document.getElementById("deck-status-label");
   const deckPlayBtn = document.getElementById("deck-play-btn");
   const deckStopBtn = document.getElementById("deck-stop-btn");
+  const deckAutoSyncBtn = document.getElementById("deck-autosync-btn");
   const headerAudioPill = document.getElementById("header-audio-pill");
   const headerAudioDot = document.getElementById("header-audio-dot");
   const visualizerCanvas = document.getElementById("audio-visualizer");
   const canvasCtx = visualizerCanvas ? visualizerCanvas.getContext("2d") : null;
 
   let currentPlayingMotif = "beethoven-5th";
+  let autoSoundtrackEnabled = false;
+  let currentSectionMotif = "beethoven-5th";
+  let autoSyncTimer = null;
+
+  const SECTION_MOTIF_MAP = {
+    "hero": "beethoven-5th",
+    "que-es": "vivaldi-primavera",
+    "medieval": "hildegarda",
+    "renacimiento": "palestrina",
+    "barroco": "bach-toccata",
+    "nomenclatura": "bach-toccata",
+    "clasicismo": "mozart-nachtmusik",
+    "titanes": "mozart-nachtmusik",
+    "romanticismo": "chopin-nocturne",
+    "historias": "chopin-nocturne",
+    "siglo-xx": "debussy-clair",
+    "guia-audicion": "debussy-clair",
+    "contemporanea": "glass-minimalism",
+    "cine-actualidad": "williams-theme",
+    "por-que-escuchar": "part-tintinnabuli"
+  };
+
+  function updateAutoSyncUI() {
+    if (!deckAutoSyncBtn) return;
+    deckAutoSyncBtn.classList.toggle("active", autoSoundtrackEnabled);
+    deckAutoSyncBtn.textContent = autoSoundtrackEnabled ? "✦ Auto-Sección: ON" : "✦ Auto-Sección: OFF";
+  }
+
+  function scheduleSectionMotif(contextKey) {
+    const motifKey = SECTION_MOTIF_MAP[contextKey];
+    if (!motifKey) return;
+    currentSectionMotif = motifKey;
+    if (!autoSoundtrackEnabled) return;
+    if (synth.isPlaying && currentPlayingMotif === motifKey) return;
+    clearTimeout(autoSyncTimer);
+    autoSyncTimer = setTimeout(() => {
+      if (autoSoundtrackEnabled && (!synth.isPlaying || currentPlayingMotif !== motifKey)) {
+        synth.playMotif(motifKey);
+      }
+    }, 550);
+  }
 
   // ==========================================================================
   // 0. MAPA DE SUBPÁGINAS — Ruta relativa desde la carpeta app/
@@ -542,16 +584,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (deckStopBtn) {
       deckStopBtn.addEventListener("click", () => {
+        autoSoundtrackEnabled = false;
+        clearTimeout(autoSyncTimer);
+        updateAutoSyncUI();
         synth.stop();
+      });
+    }
+
+    if (deckAutoSyncBtn) {
+      deckAutoSyncBtn.addEventListener("click", () => {
+        autoSoundtrackEnabled = !autoSoundtrackEnabled;
+        updateAutoSyncUI();
+        if (autoSoundtrackEnabled) {
+          synth.playMotif(currentSectionMotif || currentPlayingMotif || "beethoven-5th");
+        } else {
+          clearTimeout(autoSyncTimer);
+          synth.stop();
+        }
       });
     }
 
     if (headerAudioPill) {
       headerAudioPill.addEventListener("click", () => {
         if (synth.isPlaying) {
+          autoSoundtrackEnabled = false;
+          clearTimeout(autoSyncTimer);
+          updateAutoSyncUI();
           synth.stop();
         } else {
-          synth.playMotif(currentPlayingMotif || "beethoven-5th");
+          autoSoundtrackEnabled = true;
+          updateAutoSyncUI();
+          synth.playMotif(currentSectionMotif || currentPlayingMotif || "beethoven-5th");
         }
       });
     }
@@ -809,10 +872,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const el = entry.target;
         if (el.dataset.eraId) {
           setActiveTimeEra(el.dataset.eraId);
+          scheduleSectionMotif(el.dataset.eraId);
         } else if (el.classList.contains("hero-section")) {
           setActiveTimeEra("hero");
+          scheduleSectionMotif("hero");
         } else if (el.id && SECTION_ERA_MAP[el.id]) {
           setActiveTimeEra(SECTION_ERA_MAP[el.id]);
+          scheduleSectionMotif(el.id);
         }
       });
     }, { rootMargin: "-30% 0px -55% 0px", threshold: 0 });

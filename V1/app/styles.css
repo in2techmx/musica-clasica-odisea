@@ -459,21 +459,29 @@ body::before {
 }
 
 @media (max-width: 1120px) {
-  .nav-hamburger { display: flex; order: 3; }
+  .site-header {
+    background: rgba(6, 9, 15, 0.97) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  .header-container {
+    padding: 0 0.85rem;
+    gap: 0.5rem;
+  }
+  .nav-hamburger { display: flex !important; order: 3; }
   .header-right-actions { margin-left: auto; order: 2; }
-  .header-audio-pill { display: none; }
+  .header-audio-pill { display: none !important; }
   .main-nav {
     display: none;
     position: fixed;
     top: 64px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 64px);
+    height: calc(100dvh - 64px);
     background: rgba(6, 9, 15, 0.98);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
     border-top: 1px solid rgba(229, 184, 92, 0.25);
-    padding: 1.25rem 1.5rem 5rem;
+    padding: 1.25rem 1.25rem 6rem;
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
     overflow-y: auto;
     z-index: 2001;

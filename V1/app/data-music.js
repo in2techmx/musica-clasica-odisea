@@ -68,7 +68,7 @@ const MUSIC_DATA = {
           years: "c. 991 – 1050",
           role: "El Padre de la Notación Musical",
           initials: "GA",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Guido_d%27Arezzo.jpg/440px-Guido_d%27Arezzo.jpg",
+          image: "assets/portraits/guido-darezzo.jpg",
           whyExponent: "Sin él, la música occidental no podría leerse ni transmitirse en el tiempo. Inventó el sistema de 4 líneas y bautizó las notas musicales (Ut-Re-Mi-Fa-Sol-La) extrayendo las sílabas del himno 'Ut queant laxis' a San Juan Bautista.",
           milestones: [
             "Creó la 'Mano Guidoniana', el primer sistema pedagógico mnemotécnico visual para enseñar solfeo y entonación.",
@@ -100,7 +100,7 @@ const MUSIC_DATA = {
           years: "1098 – 1179",
           role: "La Mística Visionaria del Canto Sacro",
           initials: "HB",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Hildegard_von_Bingen.jpg/440px-Hildegard_von_Bingen.jpg",
+          image: "assets/portraits/hildegarda-von-bingen.jpg",
           whyExponent: "Abadesa, científica, teóloga y polímata del Sacro Imperio. Rompió los estrechos límites del canto gregoriano masculino con melodías que abarcan más de dos octavas y un lirismo poético extático.",
           milestones: [
             "Primera compositora de la historia europea cuya biografía, textos e identidad autoral se conservan documentados.",
@@ -132,7 +132,7 @@ const MUSIC_DATA = {
           years: "c. 1150 – 1220",
           role: "Los Pioneros de la Polifonía Compleja",
           initials: "LP",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Perotin_-_Viderunt_omnes.jpg/440px-Perotin_-_Viderunt_omnes.jpg",
+          image: "assets/portraits/leonin-perotin.jpg",
           whyExponent: "Transformaron el canto llano monódico en una catedral sonora de varias voces sincronizadas rítmicamente con los modos métricos grecolatinos.",
           milestones: [
             "Crearon el monumental 'Magnus Liber Organi' (Gran Libro del Órgano).",
@@ -176,7 +176,7 @@ const MUSIC_DATA = {
           years: "c. 1450 – 1521",
           role: "El Miguel Ángel de la Música",
           initials: "JD",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Josquin_des_Prez.jpg/440px-Josquin_des_Prez.jpg",
+          image: "assets/portraits/josquin-des-prez.jpg",
           whyExponent: "Considerado unánimemente por sus contemporáneos (incluyendo Martín Lutero y los papas de Roma) como el genio supremo de su era. Lutero proclamó: 'Josquin es el amo de las notas; ellas hacen lo que él quiere; los demás músicos hacen lo que las notas quieren'.",
           milestones: [
             "Fue el primer compositor cuya fama internacional se propagó a escala continental gracias a la imprenta musical.",
@@ -208,7 +208,7 @@ const MUSIC_DATA = {
           years: "1525 – 1594",
           role: "El Salvador de la Polifonía Sacra",
           initials: "GP",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Palestrina.jpg/440px-Palestrina.jpg",
+          image: "assets/portraits/palestrina.jpg",
           whyExponent: "Fijó el ideal supremo de pureza polifónica vocal. Durante el Concilio de Trento los prelados católicos amenazaron con prohibir la polifonía por considerarla confusa; su 'Missa Papae Marcelli' demostró que el texto en latín podía escucharse con total transparencia y devoción.",
           milestones: [
             "Estableció el estándar de contrapunto riguroso más estudiado en todos los conservatorios de la historia.",
@@ -252,7 +252,7 @@ const MUSIC_DATA = {
           years: "1685 – 1750",
           role: "La Cumbre Matemática y Espiritual de la Música",
           initials: "JSB",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Johann_Sebastian_Bach.jpg/440px-Johann_Sebastian_Bach.jpg",
+          image: "assets/portraits/bach.jpg",
           whyExponent: "El arquitecto supremo. Tomó todas las formas musicales de Europa (la fuga germánica, el concierto italiano, la suite de danzas francesa) y las llevó a una perfección estructural, riqueza armónica y hondura metafísica nunca superadas.",
           milestones: [
             "Demostró con 'El Clave Bien Temperado' que se podía componer en las 24 tonalidades mayores y menores afinando por temperamento igual.",
@@ -289,7 +289,7 @@ const MUSIC_DATA = {
           years: "1678 – 1741",
           role: "El Cura Rojo y el Maestro del Concierto Solista",
           initials: "AV",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Vivaldi.jpg/440px-Vivaldi.jpg",
+          image: "assets/portraits/vivaldi.jpg",
           whyExponent: "Sacerdote y virtuoso del violín veneciano. Fijó para siempre la estructura del concierto clásico en tres movimientos (Rápido - Lento - Rápido) e inventó la música descriptiva cinematográfica.",
           milestones: [
             "Compuso más de 500 conciertos, estableciendo la técnica del 'ritornello' (estribillo orquestal que dialoga con el virtuosismo del solista).",
@@ -326,7 +326,7 @@ const MUSIC_DATA = {
           years: "1685 – 1759",
           role: "El Titán del Drama Coral y la Épica Orquestal",
           initials: "GFH",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/George_Frideric_Handel_by_Balthasar_Denner.jpg/440px-George_Frideric_Handel_by_Balthasar_Denner.jpg",
+          image: "assets/portraits/handel.jpg",
           whyExponent: "Compositor cosmopolita (alemán educado en Italia y nacionalizado británico). Inventó el oratorio en lengua inglesa y creó algunas de las melodías corales más triunfales y universales jamás concebidas.",
           milestones: [
             "Creó el 'Aleluya' del Mesías, donde por tradición real los monarcas y el público se ponen de pie.",
@@ -370,7 +370,7 @@ const MUSIC_DATA = {
           years: "1732 – 1809",
           role: "El Padre de la Sinfonía y del Cuarteto de Cuerdas",
           initials: "JH",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Joseph_Haydn_by_Thomas_Hardy%2C_1791.jpg/440px-Joseph_Haydn_by_Thomas_Hardy%2C_1791.jpg",
+          image: "assets/portraits/haydn.jpg",
           whyExponent: "Trabajó tres décadas aislado en el palacio campestre de los príncipes Esterházy, lo que según sus propias palabras le 'obligó a ser original'. Construyó los cimientos de la sinfonía moderna y fue maestro y amigo de Mozart y profesor de Beethoven.",
           milestones: [
             "Compuso 106 sinfonías y 68 cuartetos de cuerda, definiendo la estructura clásica canónica en 4 movimientos.",
@@ -402,7 +402,7 @@ const MUSIC_DATA = {
           years: "1756 – 1791",
           role: "El Genio Melódico Insuperable de la Humanidad",
           initials: "WAM",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Wolfgang-amadeus-mozart_1.jpg/440px-Wolfgang-amadeus-mozart_1.jpg",
+          image: "assets/portraits/mozart.jpg",
           whyExponent: "Niño prodigio que componía a los 5 años y dominó todos los géneros existentes (ópera, sinfonía, concierto para piano, música sacra y de cámara) con una fluidez melódica perfecta que parecía fluir sin esfuerzo humano.",
           milestones: [
             "Revolucionó la ópera convirtiéndola en un estudio psicológico de pasiones y dilemas humanos reales ('Las Bodas de Fígaro', 'Don Giovanni').",
@@ -451,7 +451,7 @@ const MUSIC_DATA = {
           years: "1770 – 1827",
           role: "El Titán que Rompió las Reglas del Mundo",
           initials: "LvB",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Beethoven.jpg/440px-Beethoven.jpg",
+          image: "assets/portraits/beethoven.jpg",
           whyExponent: "El puente monumental entre el Clasicismo y el Romanticismo. A pesar de quedarse completamente sordo a los 30 años, canalizó su sufrimiento en obras revolucionarias de una fuerza ética y cósmica sin precedentes.",
           milestones: [
             "Con la 3ª Sinfonía ('Heroica') rompió el clasicismo duplicando la duración tradicional de una sinfonía.",
@@ -488,7 +488,7 @@ const MUSIC_DATA = {
           years: "1810 – 1849",
           role: "El Poeta del Piano y el Alma del Rubato",
           initials: "FC",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Frederic_Chopin_photo.jpeg/440px-Frederic_Chopin_photo.jpeg",
+          image: "assets/portraits/chopin.jpg",
           whyExponent: "Consagró su genio casi exclusivamente al piano. Creó una técnica expresiva ('tempo rubato': flexibilidad del tiempo musical como el latido orgánico de un corazón) y una poesía melancólica ligada al drama del exilio de su Polonia natal.",
           milestones: [
             "Elevó danzas populares de resistencia nacional como la Mazurka y la Polonesa a la cúspide de la alta cultura.",
@@ -520,7 +520,7 @@ const MUSIC_DATA = {
           years: "1840 – 1893",
           role: "El Maestro del Drama Emocional y el Ballet Universal",
           initials: "PIT",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Tchaikovsky_by_Reutlinger_c1880.jpg/440px-Tchaikovsky_by_Reutlinger_c1880.jpg",
+          image: "assets/portraits/tchaikovsky.jpg",
           whyExponent: "El compositor ruso más universal. Su capacidad para crear melodías arrebatadoras de desgarro interior y orquestaciones con una desgarradora carga emocional lo convirtieron en un fenómeno mundial.",
           milestones: [
             "Revolucionó el ballet elevándolo de mero acompañamiento bailable a drama sinfónico serio ('El Lago de los Cisnes', 'El Cascanueces', 'La Bella Durmiente').",
@@ -552,7 +552,7 @@ const MUSIC_DATA = {
           years: "1813 – 1883",
           role: "El Revolucionario de la Obra de Arte Total (Gesamtkunstwerk)",
           initials: "RW",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/RichardWagner.jpg/440px-RichardWagner.jpg",
+          image: "assets/portraits/wagner.jpg",
           whyExponent: "Figura gigantesca y polémica que transformó para siempre el teatro y la música occidental. Diseñó su propio teatro en Bayreuth y concibió el drama musical como la fusión indivisible de poesía, escenografía, mito y música continua sin arias separadas.",
           milestones: [
             "Desarrolló el sistema del 'Leitmotiv' (motivo conductor que identifica a un personaje, objeto o emoción), técnica que usan hoy todos los compositores de cine como John Williams.",
@@ -601,7 +601,7 @@ const MUSIC_DATA = {
           years: "1862 – 1918",
           role: "El Pintor del Sonido y la Luz Impresionista",
           initials: "CD",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Claude_Debussy_circa_1908%2C_foto_av_Wilhelm_Benque.jpg/440px-Claude_Debussy_circa_1908%2C_foto_av_Wilhelm_Benque.jpg",
+          image: "assets/portraits/debussy.jpg",
           whyExponent: "Francés rebelde que rompió la tiranía de la armonía germánica. En lugar de tensar acordes hacia una tónica obligada, trataba a cada acorde como un color pictórico libre, utilizando escalas de tonos enteros y pentatónicas exóticas.",
           milestones: [
             "Con el 'Preludio a la Siesta de un Fauno' (1894), Pierre Boulez dijo que 'la música moderna despertó'.",
@@ -633,7 +633,7 @@ const MUSIC_DATA = {
           years: "1882 – 1971",
           role: "El Camaleón del Ritmo que Provocó un Motín",
           initials: "IS",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Igor_Stravinsky_LOC_32392u.jpg/440px-Igor_Stravinsky_LOC_32392u.jpg",
+          image: "assets/portraits/stravinsky.jpg",
           whyExponent: "Compositor ruso cuya versatilidad marcó las tres grandes olas del siglo XX (Rusa primigenia, Neoclásica y Serial). Puso al ritmo en el trono principal de la música moderna.",
           milestones: [
             "El estreno de 'La Consagración de la Primavera' en París (1913) provocó peleas a golpes en la platea debido a sus acordes disonantes percusivos y compases cambiantes.",
@@ -670,7 +670,7 @@ const MUSIC_DATA = {
           years: "1874 – 1951",
           role: "El Demoledor de la Tonalidad y Padre del Dodecafonismo",
           initials: "AS",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Arnold_Sch%C3%B6nberg_1927.jpg/440px-Arnold_Sch%C3%B6nberg_1927.jpg",
+          image: "assets/portraits/schoenberg.jpg",
           whyExponent: "Creador de la Segunda Escuela de Viena. Al sentir que el cromatismo post-wagneriano había agotado la jerarquía tonal, 'emancipó la disonancia' e inventó el método de composición con 12 notas de igual jerarquía.",
           milestones: [
             "Sustituyó la escala mayor/menor por la serie dodecafónica (original, retrógrada, inversión e inversión retrógrada).",
@@ -719,7 +719,7 @@ const MUSIC_DATA = {
           years: "1937 – Presente",
           role: "El Arquitecto del Minimalismo Hipnótico",
           initials: "PG",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Philip_Glass_2007.jpg/440px-Philip_Glass_2007.jpg",
+          image: "assets/portraits/philip-glass.jpg",
           whyExponent: "Uno de los compositores vivos más influyentes de la historia. Despojó a la música de desarrollos dramáticos tradicionales para construir catedrales de arpegios repetitivos que evolucionan milimétricamente.",
           milestones: [
             "Revolucionó la ópera contemporánea con 'Einstein on the Beach' (1976).",
@@ -751,7 +751,7 @@ const MUSIC_DATA = {
           years: "1935 – Presente",
           role: "El Místico del Silencio y la Técnica Tintinnabuli",
           initials: "AP",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Arvo_P%C3%A4rt_2011.jpg/440px-Arvo_P%C3%A4rt_2011.jpg",
+          image: "assets/portraits/arvo-part.jpg",
           whyExponent: "Compositor estonio que inventó un estilo radicalmente despojado llamado 'tintinnabuli' (como el tañido de pequeñas campanas). Su música transmite una paz y trascendencia casi celestial en medio del ruido contemporáneo.",
           milestones: [
             "El compositor clásico vivo más interpretado en todo el planeta durante una década consecutiva.",
@@ -783,7 +783,7 @@ const MUSIC_DATA = {
           years: "1932 – Presente",
           role: "El Heredero Directo de la Gran Tradición Sinfónica",
           initials: "JW",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/John_Williams_profile.jpg/440px-John_Williams_profile.jpg",
+          image: "assets/portraits/john-williams.jpg",
           whyExponent: "El compositor más escuchado y premiado de la historia del cine (54 nominaciones al Óscar). Mantuvo viva la orquesta sinfónica post-romántica de Wagner, Holst y Chaikovski en el corazón de miles de millones de personas de todas las edades.",
           milestones: [
             "Uso magistral del Leitmotiv wagneriano en Star Wars, Indiana Jones, Jurassic Park, E.T. y Harry Potter.",
@@ -1040,3 +1040,5 @@ const MUSIC_DATA = {
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = MUSIC_DATA;
 }
+
+if (typeof window !== "undefined") { window.MUSIC_DATA = MUSIC_DATA; }

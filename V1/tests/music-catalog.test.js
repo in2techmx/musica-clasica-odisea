@@ -70,8 +70,11 @@ test("Cada época histórica cuenta con contexto, ruptura técnica, instrumentos
 // -------------------------------------------------------------
 console.log("\n👑 2. Verificación de Retratos Reales, Etapas Creativas y Catálogos Propios");
 
-test("Todos los exponentes tienen fotos reales (HTTPS), iniciales, hitos y catálogos propios", () => {
+test("Todos los exponentes tienen fotos reales verificadas (locales en disco o HTTPS), iniciales, hitos y catálogos propios", () => {
+  const fs = require("fs");
+  const path = require("path");
   let totalExponents = 0;
+  const appDir = path.resolve(__dirname, "../app");
   MUSIC_DATA.eras.forEach(era => {
     era.exponents.forEach(exp => {
       totalExponents++;
@@ -80,7 +83,10 @@ test("Todos los exponentes tienen fotos reales (HTTPS), iniciales, hitos y catá
       assert.ok(exp.years, `Faltan años biográficos en ${exp.name}`);
       assert.ok(exp.role, `Falta rol titular en ${exp.name}`);
       assert.ok(exp.initials, `Faltan iniciales de respaldo en ${exp.name}`);
-      assert.ok(typeof exp.image === 'string' && exp.image.startsWith("https://"), `Imagen inválida en ${exp.name}: ${exp.image}`);
+      const isHttps = typeof exp.image === 'string' && exp.image.startsWith("https://");
+      const localPath = typeof exp.image === 'string' ? path.join(appDir, exp.image) : "";
+      const isVerifiedLocal = localPath && fs.existsSync(localPath) && fs.statSync(localPath).size > 10000;
+      assert.ok(isHttps || isVerifiedLocal, `Imagen inválida o ausente en disco para ${exp.name}: ${exp.image}`);
       assert.ok(exp.whyExponent && exp.whyExponent.length > 30, `Explicación de mérito insuficiente en ${exp.name}`);
       assert.ok(Array.isArray(exp.milestones) && exp.milestones.length >= 2, `Debe tener al menos 2 hitos documentados: ${exp.name}`);
       assert.ok(exp.masterpiece, `Falta obra maestra representativa en ${exp.name}`);

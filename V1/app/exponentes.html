@@ -205,18 +205,36 @@
   <!-- ========================================================
        SECCIÓN 1: HUB VISUAL — CUADRÍCULA DE COMPOSITORES
        ======================================================== -->
-  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
-    <div class="section-header">
-      <div class="editorial-badge">Dossier Monográfico &amp; Hub de Catálogos • IN2TECHMX</div>
-      <h2 class="section-title">Los Máximos Exponentes y Sus Universos Creativos</h2>
-      <p class="section-desc">
-        Selecciona a cualquier compositor para acceder a su catálogo dedicado: obras completas clasificadas por género,
-        etapas creativas explicadas, contexto histórico y el legado que dejó para la eternidad.
-      </p>
-    </div>
+  <section class="section-wrapper" style="padding-top: 4.5rem; padding-bottom: 2.5rem; background: linear-gradient(180deg, rgba(6,9,15,0.72) 0%, rgba(6,9,15,0.96) 100%), url('assets/hero-concert-hall.jpg') center top / cover no-repeat; max-width: 100%; border-bottom: 1px solid rgba(229,184,92,0.14);">
+    <div style="max-width: 1280px; margin: 0 auto;">
+      <div class="section-header">
+        <div class="editorial-badge">✦ Dossier Monográfico &amp; Galería de Maestros • IN2TECHMX</div>
+        <h2 class="section-title">Los Máximos Exponentes y Sus Universos Creativos</h2>
+        <p class="section-desc">
+          Explora los retratos de los 20 titanes de la historia musical. Selecciona a cualquier compositor para acceder a su
+          catálogo dedicado: obras completas clasificadas por género, etapas creativas explicadas y legado universal.
+        </p>
+      </div>
 
-    <!-- HUB GRID — generado dinámicamente por script inline -->
-    <div id="hub-grid-container"></div>
+      <!-- Barra de búsqueda y filtro rápido del Hub -->
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:0.8rem; margin-bottom:2.4rem;">
+        <input id="hub-search-input" type="search" placeholder="🔍 Buscar compositor (ej. Bach, Mozart, Debussy...)"
+               style="background:rgba(15,23,42,0.85); border:1px solid rgba(229,184,92,0.35); border-radius:999px; color:#f8fafc; padding:0.65rem 1.25rem; font-size:0.88rem; min-width:290px; outline:none; font-family:var(--font-sans);">
+        <div class="timeline-filter-bar" id="hub-era-filters" style="margin-bottom:0;">
+          <button class="timeline-filter-btn active" data-hub-filter="all">Todas las Épocas (20)</button>
+          <button class="timeline-filter-btn" data-hub-filter="medieval">Medieval</button>
+          <button class="timeline-filter-btn" data-hub-filter="renacimiento">Renacimiento</button>
+          <button class="timeline-filter-btn" data-hub-filter="barroco">Barroco</button>
+          <button class="timeline-filter-btn" data-hub-filter="clasicismo">Clasicismo</button>
+          <button class="timeline-filter-btn" data-hub-filter="romanticismo">Romanticismo</button>
+          <button class="timeline-filter-btn" data-hub-filter="siglo-xx">Siglo XX</button>
+          <button class="timeline-filter-btn" data-hub-filter="contemporanea">Contemporánea</button>
+        </div>
+      </div>
+
+      <!-- HUB GRID — generado dinámicamente desde MUSIC_DATA -->
+      <div id="hub-grid-container"></div>
+    </div>
   </section>
 
   <div class="section-wrapper"><div class="hub-divider"></div></div>
@@ -339,72 +357,115 @@
       };
 
       const container = document.getElementById("hub-grid-container");
-      if (!container || !window.MUSIC_DATA) return;
+      const dataSource = typeof MUSIC_DATA !== "undefined" ? MUSIC_DATA : window.MUSIC_DATA;
+      if (!container || !dataSource) return;
 
-      MUSIC_DATA.eras.forEach(era => {
-        const section = document.createElement("div");
-        section.className = "hub-era-section";
+      let activeEra = "all";
+      let searchTerm = "";
 
-        // Era heading
-        const heading = document.createElement("div");
-        heading.className = "hub-era-heading";
-        heading.innerHTML = `
-          <span class="hub-era-period-tag" style="color:${era.accent}; border-color:${era.accent}">${era.period}</span>
-          <h3>${era.name}</h3>
-        `;
-        section.appendChild(heading);
+      function renderHub() {
+        container.innerHTML = "";
+        const q = searchTerm.trim().toLowerCase();
 
-        const desc = document.createElement("p");
-        desc.className = "hub-era-desc";
-        desc.textContent = era.tagline;
-        section.appendChild(desc);
+        dataSource.eras.forEach(era => {
+          if (activeEra !== "all" && era.id !== activeEra) return;
 
-        // Cards grid
-        const grid = document.createElement("div");
-        grid.className = "hub-grid";
+          const matchingExponents = era.exponents.filter(exp =>
+            !q ||
+            exp.name.toLowerCase().includes(q) ||
+            exp.role.toLowerCase().includes(q) ||
+            era.name.toLowerCase().includes(q)
+          );
+          if (matchingExponents.length === 0) return;
 
-        era.exponents.forEach(exp => {
-          const subpageUrl = SUBPAGE_MAP[exp.id];
-          const card = document.createElement("div");
-          card.className = "hub-composer-card";
+          const section = document.createElement("div");
+          section.className = "hub-era-section";
 
-          card.innerHTML = `
-            <div class="hub-portrait-wrap">
-              <img
-                src="${exp.image}"
-                alt="Retrato de ${exp.name}"
-                loading="lazy"
-                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'hub-portrait-fallback\\'>${exp.initials}</div>'"
-              >
-              <div class="hub-era-ribbon">${era.name}</div>
-            </div>
-            <div class="hub-card-body">
-              <div class="hub-composer-name">${exp.name}</div>
-              <div class="hub-composer-years">${exp.years}</div>
-              <div class="hub-composer-role">${exp.role}</div>
-              <div class="hub-card-cta">
-                ${subpageUrl
-                  ? `<a href="${subpageUrl}">📖 Ver Catálogo &amp; Etapas →</a>`
-                  : `<div class="hub-card-no-page">Dossier integrado en fichas</div>`
-                }
-              </div>
-            </div>
+          const heading = document.createElement("div");
+          heading.className = "hub-era-heading";
+          heading.innerHTML = `
+            <span class="hub-era-period-tag" style="color:${era.accent}; border-color:${era.accent}">${era.period}</span>
+            <h3>${era.name}</h3>
           `;
+          section.appendChild(heading);
 
-          // Si tiene subpágina, el clic en el retrato también navega
-          if (subpageUrl) {
-            card.querySelector(".hub-portrait-wrap").style.cursor = "pointer";
-            card.querySelector(".hub-portrait-wrap").addEventListener("click", () => {
-              window.location.href = subpageUrl;
-            });
-          }
+          const desc = document.createElement("p");
+          desc.className = "hub-era-desc";
+          desc.textContent = era.tagline;
+          section.appendChild(desc);
 
-          grid.appendChild(card);
+          const grid = document.createElement("div");
+          grid.className = "hub-grid";
+
+          matchingExponents.forEach(exp => {
+            const subpageUrl = SUBPAGE_MAP[exp.id];
+            const card = document.createElement("div");
+            card.className = "hub-composer-card card-tilt";
+
+            card.innerHTML = `
+              <div class="hub-portrait-wrap">
+                <img
+                  src="${exp.image}"
+                  alt="Retrato de ${exp.name}"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'hub-portrait-fallback\\'>${exp.initials}</div>'"
+                >
+                <div class="hub-era-ribbon">${era.name}</div>
+              </div>
+              <div class="hub-card-body">
+                <div class="hub-composer-name">${exp.name}</div>
+                <div class="hub-composer-years">${exp.years}</div>
+                <div class="hub-composer-role">${exp.role}</div>
+                <div class="hub-card-cta" style="display:flex; flex-direction:column; gap:0.45rem;">
+                  <button class="btn-audio-motif" data-motif="${exp.motifKey}" style="width:100%; justify-content:center; font-size:0.72rem; padding:0.45rem 0.6rem;">
+                    <span>▶</span> Escuchar Motivo
+                  </button>
+                  ${subpageUrl
+                    ? `<a href="${subpageUrl}">📖 Ver Catálogo &amp; Etapas →</a>`
+                    : `<a href="#masters-full-container">📜 Ver Ficha Integrada ↓</a>`
+                  }
+                </div>
+              </div>
+            `;
+
+            if (subpageUrl) {
+              card.querySelector(".hub-portrait-wrap").style.cursor = "pointer";
+              card.querySelector(".hub-portrait-wrap").addEventListener("click", () => {
+                window.location.href = subpageUrl;
+              });
+            }
+
+            grid.appendChild(card);
+          });
+
+          section.appendChild(grid);
+          container.appendChild(section);
         });
 
-        section.appendChild(grid);
-        container.appendChild(section);
+        if (container.children.length === 0) {
+          container.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:2rem;">No se encontraron compositores para "${searchTerm}".</p>`;
+        }
+      }
+
+      const hubFilterBtns = document.querySelectorAll("[data-hub-filter]");
+      hubFilterBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+          hubFilterBtns.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          activeEra = btn.dataset.hubFilter;
+          renderHub();
+        });
       });
+
+      const searchInput = document.getElementById("hub-search-input");
+      if (searchInput) {
+        searchInput.addEventListener("input", (e) => {
+          searchTerm = e.target.value;
+          renderHub();
+        });
+      }
+
+      renderHub();
     })();
   </script>
 </body>

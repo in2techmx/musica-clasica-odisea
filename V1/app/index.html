@@ -16,32 +16,134 @@
   <div id="scroll-progress-bar"></div>
 
   <!-- HEADER & NAVEGACIÓN PRINCIPAL -->
-  <header class="site-header">
+  <header class="site-header" id="site-header">
     <div class="header-container">
+
+      <!-- MARCA -->
       <a href="#top" class="brand-wrapper">
-        <span class="brand-symbol">𝄞</span>
+        <div class="brand-symbol-wrap">
+          <span class="brand-symbol">𝄞</span>
+        </div>
         <div class="brand-text">
-          <h1>ODISEA CLÁSICA</h1>
-          <span class="brand-badge">IN2TECHMX • Vanguard Craft</span>
+          <span class="brand-title">ODISEA CLÁSICA</span>
+          <span class="brand-badge">IN2TECHMX · Vanguard Craft</span>
         </div>
       </a>
 
-      <nav>
+      <!-- HAMBURGUESA MÓVIL -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- NAV PRINCIPAL -->
+      <nav class="main-nav" id="main-nav">
         <ul class="nav-chapters">
-          <li><a href="#que-es" class="nav-link">¿Qué es?</a></li>
-          <li><a href="#timeline" class="nav-link">Timeline</a></li>
-          <li><a href="#nomenclatura" class="nav-link">Nomenclatura</a></li>
-          <li><a href="#titanes" class="nav-link">Titanes & Hitos</a></li>
-          <li><a href="#historias" class="nav-link">Peste & Revoluciones</a></li>
-          <li><a href="exponentes.html" class="nav-link nav-link-special">Catálogos & Etapas ↗</a></li>
-          <li><a href="#por-que-escuchar" class="nav-link">¿Por qué Escucharla?</a></li>
+
+          <!-- Items simples -->
+          <li class="nav-item">
+            <a href="#que-es" class="nav-link">
+              <span class="nav-link-icon">◎</span> ¿Qué es?
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#timeline" class="nav-link">
+              <span class="nav-link-icon">⟡</span> Timeline
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#nomenclatura" class="nav-link">
+              <span class="nav-link-icon">𝄢</span> Nomenclatura
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#titanes" class="nav-link">
+              <span class="nav-link-icon">★</span> Titanes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#historias" class="nav-link">
+              <span class="nav-link-icon">⚡</span> Historia
+            </a>
+          </li>
+
+          <!-- MEGA-DROPDOWN: CATÁLOGOS -->
+          <li class="nav-item nav-item-mega" id="nav-mega-trigger">
+            <a href="exponentes.html" class="nav-link nav-link-special nav-link-mega-toggle" id="mega-toggle-btn">
+              <span class="nav-link-icon">📖</span> Catálogos
+              <svg class="nav-chevron" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </a>
+
+            <!-- MEGA PANEL -->
+            <div class="mega-panel" id="mega-panel">
+              <div class="mega-panel-inner">
+                <div class="mega-col mega-col-featured">
+                  <div class="mega-featured-title">📚 Dossier de Compositores</div>
+                  <p class="mega-featured-desc">Catálogos completos por género, etapas creativas y contexto histórico de cada maestro.</p>
+                  <a href="exponentes.html" class="mega-featured-cta">Ver todos los compositores →</a>
+                  <div class="mega-era-pills">
+                    <span class="mega-era-pill" style="--ec:#8b6914">Medieval</span>
+                    <span class="mega-era-pill" style="--ec:#2d7a4f">Renacimiento</span>
+                    <span class="mega-era-pill" style="--ec:#1e5fa8">Barroco</span>
+                    <span class="mega-era-pill" style="--ec:#7c3d8e">Clasicismo</span>
+                    <span class="mega-era-pill" style="--ec:#9b2335">Romanticismo</span>
+                    <span class="mega-era-pill" style="--ec:#2b7a78">Siglo XX</span>
+                    <span class="mega-era-pill" style="--ec:#4a5568">Contemporánea</span>
+                  </div>
+                </div>
+
+                <div class="mega-col">
+                  <div class="mega-col-title">🎼 Barroco & Clasicismo</div>
+                  <ul class="mega-links-list">
+                    <li><a href="exponentes/bach.html"><img src="assets/portraits/bach.jpg" alt="Bach"> J. S. Bach <span>BWV</span></a></li>
+                    <li><a href="exponentes/vivaldi.html"><img src="assets/portraits/vivaldi.jpg" alt="Vivaldi"> Vivaldi <span>RV</span></a></li>
+                    <li><a href="exponentes/handel.html"><img src="assets/portraits/handel.jpg" alt="Händel"> Händel <span>HWV</span></a></li>
+                    <li><a href="exponentes/haydn.html"><img src="assets/portraits/haydn.jpg" alt="Haydn"> Haydn <span>Hob.</span></a></li>
+                    <li><a href="exponentes/mozart.html"><img src="assets/portraits/mozart.jpg" alt="Mozart"> Mozart <span>K.</span></a></li>
+                  </ul>
+                </div>
+
+                <div class="mega-col">
+                  <div class="mega-col-title">🔥 Romanticismo & Moderno</div>
+                  <ul class="mega-links-list">
+                    <li><a href="exponentes/beethoven.html"><img src="assets/portraits/beethoven.jpg" alt="Beethoven"> Beethoven <span>Op.</span></a></li>
+                    <li><a href="exponentes/chopin.html"><img src="assets/portraits/chopin.jpg" alt="Chopin"> Chopin <span>Op./B.</span></a></li>
+                    <li><a href="exponentes/tchaikovsky.html"><img src="assets/portraits/tchaikovsky.jpg" alt="Chaikovski"> Chaikovski <span>Op.</span></a></li>
+                    <li><a href="exponentes/wagner.html"><img src="assets/portraits/wagner.jpg" alt="Wagner"> Wagner <span>WWV</span></a></li>
+                    <li><a href="exponentes/debussy.html"><img src="assets/portraits/debussy.jpg" alt="Debussy"> Debussy <span>L.</span></a></li>
+                  </ul>
+                </div>
+
+                <div class="mega-col">
+                  <div class="mega-col-title">🌐 Vanguardia & Hoy</div>
+                  <ul class="mega-links-list">
+                    <li><a href="exponentes/stravinsky.html"><img src="assets/portraits/stravinsky.jpg" alt="Stravinsky"> Stravinsky <span>Craft</span></a></li>
+                    <li><a href="exponentes/schoenberg.html"><img src="assets/portraits/schoenberg.jpg" alt="Schoenberg"> Schoenberg <span>Op.</span></a></li>
+                    <li><a href="exponentes/philip-glass.html"><img src="assets/portraits/philip-glass.jpg" alt="Philip Glass"> Philip Glass <span>Cat.</span></a></li>
+                    <li><a href="exponentes/arvo-part.html"><img src="assets/portraits/arvo-part.jpg" alt="Arvo Pärt"> Arvo Pärt <span>Tint.</span></a></li>
+                    <li><a href="exponentes/john-williams.html"><img src="assets/portraits/john-williams.jpg" alt="John Williams"> John Williams <span>Leitmotiv</span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a href="#por-que-escuchar" class="nav-link">
+              <span class="nav-link-icon">♡</span> ¿Por qué?
+            </a>
+          </li>
+
         </ul>
       </nav>
 
+      <!-- AUDIO PILL -->
       <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis Orquestal">
         <div class="audio-pulse-dot" id="header-audio-dot"></div>
-        <span class="header-audio-text">Audio Web API</span>
+        <span class="header-audio-text">Audio Live</span>
       </div>
+
     </div>
   </header>
 
@@ -88,6 +190,36 @@
         <div class="stat-item">
           <div class="stat-number">100%</div>
           <div class="stat-label">Web Audio en Vivo</div>
+        </div>
+      </div>
+      <!-- Galería Visual Destacada de Maestros -->
+      <div class="hero-portraits-strip">
+        <div class="hero-portraits-label">✦ Acceso Directo a Catálogos &amp; Etapas de los Grandes Maestros</div>
+        <div class="hero-portraits-row">
+          <a href="exponentes/bach.html" class="hero-portrait-tile">
+            <img src="assets/portraits/bach.jpg" alt="Johann Sebastian Bach">
+            <div class="hero-portrait-caption"><strong>J. S. Bach</strong><span>Barroco · BWV</span></div>
+          </a>
+          <a href="exponentes/vivaldi.html" class="hero-portrait-tile">
+            <img src="assets/portraits/vivaldi.jpg" alt="Antonio Vivaldi">
+            <div class="hero-portrait-caption"><strong>A. Vivaldi</strong><span>Barroco · RV</span></div>
+          </a>
+          <a href="exponentes/mozart.html" class="hero-portrait-tile">
+            <img src="assets/portraits/mozart.jpg" alt="Wolfgang Amadeus Mozart">
+            <div class="hero-portrait-caption"><strong>W. A. Mozart</strong><span>Clasicismo · K.</span></div>
+          </a>
+          <a href="exponentes/beethoven.html" class="hero-portrait-tile">
+            <img src="assets/portraits/beethoven.jpg" alt="Ludwig van Beethoven">
+            <div class="hero-portrait-caption"><strong>L. Beethoven</strong><span>Romanticismo · Op.</span></div>
+          </a>
+          <a href="exponentes/chopin.html" class="hero-portrait-tile">
+            <img src="assets/portraits/chopin.jpg" alt="Frédéric Chopin">
+            <div class="hero-portrait-caption"><strong>F. Chopin</strong><span>Romanticismo · Op.</span></div>
+          </a>
+          <a href="exponentes/debussy.html" class="hero-portrait-tile">
+            <img src="assets/portraits/debussy.jpg" alt="Claude Debussy">
+            <div class="hero-portrait-caption"><strong>C. Debussy</strong><span>Siglo XX · L.</span></div>
+          </a>
         </div>
       </div>
     </div>
@@ -405,8 +537,8 @@
     <div class="tiles-grid">
       <div class="card-tilt">
         <div class="card-tilt-inner">
-          <div class="exponent-portrait-box" style="margin-bottom: 1rem; width: 60px; height: 60px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/John_Williams_profile.jpg/440px-John_Williams_profile.jpg" alt="John Williams" class="exponent-portrait-img">
+          <div class="exponent-portrait-box" style="margin-bottom: 1rem; width: 64px; height: 64px;">
+            <img src="assets/portraits/john-williams.jpg" alt="John Williams" class="exponent-portrait-img">
           </div>
           <h4 class="pillar-title">John Williams & El Leitmotiv Wagneriano</h4>
           <p class="pillar-desc">
@@ -424,8 +556,8 @@
 
       <div class="card-tilt">
         <div class="card-tilt-inner">
-          <div class="exponent-portrait-box" style="margin-bottom: 1rem; width: 60px; height: 60px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Johann_Sebastian_Bach.jpg/440px-Johann_Sebastian_Bach.jpg" alt="Bach" class="exponent-portrait-img">
+          <div class="exponent-portrait-box" style="margin-bottom: 1rem; width: 64px; height: 64px;">
+            <img src="assets/portraits/bach.jpg" alt="Bach" class="exponent-portrait-img">
           </div>
           <h4 class="pillar-title">Hans Zimmer & Las Texturas del Siglo XX</h4>
           <p class="pillar-desc">
@@ -438,8 +570,8 @@
 
       <div class="card-tilt">
         <div class="card-tilt-inner">
-          <div class="exponent-portrait-box" style="margin-bottom: 1rem; width: 60px; height: 60px;">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Vivaldi.jpg/440px-Vivaldi.jpg" alt="Vivaldi" class="exponent-portrait-img">
+          <div class="exponent-portrait-box" style="margin-bottom: 1rem; width: 64px; height: 64px;">
+            <img src="assets/portraits/vivaldi.jpg" alt="Vivaldi" class="exponent-portrait-img">
           </div>
           <h4 class="pillar-title">Max Richter & El Neoclasicismo Íntimo</h4>
           <p class="pillar-desc">
@@ -635,5 +767,57 @@
   <script src="data-music.js"></script>
   <script src="audio-synthesizer.js"></script>
   <script src="app.js"></script>
+<script>
+  // Navegación Vanguard: hamburguesa móvil, mega-dropdown y header con scroll
+  (function initVanguardNav() {
+    const hamburger = document.getElementById('nav-hamburger');
+    const mainNav = document.getElementById('main-nav');
+    const megaItem = document.getElementById('nav-mega-trigger');
+    const megaToggleBtn = document.getElementById('mega-toggle-btn');
+    const header = document.getElementById('site-header');
+
+    if (hamburger && mainNav) {
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+        hamburger.setAttribute('aria-expanded', String(!expanded));
+        mainNav.classList.toggle('open');
+      });
+    }
+
+    if (megaItem && megaToggleBtn) {
+      megaToggleBtn.addEventListener('click', (e) => {
+        // En pantallas móviles/tablet abre el acordeón; en escritorio navega directo al hub
+        if (window.innerWidth <= 1024) {
+          e.preventDefault();
+          megaItem.classList.toggle('open');
+        }
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (megaItem && !megaItem.contains(e.target)) {
+        megaItem.classList.remove('open');
+      }
+      if (mainNav && hamburger && !mainNav.contains(e.target) && !hamburger.contains(e.target)) {
+        mainNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (megaItem) megaItem.classList.remove('open');
+        if (mainNav) mainNav.classList.remove('open');
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 40);
+      });
+    }
+  })();
+</script>
 </body>
 </html>

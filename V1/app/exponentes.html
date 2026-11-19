@@ -202,6 +202,39 @@
       LOS GRANDES MAESTROS • CATÁLOGOS &amp; ETAPAS
     </div>
     <div class="header-right-actions">
+        <!-- SELECTOR MULTILINGÜE -->
+        <div class="lang-selector-wrap" id="lang-selector-wrap">
+          <button class="lang-selector-btn notranslate" id="lang-selector-btn" aria-label="Seleccionar idioma / Select language" aria-expanded="false" title="Cambiar idioma / Switch language">
+            <svg class="lang-globe-icon" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+            <span class="lang-current-flag">🇪🇸</span>
+            <span class="lang-current-label">ES</span>
+            <svg class="lang-chevron" viewBox="0 0 10 6" fill="none">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="lang-dropdown-menu notranslate" id="lang-dropdown-menu" role="listbox">
+            <button class="lang-opt-btn active" data-lang="es" role="option" aria-selected="true">
+              <span class="lang-flag">🇪🇸</span> <span class="lang-name">Español</span> <span class="lang-code">ES</span>
+            </button>
+            <button class="lang-opt-btn" data-lang="en" role="option" aria-selected="false">
+              <span class="lang-flag">🇬🇧</span> <span class="lang-name">English</span> <span class="lang-code">EN</span>
+            </button>
+            <button class="lang-opt-btn" data-lang="fr" role="option" aria-selected="false">
+              <span class="lang-flag">🇫🇷</span> <span class="lang-name">Français</span> <span class="lang-code">FR</span>
+            </button>
+            <button class="lang-opt-btn" data-lang="ru" role="option" aria-selected="false">
+              <span class="lang-flag">🇷🇺</span> <span class="lang-name">Русский</span> <span class="lang-code">RU</span>
+            </button>
+            <button class="lang-opt-btn" data-lang="zh-CN" role="option" aria-selected="false">
+              <span class="lang-flag">🇨🇳</span> <span class="lang-name">中文</span> <span class="lang-code">ZH</span>
+            </button>
+          </div>
+        </div>
+
       <a href="https://buymeacoffee.com/in2techmx" target="_blank" rel="noopener noreferrer" class="header-bmc-btn" title="Apoyar proyecto · Buy Me a Coffee" aria-label="Apoyar en Buy Me a Coffee">
         <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
         <span>Apoyar</span>
@@ -484,5 +517,6 @@
       renderHub();
     })();
   </script>
+  <script src="i18n.js?v=40"></script>
 </body>
 </html>

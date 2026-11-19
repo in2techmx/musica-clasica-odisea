@@ -410,8 +410,9 @@ document.addEventListener("DOMContentLoaded", () => {
                   </div>
                   <p class="lg-work-why">${w.whyListen}</p>
                   <div class="lg-work-actions">
-                    <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ Escuchar en YouTube</a>
-                    <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎼 ${w.freeLabel} (Gratis)</a>
+                    <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ YouTube</a>
+                    <a href="${w.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="btn-spotify-listen">♫ Spotify</a>
+                    <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎧 Audio Libre (Archive)</a>
                   </div>
                 </div>
               `).join("")}
@@ -622,8 +623,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <p class="lg-work-why">${w.whyListen}</p>
                 <div class="lg-work-actions">
-                  <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ Escuchar en YouTube</a>
-                  <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎼 ${w.freeLabel} (Gratis)</a>
+                  <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ YouTube</a>
+                  <a href="${w.spotifyUrl}" target="_blank" rel="noopener noreferrer" class="btn-spotify-listen">♫ Spotify</a>
+                  <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎧 Audio Libre (Archive)</a>
                 </div>
               </div>
             `).join("")}
@@ -714,7 +716,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="editorial-badge">🎧 Guía de Audición Recomendada • YouTube &amp; Audio Libre</div>
         <h3 class="section-title" style="font-size:clamp(1.6rem, 3vw, 2.3rem);">Qué Escuchar para Entender Cada Etapa de ${found.exp.name}</h3>
         <p class="section-desc">
-          Obras esenciales seleccionadas por periodo creativo con guía de escucha y enlaces directos gratuitos en YouTube e IMSLP / Internet Archive.
+          Obras esenciales seleccionadas por periodo creativo con guía de escucha y enlaces directos gratuitos en YouTube, Spotify e Internet Archive Audio.
         </p>
       </div>
       <div class="lg-stages-grid">

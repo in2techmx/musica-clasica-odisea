@@ -9,11 +9,12 @@ function buildYouTubeSearchUrl(query) {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
 }
 
-function buildFreeArchiveUrl(query, useArchive = false) {
-  if (useArchive) {
-    return `https://archive.org/search?query=${encodeURIComponent(query)}&and[]=mediatype:audio`;
-  }
-  return `https://imslp.org/index.php?search=${encodeURIComponent(query)}`;
+function buildFreeArchiveUrl(query) {
+  return `https://archive.org/search?query=${encodeURIComponent(query)}&and[]=mediatype:audio`;
+}
+
+function buildSpotifySearchUrl(query) {
+  return `https://open.spotify.com/search/${encodeURIComponent(query)}`;
 }
 
 const LISTENING_GUIDE_BY_COMPOSER = {
@@ -844,8 +845,9 @@ function enrichWork(w) {
     duration: w.duration,
     whyListen: w.whyListen,
     youtubeUrl: buildYouTubeSearchUrl(w.ytQuery),
-    freeArchiveUrl: buildFreeArchiveUrl(w.archiveQuery, Boolean(w.useArchive)),
-    freeLabel: w.freeLabel || "IMSLP"
+    spotifyUrl: buildSpotifySearchUrl(w.archiveQuery || w.ytQuery),
+    freeArchiveUrl: buildFreeArchiveUrl(w.archiveQuery || w.ytQuery),
+    freeLabel: "Archive Audio"
   };
 }
 

@@ -813,70 +813,133 @@ const MUSIC_DATA = {
     }
   ],
 
-  // HISTORIAS PROFUNDAS: MÚSICA, SANGRE, PESTE Y REVOLUCIONES
+  // HISTORIAS PROFUNDAS: MÚSICA, SANGRE, PESTE Y REVOLUCIONES (CON ETIQUETADO HISTORIOGRÁFICO Y FUENTES)
   historicalChronologyStories: [
     {
       eraId: "medieval",
-      title: "La Peste Negra y el Pánico al Apocalipsis (1347–1351)",
-      historicalEvent: "La Muerte Negra arrasa un tercio de la población europea",
-      impactOnMusic: "El terror a la condena divina impulsó el nacimiento de las misas polifónicas complejas y los motetes funerarios. Ante la muerte inminente, los poetas abandonaron el latín eclesiástico abstracto y nació el 'Ars Nova' en Francia e Italia (Guillaume de Machaut), componiendo canciones sobre el amor carnal y la fragilidad humana.",
-      fascinatingFact: "Los flagelantes caminaban entre ciudades azotándose la espalda mientras entonaban canciones llamadas 'Geisslerlieder', los primeros cánticos religiosos populares en lengua vernácula que la gente común podía entender sin sacerdotes."
+      categoryTag: "Documentado",
+      title: "La Peste Negra, Guillaume de Machaut y los Cánticos de Flagelantes (1347–1360)",
+      historicalEvent: "La epidemia de 1347–1351 causa la muerte de entre un tercio y la mitad de la población europea",
+      impactOnMusic: "Aunque la polifonía litúrgica (Notre Dame, s. XII), la lírica vernácula (trovadores, cantigas, laude) y el tratado del 'Ars Nova' (Philippe de Vitry, c. 1320) habían nacido décadas antes de la peste, la catástrofe demográfica diezmó capillas y scriptoria monásticos. Guillaume de Machaut —máximo poeta y compositor del amor cortés y del Ars Nova francés— sobrevivió a la epidemia de 1348 y hacia 1360 compuso su monumental 'Messe de Nostre Dame' para la Catedral de Reims: la primera misa ordinaria polifónica completa escrita por un solo autor conocido.",
+      fascinatingFact: "Durante el pico de la peste en 1349, procesiones de flagelantes recorrieron Europa central entonando los 'Geisslerlieder' (cantos penitenciales vernáculos conservados en la crónica de Hugo Spechtshart de Reutlingen), testimonio directo del trauma colectivo.",
+      sourceRef: "Fuentes: Hoppin, R. H. (1978), Medieval Music; Robertson, A. W. (2002), Guillaume de Machaut and Reims."
     },
     {
       eraId: "renacimiento",
-      title: "La Imprenta de Petrucci y la Rebelión de Lutero (1501–1517)",
-      historicalEvent: "Nacimiento de la imprenta musical y publicación de las 95 Tesis",
-      impactOnMusic: "En 1501, Ottaviano Petrucci patenta en Venecia el método para imprimir partituras con tipos móviles. Por primera vez en la historia humana, una composición de Josquin des Prez podía ser cantada simultáneamente en Toledo, Brujas, Núremberg y Roma sin necesidad de copiarla a mano. En 1517, Martín Lutero comprendió este poder y utilizó la imprenta para publicar 'corales luteranos' en alemán que toda la congregación cantaba al unísono, quitándole al Papa el monopolio sonoro de la fe.",
-      fascinatingFact: "Lutero declaró que 'la música es una señora y soberana de las emociones humanas, y después de la teología, no hay ningún arte que pueda compararse con ella'."
+      categoryTag: "Documentado",
+      title: "Los Tipos Móviles de Petrucci (1501) y los Himnarios de Lutero (1524)",
+      historicalEvent: "Primera polifonía impresa con tipos móviles y difusión de los corales de la Reforma",
+      impactOnMusic: "Aunque ya se imprimían misales con canto llano desde la década de 1470, Ottaviano Petrucci obtuvo en 1498 el privilegio del Senado de Venecia y publicó en 1501 el 'Harmonice Musices Odhecaton': la primera colección de música polifónica impresa con tipos móviles metálicos (mediante un proceso de triple impresión). Dos décadas después, en 1524, Martín Lutero y Johann Walter publicaron los primeros himnarios protestantes ('Achtliederbuch' y 'Eyn geystlich Gesangk Buchleyn'), impulsando el canto coral congregacional en lengua alemana.",
+      fascinatingFact: "En su prefacio en latín a la colección polifónica 'Symphoniae iucundae' de Georg Rhau (1538), Lutero escribió que, después de la palabra de Dios, solo la música merece ser exaltada como 'señora y gobernadora de los afectos humanos'.",
+      sourceRef: "Fuentes: Boorman, S. (2006), Ottaviano Petrucci: Catalogue Raisonné; Leaver, R. A. (2007), Luther's Liturgical Music."
     },
     {
       eraId: "renacimiento",
-      title: "El Juicio del Concilio de Trento y la Misa Salvada (1562)",
-      historicalEvent: "La Contrarreforma católica a punto de prohibir la polifonía",
-      impactOnMusic: "Los cardenales ultraconservadores del Concilio de Trento estaban furiosos: las voces polifónicas entrelazadas eran tan densas que las palabras sagradas de la misa quedaban enterradas en una algarabía incomprensible. La propuesta oficial era quemar las partituras complejas y regresar exclusivamente al canto llano monódico medieval.",
-      fascinatingFact: "Palestrina compuso expresamente la 'Missa Papae Marcelli' a seis voces y la interpretó ante los cardenales en la Capilla Sixtina: la claridad de las palabras latinas era tan cristalina y la armonía tan angelical que el papa Pío IV exclamó: '¡Estos son los cánticos que el apóstol Juan escuchó en la Jerusalén celestial!' y la música polifónica fue salvada para siempre."
+      categoryTag: "Tradición o leyenda",
+      title: "El Concilio de Trento y la Leyenda de Palestrina como 'Salvador de la Polifonía' (1555–1563)",
+      historicalEvent: "Debates tridentinos sobre la inteligibilidad del texto litúrgico y construcción del mito de Palestrina",
+      impactOnMusic: "Lo documentado en las sesiones de 1562–1563 del Concilio de Trento es que la Iglesia exigió que las palabras de la misa fueran claramente comprensibles y que se excluyera de los templos toda música 'lasciva o impura'. Sin embargo, no existe evidencia histórica de que el Concilio propusiera quemar partituras ni prohibir la polifonía en su totalidad.",
+      fascinatingFact: "La célebre historia según la cual la 'Missa Papae Marcelli' de Palestrina (vinculada al breve pontificado de Marcelo II en 1555 y publicada en 1567) habría convencido por sí sola al papa Pío IV de no prohibir la polifonía nació décadas después en escritos de Agostino Agazzari (1607) y Giuseppe Baini (1828), hasta inspirar la ópera 'Palestrina' de Hans Pfitzner.",
+      sourceRef: "Fuentes: Monson, C. A. (2002), «The Council of Trent Revisited», JAMS 55/1; Lockwood, L. (1975), Palestrina: Pope Marcellus Mass."
     },
     {
       eraId: "barroco",
-      title: "Versalles y la Música como Arma del Absolutismo (c. 1660–1715)",
-      historicalEvent: "Luis XIV 'El Rey Sol' centraliza el poder de Francia",
-      impactOnMusic: "Jean-Baptiste Lully y Luis XIV comprendieron que la música y la danza eran herramientas militares y políticas de sumisión. En el Palacio de Versalles, la nobleza francesa era obligada a bailar minués y danzas de corte donde cada paso sincronizado representaba la obediencia al Rey.",
-      fascinatingFact: "Lully inventó la 'Obertura Francesa' con ritmos punteados majestuosos específicamente calculados para marcar el ritmo al que Luis XIV entraba físicamente a la sala. Lully murió de gangrena tras clavarse en el pie la pesada vara de madera con la que marcaba el compás contra el suelo."
+      categoryTag: "Interpretación histórica",
+      title: "Versalles, el Ceremonial de Luis XIV y el Bastón Mortal de Lully (1661–1687)",
+      historicalEvent: "Centralización del espectáculo cortesano bajo Luis XIV y monopolio operístico de Jean-Baptiste Lully",
+      impactOnMusic: "Desde la sociología histórica (Norbert Elias), la etiqueta, el ballet de corte y la música en Versalles se interpretan como mecanismos de prestigio y disciplina simbólica de la nobleza alrededor de Luis XIV. El florentino Giovanni Battista Lulli —naturalizado francés como Jean-Baptiste Lully— obtuvo el monopolio real de la academia de ópera y consolidó la 'obertura francesa' de ritmos punteados solemnes.",
+      fascinatingFact: "Un hecho estrictamente documentado ocurrió el 8 de enero de 1687: mientras dirigía su 'Te Deum' para celebrar la recuperación médica de Luis XIV, Lully se golpeó accidentalmente el pie con el pesado bastón de mando con el que marcaba el pulso contra el suelo; la herida se gangrenó y le causó la muerte el 22 de marzo.",
+      sourceRef: "Fuentes: Elias, N. (1969), La sociedad cortesana; Isherwood, R. M. (1973), Music in the Service of the King."
+    },
+    {
+      eraId: "barroco",
+      categoryTag: "Documentado",
+      title: "Vivaldi y las Huérfanas Virtuosas del Ospedale della Pietà (1703–1740)",
+      historicalEvent: "Un orfanato femenino de Venecia se convierte en el mayor laboratorio instrumental de Europa",
+      impactOnMusic: "Antonio Vivaldi, ordenado sacerdote ('Il Prete Rosso'), trabajó durante más de treinta años como maestro de violín y compositor residente en el Pio Ospedale della Pietà de Venecia, una institución que acogía a niñas huérfanas o abandonadas. Para su orquesta y coro femeninos ('le figlie di coro') Vivaldi escribió centenares de conciertos, probando combinaciones inéditas de violín, violonchelo, oboe, fagot y mandolina.",
+      fascinatingFact: "Viajeros europeos como Charles de Brosses dejaron crónicas asombradas de cómo aquellas jóvenes —que inicialmente tocaban tras celosías metálicas— ejecutaban los pasajes más vertiginosos del repertorio barroco con una precisión que ninguna otra orquesta italiana igualaba.",
+      sourceRef: "Fuentes: Talbot, M. (1993), Vivaldi (The Master Musicians); Baldauf-Berdes, J. L. (1993), Women Musicians of Venice."
     },
     {
       eraId: "clasicismo",
-      title: "La Furia de Beethoven y la Partitura Rota de Napoleón (1804)",
-      historicalEvent: "Napoleón Bonaparte se corona Emperador de Francia",
-      impactOnMusic: "Beethoven, devoto creyente en los ideales democráticos de la Revolución Francesa (Libertad, Igualdad, Fraternidad), había dedicado su monumental 3ª Sinfonía a Napoleón, viéndolo como el liberador de Europa frente a las monarquías feudales. El título original manuscrito era 'Bonaparte'.",
-      fascinatingFact: "Cuando su alumno Ferdinand Ries le dio la noticia de que Napoleón se había autocoronado emperador en Notre Dame, Beethoven estalló en ira: '¿Así que no es más que un hombre común? ¡Ahora pisoteará todos los derechos humanos y se convertirá en un tirano!' Tomó la portada de la partitura y tachó el nombre de Napoleón con tanta furia que desgarró el papel, renombrándola 'Sinfonía Heroica, compuesta para festejar el recuerdo de un gran hombre'."
+      categoryTag: "Documentado / Tradición biográfica",
+      title: "Beethoven, Napoleón y la Portada Rasgada de la Sinfonía 'Heroica' (1804)",
+      historicalEvent: "Proclamación imperial de Napoleón Bonaparte y cambio de título de la 3ª Sinfonía, Op. 55",
+      impactOnMusic: "Según las memorias publicadas en 1838 por su discípulo Ferdinand Ries, al enterarse en mayo de 1804 de que Napoleón Bonaparte se había proclamado Emperador de los franceses (la coronación en Notre Dame se celebró el 2 de diciembre), Beethoven exclamó que Napoleón también se convertiría en un tirano y arrancó la página titular. Con todo, la relación fue ambivalente: en una carta a Breitkopf & Härtel de agosto de 1804, Beethoven aún mencionaba que la sinfonía 'se titula realmente Bonaparte'.",
+      fascinatingFact: "La prueba material se conserva hoy en el archivo de la Gesellschaft der Musikfreunde de Viena: en la copia manuscrita de la partitura, las palabras 'Intitulata Bonaparte' fueron raspadas con tanta fuerza que dejaron un agujero en el papel. Al publicarse en 1806, llevó el subtítulo 'Sinfonía Heroica, compuesta para festejar el recuerdo de un gran hombre'.",
+      sourceRef: "Fuentes: Wegeler, F. G. & Ries, F. (1838), Biographische Notizen über L. van Beethoven; Lockwood, L. (2003), Beethoven."
     },
     {
       eraId: "romanticismo",
-      title: "La Revolución Industrial y el Alma de Hierro del Piano (c. 1820–1860)",
-      historicalEvent: "Auge de la siderurgia, ferrocarriles y minería de carbón",
-      impactOnMusic: "Los antiguos fortepianos de madera de Mozart eran delicados y se quebraban fácilmente. Gracias a la metalurgia pesada de la Revolución Industrial, los fabricantes inventaron el marco de hierro fundido de una sola pieza. Esto permitió tensar cuerdas de acero con una presión de más de 20 toneladas.",
-      fascinatingFact: "Sin este avance de la industria del carbón y del acero, Franz Liszt jamás hubiera podido inventar el recital de piano masivo donde tocaba con tanta violencia que enloquecía al público (la 'Lisztomanía'), rompiendo cuerdas ante damas que desmayaban de histeria."
+      categoryTag: "Documentado",
+      title: "La Siderurgia del Piano (1825–1859) y el Fenómeno de la 'Lisztomanía' (1844)",
+      historicalEvent: "Invención del bastidor de hierro fundido y nacimiento del recital solista moderno",
+      impactOnMusic: "La evolución metalúrgica del siglo XIX transformó la acústica del piano: en 1825 Alpheus Babcock patentó en Boston el primer marco de hierro fundido de una sola pieza, y en 1859 Steinway & Sons patentó el bastidor de hierro con cuerdas cruzadas (base de los pianos de concierto modernos, que hoy soportan cerca de 20 toneladas de tensión). Este aumento gradual de potencia y resonancia permitió llenar salas públicas cada vez mayores.",
+      fascinatingFact: "En 1840, Franz Liszt utilizó por primera vez en Londres el término 'recital' para sus conciertos de piano a solas, y en 1844 el escritor Heinrich Heine acuñó la palabra 'Lisztomanía' para describir el fervor colectivo que despertaban sus presentaciones en toda Europa.",
+      sourceRef: "Fuentes: Ehrlich, C. (1990), The Piano: A History; Walker, A. (1983), Franz Liszt: The Virtuoso Years."
     },
     {
       eraId: "romanticismo",
-      title: "La Tragedia de Polonia y el Llanto en el Exilio de Chopin (1830)",
-      historicalEvent: "El Levantamiento de Noviembre en Varsovia aplastado por el Zar",
-      impactOnMusic: "Chopin tenía apenas 20 años cuando salió de Polonia para dar conciertos. Semanas después estalló la rebelión en Varsovia y el ejército ruso bombardeó la ciudad con brutalidad. El padre de Chopin le escribió: 'No vuelvas jamás, tu salud es frágil; sirve a Polonia con tu música'.",
-      fascinatingFact: "Chopin jamás pudo regresar a su tierra natal. Guardó hasta su muerte un saquito con tierra polaca sobre su piano en París. Sus polonesas y mazurkas eran armas de dignidad nacional. Cuando falleció por tuberculosis a los 39 años, cumpliendo su última voluntad, su hermana Ludwika extrajo su corazón de su cadáver y lo contrabandeó en un frasco con coñac oculto bajo su falda a través de los puestos fronterizos rusos para enterrarlo en la Iglesia de la Santa Cruz de Varsovia, donde aún reposa."
+      categoryTag: "Documentado / Tradición histórica",
+      title: "El Exilio de Chopin, la Caída de Varsovia (1831) y el Regreso de su Corazón (1849)",
+      historicalEvent: "Represión del Levantamiento de Noviembre en Polonia y exilio definitivo de Chopin en París",
+      impactOnMusic: "Frédéric Chopin dejó Varsovia el 2 de noviembre de 1830 para una gira de conciertos; al despedirse, sus amigos le entregaron una copa de plata con tierra polaca. Semanas más tarde estalló el Levantamiento de Noviembre contra el Imperio ruso, y en septiembre de 1831 —mientras Chopin se encontraba en Stuttgart— las tropas zaristas tomaron Varsovia. Chopin nunca volvió a pisar suelo polaco y volcó esa memoria en sus polonesas, mazurkas y baladas.",
+      fascinatingFact: "Tras su muerte en París el 17 de octubre de 1849 (atribuida tradicionalmente a tuberculosis, aunque análisis modernos han propuesto también fibrosis quística o pericarditis), la tierra polaca que conservaba fue esparcida sobre su tumba en Père-Lachaise, mientras que su hermana Ludwika trasladó su corazón conservado en alcohol hasta la Iglesia de la Santa Cruz de Varsovia.",
+      sourceRef: "Fuentes: Zamoyski, A. (2010), Chopin: Prince of the Romantics; Witt, M. et al. (2018), American Journal of Medicine 131/2."
+    },
+    {
+      eraId: "romanticismo",
+      categoryTag: "Documentado",
+      title: "Richard Wagner en las Barricadas de Dresde y Orden de Captura (1849)",
+      historicalEvent: "El Levantamiento de Mayo en Dresde durante las revoluciones alemanas de 1848–1849",
+      impactOnMusic: "Mientras ocupaba el puesto de Kapellmeister de la corte real de Sajonia, Richard Wagner se unió activamente a la insurrección democrática de mayo de 1849 en Dresde junto al anarquista ruso Mijaíl Bakunin, redactando panfletos y vigilando los movimientos de tropas desde la torre de la Frauenkirche. Tras el aplastamiento del levantamiento por el ejército prusiano, se emitió una orden de arresto contra él.",
+      fascinatingFact: "Con la ayuda de Franz Liszt y un pasaporte falso, Wagner huyó a Zúrich. Durante más de una década de exilio político sin poder pisar territorio alemán concibió el libreto y las primeras partes de 'El anillo del nibelungo' y 'Tristán e Isolda'.",
+      sourceRef: "Fuentes: Millington, B. (2012), The Sorcerer of Bayreuth; Gregor-Dellin, M. (1983), Richard Wagner."
+    },
+    {
+      eraId: "romanticismo",
+      categoryTag: "Documentado / Tradición histórica",
+      title: "Verdi, el 'Va, pensiero' y el Risorgimento Italiano (1842–1861)",
+      historicalEvent: "Unificación de Italia y recepción patriótica de las óperas de Giuseppe Verdi",
+      impactOnMusic: "El coro de esclavos hebreos 'Va, pensiero' de la ópera 'Nabucco' (1842) de Giuseppe Verdi alcanzó una enorme popularidad en la Italia dividida y se convirtió —especialmente a partir de las décadas siguientes y del multitudinario funeral de Verdi en 1901— en el emblema musical de la identidad nacional italiana.",
+      fascinatingFact: "En los años previos a la unificación de 1861 se difundió en muros de Milán y Venecia el acrónimo '¡Viva V.E.R.D.I.!', utilizado como lema de doble sentido para aclamar al compositor y a 'Vittorio Emanuele Re D'Italia' frente a las autoridades.",
+      sourceRef: "Fuentes: Parker, R. (1997), Leonora's Last Act: Essays in Verdian Discourse; Rosselli, J. (2000), The Life of Verdi."
     },
     {
       eraId: "siglo-xx",
-      title: "La Noche que París Ardió a Golpes: El Estreno de la Primavera (1913)",
-      historicalEvent: "Europa al borde del abismo bélico de la Primera Guerra Mundial",
-      impactOnMusic: "El 29 de mayo de 1913, en el Théâtre des Champs-Élysées, Stravinsky estrenó 'La Consagración de la Primavera'. En vez de tutús etéreos y melodías dulces, los bailarines danzaban con pisadas brutales encorvadas y la orquesta descargaba acordes politonales percusivos con compases cambiantes.",
-      fascinatingFact: "A los tres minutos de iniciada la obra estalló una batalla campal entre la aristocracia ofendida y los jóvenes vanguardistas (incluyendo a Maurice Ravel y Jean Cocteau). Volaron bastones, sombreros y puñetazos; la policía tuvo que intervenir y arrestó a 40 personas mientras la orquesta continuaba tocando a ciegas entre el estruendo. Catorce meses después, las ametralladoras mecanizadas de la Primera Guerra Mundial confirmaban el presentimiento sonoro de Stravinsky."
+      categoryTag: "Documentado / Interpretación histórica",
+      title: "El Tumulto de 'La Consagración de la Primavera' de Stravinski en París (1913)",
+      historicalEvent: "Estreno escénico de los Ballets Rusos en el Théâtre des Champs-Élysées el 29 de mayo de 1913",
+      impactOnMusic: "En la noche del estreno, la combinación de la coreografía de pies vueltos hacia adentro de Vaslav Nijinski y los acordes politonales con acentos irregulares de Ígor Stravinski desató desde los primeros minutos de la primera parte una sonora disputa de silbidos, gritos y aplausos entre sectores rivales del público parisino.",
+      fascinatingFact: "Lejos de detenerse, el director Pierre Monteux mantuvo a la orquesta tocando hasta el último compás mientras Nijinski gritaba los números rítmicos a los bailarines desde bambalinas, según relataron testigos como Jean Cocteau y el propio Stravinski. Un mes después, la versión de concierto dirigida por Monteux fue aclamada como un triunfo musical.",
+      sourceRef: "Fuentes: Stravinski, Í. (1936), Crónicas de mi vida; Kelly, T. F. (2000), First Nights: Five Musical Premieres."
     },
     {
       eraId: "siglo-xx",
-      title: "El Asedio de Leningrado y la Partitura en Microfilm (1942)",
-      historicalEvent: "El sitio nazi de 900 días donde murieron de hambre un millón de civiles",
-      impactOnMusic: "Dmitri Shostakóvich se encontraba atrapado en Leningrado durante el asedio alemán. Mientras las bombas caían y se desempeñaba como bombero voluntario en el tejado del conservatorio, compuso su 7ª Sinfonía ('Leningrado'). La partitura fue contrabandeada en un microfilm a través de Teherán y El Cairo para ser estrenada en Nueva York.",
-      fascinatingFact: "El 9 de agosto de 1942, día en que Hitler había planeado celebrar la caída de la ciudad con un banquete, la Orquesta de la Radio de Leningrado (cuyos músicos estaban tan desnutridos que varios se desmayaban en los ensayos) interpretó la sinfonía. Los militares soviéticos colocaron altavoces gigantescos apuntando hacia las trincheras alemanas para que los soldados nazis escucharan la música. Un general alemán confesó años después: 'Cuando escuchamos esa sinfonía sonar con tal furia desde una ciudad que creíamos muerta, comprendimos que jamás ganaríamos la guerra'."
+      categoryTag: "Documentado",
+      title: "Silvestre Revueltas en la Guerra Civil Española (1937)",
+      historicalEvent: "Gira solidaria y estreno de 'Homenaje a Federico García Lorca' en Madrid y Valencia",
+      impactOnMusic: "En 1937, en plena Guerra Civil Española, el compositor mexicano Silvestre Revueltas viajó a España junto a Octavio Paz, Elena Garro y la delegación de la LEAR para participar en el II Congreso Internacional de Escritores para la Defensa de la Cultura. Bajo los bombardeos en Madrid y Valencia, Revueltas dirigió personalmente sus obras sinfónicas y camerísticas.",
+      fascinatingFact: "Allí presentó su 'Homenaje a Federico García Lorca' (escrito tras el asesinato del poeta granadino en 1936), una obra que funde el dolor fúnebre con el estallido vital de la trompeta, la tuba y el son popular mexicano.",
+      sourceRef: "Fuentes: Contreras Soto, E. (2000), Silvestre Revueltas: Baile, duelo y son; Kolb, R. (2023), Silvestre Revueltas: Sounds of a Political Passion."
+    },
+    {
+      eraId: "siglo-xx",
+      categoryTag: "Documentado",
+      title: "La 7ª Sinfonía de Shostakóvich y los Altavoces del Sitio de Leningrado (1941–1942)",
+      historicalEvent: "El asedio de 872 días a Leningrado (c. 600,000 a 1.1 millones de víctimas civiles)",
+      impactOnMusic: "Dmitri Shostakóvich inició su 7ª Sinfonía en Leningrado durante las primeras semanas del cerco alemán, antes de ser evacuado con su familia en octubre de 1941 a Kúibyshev (Samara), donde concluyó la partitura en diciembre y se realizó el estreno mundial el 5 de marzo de 1942. Fotografiada en microfilm, la obra viajó por Teherán y El Cairo para su estreno en Occidente en Londres y en Nueva York bajo la batuta de Arturo Toscanini (julio de 1942).",
+      fascinatingFact: "El hito más conmovedor ocurrió dentro de la propia ciudad sitiada el 9 de agosto de 1942: Karl Eliasberg reunió a los escasos sobrevivientes de la Orquesta de la Radio de Leningrado con músicos llamados del frente. El general soviético Leonid Góvorov lanzó un bombardeo previo ('Operación Borrasca') para silenciar las baterías alemanas durante el concierto, que se transmitió por altavoces hacia las líneas enemigas; años después, exsoldados alemanes relataron a Eliasberg la impresión que les causó aquella transmisión.",
+      sourceRef: "Fuentes: Fay, L. E. (2000), Shostakovich: A Life; Reid, A. (2011), Leningrad: Tragedy of a City Under Siege."
+    },
+    {
+      eraId: "contemporanea",
+      categoryTag: "Documentado",
+      title: "Leonard Bernstein y la 'Oda a la Libertad' tras la Caída del Muro de Berlín (1989)",
+      historicalEvent: "Conciertos históricos del 23 y 25 de diciembre de 1989 en Berlín Occidental y Oriental",
+      impactOnMusic: "Siete semanas después de la apertura del Muro de Berlín, Leonard Bernstein dirigió la 9ª Sinfonía de Beethoven en el Schauspielhaus de Berlín Oriental con una orquesta y coros integrados por músicos de Alemania Oriental y Occidental, así como de las cuatro potencias de posguerra (Francia, Reino Unido, Unión Soviética y Estados Unidos).",
+      fascinatingFact: "Para aquella ocasión, Bernstein sustituyó en el cuarto movimiento la palabra 'Freude' (Alegría) del poema de Schiller por 'Freiheit' (Libertad), en una transmisión televisiva seguida en directo en más de veinte países.",
+      sourceRef: "Fuentes: Burton, H. (1994), Leonard Bernstein; Buch, E. (2003), Beethoven's Ninth: A Political History."
     }
   ],
 

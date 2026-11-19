@@ -437,25 +437,33 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderHistoryStories() {
     if (!historyStoriesContainer || !MUSIC_DATA.historicalChronologyStories) return;
 
-    historyStoriesContainer.innerHTML = MUSIC_DATA.historicalChronologyStories.map(story => `
+    historyStoriesContainer.innerHTML = MUSIC_DATA.historicalChronologyStories.map(story => {
+      const cleanEra = story.eraId.replace(/-/g, " ").toUpperCase();
+      const catTag = story.categoryTag || "Documentado";
+      const sourceHtml = story.sourceRef
+        ? `<div style="margin-top:0.85rem; padding-top:0.65rem; border-top:1px solid rgba(229,184,92,0.14); font-size:0.74rem; color:var(--text-muted); font-style:italic;">${story.sourceRef}</div>`
+        : "";
+      return `
       <div class="story-card card-tilt">
         <div class="card-tilt-inner">
           <div class="story-badge-row">
-            <span class="story-era-badge">${story.eraId.toUpperCase()}</span>
-            <span class="story-event-tag">Hecho Histórico Real</span>
+            <span class="story-era-badge">${cleanEra}</span>
+            <span class="story-event-tag">${catTag}</span>
           </div>
 
           <h4 class="story-title">${story.title}</h4>
-          <div class="story-historical-event">📌 ${story.historicalEvent}</div>
+          <div class="story-historical-event">${story.historicalEvent}</div>
           <p class="story-impact">${story.impactOnMusic}</p>
 
           <div class="story-fact-box">
-            <strong>¿Sabías que...?</strong>
+            <strong>Contexto &amp; Crónica:</strong>
             ${story.fascinatingFact}
           </div>
+          ${sourceHtml}
         </div>
       </div>
-    `).join("");
+    `;
+    }).join("");
   }
 
   // ==========================================================================

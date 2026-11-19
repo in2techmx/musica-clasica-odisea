@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * ODISEA CLÁSICA — SISTEMA DE INTERNACIONALIZACIÓN (i18n)
- * Soporte multilingüe: Español (ES), English (EN), Français (FR), Русский (RU), 中文 (ZH)
+ * Soporte multilingüe: Español (ES), English (EN), Français (FR), Português (PT), Русский (RU), 中文 (ZH)
  * Arquitectura modular IN2TECHMX — Framework de Gobernanza y Rigor Técnico
  * ============================================================================
  */
@@ -13,6 +13,7 @@
     'es': { name: 'Español', flag: '🇪🇸', label: 'ES', title: 'Cambiar a Español' },
     'en': { name: 'English', flag: '🇬🇧', label: 'EN', title: 'Switch to English' },
     'fr': { name: 'Français', flag: '🇫🇷', label: 'FR', title: 'Passer en Français' },
+    'pt': { name: 'Português', flag: '🇵🇹', label: 'PT', title: 'Mudar para Português' },
     'ru': { name: 'Русский', flag: '🇷🇺', label: 'RU', title: 'Переключить на Русский' },
     'zh-CN': { name: '中文 (简体)', flag: '🇨🇳', label: 'ZH', title: '切换为简体中文' }
   };
@@ -32,7 +33,7 @@
     if (window.google && window.google.translate) {
       new window.google.translate.TranslateElement({
         pageLanguage: 'es',
-        includedLanguages: 'en,fr,ru,zh-CN',
+        includedLanguages: 'en,fr,pt,ru,zh-CN',
         autoDisplay: false
       }, 'google_translate_element');
     }

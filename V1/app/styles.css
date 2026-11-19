@@ -3272,3 +3272,131 @@ p, h1, h2, h3, h4, h5, h6, li, td, .raw-piece-title, .assembled-title {
   border: 1px dashed rgba(229, 184, 92, 0.2);
   border-radius: 12px;
 }
+
+/* =========================================================================
+   INDICADOR GAMIFICADO DE SCROLL (FLECHA TENUE CON PULSO SECUENCIAL)
+   ========================================================================= */
+.scroll-cue-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2.2rem;
+  padding-top: 0.4rem;
+}
+
+.hero-section .scroll-cue-wrap {
+  margin-top: 2.4rem;
+}
+
+.scroll-cue-quest {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: rgba(243, 212, 139, 0.52);
+  opacity: 0.62;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  transition: opacity 0.35s ease, transform 0.35s ease, color 0.35s ease;
+  user-select: none;
+}
+
+.scroll-cue-quest:hover,
+.scroll-cue-quest:focus-visible {
+  opacity: 0.96;
+  color: var(--gold-light);
+  transform: translateY(3px);
+}
+
+.scroll-cue-kicker {
+  font-size: 0.64rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: rgba(229, 184, 92, 0.58);
+  animation: scroll-kicker-breathe 2.8s ease-in-out infinite;
+}
+
+.scroll-cue-quest:hover .scroll-cue-kicker {
+  color: var(--gold-light);
+}
+
+.scroll-cue-icon-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid rgba(229, 184, 92, 0.22);
+  background: radial-gradient(ellipse at center, rgba(229, 184, 92, 0.08) 0%, rgba(9, 14, 26, 0.25) 100%);
+  box-shadow: 0 0 16px rgba(229, 184, 92, 0.08);
+}
+
+.scroll-cue-quest:hover .scroll-cue-icon-box {
+  border-color: rgba(229, 184, 92, 0.55);
+  box-shadow: 0 0 22px rgba(229, 184, 92, 0.24);
+}
+
+.scroll-cue-chevrons {
+  width: 18px;
+  height: 26px;
+  overflow: visible;
+}
+
+.scroll-cue-chevrons path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.18;
+  animation: scroll-chevron-cascade 2.2s ease-in-out infinite;
+}
+
+.scroll-cue-chevrons path:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.scroll-cue-chevrons path:nth-child(2) {
+  animation-delay: 0.28s;
+}
+
+.scroll-cue-chevrons path:nth-child(3) {
+  animation-delay: 0.56s;
+}
+
+@keyframes scroll-chevron-cascade {
+  0%, 100% {
+    opacity: 0.14;
+    transform: translateY(-2px);
+  }
+  45% {
+    opacity: 0.85;
+    transform: translateY(2px);
+  }
+  75% {
+    opacity: 0.25;
+    transform: translateY(4px);
+  }
+}
+
+@keyframes scroll-kicker-breathe {
+  0%, 100% {
+    opacity: 0.42;
+  }
+  50% {
+    opacity: 0.88;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue-chevrons path,
+  .scroll-cue-kicker {
+    animation: none;
+    opacity: 0.65;
+  }
+}

@@ -20,7 +20,7 @@ const MUSIC_DATA = {
     myths: [
       {
         myth: "Es música aburrida y para dormirse.",
-        reality: "Tiene pasajes de furia, caos, éxtasis y suspenso que superan a cualquier banda sonora de acción (ej. el 'Dies Irae' de Verdi o 'La Consagración de la Primavera' de Stravinsky)."
+        reality: "Tiene pasajes de furia, caos, éxtasis y suspenso que superan a cualquier banda sonora de acción (ej. el 'Dies Irae' de Verdi o 'La Consagración de la Primavera' de Stravinski)."
       },
       {
         myth: "Es solo para expertos o élites intelectuales.",
@@ -987,6 +987,20 @@ const MUSIC_DATA = {
         assignedTo: "George Frideric Händel",
         creator: "Bernd Baselt (1978–1986)",
         originReason: "Organiza temáticamente en 612 números las óperas, oratorios ('El Mesías' es HWV 56), himnos y suites instrumentales de Händel."
+      },
+      {
+        code: "L.",
+        name: "Catálogo Lesure",
+        assignedTo: "Claude Debussy",
+        creator: "François Lesure (1977, rev. 2003)",
+        originReason: "Debussy rara vez usó números de Opus; Lesure catalogó cronológicamente sus obras desde sus primeras canciones juveniles hasta sus sonatas tardías."
+      },
+      {
+        code: "K. (Stravinski)",
+        name: "Catálogo Kirchmeyer",
+        assignedTo: "Ígor Stravinski",
+        creator: "Helmut Kirchmeyer (2002)",
+        originReason: "Stravinski tampoco numeró sus obras con Opus; el catálogo académico de Kirchmeyer (abreviado K.) clasifica cronológicamente sus 112 composiciones y arreglos."
       }
     ],
 
@@ -1047,9 +1061,9 @@ const MUSIC_DATA = {
       why: "Llamada por Wagner 'la apoteosis de la danza'. Una avalancha rítmica imparable que te subirá la adrenalina más que 3 tazas de café espresso."
     },
     {
-      mood: "🧠 Concentración Absoluta para Trabajar o Estudiar",
-      piece: "J.S. Bach - Variaciones Goldberg (interpretadas por Glenn Gould)",
-      why: "Estructura matemática impecable. Arreglos basados en un bajo continuo que calman la ansiedad y alinean las ondas cerebrales en modo de foco profundo."
+      mood: "🧠 Concentración para Trabajar o Estudiar",
+      piece: "J.S. Bach - Variaciones Goldberg, BWV 988",
+      why: "Construidas sobre una línea de bajo recurrente (ground bass) de 32 notas —no un bajo continuo—, cuya regularidad armónica ofrece un acompañamiento ideal para la lectura y el estudio."
     },
     {
       mood: "🌌 Paz Nocturna, Descompresión y Calma",

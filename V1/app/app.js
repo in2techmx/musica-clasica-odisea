@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="exponent-pill">
           <div class="exponent-header">
             <div class="exponent-portrait-box">
-              <img src="${exp.image}" alt="${exp.name}" class="exponent-portrait-img" loading="lazy"
+              <img src="${exp.image}" alt="Retrato histórico de ${exp.name} (${exp.years}), ${exp.role}" class="exponent-portrait-img" loading="lazy"
                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'exponent-portrait-fallback\\'>${exp.initials}</div>'">
             </div>
             <div>
@@ -291,12 +291,36 @@ document.addEventListener("DOMContentLoaded", () => {
     const assembledMeaningEl = document.getElementById("assembled-meaning");
 
     const COMPOSER_CATALOGS = {
-      "beethoven": { name: "Ludwig van Beethoven", cat: "Op.", numRange: "Op. 67", tag: "Opus" },
-      "bach": { name: "Johann Sebastian Bach", cat: "BWV", numRange: "BWV 1048", tag: "Bach-Werke-Verzeichnis" },
-      "mozart": { name: "Wolfgang Amadeus Mozart", cat: "K.", numRange: "K. 525", tag: "Köchel-Verzeichnis" },
-      "schubert": { name: "Franz Schubert", cat: "D.", numRange: "D. 759", tag: "Deutsch-Verzeichnis" },
-      "haydn": { name: "Joseph Haydn", cat: "Hob.", numRange: "Hob. I:94", tag: "Hoboken-Verzeichnis" },
-      "vivaldi": { name: "Antonio Vivaldi", cat: "RV", numRange: "RV 269", tag: "Ryom-Verzeichnis" }
+      "beethoven": { name: "Ludwig van Beethoven", cat: "Op.", numRange: "Op. 67", tag: "Opus (orden aproximado de publicación)" },
+      "bach": { name: "Johann Sebastian Bach", cat: "BWV", numRange: "BWV 1048", tag: "Bach-Werke-Verzeichnis (temático)" },
+      "mozart": { name: "Wolfgang Amadeus Mozart", cat: "K.", numRange: "K. 550", tag: "Köchel-Verzeichnis (cronológico)" },
+      "schubert": { name: "Franz Schubert", cat: "D.", numRange: "D. 759", tag: "Deutsch-Verzeichnis (cronológico)" },
+      "haydn": { name: "Joseph Haydn", cat: "Hob.", numRange: "Hob. I:94", tag: "Hoboken-Verzeichnis (por género)" },
+      "vivaldi": { name: "Antonio Vivaldi", cat: "RV", numRange: "RV 269", tag: "Ryom-Verzeichnis (por instrumentación)" }
+    };
+
+    // Base verificada de combinaciones históricas reales dentro del decodificador
+    const REAL_HISTORICAL_WORKS = {
+      "beethoven|Sinfonía|1|Do mayor": { cat: "Op. 21 (1800)", note: "Su primera sinfonía, estrenada en Viena en 1800." },
+      "beethoven|Sinfonía|3|Mi bemol mayor": { cat: "Op. 55 'Heroica' (1804)", note: "Obra histórica real que transformó la dimensión del sinfonismo." },
+      "beethoven|Sinfonía|5|Do menor": { cat: "Op. 67 (1808)", note: "Obra histórica real estrenada en el Theater an der Wien en 1808." },
+      "beethoven|Sinfonía|9|Re menor": { cat: "Op. 125 'Coral' (1824)", note: "Su novena y última sinfonía, que incorpora voces solistas y coro en el movimiento final." },
+      "beethoven|Concierto para Piano|3|Do menor": { cat: "Op. 37 (1800)", note: "Su único concierto para piano en modo menor." },
+      "beethoven|Concierto para Piano|5|Mi bemol mayor": { cat: "Op. 73 'Emperador' (1809)", note: "Su quinto y último concierto para piano." },
+      "beethoven|Sonata para Piano|5|Do menor": { cat: "Op. 10 n.º 1 (1798)", note: "Sonata juvenil real de su primera etapa vienesa." },
+      "mozart|Cuarteto de Cuerdas|1|Sol mayor": { cat: "K. 80 'Lodi' (1770)", note: "Su primer cuarteto de cuerdas, compuesto en Italia a los 14 años." },
+      "haydn|Sinfonía|1|Re mayor": { cat: "Hob. I:1 (1759)", note: "Compuesta para el conde Morzin; su n.º 94 en Sol mayor es 'La Sorpresa' (Hob. I:94)." },
+      "bach|Suite Orquestal|1|Do mayor": { cat: "BWV 1066", note: "Bach compuso 4 Oberturas/Suites Orquestales (BWV 1066–1069)." },
+      "schubert|Sinfonía|3|Re mayor": { cat: "D. 200 (1815)", note: "Schubert compuso su 3ª en Re mayor; su célebre 'Inconclusa' es la n.º 8 en Si menor (D. 759)." }
+    };
+
+    const COMPOSER_REALITY_HINTS = {
+      "bach": "Nota histórica: J. S. Bach (Barroco) no compuso 'Sinfonías' ni 'Cuartetos de Cuerdas' clásicos (formas nacidas décadas después con Haydn), sino Conciertos, Suites (BWV 1066–1069), Fugas, Cantatas y Pasiones.",
+      "vivaldi": "Nota histórica: Vivaldi destacó en más de 500 Conciertos (como RV 269 'La Primavera' en Mi mayor) y óperas; el molde clásico de Sinfonía y Cuarteto de Cuerdas surgió posteriormente.",
+      "mozart": "Nota histórica: Mozart escribió 41 sinfonías (ej. n.º 25 y n.º 40 en Sol menor, K. 183 y K. 550) y 27 conciertos para piano (ej. n.º 20 en Re menor, K. 466).",
+      "schubert": "Nota histórica: Schubert compuso 9 sinfonías (n.º 4 'Trágica' en Do menor, D. 417; n.º 5 en Si bemol mayor, D. 485) y 15 cuartetos de cuerda (como 'La muerte y la doncella' en Re menor, D. 810), pero ningún Concierto para Piano.",
+      "haydn": "Nota histórica: Haydn escribió 104 sinfonías (como la n.º 94 'La Sorpresa' en Sol mayor, Hob. I:94) y 68 cuartetos de cuerdas (Hob. III).",
+      "beethoven": "Nota histórica: Beethoven compuso 9 sinfonías, 5 conciertos para piano, 32 sonatas para piano y 16 cuartetos de cuerda."
     };
 
     function updateDecoder() {
@@ -308,18 +332,25 @@ document.addEventListener("DOMContentLoaded", () => {
       const number = numberSelect.value;
       const compData = COMPOSER_CATALOGS[composerKey] || COMPOSER_CATALOGS["beethoven"];
 
-      const fullTitle = `${genre} n.º ${number} en ${key}, ${compData.numRange} — ${compData.name}`;
+      const lookupKey = `${composerKey}|${genre}|${number}|${key}`;
+      const realMatch = REAL_HISTORICAL_WORKS[lookupKey];
+      const catCode = realMatch ? realMatch.cat : `${compData.cat} [ej. ${compData.numRange}]`;
+
+      const fullTitle = `${genre} n.º ${number} en ${key}, ${catCode} — ${compData.name}`;
       if (assembledTitleEl) {
         assembledTitleEl.textContent = fullTitle;
       }
 
       if (assembledMeaningEl) {
+        const statusBadge = realMatch
+          ? `<div style="display:inline-block; margin-bottom:0.65rem; padding:0.25rem 0.75rem; border-radius:999px; background:rgba(16,185,129,0.16); border:1px solid rgba(16,185,129,0.5); color:#a7f3d0; font-size:0.74rem; font-weight:700;">✓ Obra Histórica Real Verificada (${realMatch.cat})</div><br><span style="color:var(--gold-light);">${realMatch.note}</span><br><br>`
+          : `<div style="display:inline-block; margin-bottom:0.65rem; padding:0.25rem 0.75rem; border-radius:999px; background:rgba(245,158,11,0.14); border:1px solid rgba(245,158,11,0.45); color:#fde68a; font-size:0.74rem; font-weight:700;">🧪 Combinación Didáctica Simulada (Para practicar lectura de títulos)</div><br><span style="color:var(--text-muted); font-size:0.84rem;">${COMPOSER_REALITY_HINTS[composerKey] || ""}</span><br><br>`;
+
         assembledMeaningEl.innerHTML = `
-          <strong>¿Cómo se interpreta esto didácticamente?</strong><br>
-          Esta obra es una composición formal de tipo <strong>${genre}</strong> (la número <strong>${number}</strong> que escribió el maestro).
-          Está construida sobre la escala de <strong>${key}</strong>, lo que dicta su arquitectura armónica y carácter emocional.
-          El identificador <strong>${compData.numRange}</strong> corresponde al catálogo universal <em>${compData.tag}</em>,
-          el cual garantiza que los musicólogos de todo el mundo sepan con exactitud milimétrica de qué manuscrito histórico se trata.
+          ${statusBadge}
+          <strong>Lectura de sus 4 elementos:</strong>
+          Forma musical <strong>${genre}</strong> · Número de serie <strong>n.º ${number}</strong> ·
+          Tonalidad <strong>${key}</strong> · Sistema de catalogación <strong>${compData.tag}</strong>.
         `;
       }
     }
@@ -364,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="card-tilt-inner">
             <div class="titan-top">
               <div class="exponent-portrait-box">
-                <img src="${titan.image}" alt="${titan.name}" class="exponent-portrait-img" loading="lazy"
+                <img src="${titan.image}" alt="Retrato histórico de ${titan.name} (${titan.years}), ${titan.eraName}" class="exponent-portrait-img" loading="lazy"
                      onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'exponent-portrait-fallback\\'>${titan.initials}</div>'">
               </div>
               <div>
@@ -478,7 +509,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="card-tilt-inner">
             <div class="master-header">
               <div class="master-big-portrait">
-                <img src="${master.image}" alt="${master.name}" loading="lazy"
+                <img src="${master.image}" alt="Retrato histórico de ${master.name} (${master.years}), ${era.name}" loading="lazy"
                      onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'exponent-portrait-fallback\\' style=\\'font-size:2rem\\'>${master.initials}</div>'">
               </div>
               <div class="master-title-box">
@@ -621,7 +652,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener("keydown", (e) => {
-      if (e.code === "Space" && e.target.tagName !== "INPUT" && e.target.tagName !== "SELECT") {
+      if (e.altKey && e.code === "KeyP") {
         e.preventDefault();
         if (synth.isPlaying) {
           synth.stop();

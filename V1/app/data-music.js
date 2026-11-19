@@ -24,18 +24,18 @@ const MUSIC_DATA = {
       },
       {
         myth: "Es solo para expertos o élites intelectuales.",
-        reality: "Fue la música popular y festiva de su tiempo; Bach tocaba en cafeterías, Mozart escribía para teatros populares de comedia y Verdi era coreado por obreros en las calles de Milán."
+        reality: "Convivió con espacios públicos y populares: Bach dirigía el Collegium Musicum en la cafetería Zimmermann de Leipzig, Mozart compuso singspiels en alemán como 'La flauta mágica' para el teatro popular Theater auf der Wieden, y arias de Verdi eran cantadas en las calles de Italia."
       },
       {
         myth: "Murió hace cientos de años.",
-        reality: "Está en su apogeo: vive en el cine (Star Wars, Interestelar), en los videojuegos (Zelda, Elden Ring) y en compositores vivos como Max Richter, Arvo Pärt o John Williams."
+        reality: "Sigue plenamente vigente: dialoga con el cine (Star Wars, Interestelar), los videojuegos (Zelda, Final Fantasy) y compositores contemporáneos como Max Richter, Arvo Pärt o John Williams llenan salas de conciertos y auditorios en todo el mundo."
       }
     ],
     corePillars: [
       {
         icon: "🎼",
-        title: "La Partitura como Arquitectura",
-        desc: "A diferencia de las tradiciones puramente orales o improvisadas, cada nota, silencio, articulación, tempo y volumen está meticulosamente escrito. Esto permite que una orquesta de 100 personas sincronice su mente en una sola obra masiva."
+        title: "La Partitura y el Arte de la Improvisación",
+        desc: "La partitura fija con precisión la arquitectura general para coordinar a decenas de músicos, pero durante siglos convivió con una vibrante tradición de improvisación: desde el bajo continuo barroco hasta las cadencias solistas que Bach, Mozart y Beethoven improvisaban en vivo."
       },
       {
         icon: "⚖️",
@@ -629,7 +629,7 @@ const MUSIC_DATA = {
         },
         {
           id: "stravinsky",
-          name: "Ígor Stravinsky",
+          name: "Ígor Stravinski",
           years: "1882 – 1971",
           role: "El Camaleón del Ritmo que Provocó un Motín",
           initials: "IS",
@@ -666,7 +666,7 @@ const MUSIC_DATA = {
         },
         {
           id: "schoenberg",
-          name: "Arnold Schoenberg",
+          name: "Arnold Schönberg",
           years: "1874 – 1951",
           role: "El Demoledor de la Tonalidad y Padre del Dodecafonismo",
           initials: "AS",
@@ -956,9 +956,37 @@ const MUSIC_DATA = {
       {
         code: "WoO",
         name: "Werk ohne Opuszahl (Obra sin número de Opus)",
-        assignedTo: "Especialmente Ludwig van Beethoven",
+        assignedTo: "Especialmente Ludwig van Beethoven y Johannes Brahms",
         creator: "Georg Kinsky y Hans Halm (1955)",
-        originReason: "Obras que Beethoven nunca asignó con número de opus comercial oficial (como bagatelas, canciones o danzas). ¡La famosísima 'Para Elisa' no tiene Opus, es WoO 59!"
+        originReason: "Obras que el compositor no publicó con número de Opus comercial (como bagatelas, variaciones o canciones). La célebre 'Para Elisa' no lleva Opus: es WoO 59."
+      },
+      {
+        code: "Anh.",
+        name: "Anhang (Apéndice de Catálogo)",
+        assignedTo: "Catálogos BWV (Bach), K. (Mozart) y Kinsky-Halm (Beethoven)",
+        creator: "Musicólogos editores de cada catálogo",
+        originReason: "Sección reservada para obras fragmentarias, transcripciones, manuscritos perdidos o piezas de atribución dudosa o espuria."
+      },
+      {
+        code: "S.",
+        name: "Catálogo Searle",
+        assignedTo: "Franz Liszt",
+        creator: "Humphrey Searle (1966)",
+        originReason: "Liszt revisó, transcribió y reescribió sus propias obras tantas veces a lo largo de su vida que Searle creó una clasificación temática integral (S. 1 a S. 999)."
+      },
+      {
+        code: "Sz.",
+        name: "Catálogo Szőllősy",
+        assignedTo: "Béla Bartók",
+        creator: "András Szőllősy (1956)",
+        originReason: "Bartók dejó de usar números de Opus tres veces por considerarlos confusos; Szőllősy ordenó cronológicamente toda su producción."
+      },
+      {
+        code: "HWV",
+        name: "Händel-Werke-Verzeichnis",
+        assignedTo: "George Frideric Händel",
+        creator: "Bernd Baselt (1978–1986)",
+        originReason: "Organiza temáticamente en 612 números las óperas, oratorios ('El Mesías' es HWV 56), himnos y suites instrumentales de Händel."
       }
     ],
 
@@ -986,28 +1014,28 @@ const MUSIC_DATA = {
   whyItMatters: [
     {
       num: "01",
-      title: "Gimnasia Integral para el Cerebro (Neurociencia)",
-      desc: "Escuchar música polifónica activa simultáneamente el hemisferio izquierdo (análisis lógico y patrones matemáticos) y el derecho (emoción pura e imaginación espacial). Estudios con resonancia magnética confirman que fortalece el cuerpo calloso y mejora la plasticidad neuronal."
+      title: "Neurociencia Cognitiva y Escucha Atenta",
+      desc: "Diversos estudios en neurociencia cognitiva sugieren que la escucha musical activa redes cerebrales distribuidas de percepción auditiva, memoria, atención y recompensa dopaminérgica, y puede contribuir a reducir el estrés percibido (cf. Zatorre & Salimpoor, PNAS, 2013; Levitin, 2006)."
     },
     {
       num: "02",
-      title: "El Espejo de las Emociones No Simplificadas",
-      desc: "Gran parte de la música comercial moderna empaqueta una sola emoción en 3 minutos. La música clásica expone la ambivalencia real: el duelo que se transmuta en consuelo, la euforia con una sombra de melancolía, el suspenso y la catarsis."
+      title: "El Espejo de Emociones Matizadas",
+      desc: "Las formas extensas permiten recorrer arcos psicológicos complejos en una sola obra: la incertidumbre que gradualmente se transforma en consuelo, o la serenidad atravesada por momentos de tensión dramática."
     },
     {
       num: "03",
-      title: "El Código Fuente de Toda la Música Actual",
-      desc: "Sin las disonancias de Bach no habría acordes de Jazz; sin los clímax dinámicos de Beethoven no existiría el rock de estadios; sin el Leitmotiv de Wagner no habría bandas sonoras de cine; sin el Canon de Pachelbel no existirían las progresiones armónicas de The Beatles o Daft Punk."
+      title: "Raíces e Influencias en la Música Actual",
+      desc: "Su lenguaje armónico y formal ha nutrido a numerosos géneros modernos: el contrapunto de Bach y el colorido impresionista de Debussy y Ravel influyeron en pioneros del jazz; el Leitmotiv de Wagner transformó la música de cine; y progresiones barrocas como el Canon de Pachelbel siguen dialogando con el pop contemporáneo."
     },
     {
       num: "04",
-      title: "El Antídoto al Algoritmo y a la Fragmentación Mental",
-      desc: "Vivimos en una cultura de videos de 15 segundos y atención fragmentada. Sentarse a escuchar una obra de 20 minutos sin interrupciones es un acto de resistencia cognitiva, una meditación profunda y un entrenamiento para recuperar el foco profundo."
+      title: "Un Espacio para la Atención Pausada",
+      desc: "Sumergirse en una obra de 15 o 30 minutos complementa nuestros hábitos cotidianos de escucha rápida, ofreciendo un espacio de calma, contemplación y escucha profunda."
     },
     {
       num: "05",
-      title: "Un Lenguaje Universal que Conecta Siglos",
-      desc: "Cuando escuchas el grito de dolor de Beethoven o la serenidad de Bach, estás sintiendo exactamente lo que sintió un ser humano hace 250 años ante el amor, la muerte y el misterio. Es el puente empático más poderoso jamás construido."
+      title: "Un Puente Empático a Través de los Siglos",
+      desc: "Al escuchar una obra de Beethoven, Hildegarda de Bingen o Chopin, conectamos con las preguntas, dolores y esperanzas de seres humanos de otras épocas a través de un lenguaje sensible compartido."
     }
   ],
 

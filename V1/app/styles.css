@@ -263,10 +263,11 @@ body::before {
 .mega-panel {
   position: absolute;
   top: calc(100% + 14px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-10px);
-  width: 860px;
-  max-width: 95vw;
+  right: -125px;
+  left: auto;
+  transform: translateY(-10px);
+  width: 980px;
+  max-width: calc(100vw - 2rem);
   background: rgba(10, 14, 24, 0.97);
   border: 1px solid rgba(229, 184, 92, 0.18);
   border-radius: 18px;
@@ -281,7 +282,7 @@ body::before {
 .mega-panel::before {
   content: '';
   position: absolute;
-  top: -1px; left: 50%; transform: translateX(-50%);
+  top: -1px; right: 155px;
   width: 60px; height: 1px;
   background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
 }
@@ -289,7 +290,7 @@ body::before {
 .nav-item-mega:hover .mega-panel {
   opacity: 1;
   pointer-events: all;
-  transform: translateX(-50%) translateY(0);
+  transform: translateY(0);
 }
 .nav-item-mega:hover .nav-chevron { transform: rotate(180deg); }
 /* Invisible hover bridge so moving mouse from button into mega-panel doesn't close it */
@@ -303,7 +304,7 @@ body::before {
 }
 .mega-panel-inner {
   display: grid;
-  grid-template-columns: 220px 1fr 1fr 1fr;
+  grid-template-columns: 200px repeat(4, minmax(0, 1fr));
   gap: 0;
   min-height: 280px;
 }

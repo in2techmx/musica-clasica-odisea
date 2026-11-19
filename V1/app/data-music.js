@@ -252,7 +252,7 @@ const MUSIC_DATA = {
           years: "1685 – 1750",
           role: "La Cumbre del Contrapunto y la Síntesis Barroca",
           initials: "JSB",
-          image: "assets/portraits/bach.jpg",
+          image: "assets/portraits/bach.jpg?v=38",
           whyExponent: "Sintetizó y llevó a su máxima complejidad las principales tradiciones europeas de su tiempo —el contrapunto y la tradición orgánica alemana, la claridad formal del concierto italiano y la estilización rítmica de la suite francesa— con un dominio inigualado de la armonía y la polifonía.",
           milestones: [
             "Con los dos libros de 'El Clave Bien Temperado' (1722 y c. 1742) demostró el potencial expresivo de las 24 tonalidades mayores y menores empleando 'buenos temperamentos' (afinaciones circulantes que permitían modular a cualquier tonalidad conservando el color propio de cada una, distintas del temperamento igual matemático moderno).",
@@ -289,7 +289,7 @@ const MUSIC_DATA = {
           years: "1678 – 1741",
           role: "El Cura Rojo y el Gran Impulsor del Concierto Solista",
           initials: "AV",
-          image: "assets/portraits/vivaldi.jpg",
+          image: "assets/portraits/vivaldi.jpg?v=38",
           whyExponent: "Sacerdote veneciano ('Il Prete Rosso') y virtuoso del violín. Consolidó el modelo barroco del concierto solista en tres movimientos (Rápido – Lento – Rápido, desarrollado a partir de Torelli y Albinoni) y la forma con 'ritornello', ejerciendo una influencia decisiva en toda Europa, incluido J. S. Bach.",
           milestones: [
             "Se conservan más de 500 conciertos suyos (unos 230 para violín, además de fagot, violonchelo, oboe, flauta y mandolina), junto con más de 40 óperas y abundante música sacra.",
@@ -326,7 +326,7 @@ const MUSIC_DATA = {
           years: "1685 – 1759",
           role: "El Titán de la Ópera Seria y del Oratorio Dramático Inglés",
           initials: "GFH",
-          image: "assets/portraits/handel.jpg",
+          image: "assets/portraits/handel.jpg?v=38",
           whyExponent: "Compositor cosmopolita del Barroco tardío: nacido en Halle (Sajonia), formado en la ópera y el concierto en Italia y naturalizado súbdito británico en Londres en 1727. Dominó la ópera seria italiana y creó el género del oratorio dramático en lengua inglesa.",
           milestones: [
             "Compuso en 1741 el oratorio 'El Mesías' (estrenado en Dublín en 1742); la costumbre de ponerse de pie durante su coro 'Hallelujah' se asocia a una tradición histórica atribuida al rey Jorge II en el estreno londinense de 1743 (documentada en testimonios de la década de 1780).",
@@ -375,7 +375,7 @@ const MUSIC_DATA = {
           years: "1732 – 1809",
           role: "El Arquitecto de la Sinfonía y del Cuarteto de Cuerdas",
           initials: "JH",
-          image: "assets/portraits/haydn.jpg",
+          image: "assets/portraits/haydn.jpg?v=38",
           whyExponent: "Trabajó durante casi tres décadas como Kapellmeister de los príncipes Esterházy, aislamiento relativo que, según recordó a su biógrafo Georg August Griesinger, le permitió experimentar y lo 'forzó a ser original'. Aunque no inventó la sinfonía ni el cuarteto desde cero, estableció su arquitectura clásica de referencia; fue amigo cercano y referente admirado por Mozart (quien le dedicó seis cuartetos) y tutor del joven Beethoven en Viena.",
           milestones: [
             "Su catálogo reúne 104 sinfonías numeradas tradicionalmente, más las dos sinfonías tempranas sin número conocidas como 'A' (Hob. I:107) y 'B' (Hob. I:108) —para un total de 106 sinfonías, además de la Sinfonía Concertante Hob. I:105—, junto con 68 cuartetos de cuerda.",
@@ -407,7 +407,7 @@ const MUSIC_DATA = {
           years: "1756 – 1791",
           role: "La Síntesis Suprema del Clasicismo Vienés",
           initials: "WAM",
-          image: "assets/portraits/mozart.jpg",
+          image: "assets/portraits/mozart.jpg?v=38",
           whyExponent: "Formado desde la infancia en recorridos por las principales cortes y centros musicales de Europa, Mozart asimiló los estilos italiano, francés y germánico para llevar a su plenitud todos los géneros de su época: la ópera (seria, buffa y singspiel), el concierto para piano, la sinfonía, el cuarteto y el quinteto de cuerdas, y la música sacra.",
           milestones: [
             "Transformó la dramaturgia operística dotando a sus personajes de profundidad psicológica y conjuntos vocales donde la acción avanza en tiempo real ('Las bodas de Fígaro', 'Don Giovanni', 'Così fan tutte', 'La flauta mágica').",
@@ -456,7 +456,7 @@ const MUSIC_DATA = {
           years: "1770 – 1827",
           role: "El Titán entre el Clasicismo Vienés y la Era Romántica",
           initials: "LvB",
-          image: "assets/portraits/beethoven.jpg",
+          image: "assets/portraits/beethoven.jpg?v=38",
           whyExponent: "Figura bisagra de la historia musical occidental. Partiendo de las formas clásicas de Haydn y Mozart, expandió sus proporciones, su tensión motívica y su carga expresiva hasta abrir el camino al siglo XIX. Su pérdida auditiva —cuyos primeros síntomas aparecieron hacia los 26–28 años (finales de la década de 1790) y que derivó en sordera prácticamente total hacia 1814–1818— coincidió con una radicalización formal sin precedentes.",
           milestones: [
             "Con la 3.ª Sinfonía 'Heroica' (Op. 55, 1803–1804) transformó la escala dramática y arquitectónica del género sinfónico.",
@@ -557,7 +557,7 @@ const MUSIC_DATA = {
           years: "1813 – 1883",
           role: "El Reformador del Drama Musical (Gesamtkunstwerk)",
           initials: "RW",
-          image: "assets/portraits/wagner.jpg",
+          image: "assets/portraits/wagner.jpg?v=38",
           whyExponent: "Compositor, director y autor de sus propios libretos que transformó el teatro lírico y el lenguaje armónico del siglo XIX. Concibió el drama musical como una 'obra de arte total' ('Gesamtkunstwerk') donde poesía, música, escena y arquitectura teatral (materializada en el Festspielhaus de Bayreuth, inaugurado en 1876) se funden en una corriente sinfónica continua sin división en arias y recitativos cerrados.",
           milestones: [
             "Sistematizó a escala monumental el uso dramático del 'Leitmotiv' (motivo conductor asociado a personajes, objetos, ideas o estados psicológicos, con antecedentes en Weber o Berlioz), técnica que influyó decisivamente en la ópera posterior y en la música cinematográfica.",

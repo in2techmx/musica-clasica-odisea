@@ -2208,3 +2208,263 @@ body::before {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ==========================================================================
+   GUÍA DE AUDICIÓN RECOMENDADA POR AUTOR Y ETAPA (YOUTUBE & AUDIO LIBRE)
+   ========================================================================== */
+.lg-composer-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin-bottom: 2.2rem;
+}
+
+.lg-composer-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.42rem 0.9rem 0.42rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s var(--transition-smooth);
+  font-family: var(--font-sans);
+}
+
+.lg-composer-chip img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 1px solid rgba(229, 184, 92, 0.35);
+}
+
+.lg-composer-chip:hover {
+  border-color: rgba(229, 184, 92, 0.55);
+  color: #fff;
+  background: rgba(22, 33, 54, 0.92);
+  transform: translateY(-2px);
+}
+
+.lg-composer-chip.active {
+  background: linear-gradient(135deg, rgba(229, 184, 92, 0.22), rgba(229, 184, 92, 0.08));
+  border-color: var(--gold-primary);
+  color: #fff;
+  box-shadow: 0 0 22px rgba(229, 184, 92, 0.22);
+}
+
+.lg-spotlight-panel {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.88), rgba(8, 12, 22, 0.96));
+  border: 1px solid rgba(229, 184, 92, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2.2rem;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+}
+
+.lg-spotlight-header {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  padding-bottom: 1.8rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid rgba(229, 184, 92, 0.14);
+  flex-wrap: wrap;
+}
+
+.lg-spotlight-portrait {
+  width: 110px;
+  height: 138px;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(229, 184, 92, 0.45);
+  flex-shrink: 0;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+.lg-spotlight-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.lg-spotlight-meta h4 {
+  font-family: var(--font-serif-display);
+  font-size: 1.75rem;
+  color: #fff;
+  margin: 0.25rem 0 0.35rem;
+}
+
+.lg-spotlight-meta p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  max-width: 720px;
+  line-height: 1.6;
+}
+
+.lg-stages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  gap: 1.5rem;
+}
+
+.lg-stage-card {
+  background: rgba(11, 17, 30, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lg-stage-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+}
+
+.lg-stage-title {
+  font-family: var(--font-serif-display);
+  font-size: 1.12rem;
+  color: #fff;
+  line-height: 1.3;
+  margin-top: 0.2rem;
+}
+
+.lg-stage-proposal {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  padding-left: 0.75rem;
+  border-left: 2px solid rgba(229, 184, 92, 0.45);
+}
+
+.lg-works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 0.4rem;
+}
+
+.lg-work-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(229, 184, 92, 0.16);
+  border-radius: 12px;
+  padding: 1rem 1.05rem;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.lg-work-item:hover {
+  border-color: rgba(229, 184, 92, 0.45);
+  background: rgba(229, 184, 92, 0.05);
+}
+
+.lg-work-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.lg-work-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #f8fafc;
+  line-height: 1.35;
+}
+
+.lg-work-duration {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--gold-light);
+  background: rgba(229, 184, 92, 0.12);
+  border: 1px solid rgba(229, 184, 92, 0.28);
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lg-work-why {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+}
+
+.lg-work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.btn-yt-listen,
+.btn-free-listen {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.42rem 0.82rem;
+  border-radius: 999px;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.btn-yt-listen {
+  background: rgba(239, 68, 68, 0.14);
+  border: 1px solid rgba(239, 68, 68, 0.48);
+  color: #fecaca;
+}
+
+.btn-yt-listen:hover {
+  background: #dc2626;
+  border-color: #ef4444;
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(220, 38, 38, 0.35);
+}
+
+.btn-free-listen {
+  background: rgba(229, 184, 92, 0.1);
+  border: 1px solid rgba(229, 184, 92, 0.35);
+  color: var(--gold-light);
+}
+
+.btn-free-listen:hover {
+  background: rgba(229, 184, 92, 0.22);
+  border-color: var(--gold-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* Bloque compacto dentro de las tarjetas de etapa en exponentes.html */
+.period-recommended-works {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px dashed rgba(229, 184, 92, 0.22);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.period-rec-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-primary);
+}

@@ -200,6 +200,30 @@ test("Se incluyen los 5 pilares de por qué es importante y la Brújula de inici
   assert.strictEqual(MUSIC_DATA.beginnerCompass.length, 4, "Deben existir 4 recomendaciones por ánimo");
 });
 
+console.log("\n🎧 7. Verificación de Guía de Audición Recomendada por Autor y Etapa");
+
+test("Todos los compositores y cada una de sus etapas tienen obras recomendadas con enlaces gratuitos a YouTube e IMSLP/Archive", () => {
+  const { hydrateListeningGuide } = require("../app/listening-guide.js");
+  hydrateListeningGuide(MUSIC_DATA);
+  let totalWorks = 0;
+  MUSIC_DATA.eras.forEach(era => {
+    era.exponents.forEach(exp => {
+      exp.periods.forEach((p, idx) => {
+        assert.ok(Array.isArray(p.recommendedWorks) && p.recommendedWorks.length >= 1,
+          `Faltan obras recomendadas en ${exp.name} — Etapa ${idx + 1}`);
+        p.recommendedWorks.forEach(w => {
+          totalWorks++;
+          assert.ok(w.title && w.title.length > 5, `Título inválido en ${exp.name}`);
+          assert.ok(w.whyListen && w.whyListen.length > 25, `Guía de escucha insuficiente en ${w.title}`);
+          assert.ok(w.youtubeUrl && w.youtubeUrl.startsWith("https://www.youtube.com/"), `URL YouTube inválida en ${w.title}`);
+          assert.ok(w.freeArchiveUrl && w.freeArchiveUrl.startsWith("https://"), `URL Archivo libre inválida en ${w.title}`);
+        });
+      });
+    });
+  });
+  assert.ok(totalWorks >= 55, `Debe haber al menos 55 obras recomendadas en total (actuales: ${totalWorks})`);
+});
+
 // -------------------------------------------------------------
 // REPORTE DE RESULTADOS
 // -------------------------------------------------------------

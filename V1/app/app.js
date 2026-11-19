@@ -7,6 +7,11 @@
  */
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Hidratar guía de audición si está cargada
+  if (typeof window.hydrateListeningGuide === "function" && typeof MUSIC_DATA !== "undefined") {
+    window.hydrateListeningGuide(MUSIC_DATA);
+  }
+
   // Instancia del Sintetizador Orquestal
   const synth = new ClassicalSynthesizer();
 
@@ -390,7 +395,26 @@ document.addEventListener("DOMContentLoaded", () => {
         card.dataset.eraId = era.id;
         card.style.setProperty("--card-accent", era.accent);
 
-        let periodsHtml = master.periods ? master.periods.map((p, idx) => `
+        let periodsHtml = master.periods ? master.periods.map((p, idx) => {
+          const recWorksHtml = (p.recommendedWorks && p.recommendedWorks.length > 0) ? `
+            <div class="period-recommended-works">
+              <div class="period-rec-label">🎧 Obras Recomendadas para Entender esta Etapa</div>
+              ${p.recommendedWorks.map(w => `
+                <div class="lg-work-item">
+                  <div class="lg-work-top">
+                    <div class="lg-work-title">${w.title}</div>
+                    <span class="lg-work-duration">${w.duration}</span>
+                  </div>
+                  <p class="lg-work-why">${w.whyListen}</p>
+                  <div class="lg-work-actions">
+                    <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ Escuchar en YouTube</a>
+                    <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎼 ${w.freeLabel} (Gratis)</a>
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          ` : "";
+          return `
           <div class="master-period-card">
             <div class="period-name">Etapa ${idx + 1}: ${p.name}</div>
             <p class="period-focus"><strong>Contexto de Vida:</strong> ${p.focus}</p>
@@ -398,8 +422,10 @@ document.addEventListener("DOMContentLoaded", () => {
               <strong>¿Qué propone en esta etapa?</strong><br>
               ${p.proposal}
             </div>
+            ${recWorksHtml}
           </div>
-        `).join("") : `<p style="color:var(--text-muted)">Etapas integradas en manuscritos litúrgicos.</p>`;
+        `;
+        }).join("") : `<p style="color:var(--text-muted)">Etapas integradas en manuscritos litúrgicos.</p>`;
 
         card.innerHTML = `
           <div class="card-tilt-inner">
@@ -572,6 +598,129 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
+  // 7B. GUÍA DE AUDICIÓN INTERACTIVA POR AUTOR Y ETAPA (INDEX.HTML & SUBPÁGINAS)
+  // ==========================================================================
+  function buildStagesListeningHtml(composer, era) {
+    const stagesHtml = (composer.periods || []).map((p, idx) => {
+      const works = p.recommendedWorks || [];
+      return `
+        <div class="lg-stage-card">
+          <div>
+            <span class="lg-stage-badge">Etapa ${idx + 1} · ${era.name}</span>
+            <h5 class="lg-stage-title">${p.name}</h5>
+          </div>
+          <div class="lg-stage-proposal">${p.proposal}</div>
+          <div class="lg-works-list">
+            ${works.map(w => `
+              <div class="lg-work-item">
+                <div class="lg-work-top">
+                  <div class="lg-work-title">${w.title}</div>
+                  <span class="lg-work-duration">${w.duration}</span>
+                </div>
+                <p class="lg-work-why">${w.whyListen}</p>
+                <div class="lg-work-actions">
+                  <a href="${w.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="btn-yt-listen">▶ Escuchar en YouTube</a>
+                  <a href="${w.freeArchiveUrl}" target="_blank" rel="noopener noreferrer" class="btn-free-listen">🎼 ${w.freeLabel} (Gratis)</a>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `;
+    }).join("");
+    return stagesHtml;
+  }
+
+  function renderListeningGuideSection() {
+    const selectorEl = document.getElementById("lg-composer-selector");
+    const spotlightEl = document.getElementById("lg-spotlight-panel");
+    if (!selectorEl || !spotlightEl || typeof MUSIC_DATA === "undefined") return;
+
+    const allEntries = [];
+    MUSIC_DATA.eras.forEach(era => {
+      era.exponents.forEach(exp => allEntries.push({ exp, era }));
+    });
+    if (allEntries.length === 0) return;
+
+    let activeId = "beethoven";
+    if (!allEntries.some(e => e.exp.id === activeId)) {
+      activeId = allEntries[0].exp.id;
+    }
+
+    function renderSpotlight(composerId) {
+      const found = allEntries.find(e => e.exp.id === composerId) || allEntries[0];
+      const { exp, era } = found;
+      const subpageUrl = SUBPAGE_MAP[exp.id];
+
+      spotlightEl.innerHTML = `
+        <div class="lg-spotlight-header">
+          <div class="lg-spotlight-portrait">
+            <img src="${exp.image}" alt="${exp.name}">
+          </div>
+          <div class="lg-spotlight-meta" style="flex:1;">
+            <span class="editorial-badge" style="margin-bottom:0.35rem; color:${era.accent}; border-color:${era.accent}">${era.name} (${era.period})</span>
+            <h4>${exp.name} <span style="font-size:0.95rem; color:var(--text-muted); font-family:var(--font-sans); font-weight:400;">(${exp.years})</span></h4>
+            <p>${exp.whyExponent}</p>
+            <div style="margin-top:0.85rem; display:flex; gap:0.7rem; flex-wrap:wrap; align-items:center;">
+              <button class="btn-audio-motif" data-motif="${exp.motifKey}"><span>▶</span> Escuchar Motivo Integrado</button>
+              ${subpageUrl ? `<a href="${subpageUrl}" class="btn-catalog-subpage">📖 Abrir Catálogo Completo →</a>` : ""}
+            </div>
+          </div>
+        </div>
+        <div class="lg-stages-grid">
+          ${buildStagesListeningHtml(exp, era)}
+        </div>
+      `;
+    }
+
+    selectorEl.innerHTML = allEntries.map(({ exp }) => `
+      <button type="button" class="lg-composer-chip ${exp.id === activeId ? "active" : ""}" data-lg-id="${exp.id}">
+        <img src="${exp.image}" alt="${exp.name}" loading="lazy">
+        <span>${exp.name.split("(")[0].trim()}</span>
+      </button>
+    `).join("");
+
+    selectorEl.querySelectorAll(".lg-composer-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        selectorEl.querySelectorAll(".lg-composer-chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+        activeId = chip.dataset.lgId;
+        renderSpotlight(activeId);
+      });
+    });
+
+    renderSpotlight(activeId);
+  }
+
+  function renderSubpageListeningGuide() {
+    const mount = document.getElementById("subpage-listening-guide");
+    if (!mount || typeof MUSIC_DATA === "undefined") return;
+    const composerId = mount.dataset.composerId;
+    if (!composerId) return;
+
+    let found = null;
+    MUSIC_DATA.eras.forEach(era => {
+      era.exponents.forEach(exp => {
+        if (exp.id === composerId) found = { exp, era };
+      });
+    });
+    if (!found) return;
+
+    mount.innerHTML = `
+      <div class="section-header" style="margin-bottom:2rem;">
+        <div class="editorial-badge">🎧 Guía de Audición Recomendada • YouTube &amp; Audio Libre</div>
+        <h3 class="section-title" style="font-size:clamp(1.6rem, 3vw, 2.3rem);">Qué Escuchar para Entender Cada Etapa de ${found.exp.name}</h3>
+        <p class="section-desc">
+          Obras esenciales seleccionadas por periodo creativo con guía de escucha y enlaces directos gratuitos en YouTube e IMSLP / Internet Archive.
+        </p>
+      </div>
+      <div class="lg-stages-grid">
+        ${buildStagesListeningHtml(found.exp, found.era)}
+      </div>
+    `;
+  }
+
+  // ==========================================================================
   // INICIALIZACIÓN
   // ==========================================================================
   renderTimeline();
@@ -579,6 +728,8 @@ document.addEventListener("DOMContentLoaded", () => {
   renderCatalogsAndTitans();
   renderHistoryStories();
   renderMastersFullPage();
+  renderListeningGuideSection();
+  renderSubpageListeningGuide();
   initTiltAndSpotlight();
   setupAudioInteractivity();
 });

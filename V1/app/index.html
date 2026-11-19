@@ -75,6 +75,11 @@
               <svg class="svg-ico" viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg> Evolución
             </a>
           </li>
+          <li class="nav-item">
+            <a href="#comentarios" class="nav-link">
+              <svg class="svg-ico" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Comentarios
+            </a>
+          </li>
 
           <!-- MEGA-DROPDOWN: CATÁLOGOS -->
           <li class="nav-item nav-item-mega" id="nav-mega-trigger">
@@ -886,14 +891,33 @@
 
     <div class="comments-shell">
       <div class="comments-tabs" role="tablist">
-        <button type="button" class="comments-tab-btn active" data-ctab="public">Comentarios Públicos (GitHub / Utterances)</button>
-        <button type="button" class="comments-tab-btn" data-ctab="quick">Nota Rápida (Sin Registro)</button>
+        <button type="button" class="comments-tab-btn active" data-ctab="quick">Escribir Comentario (Sin Registro)</button>
+        <button type="button" class="comments-tab-btn" data-ctab="public">Foro GitHub (Utterances)</button>
       </div>
 
-      <!-- TAB 1: Comentarios Públicos Reales (Utterances conectado al repo) -->
-      <div id="ctab-public">
+      <!-- TAB 1 (VISIBLE POR DEFECTO): Formulario directo sin registro -->
+      <div id="ctab-quick">
+        <form id="quick-comment-form">
+          <div class="comment-form-grid">
+            <input type="text" id="qc-name" class="comment-input" placeholder="Tu nombre o apodo *" maxlength="60" required>
+            <input type="text" id="qc-fav" class="comment-input" placeholder="Compositor u obra favorita (opcional)" maxlength="80">
+          </div>
+          <textarea id="qc-text" class="comment-textarea" placeholder="Escribe aquí tu comentario, duda o recomendación musical..." maxlength="600" required></textarea>
+          <div class="comment-form-actions">
+            <span style="font-size:0.76rem; color:var(--text-muted);">Tu comentario aparece al instante abajo; también puedes enviarlo al foro público de GitHub.</span>
+            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
+              <button type="submit" class="btn-primary" style="padding:0.6rem 1.35rem; font-size:0.82rem;">Publicar Comentario</button>
+              <a id="qc-github-link" href="https://github.com/in2techmx/musica-clasica-odisea/issues/new?labels=comentarios&title=Comentario%20en%20Odisea%20Cl%C3%A1sica" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding:0.55rem 1.1rem; font-size:0.8rem;">Publicar en Foro GitHub ↗</a>
+            </div>
+          </div>
+        </form>
+        <div id="quick-comments-list" class="comments-list"></div>
+      </div>
+
+      <!-- TAB 2: Comentarios Públicos Reales (Utterances conectado al repo) -->
+      <div id="ctab-public" style="display:none;">
         <p style="font-size:0.84rem; color:var(--text-muted); margin-bottom:1.1rem;">
-          Comentarios públicos persistentes para todos los visitantes, respaldados directamente en
+          Comentarios públicos sincronizados con GitHub Issues en
           <a href="https://github.com/in2techmx/musica-clasica-odisea/issues" target="_blank" rel="noopener noreferrer" style="color:var(--gold-light);">in2techmx/musica-clasica-odisea</a>.
         </p>
         <div id="utterances-mount">
@@ -906,25 +930,6 @@
                   async>
           </script>
         </div>
-      </div>
-
-      <!-- TAB 2: Muro Rápido sin registro + opción de enviar al autor -->
-      <div id="ctab-quick" style="display:none;">
-        <form id="quick-comment-form">
-          <div class="comment-form-grid">
-            <input type="text" id="qc-name" class="comment-input" placeholder="Tu nombre o apodo *" maxlength="60" required>
-            <input type="text" id="qc-fav" class="comment-input" placeholder="Compositor u obra favorita (opcional)" maxlength="80">
-          </div>
-          <textarea id="qc-text" class="comment-textarea" placeholder="Escribe tu comentario, duda o recomendación musical..." maxlength="600" required></textarea>
-          <div class="comment-form-actions">
-            <span style="font-size:0.76rem; color:var(--text-muted);">Se guarda al instante en tu navegador y puedes publicarlo también en el foro.</span>
-            <div style="display:flex; gap:0.6rem; flex-wrap:wrap;">
-              <button type="submit" class="btn-primary" style="padding:0.6rem 1.35rem; font-size:0.82rem;">Publicar Nota</button>
-              <a id="qc-github-link" href="https://github.com/in2techmx/musica-clasica-odisea/issues/new?labels=comentarios&title=Comentario%20en%20Odisea%20Cl%C3%A1sica" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding:0.55rem 1.1rem; font-size:0.8rem;">Enviar al Foro Público ↗</a>
-            </div>
-          </div>
-        </form>
-        <div id="quick-comments-list" class="comments-list"></div>
       </div>
     </div>
   </section>

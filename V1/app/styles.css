@@ -458,7 +458,8 @@ body::before {
 }
 
 @media (max-width: 1120px) {
-  .nav-hamburger { display: flex; }
+  .nav-hamburger { display: flex; order: 3; }
+  .header-right-actions { margin-left: auto; order: 2; }
   .header-audio-pill { display: none; }
   .main-nav {
     display: none;

@@ -3584,15 +3584,114 @@ body {
 }
 
 /* En dispositivos móviles compactar el botón */
-@media (max-width: 600px) {
+/* Optimizaciones en dispositivos móviles para el selector multilingüe */
+@media (max-width: 900px) {
+  .lang-selector-wrap {
+    display: inline-flex !important;
+    position: relative !important;
+  }
   .lang-selector-btn {
-    padding: 0.28rem 0.5rem;
-    font-size: 0.75rem;
+    padding: 0.35rem 0.55rem !important;
+    font-size: 0.78rem !important;
+    gap: 0.35rem !important;
+    border-color: rgba(229, 184, 92, 0.45) !important;
+    background: rgba(229, 184, 92, 0.08) !important;
   }
   .lang-globe-icon {
-    display: none;
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    stroke: var(--gold-primary) !important;
+    stroke-width: 2.2 !important;
+  }
+  .lang-current-flag {
+    display: inline-block !important;
+    font-size: 0.88rem !important;
+  }
+  .lang-current-label {
+    display: inline-block !important;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
   }
   .lang-dropdown-menu {
-    right: -10px;
+    right: 0 !important;
+    min-width: 175px !important;
+    top: calc(100% + 8px) !important;
+    z-index: 3500 !important;
+  }
+
+  /* Barra de idiomas dentro del menú móvil */
+  .mobile-lang-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.75rem;
+    background: rgba(229, 184, 92, 0.06);
+    border: 1px solid rgba(229, 184, 92, 0.22);
+    border-radius: 12px;
+  }
+  .mobile-lang-title {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--gold-light);
+  }
+  .mobile-lang-pills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+  }
+  .mobile-lang-pill {
+    padding: 0.4rem 0.2rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(229, 184, 92, 0.2);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+  }
+  .mobile-lang-pill:hover,
+  .mobile-lang-pill.active {
+    background: rgba(229, 184, 92, 0.2);
+    border-color: var(--gold-primary);
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-lang-bar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 0.55rem !important;
+    gap: 0.35rem !important;
+  }
+  .brand-text .brand-badge {
+    display: none !important;
+  }
+  .brand-symbol-wrap {
+    width: 32px !important;
+    height: 32px !important;
+  }
+  .header-bmc-btn {
+    padding: 0.22rem 0.38rem !important;
+  }
+  .header-bmc-btn span {
+    display: none !important;
+  }
+  .lang-selector-btn {
+    padding: 0.3rem 0.45rem !important;
   }
 }

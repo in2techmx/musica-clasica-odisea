@@ -137,6 +137,11 @@
       btn.setAttribute('aria-selected', isAct ? 'true' : 'false');
     });
 
+    document.querySelectorAll('.mobile-lang-pill').forEach(pill => {
+      const isAct = (pill.dataset.lang === lang);
+      pill.classList.toggle('active', isAct);
+    });
+
     const rootHtml = document.documentElement;
     if (rootHtml) {
       rootHtml.setAttribute('lang', lang === 'zh-CN' ? 'zh' : lang);
@@ -150,6 +155,13 @@
 
     const activeLang = getCurrentLang();
     updateUI(activeLang);
+
+    // Configurar pills del menú móvil
+    document.querySelectorAll('.mobile-lang-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        switchLanguage(pill.dataset.lang);
+      });
+    });
 
     // Configurar selectores multilingües
     document.querySelectorAll('.lang-selector-wrap').forEach(wrap => {

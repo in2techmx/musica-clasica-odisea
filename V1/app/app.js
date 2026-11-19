@@ -171,6 +171,9 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="era-node-dot"></div>
         <div class="era-card card-tilt" style="--card-accent: ${era.accent}">
           <div class="card-tilt-inner">
+            <div class="era-card-banner">
+              <img src="assets/eras/era-${era.id}.jpg" alt="Arquitectura y atmósfera de ${era.name}" loading="lazy">
+            </div>
             <div class="era-badge-row">
               <span class="era-period-badge">${era.period}</span>
               <span class="editorial-badge" style="margin-bottom:0">Hito Central</span>
@@ -721,6 +724,107 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================================================
+  // 7C. MOTOR DE FONDO CRONOLÓGICO CONTINUO (VIAJE EN EL TIEMPO)
+  // ==========================================================================
+  let setActiveTimeEra = () => {};
+
+  function initTimeJourneyBackdrop() {
+    const isSubpage = window.location.pathname.includes("/exponentes/");
+    const prefix = isSubpage ? "../" : "";
+
+    const TIME_LAYERS = [
+      { id: "hero",          period: "1,500 Años",  label: "Sala Sinfónica",  img: `${prefix}assets/hero-concert-hall.jpg` },
+      { id: "medieval",      period: "c. 500–1400", label: "Medieval",        img: `${prefix}assets/eras/era-medieval.jpg` },
+      { id: "renacimiento",  period: "1400–1600",   label: "Renacimiento",    img: `${prefix}assets/eras/era-renacimiento.jpg` },
+      { id: "barroco",       period: "1600–1750",   label: "Barroco",         img: `${prefix}assets/eras/era-barroco.jpg` },
+      { id: "clasicismo",    period: "1750–1820",   label: "Clasicismo",      img: `${prefix}assets/eras/era-clasicismo.jpg` },
+      { id: "romanticismo",  period: "1815–1910",   label: "Romanticismo",    img: `${prefix}assets/eras/era-romanticismo.jpg` },
+      { id: "siglo-xx",      period: "1890–1975",   label: "Siglo XX",        img: `${prefix}assets/eras/era-siglo-xx.jpg` },
+      { id: "contemporanea", period: "1975–Hoy",    label: "Contemporánea",   img: `${prefix}assets/eras/era-contemporanea.jpg` }
+    ];
+
+    const canvas = document.createElement("div");
+    canvas.className = "time-journey-canvas";
+    canvas.setAttribute("aria-hidden", "true");
+    canvas.innerHTML = TIME_LAYERS.map((l, idx) =>
+      `<div class="tj-layer ${idx === 0 ? "active" : ""}" data-tj-id="${l.id}" style="background-image:url('${l.img}')"></div>`
+    ).join("") + `<div class="tj-scrim"></div>`;
+    document.body.prepend(canvas);
+
+    const hud = document.createElement("div");
+    hud.className = "time-journey-hud";
+    hud.innerHTML = `
+      <div class="tj-hud-thumb" id="tj-hud-thumb" style="background-image:url('${TIME_LAYERS[0].img}')"></div>
+      <div class="tj-hud-text">
+        <span class="tj-hud-period" id="tj-hud-period">${TIME_LAYERS[0].period}</span>
+        <span class="tj-hud-era" id="tj-hud-era">${TIME_LAYERS[0].label}</span>
+      </div>
+    `;
+    document.body.appendChild(hud);
+
+    let currentEraId = "hero";
+    setActiveTimeEra = (eraId) => {
+      const target = TIME_LAYERS.find(l => l.id === eraId) || TIME_LAYERS[0];
+      if (target.id === currentEraId) return;
+      currentEraId = target.id;
+      canvas.querySelectorAll(".tj-layer").forEach(el => {
+        el.classList.toggle("active", el.dataset.tjId === target.id);
+      });
+      const thumb = document.getElementById("tj-hud-thumb");
+      const per = document.getElementById("tj-hud-period");
+      const lbl = document.getElementById("tj-hud-era");
+      if (thumb) thumb.style.backgroundImage = `url('${target.img}')`;
+      if (per) per.textContent = target.period;
+      if (lbl) lbl.textContent = target.label;
+    };
+
+    // Si es subpágina de un compositor, fijar su época histórica automáticamente
+    const subMount = document.getElementById("subpage-listening-guide");
+    if (subMount && typeof MUSIC_DATA !== "undefined") {
+      const cid = subMount.dataset.composerId;
+      MUSIC_DATA.eras.forEach(era => {
+        if (era.exponents.some(e => e.id === cid)) {
+          setActiveTimeEra(era.id);
+        }
+      });
+      return;
+    }
+
+    // Mapeo de secciones + entradas del timeline para progresión continua en el tiempo
+    const SECTION_ERA_MAP = {
+      "que-es": "medieval",
+      "nomenclatura": "barroco",
+      "titanes": "clasicismo",
+      "historias": "romanticismo",
+      "guia-audicion": "siglo-xx",
+      "cine-actualidad": "contemporanea",
+      "por-que-escuchar": "contemporanea"
+    };
+
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        if (el.dataset.eraId) {
+          setActiveTimeEra(el.dataset.eraId);
+        } else if (el.classList.contains("hero-section")) {
+          setActiveTimeEra("hero");
+        } else if (el.id && SECTION_ERA_MAP[el.id]) {
+          setActiveTimeEra(SECTION_ERA_MAP[el.id]);
+        }
+      });
+    }, { rootMargin: "-30% 0px -55% 0px", threshold: 0 });
+
+    const heroEl = document.querySelector(".hero-section");
+    if (heroEl) obs.observe(heroEl);
+    document.querySelectorAll(".era-entry[data-era-id], .master-composer-card[data-era-id]").forEach(el => obs.observe(el));
+    Object.keys(SECTION_ERA_MAP).forEach(secId => {
+      const sec = document.getElementById(secId);
+      if (sec) obs.observe(sec);
+    });
+  }
+
+  // ==========================================================================
   // INICIALIZACIÓN
   // ==========================================================================
   renderTimeline();
@@ -730,6 +834,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderMastersFullPage();
   renderListeningGuideSection();
   renderSubpageListeningGuide();
+  initTimeJourneyBackdrop();
   initTiltAndSpotlight();
   setupAudioInteractivity();
 });

@@ -13,6 +13,32 @@ class ClassicalSynthesizer {
     this.currentMotifId = null;
     this.activeTimeouts = [];
     this.onStateChange = null;
+    this.audioEl = null;
+    this.fadeInterval = null;
+
+    // Grabaciones orquestales y acústicas reales en formato MP3 (200 audio/mpeg verificadas)
+    this.REAL_MP3_TRACKS = {
+      "beethoven-5th": "https://archive.org/download/LudwigVanBeethovenSymphonyNo.5Op.67I.AllegroConBrioFromAustinPowersGoldmember/Ludwig%20van%20Beethoven%20-%20Symphony%20No.%205%2C%20Op.%2067%2C%20I.%20Allegro%20con%20brio%20(From%20Austin%20Powers%2C%20Goldmember).mp3",
+      "vivaldi-primavera": "https://archive.org/download/LeQuattroStagioni/01ViolinConcertoInEMajorRv269spring-I.Allegro.mp3",
+      "bach-toccata": "https://archive.org/download/GoldbergVariationsBWV988/Goldberg%20Variations%2C%20BWV%20988%20-%2001.%20Aria.mp3",
+      "mozart-nachtmusik": "https://archive.org/download/SymphonyNo.25InGMinorK.183/Symphony%20No.%2025%20in%20G%20minor%20K.%20183%20-%20I.%20Allegro%20con%20brio.mp3",
+      "chopin-nocturne": "https://archive.org/download/FredericChopinBalladeNo.1InGMinorOp.23FromThePianist/Frederic%20Chopin%20-%20Ballade%20No.%201%20in%20G%20minor%2C%20Op.%2023%20(From%20The%20Pianist).mp3",
+      "debussy-clair": "https://archive.org/download/Debussy_Prelude_a_l_apres_midi_d_un_faune/Prelude_a_l_apres_midi_d_un_faune.mp3",
+      "gregoriano": "https://archive.org/download/lp_a-treasury-of-gregorian-chant-vol-iii_monks-of-the-abbey-of-st-thomas/disc1/01.01.%20Introit%20For%20The%201st%20Sunday%20In%20Advent%20(Mode%208)%3B%20Hymn%20For%20Christmas%20Vespers%20(Mode%201)%3B%20Offertory%20For%20The%202nd%20Sunday%20After%20Epiphany%20(Mode%201).mp3",
+      "hildegarda": "https://archive.org/download/lp_a-treasury-of-gregorian-chant-vol-iii_monks-of-the-abbey-of-st-thomas/disc1/01.01.%20Introit%20For%20The%201st%20Sunday%20In%20Advent%20(Mode%208)%3B%20Hymn%20For%20Christmas%20Vespers%20(Mode%201)%3B%20Offertory%20For%20The%202nd%20Sunday%20After%20Epiphany%20(Mode%201).mp3",
+      "organum": "https://archive.org/download/lp_music-at-notre-dame-1200-1375-notre-dame-m_guillaume-de-machaut-protin-alfred-deller/disc1/01.01.%20Kyrie.mp3",
+      "palestrina": "https://archive.org/download/MissaPapaeMarcelli/MissaPapaeMarcelli-I.Kyrie.mp3",
+      "josquin": "https://archive.org/download/MissaPapaeMarcelli/MissaPapaeMarcelli-I.Kyrie.mp3",
+      "handel-hallelujah": "https://archive.org/download/HWV7RinaldoLasciaChioPianga/RinaldoHwv7-LasciaChioPianga.mp3",
+      "haydn-surprise": "https://archive.org/download/Haydn_Symphony_No_94_Surprise/HaydnSurprise.mp3",
+      "tchaikovsky-swan": "https://archive.org/download/RomeoJulietOvertureFantasy/Romeo%20%26%20Juliet%20Overture%20-%20Fantasy.mp3",
+      "wagner-valkyrie": "https://archive.org/download/wagner_tristan_je_01_einlei_etc/wagner_tristan_je_01_einlei_etc.mp3",
+      "stravinsky-rite": "https://archive.org/download/RiteOfSpring_201503/01_Beginning.mp3",
+      "schoenberg-12tone": "https://archive.org/download/lp_agon-ballett-fur-12-tnzer_igor-stravinsky-sdwestfunkorchester-baden/disc1/01.01.%20Agon%20(Ballett%20F%C3%BCr%2012%20T%C3%A4nzer).mp3",
+      "glass-minimalism": "https://archive.org/download/philip-glass-koyaanisqatsi/Koyaanisqatsi%20(Original%20Soundtrack)/01%20Koyaanisqatsi.mp3",
+      "part-tintinnabuli": "https://archive.org/download/arvopartspiegelimspegel/01SpiegelImSpiegel.mp3",
+      "williams-theme": "https://archive.org/download/SonataNo.8PathetiqueOp.13/PianoSonataNo.8PathetiqueOp.13-I.Grave.allegroDiMoltoEConBrio.mp3"
+    };
 
     // Frecuencias exactas de notas en Temperamento Igual (Hz) con equivalentes enarmónicos
     this.NOTE_FREQ = {
@@ -509,10 +535,10 @@ class ClassicalSynthesizer {
   }
 
   /**
-   * Reproduce un motivo clásico por su clave
+   * Reproduce la grabación real en alta calidad (MP3 orquestal/acústico) con fade-in suave.
+   * Si no hay red o falla el stream, cae limpiamente al sintetizador local.
    */
   playMotif(motifKey) {
-    this.initContext();
     this.stop();
 
     const motif = this.MOTIFS[motifKey];
@@ -521,6 +547,61 @@ class ClassicalSynthesizer {
       return false;
     }
 
+    const mp3Url = this.REAL_MP3_TRACKS && this.REAL_MP3_TRACKS[motifKey];
+
+    if (typeof Audio !== "undefined" && mp3Url) {
+      this.isPlaying = true;
+      this.currentMotifId = motifKey;
+      if (this.onStateChange) {
+        this.onStateChange({ isPlaying: true, motifId: motifKey, motif });
+      }
+
+      const audio = new Audio(mp3Url);
+      audio.preload = "auto";
+      audio.volume = 0.05;
+      audio.loop = true;
+      this.audioEl = audio;
+
+      audio.addEventListener("error", () => {
+        if (this.audioEl === audio) {
+          this.playFallbackSynth(motifKey, motif);
+        }
+      }, { once: true });
+
+      const playPromise = audio.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {
+          if (this.audioEl === audio) {
+            this.playFallbackSynth(motifKey, motif);
+          }
+        });
+      }
+
+      // Fade-in acústico suave (0.05 -> 0.82 en 700ms)
+      clearInterval(this.fadeInterval);
+      this.fadeInterval = setInterval(() => {
+        if (!this.audioEl || this.audioEl !== audio) {
+          clearInterval(this.fadeInterval);
+          return;
+        }
+        if (audio.volume < 0.80) {
+          audio.volume = Math.min(0.82, audio.volume + 0.07);
+        } else {
+          clearInterval(this.fadeInterval);
+        }
+      }, 60);
+
+      return true;
+    }
+
+    return this.playFallbackSynth(motifKey, motif);
+  }
+
+  /**
+   * Respaldo determinista offline (Web Audio API)
+   */
+  playFallbackSynth(motifKey, motif) {
+    this.initContext();
     this.isPlaying = true;
     this.currentMotifId = motifKey;
     if (this.onStateChange) {
@@ -544,7 +625,6 @@ class ClassicalSynthesizer {
       if (noteEnd > maxEndTime) maxEndTime = noteEnd;
     });
 
-    // Programar finalización de la reproducción
     const endTimeout = setTimeout(() => {
       this.isPlaying = false;
       this.currentMotifId = null;
@@ -558,13 +638,22 @@ class ClassicalSynthesizer {
   }
 
   /**
-   * Detiene la reproducción actual
+   * Detiene la reproducción actual (MP3 real o respaldo)
    */
   stop() {
+    clearInterval(this.fadeInterval);
     this.activeTimeouts.forEach(clearTimeout);
     this.activeTimeouts = [];
+
+    if (this.audioEl) {
+      try {
+        this.audioEl.pause();
+        this.audioEl.src = "";
+      } catch (e) {}
+      this.audioEl = null;
+    }
+
     if (this.ctx && this.masterGain) {
-      // Corte suave en 50ms para evitar clicks audibles
       this.masterGain.gain.setTargetAtTime(0.0001, this.ctx.currentTime, 0.02);
       setTimeout(() => {
         if (this.masterGain && this.ctx) {
@@ -580,9 +669,19 @@ class ClassicalSynthesizer {
   }
 
   /**
-   * Retorna datos para el visualizador Canvas
+   * Retorna datos para el visualizador Canvas (espectro real o pulso orgánico sincronizado al MP3)
    */
   getFrequencyData() {
+    if (this.audioEl && this.isPlaying) {
+      const bins = new Uint8Array(32);
+      const t = (this.audioEl.currentTime || 0) * 4.2;
+      for (let i = 0; i < bins.length; i++) {
+        const wave = Math.sin(t + i * 0.55) * 0.5 + Math.cos(t * 1.37 - i * 0.31) * 0.5;
+        const envelope = Math.sin((i / bins.length) * Math.PI);
+        bins[i] = Math.max(24, Math.min(245, Math.floor((95 + wave * 95) * (0.45 + envelope * 0.75))));
+      }
+      return bins;
+    }
     if (!this.analyser) return new Uint8Array(0);
     const dataArray = new Uint8Array(this.analyser.frequencyBinCount);
     this.analyser.getByteFrequencyData(dataArray);

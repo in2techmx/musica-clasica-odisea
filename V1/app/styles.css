@@ -2557,14 +2557,20 @@ body::before {
     linear-gradient(180deg, rgba(5, 8, 14, 0.42) 0%, rgba(6, 9, 15, 0.56) 50%, rgba(5, 8, 14, 0.72) 100%);
 }
 
-/* Asegurar que todo el contenido flote sobre el lienzo cronológico */
-.site-header,
-.section-nav-banner,
+/* Asegurar que todo el contenido flote sobre el lienzo cronológico,
+   pero manteniendo el header y la barra pegajosa SIEMPRE encima de las secciones */
 .hero-section,
 .section-wrapper,
 .site-footer {
   position: relative;
   z-index: 2;
+}
+
+.site-header,
+.section-nav-banner {
+  position: sticky !important;
+  top: 0;
+  z-index: 1000 !important;
 }
 
 /* HUD Cronológico sutil indicando la época visible al hacer scroll */

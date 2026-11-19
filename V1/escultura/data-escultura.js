@@ -782,7 +782,7 @@ const ESCULTURA_DATA = {
     "technique": "Ensamblaje modular rítmico de 17 módulos romboidales",
     "dimensions": "29.33 metros de altura",
     "location": "Târgu Jiu, Rumanía",
-    "image": "assets/obras/brancusi-beso.jpg?v=5",
+    "image": "assets/obras/brancusi-columna.jpg",
     "highlight": "El eje vertical infinito que conecta la tierra con el cielo en ritmo geométrico puro.",
     "curatorialNote": "Obra cumbre de la escultura moderna. Brâncuși apiló módulos romboidales idénticos inspirados en los pilares tradicionales rumanos de madera, creando un tótem minimalista de casi 30 metros que parece prolongarse eternamente hacia el firmamento."
   },

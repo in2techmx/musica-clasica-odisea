@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ludwig van Beethoven — Catálogo Completo & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Ludwig van Beethoven: Catálogo Opus y WoO clasificado por géneros (9 sinfonías, conciertos, 32 sonatas, cuartetos tardíos) y análisis de sus 3 etapas creativas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- BARRA DE LECTURA SUPERIOR -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA DE RETORNO -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      LUDWIG VAN BEETHOVEN • CATÁLOGO & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Beethoven.jpg/440px-Beethoven.jpg" alt="Ludwig van Beethoven">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-romantic); border-color: var(--accent-romantic);">TRANSICIÓN CLASICISMO ➔ ROMANTICISMO</span>
+          <h3>Ludwig van Beethoven</h3>
+          <div class="master-meta-row">
+            <span>Bonn, 1770 – Viena, 1827</span> • 
+            <strong style="color: var(--gold-primary);">El Titán que Rompió las Reglas del Mundo</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Beethoven no solo compuso música; redefinió el lugar del artista en la historia humana. 
+            Fue el primer músico que se negó a ser tratado como sirviente de nobles y clérigos. 
+            A través de una sordera progresiva y atroz, convirtió el sufrimiento interior en un triunfo ético universal, 
+            empujando las formas clásicas de Haydn y Mozart hacia la libertad emocional del Romanticismo.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="beethoven-5th">
+              <span>▶</span> Escuchar Motivo del Destino (Sinfonía n.º 5)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Beethoven? (Opus & Catálogo WoO)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Beethoven utilizó principalmente números de <strong>Opus (Op. 1 al Op. 138)</strong> para sus composiciones que él mismo consideró merecedoras de publicación comercial oficial en vida (o publicadas poco después de su muerte). 
+          Sin embargo, dejó decenas de obras maestras tempranas, bagatelas, canciones y danzas que no recibieron número de Opus. 
+          En 1955, los musicólogos Georg Kinsky y Hans Halm crearon el catálogo <strong>WoO (Werk ohne Opuszahl: 'Obra sin número de Opus')</strong>, que comprende 205 obras numeradas de forma rigurosa (incluyendo la inmortal <em>Para Elisa, WoO 59</em>).
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Beethoven
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Clasicismo Vienés Temprano (1792–1802)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Llega a Viena con 21 años, estudia con Joseph Haydn y asombra a la aristocracia como un pianista improvisador salvaje y volcánico.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Maestría absoluta de los moldes clásicos (Mozart y Haydn), pero introduciendo acentos dinámicos violentos (sforzandos sorpresivos) y sustituyendo el elegante minué por el scherzo rápido.
+          </div>
+          <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--gold-light);">
+            <strong>Obras Maestras:</strong> Sinfonías 1 y 2, Conciertos para piano 1 y 2, Cuartetos Op. 18, Sonata Patética Op. 13 y Claro de Luna Op. 27 n.º 2.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: El Periodo Heroico (1803–1814)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Escribe el desgarrador <em>Testamento de Heiligenstadt</em> aceptando que su sordera es incurable y decide no suicidarse para cumplir su sagrada misión creadora.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La música como combate existencial: obras a gran escala donde un diminuto motivo lucha contra la adversidad y transfigura la tragedia menor en victoria mayor luminosa.
+          </div>
+          <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--gold-light);">
+            <strong>Obras Maestras:</strong> Sinfonías 3ª (Heroica), 5ª (Destino), 6ª (Pastoral) y 7ª; Concierto Emperador Op. 73; Sonata Appassionata Op. 57; Ópera Fidelio.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Trascendencia y Sordera Total (1815–1827)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Sordera 100% total. Se comunica únicamente mediante 'cuadernos de conversación'. Enfermo y aislado de la sociedad vienesa, escucha la música exclusivamente en su mente.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Disolución de las fronteras formales. Fusión del contrapunto de Bach con variaciones infinitas, misticismo cósmico y profecía del siglo XX (la Gran Fuga).
+          </div>
+          <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--gold-light);">
+            <strong>Obras Maestras:</strong> Sinfonía n.º 9 Coral Op. 125 ('Oda a la Alegría'), Missa Solemnis Op. 123, Cuartetos tardíos (Op. 127, 130, 131, 132, 135) y Sonata Hammerklavier.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Ludwig van Beethoven</h3>
+      <p class="section-desc">
+        Explora las obras que cambiaron la historia de la música, clasificadas por su género arquitectónico con número de catálogo universal, año y propuesta conceptual:
+      </p>
+    </div>
+
+    <!-- 1. LAS 9 SINFONÍAS -->
+    <h4 class="cat-genre-title">🎼 Las 9 Sinfonías Orquestales</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 21</span></td>
+            <td><strong>Sinfonía n.º 1</strong></td>
+            <td>Do mayor</td>
+            <td>1800</td>
+            <td>Desafía la convención abriendo con una disonancia que no resuelve en la tónica, anunciando un nuevo siglo.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 36</span></td>
+            <td><strong>Sinfonía n.º 2</strong></td>
+            <td>Re mayor</td>
+            <td>1802</td>
+            <td>Compuesta durante su crisis de sordera en Heiligenstadt; rebosante de energía vital desafiante.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 55</span></td>
+            <td><strong>Sinfonía n.º 3 'Heroica'</strong></td>
+            <td>Mi bemol mayor</td>
+            <td>1804</td>
+            <td>El punto de no retorno. Duplicó la extensión de la sinfonía clásica. Originalmente dedicada a Napoleón Bonaparte hasta que este se autocoronó emperador.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 60</span></td>
+            <td><strong>Sinfonía n.º 4</strong></td>
+            <td>Si bemol mayor</td>
+            <td>1806</td>
+            <td>Llamada por Schumann 'una doncella griega entre dos gigantes nórdicos'; elegancia clásica lírica.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 67</span></td>
+            <td><strong>Sinfonía n.º 5</strong></td>
+            <td>Do menor</td>
+            <td>1808</td>
+            <td>El motivo de cuatro notas ('el destino llamando a la puerta') que vertebra toda la obra hasta el triunfo final en Do mayor.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 68</span></td>
+            <td><strong>Sinfonía n.º 6 'Pastoral'</strong></td>
+            <td>Fa mayor</td>
+            <td>1808</td>
+            <td>Pionera de la música programática romántica: retrata cantos de pájaros, una tormenta campesina y el agradecimiento a la naturaleza.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 92</span></td>
+            <td><strong>Sinfonía n.º 7</strong></td>
+            <td>La mayor</td>
+            <td>1812</td>
+            <td>Wagner la llamó 'la apoteosis de la danza'. Su segundo movimiento (Allegretto) provocó ovaciones de pie en su estreno.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 93</span></td>
+            <td><strong>Sinfonía n.º 8</strong></td>
+            <td>Fa mayor</td>
+            <td>1812</td>
+            <td>Humor intelectual agudo y velocidad vertiginosa; homenaje irónico al metrónomo recién inventado por Mälzel.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 125</span></td>
+            <td><strong>Sinfonía n.º 9 'Coral'</strong></td>
+            <td>Re menor</td>
+            <td>1824</td>
+            <td>Monumento supremo de la humanidad. Introduce solistas vocales y coro masivo interpretando el poema de Schiller 'Oda a la Alegría'.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. CONCIERTOS PARA SOLISTA -->
+    <h4 class="cat-genre-title">🎹 Conciertos para Solista y Orquesta</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 15</span></td>
+            <td><strong>Concierto para piano n.º 1</strong></td>
+            <td>Do mayor</td>
+            <td>1795</td>
+            <td>Muestra el virtuosismo atlético del joven Beethoven en los salones de Viena.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 37</span></td>
+            <td><strong>Concierto para piano n.º 3</strong></td>
+            <td>Do menor</td>
+            <td>1800</td>
+            <td>Su primer concierto en tonalidad menor, lleno de dramatismo tempestuoso y preludio de su estilo heroico.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 58</span></td>
+            <td><strong>Concierto para piano n.º 4</strong></td>
+            <td>Sol mayor</td>
+            <td>1806</td>
+            <td>Revolucionario: por primera vez en la historia, el piano solista entra solo en los primeros compases antes de la orquesta.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 61</span></td>
+            <td><strong>Concierto para violín</strong></td>
+            <td>Re mayor</td>
+            <td>1806</td>
+            <td>La cumbre lírica del concierto de violín; inicia con cuatro golpes enigmáticos de timbal solo.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 73</span></td>
+            <td><strong>Concierto para piano n.º 5 'Emperador'</strong></td>
+            <td>Mi bemol mayor</td>
+            <td>1809</td>
+            <td>La cumbre sinfónica del piano solista: fuerza heroica monumental en plena invasión napoleónica de Viena.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. SONATAS Y MÚSICA DE CÁMARA -->
+    <h4 class="cat-genre-title">🎻 Sonatas Emblemáticas y Cuartetos Tardíos</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 13</span></td>
+            <td><strong>Sonata para piano n.º 8 'Patética'</strong></td>
+            <td>Do menor</td>
+            <td>1798</td>
+            <td>Introduce una introducción lenta trágica que reaparece como motivo estructural a lo largo del movimiento.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 27 n.º 2</span></td>
+            <td><strong>Sonata para piano n.º 14 'Claro de Luna'</strong></td>
+            <td>Do sostenido menor</td>
+            <td>1801</td>
+            <td>'Quasi una fantasia': rompe el orden tradicional colocando un movimiento lento hipnótico al inicio.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 57</span></td>
+            <td><strong>Sonata para piano n.º 23 'Appassionata'</strong></td>
+            <td>Fa menor</td>
+            <td>1804</td>
+            <td>Una tormenta de fuego técnico y desesperación humana sin un solo instante de tregua complaciente.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 106</span></td>
+            <td><strong>Sonata para piano n.º 29 'Hammerklavier'</strong></td>
+            <td>Si bemol mayor</td>
+            <td>1818</td>
+            <td>Considerada la sonata más difícil e imponente de la literatura para teclado; culmina en una fuga a 3 voces titánica.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 133</span></td>
+            <td><strong>Gran Fuga para Cuarteto de Cuerdas</strong></td>
+            <td>Si bemol mayor</td>
+            <td>1825</td>
+            <td>Stravinsky dijo de ella que era 'una pieza de música contemporánea que seguirá siéndolo para siempre'.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WoO 59</span></td>
+            <td><strong>Bagatela 'Para Elisa' (Für Elise)</strong></td>
+            <td>La menor</td>
+            <td>1810</td>
+            <td>Poco allegretto íntimo encontrado póstumamente en Múnich; una de las melodías más famosas de la historia.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK FLOTANTE DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Beethoven: Motivo del Destino (5ª Sinfonía)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <!-- SCRIPTS -->
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

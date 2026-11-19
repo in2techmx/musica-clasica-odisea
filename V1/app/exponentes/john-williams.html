@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Williams — El Sinfonismo Cinematográfico & La Mitología Moderna | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de John Williams: El gran heredero del sinfonismo orquestal clásico en el siglo XX y XXI, 5 Oscars, Star Wars, La lista de Schindler, Jurassic Park, Harry Potter y conciertos de concierto.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      JOHN WILLIAMS • EL SINFONISMO CINEMATOGRÁFICO
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/John_Williams_in_2006.jpg/440px-John_Williams_in_2006.jpg" alt="John Williams">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-contemporary); border-color: var(--accent-contemporary);">LA GRAN ORQUESTA SINFÓNICA EN EL SIGLO XXI</span>
+          <h3>John Williams</h3>
+          <div class="master-meta-row">
+            <span>Nueva York, 1932 – Presente</span> • 
+            <strong style="color: var(--gold-primary);">5 Premios Oscar, 54 Nominaciones y el Heredero del Gran Lirismo Sinfónico</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            A mediados de la década de 1970, Hollywood consideraba que la gran orquesta sinfónica clásica estaba muerta y debía ser reemplazada por guitarras pop o sintetizadores electrónicos. 
+            En 1977, la atronadora fanfarria de apertura de <em>Star Wars</em> grabada por la Orquesta Sinfónica de Londres resucitó de un solo golpe la orquesta de 100 músicos como el medio narrativo supremo del imaginario universal. 
+            Heredero directo de la tradición orquestal de Wagner, Chaikovski, Holst y Korngold, Williams aplicó la técnica del <em>Leitmotiv</em> a la mitología contemporánea, creando las melodías más grabadas en el subconsciente de la humanidad: <em>Tiburón</em>, <em>Indiana Jones</em>, <em>E.T.</em>, <em>Jurassic Park</em>, <em>La lista de Schindler</em> y <em>Harry Potter</em>.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="williams-theme">
+              <span>▶</span> Escuchar Tema de la Fuerza (Star Wars)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de John Williams? (Film Scores & Concert Works Catalog)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Con más de 120 bandas sonoras cinematográficas completas y más de 30 obras de concierto de música clásica pura (conciertos para violonchelo, violín, tuba, trompa, fagot, arpa, oboe y flauta), su catálogo está preservado en la <strong>Library of Congress</strong> de Washington y publicado por Hal Leonard Corporation.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de John Williams
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Del Jazz y la TV al Estallido de Star Wars (1956–1977)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Pianista de jazz en Nueva York ('Johnny Williams') y arreglista en Hollywood para Bernard Herrmann y Alfred Newman. Alianza histórica con Steven Spielberg en 'Tiburón' (1975) y con George Lucas en 'Star Wars' (1977).
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El resurgimiento del post-romanticismo orquestal: un motivo de apenas dos notas (Fa–Fa sostenido) puede infundir terror atávico, y una fanfarria heroica en Si bemol mayor puede definir una galaxia entera.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: La Década de Oro y Dirección en Boston Pops (1978–1993)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Director titular de la legendaria Boston Pops Orchestra (1980–1993). Compone obras maestras consecutivas: 'El Imperio Contraataca', 'Raiders of the Lost Ark', 'E.T.', 'Jurassic Park' y la desgarradora 'La lista de Schindler'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Maestría absoluta del <em>Leitmotiv</em> operístico aplicado a la narrativa visual, y el solo de violín elegíaco de Itzhak Perlman como memoria del dolor humano.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Consagración en Viena, Berlín y Conciertos Clásicos (1994–Presente)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Crea la música de 'Harry Potter' (Hedwig's Theme) y 'Salvar al soldado Ryan'. En 2020 y 2021 debuta dirigiendo a la Filarmónica de Viena en el Musikverein y a la Filarmónica de Berlín con ovaciones de diez minutos.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La reconciliación definitiva entre la música de cine y las catedrales sinfónicas clásicas más prestigiosas del mundo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de John Williams</h3>
+      <p class="section-desc">
+        Clasificación de sus bandas sonoras legendarias y conciertos para orquesta sinfónica:
+      </p>
+    </div>
+
+    <!-- 1. BANDAS SONORAS CINEMATOGRÁFICAS INMORTALES -->
+    <h4 class="cat-genre-title">🎬 Obras Cumbres de la Mitología Cinematográfica</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Banda Sonora</th>
+            <th>Director</th>
+            <th>Premio / Hito</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Star Wars (Episodios IV a IX)</strong></td>
+            <td>George Lucas / J.J. Abrams</td>
+            <td>Ganador del Oscar • Disco de Oro</td>
+            <td>1977–2019</td>
+            <td>La partitura sinfónica más influyente de la cultura popular; más de 50 leitmotiven individuales que abarcan la Marcha Imperial, el Tema de Leia y el Tema de la Fuerza.</td>
+          </tr>
+          <tr>
+            <td><strong>La lista de Schindler (Schindler's List)</strong></td>
+            <td>Steven Spielberg</td>
+            <td>Ganador del Oscar y Grammy</td>
+            <td>1993</td>
+            <td>Solo de violín solista grabado por Itzhak Perlman; una elegía judía de dolor, compasión y dignidad humana en medio de la barbarie del Holocausto.</td>
+          </tr>
+          <tr>
+            <td><strong>Jurassic Park (Parque Jurásico)</strong></td>
+            <td>Steven Spielberg</td>
+            <td>Éxito mundial de taquilla y crítica</td>
+            <td>1993</td>
+            <td>El himno a la majestuosidad de la naturaleza viva; una marcha noble y grandiosa de trompas y cuerdas que recrea el asombro infantil ante los dinosaurios.</td>
+          </tr>
+          <tr>
+            <td><strong>Harry Potter (La piedra filosofal, etc.)</strong></td>
+            <td>Chris Columbus / Alfonso Cuarón</td>
+            <td>Hedwig's Theme (Tema de Hedwig)</td>
+            <td>2001</td>
+            <td>El solo misterioso y flotante de celesta que definió el universo mágico de Hogwarts para múltiples generaciones de jóvenes de todo el planeta.</td>
+          </tr>
+          <tr>
+            <td><strong>E.T. El Extraterrestre</strong></td>
+            <td>Steven Spielberg</td>
+            <td>Ganador del Oscar</td>
+            <td>1982</td>
+            <td>La secuencia final de 'Adventures on Earth' fue montada por Spielberg al ritmo de la partitura de Williams, invirtiendo la regla habitual de adaptar la música al corte fílmico.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. CONCIERTOS PARA SOLISTA Y SALA DE CONCIERTO -->
+    <h4 class="cat-genre-title">🎻 Obras Clásicas de Concierto Puro</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Obra de Concierto</th>
+            <th>Solista / Dedicatario</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Concierto para violonchelo y orquesta</strong></td>
+            <td>Yo-Yo Ma</td>
+            <td>1994</td>
+            <td>Obra virtuosística de concierto puro con un lirismo desgarrador en cuatro movimientos que explora las texturas más profundas del violonchelo.</td>
+          </tr>
+          <tr>
+            <td><strong>Concierto para violín n.º 2</strong></td>
+            <td>Anne-Sophie Mutter</td>
+            <td>2021</td>
+            <td>Compuesto expresamente para la gran virtuosa alemana; grabado con la Orquesta Sinfónica de Boston con un virtuosismo contemporáneo deslumbrante.</td>
+          </tr>
+          <tr>
+            <td><strong>Olympic Fanfare and Theme</strong></td>
+            <td>Juegos Olímpicos de Los Ángeles 1984</td>
+            <td>1984</td>
+            <td>Ganadora del Grammy; la fanfarria marcial de metales que simboliza la gloria deportiva y el ideal de fraternidad de los Juegos Olímpicos modernos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">John Williams: Tema de la Fuerza (Star Wars)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

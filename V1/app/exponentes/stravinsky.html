@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ígor Stravinsky — Catálogo White (W.) & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Ígor Stravinsky: Catálogo White clasificado por etapas (Período Ruso / Ballets Rusos, Período Neoclásico y Período Serial) con análisis de La consagración de la primavera y Petrushka.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      ÍGOR STRAVINSKY • CATÁLOGO WHITE & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Igor_Stravinsky_LOC_32392u.jpg/440px-Igor_Stravinsky_LOC_32392u.jpg" alt="Ígor Stravinsky">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-modern); border-color: var(--accent-modern);">VANGUARDIA DEL SIGLO XX & LA REVOLUCIÓN DEL RITMO</span>
+          <h3>Ígor Stravinsky</h3>
+          <div class="master-meta-row">
+            <span>Oranienbaum, 1882 – Nueva York, 1971</span> • 
+            <strong style="color: var(--gold-primary);">El Camaleón del Siglo XX y el Arquitecto del Pulso Salvaje</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            El 29 de mayo de 1913, en el flamante Théâtre des Champs-Élysées de París, el estreno de su ballet <em>La consagración de la primavera</em> desató una de las trifulcas más violentas y legendarias de la historia del arte: 
+            puñetazos entre aristócratas y vanguardistas mientras la orquesta tocaba compases asimétricos salvajes (5/8, 7/8, 3/16) y acordes politonales disonantes que rompieron para siempre la regularidad del compás occidental. 
+            Lejos de anclarse en el escándalo, Stravinsky reinventó su estilo tres veces a lo largo de su longeva vida: del nacionalismo folclórico ruso al neoclasicismo transparente y, en su vejez en Hollywood, al dodecafonismo serial estricto.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="stravinsky-rite">
+              <span>▶</span> Escuchar La Consagración de la Primavera (Augurios Primaverales)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Stravinsky? (El Catálogo Eric Walter White: W.)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Dado que Stravinsky no utilizó un sistema regular de números de opus (dejó de utilizarlos tras el Op. 12), el musicólogo británico <strong>Eric Walter White</strong> compiló en su monumental estudio monográfico de 1966 el catálogo cronológico de referencia <strong>White (W.)</strong>, registrando más de 100 obras maestras desde sus primeras piezas de alumno de Rimski-Kórsakov hasta sus últimas piezas seriales en Estados Unidos.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Stravinsky
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: El Período Ruso y los Ballets de Diáguilev (1909–1919)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Descubierto en San Petersburgo por Serguéi Diáguilev. Se traslada a París para componer con los Ballets Rusos. La trilogía compuesta por 'El pájaro de fuego' (1910), 'Petrushka' (1911) y 'La consagración de la primavera' (1913) revoluciona Europa.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El ritmo como energía física primordial; politonalidad (hacer sonar la tríada de Do mayor y Fa sostenido mayor a la vez: el 'Acorde Petrushka') y mitología pagana primitiva.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: El Período Neoclásico (1920–1951)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Radicado en Francia y luego en Estados Unidos huyendo de la Segunda Guerra Mundial. Compone 'Pulcinella' sobre temas de Pergolesi, el 'Octeto de viento', la 'Sinfonía de los Salmos' y la ópera 'The Rake's Progress'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Retorno a la pureza formal del Barroco y Clasicismo ('Regreso a Bach'): texturas secas, sobriedad contrapuntística y rechazo tajante a la grandilocuencia emocional del siglo XIX.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: El Período Serial y Dodecafónico (1952–1971)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Tras la muerte de su rival ideológico Arnold Schoenberg en 1951, y guiado por el joven director Robert Craft en Los Ángeles, Stravinsky asimila la técnica dodecafónica en obras maestras como 'Agon' y 'Requiem Canticles'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Demostrar que las series matemáticas de doce tonos pueden poseer la misma pulsación rítmica transparente y vital que sus ballets juveniles.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Ígor Stravinsky</h3>
+      <p class="section-desc">
+        Clasificación por etapa y género con número White (W.), año de estreno y revolución estética:
+      </p>
+    </div>
+
+    <!-- 1. LA TRILOGÍA DE LOS BALLETS RUSOS -->
+    <h4 class="cat-genre-title">🔥 La Trilogía Sísmica de los Ballets Rusos</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título del Ballet</th>
+            <th>Año Estreno</th>
+            <th>Compañía / Estreno</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">W. 16</span></td>
+            <td><strong>El pájaro de fuego (L'Oiseau de feu)</strong></td>
+            <td>1910</td>
+            <td>Ballets Rusos (París)</td>
+            <td>Orquestación deslumbrante heredada de Rimski-Kórsakov; la célebre 'Danza infernal del rey Kastcheï' con ritmos implacables y la apoteosis triunfal final.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">W. 18</span></td>
+            <td><strong>Petrushka (Escenas burlescas en 4 cuadros)</strong></td>
+            <td>1911</td>
+            <td>Ballets Rusos (París)</td>
+            <td>La tragedia de la marioneta de paja con alma humana enamorada de la bailarina; invención del 'Acorde Petrushka' politonal que suena como una burla mordaz.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">W. 22</span></td>
+            <td><strong>La consagración de la primavera (Le Sacre du printemps)</strong></td>
+            <td>1913</td>
+            <td>Théâtre des Champs-Élysées</td>
+            <td>El hito rítmico supremo del siglo XX: arranca con un solo de fagot en el registro más agudo de su tesitura y culmina en la 'Danza sagrada' de la doncella elegida que baila hasta morir.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. OBRAS MAESTRAS NEOCLÁSICAS -->
+    <h4 class="cat-genre-title">🏛️ Obras Maestras del Período Neoclásico</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">W. 46</span></td>
+            <td><strong>Pulcinella (Ballet con canto)</strong></td>
+            <td>Orquesta de cámara y 3 solistas vocales</td>
+            <td>1920</td>
+            <td>Diseños escénicos de Picasso; toma temas del siglo XVIII y les inyecta armonías modernas, dando inicio al movimiento Neoclásico internacional.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">W. 39</span></td>
+            <td><strong>Historia del soldado (L'Histoire du soldat)</strong></td>
+            <td>7 instrumentistas y narrador recitante</td>
+            <td>1918</td>
+            <td>Concebida para un teatro ambulante durante la Primera Guerra Mundial; combina marchas con tango, pasodoble y ragtime con el violín del diablo.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">W. 59</span></td>
+            <td><strong>Sinfonía de los Salmos (Symphonie de Psaumes)</strong></td>
+            <td>Coro mixto y orquesta sin violines ni violas</td>
+            <td>1930</td>
+            <td>Compuesta para el 50 aniversario de la Orquesta Sinfónica de Boston; monumental fuga doble sacra en latín con el célebre 'Aleluya' susurrado en paz.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">W. 61</span></td>
+            <td><strong>Concierto para violín en Re mayor</strong></td>
+            <td>Violín solista y Orquesta</td>
+            <td>1931</td>
+            <td>Escrito para el virtuoso Samuel Dushkin; todos los movimientos comienzan con el mismo acorde enigmático 'lema' de onceava que abarca dos octavas y media.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ÓPERA Y OBRAS SERIALES TARDÍAS -->
+    <h4 class="cat-genre-title">🎭 Gran Ópera en Inglés y Obras Seriales Tardías</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">W. 85</span></td>
+            <td><strong>The Rake's Progress (La carrera del libertino)</strong></td>
+            <td>Ópera en 3 actos (Libreto de W.H. Auden)</td>
+            <td>1951</td>
+            <td>La cumbre de su etapa neoclásica; homenaje explícito a Mozart con arias, recitativos con clavecín y una fábula moral sobre el pacto con Nick Shadow (el diablo).</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">W. 94</span></td>
+            <td><strong>Agon (Ballet para 12 bailarines)</strong></td>
+            <td>Orquesta</td>
+            <td>1957</td>
+            <td>Coreografía de George Balanchine; obra de bisagra donde la danza de corte francesa del siglo XVII se funde con el dodecafonismo riguroso de doce notas.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">W. 104</span></td>
+            <td><strong>Requiem Canticles</strong></td>
+            <td>Contralto, Bajo, Coro y Orquesta</td>
+            <td>1966</td>
+            <td>Su última obra mayor; condensación de apenas 15 minutos de un réquiem fúnebre con series de doce tonos de una austeridad y trascendencia sobrecogedoras.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Stravinsky: La Consagración de la Primavera</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

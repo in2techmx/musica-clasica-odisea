@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Josquin des Prez — El Miguel Ángel de la Música Renacentista | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Josquin des Prez: La revolución de la imprenta musical de Petrucci (1502), el contrapunto imitativo humanista, Missa Pange Lingua, Ave Maria Virgo Serena y El Grillo.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      JOSQUIN DES PREZ • POLIFONÍA & HUMANISMO
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Josquin_des_prez.jpg/440px-Josquin_des_prez.jpg" alt="Josquin des Prez">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-renaissance); border-color: var(--accent-renaissance);">EL RENACIMIENTO HUMANISTA & LA POLIFONÍA IMITATIVA</span>
+          <h3>Josquin des Prez</h3>
+          <div class="master-meta-row">
+            <span>c. 1450 – Condé-sur-l'Escaut, 1521</span> • 
+            <strong style="color: var(--gold-primary);">El 'Miguel Ángel de la Música' y Primer Titán de la Imprenta Musical</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            "Otros compositores hacen lo que las notas quieren; pero Josquin es el amo absoluto de las notas: ellas hacen exactamente lo que él manda", proclamó Martín Lutero. 
+            Josquin fue la primera superestrella musical internacional de Europa gracias a la invención de la imprenta con tipos móviles de Ottaviano Petrucci en Venecia, quien en 1502 dedicó el primer libro de misas polifónicas enteramente a un solo compositor: <em>Misse Josquin</em>. 
+            Pionero del <strong>contrapunto imitativo continuo</strong> y de la pintura de palabras (hacer que la música describa físicamente el significado del texto), transformó la fría matemática medieval en emoción humanista renacentista pura.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="josquin">
+              <span>▶</span> Escuchar Ave Maria... Virgo Serena
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Josquin? (Las Ediciones de Petrucci y la New Josquin Edition)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Petrucci publicó tres libros completos dedicados exclusivamente a sus misas (1502, 1505, 1514). En la actualidad, el catálogo crítico de referencia es la <strong>New Josquin Edition (NJE)</strong> en 30 volúmenes, editada por la Sociedad de Historia Musical de los Países Bajos (VNM), que autentica rigurosamente sus 18 Misas, más de 60 Motetes y decenas de Chansons francesas.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Josquin
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Milán y las Cortes Italianas de los Sforza (1484–1489)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Cantor en la catedral de Milán y músico personal del cardenal Ascanio Sforza. Coincide en la corte con Leonardo da Vinci. Escribe canciones cortesanas como la divertida farsa 'El Grillo'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Integración de la ligereza y ritmo armónico italiano (frottole) con el contrapunto severo franco-flamenco.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Roma, la Capilla Sixtina y Ferrara (1489–1504)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Cantor papal en el Vaticano (donde su nombre 'JOSQUIN' aún sobrevive grabado por su propia mano en una pared del coro de la Capilla Sixtina). Luego Maestro de capilla en Ferrara para el duque Hércules I de Este.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El motete imitativo perfecto en 'Ave Maria... Virgo Serena' y el uso del 'soggetto cavato' (extraer notas musicales de las vocales del nombre del duque: Re-Ut-Re-Ut-Re-Fa-Mi-Re).
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Retiro en Condé y Últimas Obras Maestras (1504–1521)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Huye del brote de peste en Ferrara y regresa a su tierra natal como preboste de la colegiata de Notre-Dame en Condé-sur-l'Escaut, donde compone con libertad espiritual absoluta hasta su muerte.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La 'Missa Pange Lingua': abandona el rígido cantus firmus medieval para crear una misa de fantasía donde el tema gregoriano fluye libremente entre todas las voces.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Josquin des Prez</h3>
+      <p class="section-desc">
+        Clasificación de sus misas, motetes y canciones polifónicas:
+      </p>
+    </div>
+
+    <!-- 1. MISAS RENACENTISTAS CUMBRES -->
+    <h4 class="cat-genre-title">⛪ Misas Renacentistas Cumbres</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Publicación</th>
+            <th>Título de la Misa</th>
+            <th>Tipo de Construcción</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">NJE 4.1</span></td>
+            <td><strong>Missa Pange Lingua</strong></td>
+            <td>Misa de paráfrasis (4 voces)</td>
+            <td>c. 1515</td>
+            <td>La obra cumbre de la misa renacentista; el himno eucarístico gregoriano de Santo Tomás de Aquino es elaborado con una gracia y sutileza polifónica sin precedentes.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">NJE 3.1</span></td>
+            <td><strong>Missa Hercules Dux Ferrariae</strong></td>
+            <td>Soggetto cavato dalle vocali</td>
+            <td>1503</td>
+            <td>Primer ejemplo histórico de criptograma musical que convierte las vocales del nombre del mecenas en las notas musicales de la melodía central.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">NJE 1.1</span></td>
+            <td><strong>Missa L'homme armé super voces musicales</strong></td>
+            <td>Cantus firmus sobre melodía profana</td>
+            <td>1502</td>
+            <td>Abre la histórica edición impresa de Petrucci; el tema militar profano 'El hombre armado' asciende sucesivamente por cada grado de la escala diatónica en cada movimiento.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. MOTETES Y CANCIONES -->
+    <h4 class="cat-genre-title">📜 Motetes Sacros y Canciones Cortesanas</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Género</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Motete</span></td>
+            <td><strong>Ave Maria... Virgo Serena</strong></td>
+            <td>4 Voces (SATB)</td>
+            <td>c. 1485</td>
+            <td>Calificado por los humanistas como la 'Mona Lisa de la polifonía'; arranca con cuatro entradas escalonadas en imitación estricta de una perfección celestial.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Motete</span></td>
+            <td><strong>Miserere mei, Deus</strong></td>
+            <td>5 Voces</td>
+            <td>1503</td>
+            <td>Compuesto en memoria del fraile Girolamo Savonarola quemado en la hoguera en Florencia; lamento sombrío con un bajo ostinato que repite la plegaria como un rezo incesante.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Frottola</span></td>
+            <td><strong>El Grillo (El grillo es un buen cantor)</strong></td>
+            <td>4 Voces</td>
+            <td>c. 1500</td>
+            <td>Sátira humorística compuesta en la corte de Milán sobre un cantante que bebe vino y canta largamente; imita con notas repetidas y ritmos saltarines el canto del grillo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Josquin: Ave Maria... Virgo Serena</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

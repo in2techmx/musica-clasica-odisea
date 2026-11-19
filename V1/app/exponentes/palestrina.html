@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovanni Pierluigi da Palestrina — El Concilio de Trento & Catálogo Coral | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Palestrina: El príncipe de la música renacentista, la salvación de la polifonía ante el Concilio de Trento, la Missa Papae Marcelli y sus motetes sacros inmortales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      PIERLUIGI DA PALESTRINA • CATÁLOGO & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Giovanni_Pierluigi_da_Palestrina.jpg/440px-Giovanni_Pierluigi_da_Palestrina.jpg" alt="Giovanni Pierluigi da Palestrina">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-renaissance); border-color: var(--accent-renaissance);">EL RENACIMIENTO SACRO & LA POLIFONÍA PURA</span>
+          <h3>Giovanni Pierluigi da Palestrina</h3>
+          <div class="master-meta-row">
+            <span>Palestrina, 1525 – Roma, 1594</span> • 
+            <strong style="color: var(--gold-primary);">Princeps Musicae (Príncipe de la Música) y el Salvador de la Polifonía</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Cuando el Concilio de Trento estuvo a punto de prohibir tajantemente la polifonía de todas las iglesias católicas porque el cruce abigarrado de voces volvía ininteligible el texto sagrado del Evangelio, Palestrina compuso la legendaria <em>Missa Papae Marcelli</em> (1562): 
+            demostró que seis voces podían trenzarse en armonía celestial sin que se perdiera una sola sílaba del texto latino. 
+            Su estilo, caracterizado por una pureza sin asperezas sonoras y un riguroso equilibrio de disonancias preparadas y resueltas por grado conjunto (el 'Estilo Palestrina'), fue adoptado por la Iglesia Católica como el modelo eterno de la música sagrada occidental.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="palestrina">
+              <span>▶</span> Escuchar Kyrie (Missa Papae Marcelli)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Palestrina? (Haberl & Casimiri Gesamtausgabe)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Con una producción inmensa de 105 Misas, más de 300 Motetes, 68 Ofertorios y decenas de Madrigales espirituales, su catálogo se compendió en la monumental <strong>Palestrina-Gesamtausgabe</strong> editada por Franz Xaver Haberl (33 volúmenes, Leipzig 1862–1907) y actualizada por Raffaele Casimiri en Roma. Las obras se citan por número de libro impreso original (ej. <em>Missarum Liber Secundus</em>, 1567).
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Palestrina
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Maestro en Santa María la Mayor y San Pedro (1551–1560)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Protegido del Cardenal Del Monte, quien asciende como Papa Julio III. Nombrado maestro del coro de la Capilla Julia en el Vaticano. Publica su primer libro de misas dedicado al Pontífice.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Perfeccionamiento del contrapunto imitativo franco-flamenco heredado de Josquin, adaptado a la nobleza y sobriedad de las basílicas de Roma.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: La Contrarreforma y la Misa del Papa Marcelo (1560–1575)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Las sesiones de clausura del Concilio de Trento ordenan purificar la música litúrgica expulsando elementos lascivos o teatrales. Palestrina compone la 'Missa Papae Marcelli' para la comisión de cardenales.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Transparencia textual absoluta: homofonía solemne combinada con polifonía serena donde cada palabra divina resuena con claridad inmaculada.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Resiliencia ante la Peste y Gloria Final (1575–1594)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> La epidemia de peste negra arrasa Roma y arrebata la vida a su amada esposa Lucrezia y a dos de sus hijos. Considera ordenarse sacerdote, pero contrae segundas nupcias con una viuda comerciante de pieles, obteniendo independencia financiera para imprimir toda su obra.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El canto de la salvación espiritual: motetes de dolor íntimo ('Super flumina Babylonis') y la elevación contemplativa del 'Canticum Canticorum' (Cantar de los Cantares).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Giovanni Pierluigi da Palestrina</h3>
+      <p class="section-desc">
+        Clasificación por género coral con dotación vocal y trascendencia histórica:
+      </p>
+    </div>
+
+    <!-- 1. MISAS LITÚRGICAS MONUMENTALES -->
+    <h4 class="cat-genre-title">⛪ Misas Litúrgicas Fundacionales</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Publicación</th>
+            <th>Título de la Misa</th>
+            <th>Voces</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Liber II</span></td>
+            <td><strong>Missa Papae Marcelli</strong></td>
+            <td>6 Voces (SATTBB)</td>
+            <td>1562</td>
+            <td>Dedicada a la memoria del Papa Marcelo II; salvó a la polifonía de la condena tridentina. El Credo y Gloria son monumentos de inteligibilidad lírica y equilibrio armónico.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Liber III</span></td>
+            <td><strong>Missa Brevis</strong></td>
+            <td>4 Voces (SATB)</td>
+            <td>1570</td>
+            <td>La misa más interpretada y cantada del Renacimiento por su concisión magistral, frescura melódica y perfecta economía de medios vocales.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Liber VI</span></td>
+            <td><strong>Missa Assumpta est Maria</strong></td>
+            <td>6 Voces (SSATBB)</td>
+            <td>1593</td>
+            <td>Compuesta en su vejez para la fiesta de la Asunción de la Virgen; carácter luminoso y jubiloso con dos voces de soprano entrelazadas como ángeles.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. MOTETES Y MÚSICA SACRA -->
+    <h4 class="cat-genre-title">📜 Motetes Sacros y Lamentos de Devoción</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Género</th>
+            <th>Título de la Obra</th>
+            <th>Texto</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Motete</span></td>
+            <td><strong>Sicut Cervus</strong></td>
+            <td>Salmo 42 (Como el ciervo brama por las corrientes de las aguas)</td>
+            <td>1584</td>
+            <td>El arquetipo de la belleza polifónica pura: líneas melódicas que ascienden y descienden como agua de manantial, evocando la sed del alma por Dios.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Motete</span></td>
+            <td><strong>Super flumina Babylonis</strong></td>
+            <td>Salmo 137 (Junto a los ríos de Babilonia)</td>
+            <td>1581</td>
+            <td>Lamento desgarrador del pueblo judío en el exilio que cuelga sus cítaras en los sauces; compuesto tras perder a su esposa e hijos por la peste.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Antífona</span></td>
+            <td><strong>Alma Redemptoris Mater</strong></td>
+            <td>Himno mariano de Adviento a Navidad</td>
+            <td>1571</td>
+            <td>Dulzura mística y ternura contemplativa; una de las antífonas más difundidas en toda la liturgia católica europea.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Palestrina: Kyrie (Missa Papae Marcelli)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

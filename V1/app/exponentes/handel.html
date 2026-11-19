@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>George Frideric Händel — Catálogo HWV & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de George Frideric Händel: Catálogo Händel-Werke-Verzeichnis (HWV) clasificado por oratorios (El Mesías / Aleluya), suites orquestales reales (Música Acuática, Reales Fuegos de Artificio) y óperas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      GEORGE FRIDERIC HÄNDEL • CATÁLOGO HWV & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/George_Frideric_Handel_by_Balthasar_Denner.jpg/440px-George_Frideric_Handel_by_Balthasar_Denner.jpg" alt="George Frideric Händel">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-baroque); border-color: var(--accent-baroque);">EL BARROCO CORAL & LA MAJESTAD BRITÁNICA</span>
+          <h3>George Frideric Händel</h3>
+          <div class="master-meta-row">
+            <span>Halle, 1685 – Londres, 1759</span> • 
+            <strong style="color: var(--gold-primary);">El Coloso del Oratorio Dramático y la Música de Estado</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Nacido el mismo año que J.S. Bach pero dotado de un temperamento cosmopolita, empresarial y teatral absolutamente opuesto, Händel conquistó sucesivamente Alemania, Italia e Inglaterra. 
+            Nacionalizado británico en 1727, creó himnos de coronación que siguen sonando en la Abadía de Westminster hasta hoy (<em>Zadok the Priest</em> para Carlos III). 
+            Cuando el público londinense se cansó de la ópera italiana, Händel inventó de la nada el <strong>Oratorio dramático en inglés</strong>, culminando con <em>El Mesías</em> y su célebre 'Aleluya', ante el cual el rey Jorge II se puso espontáneamente de pie, iniciando una tradición que perdura en todo el mundo anglosajón.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="handel-hallelujah">
+              <span>▶</span> Escuchar Aleluya (El Mesías HWV 56)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Händel? (El Catálogo HWV)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Publicado entre 1978 y 1986 por el musicólogo alemán <strong>Bernd Baselt</strong>, el <strong>Händel-Werke-Verzeichnis (HWV)</strong> es el catálogo temático canónico que clasifica más de 600 obras en tres volúmenes según su género funcional:
+        </p>
+        <div style="font-size: 0.86rem; color: var(--gold-light);">
+          • <strong>HWV 1 al HWV 42:</strong> Las más de 40 óperas italianas compuestas para Londres (Rinaldo, Giulio Cesare, Serse).<br>
+          • <strong>HWV 43 al HWV 71:</strong> Los grandes oratorios dramáticos sacros y profanos (El Mesías, Judas Macabeo, Sansón, Israel en Egipto).<br>
+          • <strong>HWV 258 al HWV 261:</strong> Los 4 Himnos de Coronación británicos (Coronation Anthems).<br>
+          • <strong>HWV 348 al HWV 351:</strong> Las suites orquestales al aire libre (Música Acuática, Música para los Reales Fuegos de Artificio).
+        </div>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Händel
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Hamburgo y el Viaje a Italia (1702–1710)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Violinista y clavecinista en la Ópera de Hamburgo (donde sobrevivió a un duelo de espadas con Johann Mattheson gracias a un botón metálico de su abrigo). Viaja a Roma, Florencia y Venecia, donde es aclamado como 'Il Sassone' (el Sajón).
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Asimilación perfecta del lirismo y bel canto de la cantata y la ópera italiana (Corelli, Scarlatti), dotándolas de vigor contrapuntístico alemán.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: El Furor de la Ópera Italiana en Londres (1711–1738)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Establecimiento definitivo en Inglaterra. Director de la Royal Academy of Music en el King's Theatre. Contrata a las mayores estrellas de Europa (castrati como Farinelli y Senesino, y sopranos rivales como Cuzzoni y Faustina).
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El esplendor del 'Opera Seria' barroca con arias da capo de virtuosismo acrobático y orquestaciones con trompetas y oboes de brillo soberano.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: La Reinvención del Oratorio y el Mesías (1739–1759)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> La quiebra de la compañía de ópera y un derrame cerebral lo empujan a reinventarse con 56 años. Compone 'El Mesías' en solo 24 días de trance místico sin salir de su habitación. Ceguera en sus últimos años; es enterrado con honores de Estado en Westminster Abbey.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El coro monumental como protagonista dramático colectivo que encarna la voz del pueblo y la fe de la humanidad.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de George Frideric Händel</h3>
+      <p class="section-desc">
+        Clasificación por categoría de catálogo Händel-Werke-Verzeichnis (HWV):
+      </p>
+    </div>
+
+    <!-- 1. LOS GRANDES ORATORIOS Y MÚSICA CORAL -->
+    <h4 class="cat-genre-title">👑 Los Grandes Oratorios e Himnos de Coronación</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">HWV 56</span></td>
+            <td><strong>El Mesías (Messiah)</strong></td>
+            <td>4 Solistas, Gran Coro Mixto y Orquesta</td>
+            <td>1741</td>
+            <td>La obra coral más universal de Occidente; estructurada en torno a la Natividad, Pasión y Resurrección de Cristo. Su coro 'Hallelujah' es la cumbre de la emoción barroca colectiva.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">HWV 258</span></td>
+            <td><strong>Zadok the Priest (Himno de Coronación n.º 1)</strong></td>
+            <td>Coro a 7 voces y Orquesta con trompetas y timbales</td>
+            <td>1727</td>
+            <td>Interpretado en cada coronación de monarcas británicos desde Jorge II hasta Carlos III; su introducción arpegiada en crescendo continuo es el modelo melódico del himno oficial de la UEFA Champions League.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">HWV 63</span></td>
+            <td><strong>Judas Macabeo (Judas Maccabaeus)</strong></td>
+            <td>Solistas, Coro y Orquesta</td>
+            <td>1746</td>
+            <td>Celebra la victoria del duque de Cumberland; contiene el célebre coro triunfal 'See, the conqu'ring hero comes!'.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">HWV 54</span></td>
+            <td><strong>Israel en Egipto (Israel in Egypt)</strong></td>
+            <td>Doble Coro y Gran Orquesta</td>
+            <td>1739</td>
+            <td>Pintura orquestal descriptiva alucinante: la orquesta imita las plagas de ranas, moscas, langostas, granizo y las aguas del Mar Rojo tragándose al ejército del faraón.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. SUITES ORQUESTALES AL AIRE LIBRE -->
+    <h4 class="cat-genre-title">🎺 Música Orquestal Real y Conciertos</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">HWV 348–350</span></td>
+            <td><strong>Música Acuática (Water Music, Suites 1, 2 y 3)</strong></td>
+            <td>Gran orquesta con trompas de caza, trompetas y oboes</td>
+            <td>1717</td>
+            <td>Compuesta para la barcaza del rey Jorge I sobre el río Támesis en Londres; el monarca quedó tan extasiado que ordenó repetirla 3 veces seguidas hasta la madrugada.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">HWV 351</span></td>
+            <td><strong>Música para los Reales Fuegos de Artificio (Music for the Royal Fireworks)</strong></td>
+            <td>Banda militar gigante (24 oboes, 12 fagotes, 9 trompetas, 9 trompas, 3 timbales)</td>
+            <td>1749</td>
+            <td>Celebró el Tratado de Aquisgrán en Green Park ante 12.000 personas; durante el estreno los fuegos de artificio incendiaron accidentalmente el pabellón de madera real.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">HWV 319–330</span></td>
+            <td><strong>12 Concerti Grossi (Op. 6)</strong></td>
+            <td>Cuerdas y Bajo Continuo</td>
+            <td>1739</td>
+            <td>La respuesta británica a los conciertos de Corelli y Vivaldi; variedad melódica y elegancia cortesana inmaculada.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ÓPERAS ITALIANAS CUMBRES -->
+    <h4 class="cat-genre-title">🎭 Las Grandes Óperas Italianas de Londres</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Ópera</th>
+            <th>Aria Célebre</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">HWV 7</span></td>
+            <td><strong>Rinaldo</strong></td>
+            <td>'Lascia ch'io pianga'</td>
+            <td>1711</td>
+            <td>Su primer triunfo en Londres; la conmovedora aria de Almirena 'Lascia ch'io pianga' (Déjame llorar mi cruel destino) es uno de los lamentos vocales más hermosos jamás cantados.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">HWV 17</span></td>
+            <td><strong>Giulio Cesare in Egitto</strong></td>
+            <td>'Piangerò la sorte mia' / 'Va tacito e nascosto'</td>
+            <td>1724</td>
+            <td>La cumbre de la ópera seria barroca; fascinante juego político y seducción amorosa entre Julio César y Cleopatra con trompas obligadas y violines.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">HWV 40</span></td>
+            <td><strong>Serse (Jerjes)</strong></td>
+            <td>'Ombra mai fu' (Largo de Händel)</td>
+            <td>1738</td>
+            <td>Arranca con el rey persa cantando una oda de agradecimiento a la tierna sombra de un plátano; melodía de una nobleza y serenidad celestial imperecederas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Händel: Aleluya (El Mesías HWV 56)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

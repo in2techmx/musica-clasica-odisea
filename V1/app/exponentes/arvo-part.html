@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arvo Pärt — El Silencio Místico & El Estilo Tintinnabuli | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Arvo Pärt: El compositor vivo más interpretado del planeta, la invención del estilo tintinnabuli (pequeñas campanas), Spiegel im Spiegel, Für Alina, Fratres y Tabula Rasa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      ARVO PÄRT • TINTINNABULI & SILENCIO SACRO
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Arvo_P%C3%A4rt_2011.jpg/440px-Arvo_P%C3%A4rt_2011.jpg" alt="Arvo Pärt">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-contemporary); border-color: var(--accent-contemporary);">EL MINIMALISMO SACRO & EL RETORNO AL SILENCIO</span>
+          <h3>Arvo Pärt</h3>
+          <div class="master-meta-row">
+            <span>Paide, 1935 – Presente</span> • 
+            <strong style="color: var(--gold-primary);">El Compositor Clásico Vivo Más Interpretado del Mundo</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            "Podría comparar mi música con una luz blanca que contiene todos los colores. Solo un prisma puede dividirla en colores y hacerlos visibles: ese prisma es el espíritu del oyente", explica el místico estonio. 
+            Tras ser censurado en la Unión Soviética por sus primeras obras vanguardistas y sufrir una profunda crisis creativa en 1968, Pärt se retiró a un silencio absoluto durante ocho años para estudiar el canto gregoriano medieval y la polifonía renacentista. 
+            En 1976 emergió con su invención suprema: el estilo <strong>Tintinnabuli</strong> (pequeñas campanas), donde una voz melódica diatónica dialoga con una segunda voz que toca exclusivamente las notas del acorde perfecto de la tríada. Obras como <em>Spiegel im Spiegel</em> y <em>Tabula Rasa</em> han tocado el corazón de millones de oyentes con su serenidad balsámica.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="part-tintinnabuli">
+              <span>▶</span> Escuchar Spiegel im Spiegel (Espejo en el Espejo)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Arvo Pärt? (Universal Edition & Arvo Pärt Centre)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Toda la obra de Pärt está publicada exclusivamente por la prestigiosa editorial vienesa <strong>Universal Edition</strong> y catalogada rigurosamente por el <strong>Arvo Pärt Centre</strong> en Laulasmaa (Estonia), clasificando tanto sus piezas orquestales de vanguardia soviética temprana como su extenso corpus coral e instrumental Tintinnabuli.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Arvo Pärt
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Vanguardia Soviética y Collage (1960–1968)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Ingeniero de sonido en la radio estatal de Estonia. Introduce por primera vez el dodecafonismo en la URSS con 'Nekrolog' (1960), desatando la cólera de la Unión de Compositores Soviéticos por 'influencia burguesa'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Técnica del collage: enfrentar la violencia atonal con citas luminosas del 'Clave bien temperado' de Bach ('Credo', 1968), provocando la censura oficial del Partido Comunista.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: La Crisis del Silencio y el Tintinnabuli (1968–1980)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Ocho años casi sin publicar una sola nota. Estudia canto gregoriano, monodia medieval y polifonía de Machaut y Josquin. En 1976 compone la humilde pieza para piano 'Für Alina', naciendo oficialmente el Tintinnabuli. Emigra a Viena y Berlín en 1980.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El <em>Tintinnabuli</em>: una arquitectura acústica donde dos líneas forman una sola unidad espiritual indisoluble: 1 + 1 = 1. Reducción al átomo sonoro esencial.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: El Gran Retorno a Estonia y Música Sacra Coral (1981–Presente)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Alianza histórica con el productor Manfred Eicher y el sello discográfico ECM New Series. Regreso triunfal a una Estonia independiente en 2010. Obras corales magnas: 'Passio', 'Miserere', 'Kanon Pokajanen'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La voz humana como templo espiritual y el silencio como el elemento más elocuente y cargado de significado de la música.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Arvo Pärt</h3>
+      <p class="section-desc">
+        Clasificación de sus obras instrumentales y corales cumbres:
+      </p>
+    </div>
+
+    <!-- 1. OBRAS INSTRUMENTALES FUNDACIONALES TINTINNABULI -->
+    <h4 class="cat-genre-title">🔔 Obras Instrumentales Fundacionales Tintinnabuli (1976–1978)</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Obra</th>
+            <th>Dotación Instrumental</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Spiegel im Spiegel (Espejo en el espejo)</strong></td>
+            <td>Violín (o violonchelo) y Piano</td>
+            <td>1978</td>
+            <td>La obra más icónica de Pärt; arpegios de piano como un prisma de cristal sobre notas sostenidas infinitas que parecen reflejarse mutuamente en un espejo eterno.</td>
+          </tr>
+          <tr>
+            <td><strong>Für Alina (Para Alina)</strong></td>
+            <td>Piano solo</td>
+            <td>1976</td>
+            <td>El manifiesto fundacional del Tintinnabuli; quince compases sobre el acorde de Si menor tocados con pedal sostenido como campanas solitarias en la niebla.</td>
+          </tr>
+          <tr>
+            <td><strong>Fratres (Hermanos)</strong></td>
+            <td>Cuerdas y percusión (claves / timbal)</td>
+            <td>1977</td>
+            <td>Nueve variaciones sobre un tema coral hipnótico interrumpidas periódicamente por un golpe seco de percusión y pizzicatos de campana.</td>
+          </tr>
+          <tr>
+            <td><strong>Tabula Rasa (Tabla rasa / Pizarra limpia)</strong></td>
+            <td>Doble concierto para 2 violines, piano preparado y orquesta de cuerdas</td>
+            <td>1977</td>
+            <td>Obra maestra orquestal del siglo XX; el segundo movimiento ('Silentium') desciende en una espiral armónica de belleza fúnebre hasta la frontera del silencio.</td>
+          </tr>
+          <tr>
+            <td><strong>Cantus in Memoriam Benjamin Britten</strong></td>
+            <td>Campana tubular solista en La y orquesta de cuerdas</td>
+            <td>1977</td>
+            <td>Elegía fúnebre donde todas las cuerdas tocan escalas descendentes en cánones a diferentes velocidades sobre el tañido fúnebre de una campana solitaria.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. OBRAS CORALES MONUMENTALES -->
+    <h4 class="cat-genre-title">⛪ Obras Corales Monumentales</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Obra</th>
+            <th>Texto / Idioma</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Passio (Pasión según San Juan)</strong></td>
+            <td>Evangelio de San Juan (Latín)</td>
+            <td>1982</td>
+            <td>70 minutos ininterrumpidos de devoción estricta con cuarteto vocal, coro y ensamble instrumental sin un solo efectismo teatral externo.</td>
+          </tr>
+          <tr>
+            <td><strong>Kanon Pokajanen (Canon de Arrepentimiento)</strong></td>
+            <td>Eslavo eclesiástico antiguo</td>
+            <td>1997</td>
+            <td>Compuesto para el 750 aniversario de la Catedral de Colonia; 90 minutos para coro a capella de una profundidad y recogimiento monástico abrumadores.</td>
+          </tr>
+          <tr>
+            <td><strong>Magnificat</strong></td>
+            <td>Canto de la Virgen María (Latín)</td>
+            <td>1989</td>
+            <td>Polifonía aérea donde la voz de soprano solista canta en quintas y terceras suspendidas de una pureza sobrenatural.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Arvo Pärt: Spiegel im Spiegel</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

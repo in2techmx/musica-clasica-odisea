@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hildegarda de Bingen — Códices Medievales & Canto Sacro | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Hildegarda de Bingen: Códice de Rupertsberg, Códice de Dendermonde, Ordo Virtutum, Symphonia armonie celestium revelationum y la mística de la Viriditas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      HILDEGARDA DE BINGEN • CÓDICES & MÍSTICA MEDIEVAL
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Hildegard_von_Bingen.jpg/440px-Hildegard_von_Bingen.jpg" alt="Hildegarda de Bingen">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-medieval); border-color: var(--accent-medieval);">LA MONODIA SACRA & LA MÍSTICA MEDIEVAL</span>
+          <h3>Hildegarda de Bingen</h3>
+          <div class="master-meta-row">
+            <span>Bermersheim, 1098 – Bingen am Rhein, 1179</span> • 
+            <strong style="color: var(--gold-primary);">La 'Sibila del Rin', Científica, Abadesa y Primera Compositora Documentada</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Una de las figuras más prodigiosas de la civilización europea. Teóloga, médica, filósofa y abadesa benedictina, Hildegarda desafió las normas del siglo XII rompiendo los límites del canto gregoriano masculino: 
+            sus composiciones vocales alcanzan saltos de quinta y octava que superan las dos octavas y media de tesitura, con un lirismo poético apasionado que concibe la música como el único puente sonoro que el ser humano conserva de la pureza edénica previa a la caída. 
+            Escribió <em>Ordo Virtutum</em> (el drama musical con letra y notación más antiguo que sobrevive) y compiló más de 70 cantos litúrgicos en códices iluminados.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="hildegarda">
+              <span>▶</span> Escuchar O Frondens Virga (Canto Místico)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Conserva y Cataloga la Obra de Hildegarda? (Códice de Rupertsberg & Dendermonde)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          En el siglo XII no existía el concepto moderno de número de opus. Las 77 obras sacras de Hildegarda fueron copiadas directamente bajo su supervisión en dos códices medievales con neumas alemanes sobre pauta de cuatro líneas: el <strong>Riesencodex de Rupertsberg</strong> (conservado en la Biblioteca Estatal de Hesse en Wiesbaden) y el <strong>Códice de Dendermonde</strong> (Bélgica).
+        </p>
+      </div>
+
+      <!-- LAS 2 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Dos Grandes Etapas Creativas de Hildegarda
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Monasterio de Disibodenberg (1112–1150)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Vida claustral como abadesa de las monjas benedictinas en el monte Disibodenberg. Recibe la orden divina en sus visiones de 'escribir lo que ve y oye'. Redacta su tratado iluminado 'Scivias' (Conoce los Caminos).
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La música como memoria celestial: el canto sagrado devuelve al alma la armonía y templanza angélica.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Fundación de Rupertsberg y la 'Viriditas' (1150–1179)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Vence la oposición eclesiástica y funda su propio monasterio independiente para mujeres en Rupertsberg (Bingen). Compone el drama moral 'Ordo Virtutum' y la colección 'Symphonia armonie celestium revelationum'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La 'Viriditas' (la fuerza cósmica y vivificante de Dios que reverdece la creación) expresada a través de melodías vocales femeninas expansivas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Hildegarda de Bingen</h3>
+      <p class="section-desc">
+        Clasificación de sus cantos litúrgicos y dramas morales medievales:
+      </p>
+    </div>
+
+    <!-- 1. DRAMA LITÚRGICO Y CANTOS CUMBRES -->
+    <h4 class="cat-genre-title">🌿 Obras Maestras del Canto Sacro y Dramatización Moral</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Códice</th>
+            <th>Título de la Obra</th>
+            <th>Género</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Riesencodex</span></td>
+            <td><strong>Ordo Virtutum (El Orden de las Virtudes)</strong></td>
+            <td>Drama sacro alegórico (82 melodías)</td>
+            <td>c. 1151</td>
+            <td>La obra dramática musical más antigua de Europa; enfrenta a las 16 Virtudes personificadas con el Diablo, quien a diferencia de las Virtudes no puede cantar y solo emite gritos guturales porque el Mal carece de armonía.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Dendermonde</span></td>
+            <td><strong>O viridissima virga (Oh rama verdeciente)</strong></td>
+            <td>Himno a la Virgen María</td>
+            <td>c. 1155</td>
+            <td>Celebración lírica de la fertilidad espiritual de María con melismas ondulantes que se elevan como ramas que brotan al sol primaveral.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Riesencodex</span></td>
+            <td><strong>O virtus Sapientiae (Oh fuerza de la Sabiduría)</strong></td>
+            <td>Antífona a la Sabiduría Divina</td>
+            <td>c. 1160</td>
+            <td>Contemplación filosófica sobre el cosmos y la creación que abarca las alturas celestes y las profundidades de la tierra.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Dendermonde</span></td>
+            <td><strong>O ignis Spiritus Paracliti (Fuego del Espíritu Consolador)</strong></td>
+            <td>Secuencia al Espíritu Santo</td>
+            <td>c. 1170</td>
+            <td>Explora el fuego como bálsamo curativo de las heridas del alma y perfume purificador con saltos interválicos atrevidos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Hildegarda: O Frondens Virga</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

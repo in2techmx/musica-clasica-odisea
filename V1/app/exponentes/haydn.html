@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Haydn — Catálogo Hoboken (Hob.) & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Joseph Haydn: Catálogo Hoboken (Hob.) clasificado por categorías (104 sinfonías, 68 cuartetos de cuerda, oratorios La Creación y Las Estaciones) y análisis de sus etapas Esterházy y Londres.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      JOSEPH HAYDN • CATÁLOGO HOBOKEN & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Joseph_Haydn_by_Thomas_Hardy_%281791%29.jpg/440px-Joseph_Haydn_by_Thomas_Hardy_%281791%29.jpg" alt="Joseph Haydn">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-classical); border-color: var(--accent-classical);">EL CLASICISMO ILUSTRADO & LA FORMA SONATA</span>
+          <h3>Joseph Haydn</h3>
+          <div class="master-meta-row">
+            <span>Rohrau, 1732 – Viena, 1809</span> • 
+            <strong style="color: var(--gold-primary);">El 'Padre de la Sinfonía' y el Maestro del Cuarteto de Cuerdas</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            "Mi príncipe estaba satisfecho con todas mis obras; no tenía a nadie cerca para confundirme o dudar de mí, de modo que estuve obligado a ser original", confesaba 'Papá Haydn'. 
+            Aislado durante tres décadas en el palacio campestre húngaro de los príncipes Esterházy con su propia orquesta privada, Haydn inventó la arquitectura formal de la música clásica occidental: fijó los 4 movimientos canónicos de la <strong>Sinfonía</strong> (de las cuales escribió 104) y concibió el <strong>Cuarteto de Cuerdas</strong> como una conversación civilizada y profunda entre cuatro caballeros inteligentes. Mentor entrañable de Mozart y maestro de Beethoven, su humor, ingenio rítmico y nobleza humana no tienen parangón.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="haydn-surprise">
+              <span>▶</span> Escuchar Sinfonía de la Sorpresa (Hob. I:94)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Haydn? (El Catálogo Hoboken: Hob.)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Con una producción astronómica de más de 1.000 composiciones, el musicólogo y coleccionista holandés <strong>Anthony van Hoboken</strong> dedicó más de 30 años a publicar entre 1957 y 1978 el <strong>Hoboken-Verzeichnis (Hob.)</strong>. A diferencia del Köchel cronológico, el catálogo Hoboken clasifica por <strong>números romanos según género o dotación</strong>:
+        </p>
+        <div style="font-size: 0.86rem; color: var(--gold-light);">
+          • <strong>Hob. I (1 al 108):</strong> Las 104 Sinfonías canónicas y piezas orquestales concertantes.<br>
+          • <strong>Hob. III (1 al 83):</strong> Los 68 Cuartetos de cuerda históricos (Op. 20, 33, 76, etc.).<br>
+          • <strong>Hob. XVI (1 al 52):</strong> Las 52 Sonatas para teclado y piano solo.<br>
+          • <strong>Hob. XXI al XXIII:</strong> Los grandes oratorios corales ('La Creación', 'Las Estaciones') y las 14 Misas solemnes.
+        </div>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Haydn
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: El Sturm und Drang y la Forja en Eisenstadt (1761–1779)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Contratado como Vice-Kapellmeister por el príncipe Pál Antal Esterházy y luego por Nikolaus 'el Magnífico'. Encerrado en los pantanos de Fertőd, compone febrilmente sinfonías en tonalidades menores de dramatismo tempestuoso ('Trauer', 'Farewell').
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Exploración de la tensión dramática y el claroscuro del movimiento literario <em>Sturm und Drang</em> (Tempestad y Empuje) en la sinfonía orquestal.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Madurez Clásica y Diálogo con Mozart (1780–1790)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Nuevo contrato que le permite vender obras a editores internacionales de París y Londres. Amistad con el joven Mozart, a quien escucha en Viena y declara ante su padre Leopold: "Su hijo es el más grande compositor que conozco en persona o de nombre".
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Perfección del Cuarteto de Cuerdas con los Cuartetos Op. 33 (escritos con 'un espíritu totalmente nuevo y especial') y las 6 'Sinfonías de París' (Hob. I:82 a 87).
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Las Sinfonías de Londres y los Grandes Oratorios (1791–1809)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Libre tras la muerte del príncipe Nikolaus. El empresario Johann Peter Salomon lo contrata para dos triunfales temporadas en Londres (recibe el doctorado honorario en Oxford). De regreso a Viena da clases a Beethoven y compone 'La Creación'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La gran orquesta sinfónica moderna de concierto público (las 12 'Sinfonías de Londres', Hob. I:93 a 104) y el oratorio épico con timbres cósmicos que recrean el caos primitivo y la luz.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Joseph Haydn</h3>
+      <p class="section-desc">
+        Clasificación por categoría de catálogo Hoboken (Hob.) y trascendencia musical:
+      </p>
+    </div>
+
+    <!-- 1. GRANDES SINFONÍAS CLÁSICAS -->
+    <h4 class="cat-genre-title">🎼 Grandes Sinfonías Clásicas (Hob. I)</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Sinfonía</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Hob. I:45</span></td>
+            <td><strong>Sinfonía n.º 45 'De los Adioses' (Farewell)</strong></td>
+            <td>Fa sostenido menor</td>
+            <td>1772</td>
+            <td>Estratagema genial ante el príncipe: en el Adagio final, los músicos van apagando sus velas y abandonando el escenario uno a uno hasta quedar solo dos violines, logrando que el príncipe concediera vacaciones a los músicos.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Hob. I:94</span></td>
+            <td><strong>Sinfonía n.º 94 'De la Sorpresa' (Surprise / Con el golpe de timbal)</strong></td>
+            <td>Sol mayor</td>
+            <td>1791</td>
+            <td>El segundo movimiento (Andante) presenta una melodía campesina apacible tocada en pianissimo que se interrumpe de pronto con un atronador acorde 'fortissimo' con timbal para despertar a los espectadores adormilados de Londres.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Hob. I:101</span></td>
+            <td><strong>Sinfonía n.º 101 'El Reloj' (The Clock)</strong></td>
+            <td>Re mayor</td>
+            <td>1794</td>
+            <td>Célebre por el compás del Andante, donde los fagotes y las cuerdas con pizzicato imitan con precisión humorística el tictac incesante de un péndulo de reloj de pared.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Hob. I:104</span></td>
+            <td><strong>Sinfonía n.º 104 'Londres'</strong></td>
+            <td>Re mayor</td>
+            <td>1795</td>
+            <td>Su última sinfonía y coronación de su catálogo orquestal; el final incorpora un tema folclórico croata tocado sobre una nota pedal que evoca las gaitas populares.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. CUARTETOS DE CUERDA FUNDACIONALES -->
+    <h4 class="cat-genre-title">🎻 Cuartetos de Cuerda Fundacionales (Hob. III)</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título del Cuarteto</th>
+            <th>Opus</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Hob. III:38</span></td>
+            <td><strong>Cuarteto 'La Broma' (The Joke)</strong></td>
+            <td>Op. 33 n.º 2 en Mi bemol mayor</td>
+            <td>1781</td>
+            <td>En el final, Haydn introduce falsos silencios y compases incompletos para desconcertar al público, que no sabe cuándo debe comenzar a aplaudir.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Hob. III:77</span></td>
+            <td><strong>Cuarteto 'Emperador' (Kaiserquartett)</strong></td>
+            <td>Op. 76 n.º 3 en Do mayor</td>
+            <td>1797</td>
+            <td>El movimiento lento son variaciones sublimes sobre su himno 'Gott erhalte Franz den Kaiser', hoy adoptado como el Himno Nacional de Alemania.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Hob. III:78</span></td>
+            <td><strong>Cuarteto 'Salida del Sol' (Sunrise)</strong></td>
+            <td>Op. 76 n.º 4 en Si bemol mayor</td>
+            <td>1797</td>
+            <td>Apertura luminosa donde el primer violín asciende calmadamente sobre acordes sostenidos como el primer rayo de sol del alba.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ORATORIOS MONUMENTALES -->
+    <h4 class="cat-genre-title">🌌 Oratorios Monumentales (Hob. XXI)</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título del Oratorio</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Hob. XXI:2</span></td>
+            <td><strong>La Creación (Die Schöpfung)</strong></td>
+            <td>3 Solistas, Gran Coro y Orquesta</td>
+            <td>1798</td>
+            <td>Inspirado en 'El Mesías' de Händel; la introducción orquestal 'La Representación del Caos' disuelve la tonalidad armónica y culmina en el fortissimo deslumbrante: <em>"¡Y se hizo la luz!"</em>.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Hob. XXI:3</span></td>
+            <td><strong>Las Estaciones (Die Jahreszeiten)</strong></td>
+            <td>Solistas, Coro y Gran Orquesta</td>
+            <td>1801</td>
+            <td>Pintura pastoral de la vida agrícola a lo largo de las cuatro estaciones del año; cantos campesinos, cacerías con trompas y tormentas estivales.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Haydn: Sinfonía de la Sorpresa (Hob. I:94)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

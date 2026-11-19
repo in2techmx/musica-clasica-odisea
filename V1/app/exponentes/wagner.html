@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Richard Wagner — Catálogo WWV & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Richard Wagner: Catálogo Wagner-Werk-Verzeichnis (WWV) clasificado por dramas (El anillo del Nibelungo, Tristán e Isolda, Parsifal, Maestros Cantores) y análisis del Gesamtkunstwerk y el Leitmotiv.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      RICHARD WAGNER • CATÁLOGO WWV & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/RichardWagner.jpg/440px-RichardWagner.jpg" alt="Richard Wagner">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-romantic); border-color: var(--accent-romantic);">EL DRAMA MUSICAL & LA OBRA DE ARTE TOTAL</span>
+          <h3>Richard Wagner</h3>
+          <div class="master-meta-row">
+            <span>Leipzig, 1813 – Venecia, 1883</span> • 
+            <strong style="color: var(--gold-primary);">El Creador de la 'Gesamtkunstwerk' y el Revolucionario del Teatro Sonoro</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Pocas figuras en la historia cultural han suscitado tantas pasiones y debates como Richard Wagner. 
+            Abolió la ópera tradicional dividida en números cerrados (arias, recitativos) y la sustituyó por la <em>melodía infinita</em> y el tejido psicológico de los <em>Leitmotiven</em> (motivos conductores que encarnan ideas, personajes u objetos). 
+            Con <em>Tristán e Isolda</em> disolvió la tonalidad tradicional y abrió las puertas al modernismo del siglo XX; y para consumar su tetralogía de 16 horas <em>El anillo del Nibelungo</em>, construyó su propio teatro en Bayreuth con una orquesta oculta bajo el escenario.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="wagner-valkyrie">
+              <span>▶</span> Escuchar Cabalgata de las Valquirias (WWV 86B)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Wagner? (El Catálogo WWV)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          En 1986, con motivo del centenario de su fallecimiento, los musicólogos <strong>John Deathridge, Martin Geck y Egon Voss</strong> publicaron el <strong>Wagner-Werk-Verzeichnis (WWV)</strong>, catálogo canónico exhaustivo de 113 obras numeradas cronológicamente:
+        </p>
+        <div style="font-size: 0.86rem; color: var(--gold-light);">
+          • <strong>WWV 1 al WWV 62:</strong> Obras tempranas de juventud (sonatas, oberturas, 'Las Hadas', 'La prohibición de amar', 'Rienzi').<br>
+          • <strong>WWV 63 al WWV 75:</strong> Las grandes óperas románticas de consolidación ('El holandés errante', 'Tannhäuser', 'Lohengrin').<br>
+          • <strong>WWV 86 (A, B, C, D):</strong> La monumental tetralogía <em>Der Ring des Nibelungen</em> (Das Rheingold, Die Walküre, Siegfried, Götterdämmerung).<br>
+          • <strong>WWV 90, 96, 111:</strong> Las cumbres del drama musical maduro ('Tristán e Isolda', 'Los maestros cantores de Núremberg', 'Parsifal').
+        </div>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Wagner
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Ópera Romántica Temprana y Exilio (1833–1849)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Director musical en Magdeburgo, Riga y Dresde. Participa activamente en el levantamiento revolucionario de mayo de 1849 junto al anarquista Bakunin; perseguido por la policía con orden de captura, huye al exilio en Zúrich (Suiza).
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Evolución desde la grand opéra francesa hacia la leyenda mitológica germana en 'El holandés errante', 'Tannhäuser' y 'Lohengrin'.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Teoría de la 'Obra de Arte Total' y el Anillo (1849–1864)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Escribe sus ensayos fundamentales 'Arte y Revolución' y 'Ópera y Drama'. Concibe el ciclo de cuatro días 'El anillo del Nibelungo'. Pasión secreta con Mathilde Wesendonck que inspira 'Tristán e Isolda'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La <em>Gesamtkunstwerk</em>: la disolución de los límites entre poesía, música, actuación dramática y escenografía mediante el tejido sinfónico ininterrumpido del <em>Leitmotiv</em>.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: El Mecenazgo Real, Bayreuth y Parsifal (1864–1883)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Rescatado de la bancarrota por el joven rey Luis II de Baviera. Matrimonio con Cosima Liszt. Construye el Festspielhaus de Bayreuth inaugurado en 1876. Culmina su 'consagración escénica' con 'Parsifal'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La música como liturgia sagrada y redención mística del dolor universal (influencia del pesimismo de Schopenhauer).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Richard Wagner</h3>
+      <p class="section-desc">
+        Clasificación cronológica de sus dramas musicales con número WWV y trascendencia revolucionaria:
+      </p>
+    </div>
+
+    <!-- 1. LA TETRALOGÍA DEL ANILLO DEL NIBELUNGO -->
+    <h4 class="cat-genre-title">💍 La Tetralogía de 'El Anillo del Nibelungo' (Der Ring des Nibelungen)</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título del Drama</th>
+            <th>Rol en el Ciclo</th>
+            <th>Año Estreno</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">WWV 86A</span></td>
+            <td><strong>El oro del Rin (Das Rheingold)</strong></td>
+            <td>Prólogo (Vorabend) en 4 cuadros continuos</td>
+            <td>1869</td>
+            <td>Arranca con 136 compases inmutables sobre el acorde de Mi bemol mayor en las profundidades del río Rin; Alberich roba el oro y maldice el amor por el poder.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WWV 86B</span></td>
+            <td><strong>La valquiria (Die Walküre)</strong></td>
+            <td>Primera Jornada en 3 actos</td>
+            <td>1870</td>
+            <td>El drama humano de Siegmund y Sieglinde, la célebre 'Cabalgata de las Valquirias' en el acto III y la despedida de Wotan rodeando a Brunilda de un fuego mágico.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WWV 86C</span></td>
+            <td><strong>Sigfrido (Siegfried)</strong></td>
+            <td>Segunda Jornada en 3 actos</td>
+            <td>1876</td>
+            <td>La forja de la espada Nothung, el canto del pájaro del bosque y el despertar de Brunilda en la roca solitaria por el héroe que no conoce el miedo.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WWV 86D</span></td>
+            <td><strong>El ocaso de los dioses (Götterdämmerung)</strong></td>
+            <td>Tercera Jornada en prólogo y 3 actos</td>
+            <td>1876</td>
+            <td>La catástrofe cósmica final: la Marcha Fúnebre de Sigfrido y la Inmolación de Brunilda, que arroja el anillo a las llamas y purifica el mundo en el Valhalla ardiente.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. LOS GRANDES DRAMAS MUSICALES INDEPENDIENTES -->
+    <h4 class="cat-genre-title">⚡ Las Cumbres del Drama Tristán, Maestros Cantores y Parsifal</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Actos</th>
+            <th>Año Estreno</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">WWV 90</span></td>
+            <td><strong>Tristán e Isolda (Tristan und Isolde)</strong></td>
+            <td>3 Actos</td>
+            <td>1865</td>
+            <td>El hito armónico de la música occidental: el 'Acorde de Tristán' (Fa - Si - Re# - Sol#) posterga la resolución tonal durante 4 horas hasta la 'Muerte de Amor' (Liebestod).</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WWV 96</span></td>
+            <td><strong>Los maestros cantores de Núremberg (Die Meistersinger von Nürnberg)</strong></td>
+            <td>3 Actos</td>
+            <td>1868</td>
+            <td>Su única comedia madura; una defensa encendida de la libertad creadora contra el dogmatismo de los críticos (encarnados en Beckmesser) a través de Hans Sachs.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WWV 111</span></td>
+            <td><strong>Parsifal (Festival Escénico Sagrado)</strong></td>
+            <td>3 Actos</td>
+            <td>1882</td>
+            <td>Su última obra; concebida exclusivamente para la acústica mística de Bayreuth. Trata sobre la compasión que cura la herida sangrante del rey Amfortas mediante el Santo Grial.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ÓPERAS ROMÁNTICAS DE JUVENTUD -->
+    <h4 class="cat-genre-title">⛵ Las Grandes Óperas Románticas de Juventud</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">WWV 63</span></td>
+            <td><strong>El holandés errante (Der fliegende Holländer)</strong></td>
+            <td>1843</td>
+            <td>La leyenda marina del capitán fantasma condenado a navegar eternamente hasta hallar el amor fiel hasta la muerte; primera aparición de su concepto de redención.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WWV 70</span></td>
+            <td><strong>Tannhäuser y el torneo de cantores del Wartburg</strong></td>
+            <td>1845</td>
+            <td>La lucha interior entre el amor erótico y pagano (el monte de Venus) y el amor puro y espiritual (Elisabeth y el coro de peregrinos).</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">WWV 75</span></td>
+            <td><strong>Lohengrin</strong></td>
+            <td>1850</td>
+            <td>El caballero del cisne que prohíbe preguntar su nombre y origen; contiene el célebre Coro Nupcial cantado en bodas de todo el planeta.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Wagner: Cabalgata de las Valquirias (WWV 86B)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

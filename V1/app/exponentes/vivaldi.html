@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antonio Vivaldi — Catálogo Ryom (RV) & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Antonio Vivaldi: Catálogo Ryom (RV), Las Cuatro Estaciones, conciertos para violín, obras sacras y análisis de sus etapas creativas en el Ospedale della Pietà de Venecia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      ANTONIO VIVALDI • CATÁLOGO RYOM & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Antonio_Vivaldi;1678-1741.jpg/440px-Antonio_Vivaldi;1678-1741.jpg" alt="Antonio Vivaldi">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-baroque); border-color: var(--accent-baroque);">EL BARROCO VENECIANO & EL VIRTUOSISMO INSTRUMENTAL</span>
+          <h3>Antonio Vivaldi</h3>
+          <div class="master-meta-row">
+            <span>Venecia, 1678 – Viena, 1741</span> • 
+            <strong style="color: var(--gold-primary);">Il Prete Rosso (El Cura Rojo) & Arquitecto del Concierto Solista</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Sacerdote veneciano pelirrojo apartado del púlpito por asma crónica, Vivaldi convirtió el convento de huérfanas del <em>Ospedale della Pietà</em> en el laboratorio orquestal más electrizante de Europa. 
+            Estandarizó la estructura de tres movimientos (Rápido–Lento–Rápido), perfeccionó la técnica del <em>ritornello</em> y creó la primera música programática descriptiva universal con <em>Las Cuatro Estaciones</em>. Su virtuosismo al violín deslumbró a J.S. Bach, quien transcribió decenas de sus conciertos para aprender su vitalidad motriz.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="vivaldi-primavera">
+              <span>▶</span> Escuchar La Primavera (RV 269)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO: RYOM -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Vivaldi? (El Catálogo Ryom: RV)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Durante dos siglos tras su muerte en la pobreza en Viena, Vivaldi fue prácticamente olvidado. En el siglo XX, tras el descubrimiento de cientos de manuscritos en Turín, el musicólogo danés <strong>Peter Ryom</strong> publicó en 1974 el <strong>Ryom-Verzeichnis (RV)</strong>, catálogo canónico definitivo que clasifica más de 800 obras por género instrumental, dotación y tonalidad:
+        </p>
+        <div style="font-size: 0.86rem; color: var(--gold-light);">
+          • <strong>RV 1 al RV 585:</strong> Más de 500 conciertos para instrumentos solistas (violín, violonchelo, flauta, oboe, fagot, mandolina, laúd) y concierto grosso.<br>
+          • <strong>RV 586 al RV 648:</strong> Obras sacras corales (Gloria, Stabat Mater, Magnificat, Credo, salmos).<br>
+          • <strong>RV 649 al RV 740:</strong> Cantatas, serenatas y más de 40 óperas venecianas.<br>
+          • <strong>Opus Históricos (Op. 1 al 12):</strong> Colecciones publicadas en Ámsterdam en vida (ej. Op. 3 <em>L'estro armonico</em>, Op. 8 <em>Il cimento</em>).
+        </div>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Vivaldi
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: La Forja en el Ospedale della Pietà (1703–1715)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Nombrado 'Maestro di violino' en el orfanato de niñas de Venecia. Diseña una orquesta de mujeres instrumentistas de precisión asombrosa oculta tras celosías doradas que atraía a viajeros de toda Europa.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Invención del concierto solista moderno con <em>L'estro armonico</em> (Op. 3, 1711). Sustituye el contrapunto severo por una energía rítmica propulsora y contrastes dinámicos inmediatos.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Madurez Europea y Pintura Sonora (1716–1730)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Maestro di concerti en Mantua para el príncipe Felipe de Hesse-Darmstadt. Publicación triunfal en Ámsterdam de <em>Il cimento dell'armonia e dell'inventione</em> (Op. 8) que incluye <em>Las Cuatro Estaciones</em>.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Música descriptiva programática: la orquesta imita pájaros, tormentas de granizo, perros que ladran, cazadores al galope y el temblor por el hielo. El violín se transforma en pincel acústico.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: El Furor de la Ópera y Ocaso Vienés (1730–1741)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Viajes continuos como empresario operístico por Roma, Verona y Praga con su cantante predilecta Anna Girò. El gusto del público veneciano cambia; viaja a Viena en 1740 buscando el apoyo del emperador Carlos VI, quien fallece inesperadamente. Vivaldi muere en la miseria meses después.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Expansión del virtuosismo vocal y teatral: arias de bravura tempestuosa ('Agitata da due venti') y conciertos experimentales para combinaciones insólitas de instrumentos.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Antonio Vivaldi</h3>
+      <p class="section-desc">
+        Clasificación por género arquitectónico con número Ryom (RV), opus impreso y trascendencia histórica:
+      </p>
+    </div>
+
+    <!-- 1. LAS CUATRO ESTACIONES (OP. 8) -->
+    <h4 class="cat-genre-title">🌿 Las Cuatro Estaciones (Op. 8 n.º 1 a 4)</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título del Concierto</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">RV 269</span></td>
+            <td><strong>La Primavera (Op. 8 n.º 1)</strong></td>
+            <td>Mi mayor</td>
+            <td>1725</td>
+            <td>Canto de pájaros en trino de violines, murmullo de arroyos, el perro guardián que ladra en la viola y la danza campesina primaveral.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 315</span></td>
+            <td><strong>El Verano (L'estate, Op. 8 n.º 2)</strong></td>
+            <td>Sol menor</td>
+            <td>1725</td>
+            <td>La opresión sofocante del calor, el cuco, la tórtola y el sobrecogedor Presto final: una tormenta de granizo que arrasa las cosechas.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 293</span></td>
+            <td><strong>El Otoño (L'autunno, Op. 8 n.º 3)</strong></td>
+            <td>Fa mayor</td>
+            <td>1725</td>
+            <td>Celebración de la vendimia con campesinos ebrios que caen dormidos (Adagio molto armónico) y la emocionante partida de caza matutina.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 297</span></td>
+            <td><strong>El Invierno (L'inverno, Op. 8 n.º 4)</strong></td>
+            <td>Fa menor</td>
+            <td>1725</td>
+            <td>Tiritar de frío con pizzicatos gélidos, el dulce calor del hogar junto a la chimenea (Largo) y el caminar con cautela sobre el lago helado.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. GRANDES CONCIERTOS INSTRUMENTALES -->
+    <h4 class="cat-genre-title">🎻 Conciertos Solistas y Dobles Emblemáticos</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación Instrumental</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">RV 580</span></td>
+            <td><strong>Concierto para 4 violines en Si menor (Op. 3 n.º 10)</strong></td>
+            <td>4 Violines, Cuerdas y Bajo Continuo</td>
+            <td>1711</td>
+            <td>Pieza cumbre de 'L'estro armonico'. Bach quedó tan fascinado que lo transcribió para 4 claves y orquesta (BWV 1065).</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 565</span></td>
+            <td><strong>Concierto grosso en Re menor (Op. 3 n.º 11)</strong></td>
+            <td>2 Violines, Violonchelo y Cuerdas</td>
+            <td>1711</td>
+            <td>Contiene una fuga monumental e impetuosa; Bach lo transcribió para órgano solo (BWV 596).</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 93</span></td>
+            <td><strong>Concierto para laúd en Re mayor</strong></td>
+            <td>Laúd, 2 Violines y Bajo Continuo</td>
+            <td>c. 1730</td>
+            <td>Elegancia lírica sublime; el movimiento Largo es una de las melodías más célebres y serenas del repertorio barroco.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 537</span></td>
+            <td><strong>Concierto para dos trompetas en Do mayor</strong></td>
+            <td>2 Trompetas, Cuerdas y Continuo</td>
+            <td>c. 1720</td>
+            <td>El único concierto de Vivaldi para trompeta; virtuosismo marcial con llamadas antifonales brillantes en eco.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 443</span></td>
+            <td><strong>Concierto para flautino en Do mayor</strong></td>
+            <td>Flautino (piccolo), Cuerdas y Continuo</td>
+            <td>c. 1728</td>
+            <td>Pirotecnia técnica vertiginosa que explora el registro sobreagudo con escalas ultrarrápidas y ligerezas de ave.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 63</span></td>
+            <td><strong>Sonata a tres 'La Follia' (Op. 1 n.º 12)</strong></td>
+            <td>2 Violines y Bajo Continuo</td>
+            <td>1705</td>
+            <td>19 variaciones progresivas sobre la célebre danza ibérica del siglo XVI, llevando el delirio instrumental al límite.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. MÚSICA SACRA Y CORAL -->
+    <h4 class="cat-genre-title">⛪ Obras Sacras y Polifonía Coral</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">RV 589</span></td>
+            <td><strong>Gloria en Re mayor</strong></td>
+            <td>Coro mixto, Solistas y Orquesta</td>
+            <td>c. 1715</td>
+            <td>Monumento coral barroco; arranca con ritmos con puntillo marciales y júbilo radiante ('Gloria in excelsis Deo').</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 621</span></td>
+            <td><strong>Stabat Mater</strong></td>
+            <td>Contralto solista, Cuerdas y Continuo</td>
+            <td>1712</td>
+            <td>Plegaria íntima al dolor de la Virgen al pie de la Cruz; cromatismos lúgubres y solemnidad conmovedora.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">RV 644</span></td>
+            <td><strong>Oratorio 'Juditha Triumphans'</strong></td>
+            <td>Solistas femeninas, Coro y Gran Orquesta</td>
+            <td>1716</td>
+            <td>El único oratorio de Vivaldi que sobrevive completo; alegoría de la victoria de la República de Venecia sobre los turcos otomanos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Vivaldi: La Primavera (RV 269)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piotr Ilich Chaikovski — Catálogo Opus & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Piotr Ilich Chaikovski: Catálogo Opus y ČW clasificado por géneros (6 sinfonías, los 3 ballets inmortales, conciertos para piano y violín, óperas) y análisis de sus 3 etapas vitales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      PIOTR ILICH CHAIKOVSKI • CATÁLOGO & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tchaikovsky.jpg/440px-Tchaikovsky.jpg" alt="Piotr Ilich Chaikovski">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-romantic); border-color: var(--accent-romantic);">EL ROMANTICISMO RUSO & EL DESTINO TRÁGICO</span>
+          <h3>Piotr Ilich Chaikovski</h3>
+          <div class="master-meta-row">
+            <span>Vótkinsk, 1840 – San Petersburgo, 1893</span> • 
+            <strong style="color: var(--gold-primary);">El Alma Rusa y el Maestro Absoluto del Ballet Clásico</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Chaikovski unió dos mundos que parecían irreconciliables: la severa disciplina formal y contrapuntística de la escuela sinfónica centroeuropea (Mozart, Beethoven) con la desgarradora melancolía, el calor volcánico y las melodías modales del alma campesina rusa. 
+            Elevó la música para ballet de mero adorno dancístico a alta tragedia sinfónica (<em>El lago de los cisnes</em>, <em>Cascanueces</em>, <em>La bella durmiente</em>) y plasmó en sus sinfonías la lucha desgarradora contra un 'Fatum' implacable. Murió repentinamente en San Petersburgo nueve días después de estrenar su 6ª Sinfonía <em>Patética</em>.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="tchaikovsky-swan">
+              <span>▶</span> Escuchar Tema del Cisne (Op. 20)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Chaikovski? (Opus & Catálogo ČW)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          La obra de Chaikovski fue publicada en vida bajo números de <strong>Opus (Op. 1 al Op. 74)</strong> por la editorial Jurgenson de Moscú, culminando con la 6ª Sinfonía 'Patética' (Op. 74). De manera póstuma se añadieron del Op. 75 al 80.
+        </p>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          En 2006, las musicólogas <strong>Polina Vaidman y Liudmila Korabelnikova</strong> del Museo y Archivo Chaikovski de Klin completaron el <strong>Catálogo Temático Sistemático ČW</strong> (Chaikovski-Werke), asignando números rigurosos a cada pieza orquestal, coral, teatral y de cámara según manuscritos de archivo.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Chaikovski
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Formación y Síntesis Nacionalista (1866–1877)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Primer graduado del recién fundado Conservatorio de San Petersburgo bajo Antón Rubinstein; profesor de armonía en Moscú. Escribe las Sinfonías 1 a 3, la Obertura Fantasía 'Romeo y Julieta' y su titánico 1.er Concierto para piano en Si bemol menor.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Demostrar que Rusia puede producir música orquestal sinfónica con la misma solvencia arquitectónica que Alemania, sin perder el folclore popular eslavo.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Tormento Íntimo y la Cima del Ballet (1877–1885)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Crisis nerviosa y tentativa de suicidio tras su fallido matrimonio con Antonina Miliukova. Su benefactora millonaria, Nadezhda von Meck, le asigna una pensión de por vida con la condición de no verse nunca en persona. Compone la 4ª Sinfonía, la ópera 'Eugenio Oneguin', el Concierto para violín y 'El lago de los cisnes'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El concepto del 'Fatum' (el Destino ineludible) como motor sinfónico, y la invención del drama sinfónico en el ballet teatral.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Consagración Mundial y la 'Patética' (1885–1893)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Aclamado internacionalmente como director en París, Londres y Nueva York (inaugura el Carnegie Hall en 1891). Retiro campestre en Klin. Crea 'La bella durmiente', 'El cascanueces', la 5ª Sinfonía y su testamento espiritual: la 6ª Sinfonía 'Patética'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Ruptura de la convención de la sinfonía triunfal: el final de la 6ª Sinfonía no es una apoteosis de victoria, sino un <em>Adagio lamentoso</em> en Si menor que se extingue en la oscuridad absoluta de la tumba.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Piotr Ilich Chaikovski</h3>
+      <p class="section-desc">
+        Clasificación por género arquitectónico con número de Opus, año y trascendencia:
+      </p>
+    </div>
+
+    <!-- 1. EL GRAN CICLO SINFÓNICO -->
+    <h4 class="cat-genre-title">🎼 El Ciclo Sinfónico y Poemas Orquestales</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 13</span></td>
+            <td><strong>Sinfonía n.º 1 'Sueños de Invierno'</strong></td>
+            <td>Sol menor</td>
+            <td>1866</td>
+            <td>Evocación poética de las estepas heladas rusas; su primer gran triunfo sinfónico tras semanas de insomnio extenuante.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 36</span></td>
+            <td><strong>Sinfonía n.º 4 en Fa menor</strong></td>
+            <td>Fa menor</td>
+            <td>1878</td>
+            <td>Dedicada a su 'mejor amiga' Nadezhda von Meck; arranca con la célebre fanfarria del Destino tocada a pleno pulmón por trompas y fagotes.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 64</span></td>
+            <td><strong>Sinfonía n.º 5 en Mi menor</strong></td>
+            <td>Mi menor</td>
+            <td>1888</td>
+            <td>Estructura cíclica con el 'tema del Destino' que muta a lo largo de los 4 movimientos; contiene el solo de trompa más hermoso del repertorio romántico.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 74</span></td>
+            <td><strong>Sinfonía n.º 6 en Si menor 'Patética'</strong></td>
+            <td>Si menor</td>
+            <td>1893</td>
+            <td>La cumbre trágica de Chaikovski; un segundo movimiento en compás insólito de 5/4 (un vals cojo) y un final que desciende hasta el silencio y la muerte.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 49</span></td>
+            <td><strong>Obertura Solemne 1812</strong></td>
+            <td>Mi bemol mayor</td>
+            <td>1880</td>
+            <td>Conmemoración de la derrota de Napoleón en Moscú; famosa por incorporar en partitura disparos reales de cañón de artillería y campanas de iglesia.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">ČW 39</span></td>
+            <td><strong>Obertura-Fantasía 'Romeo y Julieta'</strong></td>
+            <td>Si menor / Re bemol mayor</td>
+            <td>1869/1880</td>
+            <td>Obra maestra del poema sinfónico; el Tema de Amor en Re bemol mayor es el leitmotiv de pasión amorosa más reproducido del cine y la televisión.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. LOS TRES GRANDES BALLETS INMORTALES -->
+    <h4 class="cat-genre-title">🩰 La Trilogía Inmortal del Ballet Clásico</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título del Ballet</th>
+            <th>Actos</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 20</span></td>
+            <td><strong>El lago de los cisnes (Lebedínoye ózero)</strong></td>
+            <td>4 Actos</td>
+            <td>1876</td>
+            <td>Revolución histórica: el ballet deja de ser danza mecánica para convertirse en drama musical sinfónico con el icónico oboe solista del Tema del Cisne.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 66</span></td>
+            <td><strong>La bella durmiente (Spyáshchaya krasávitsa)</strong></td>
+            <td>Prólogo y 3 Actos</td>
+            <td>1889</td>
+            <td>La partitura de danza más extensa y refinada de Chaikovski, creada en estrecha colaboración con el legendario coreógrafo Marius Petipa.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 71</span></td>
+            <td><strong>El cascanueces (Shchelkúnchik)</strong></td>
+            <td>2 Actos</td>
+            <td>1892</td>
+            <td>Fantasía navideña inmortal; Chaikovski introdujo por primera vez en Rusia el sonido cristalino de la recién inventada <em>Celesta</em> en la 'Danza del Hada de Azúcar'.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. GRANDES CONCIERTOS Y ÓPERAS -->
+    <h4 class="cat-genre-title">🎹 Conciertos para Solista y Óperas Cumbres</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 23</span></td>
+            <td><strong>Concierto para piano n.º 1 en Si bemol menor</strong></td>
+            <td>Si bemol menor</td>
+            <td>1875</td>
+            <td>Rechazado inicialmente por Nikolai Rubinstein por 'injugable'; se convirtió en el concierto de piano más célebre de la historia con sus imponentes acordes de apertura.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 35</span></td>
+            <td><strong>Concierto para violín en Re mayor</strong></td>
+            <td>Re mayor</td>
+            <td>1878</td>
+            <td>Dedicado a Leopold Auer; una joya de pirotecnia virtuosística, fogosidad gitana rusa en el final y lirismo melancólico en la 'Canzonetta'.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 24</span></td>
+            <td><strong>Ópera 'Eugenio Oneguin'</strong></td>
+            <td>3 Actos</td>
+            <td>1879</td>
+            <td>Basada en el poema de Pushkin; contiene la inmortal 'Escena de la carta' de Tatiana y el sobrecogedor duelo entre Oneguin y Lenski.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 68</span></td>
+            <td><strong>Ópera 'La dama de picas' (Píkovaya dama)</strong></td>
+            <td>3 Actos</td>
+            <td>1890</td>
+            <td>Thriller psicológico sobrenatural sobre la obsesión fatal del juego de cartas (el 3, el 7 y el As) y la locura de Hermann.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Chaikovski: El lago de los cisnes (Op. 20)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

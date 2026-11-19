@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wolfgang Amadeus Mozart — Catálogo Köchel & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Wolfgang Amadeus Mozart: Catálogo Köchel (K./KV) clasificado por géneros (41 sinfonías, conciertos para piano, óperas de Da Ponte, Requiem) y análisis de sus etapas Salzburgo y Viena.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      WOLFGANG AMADEUS MOZART • CATÁLOGO & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Wolfgang-amadeus-mozart_1.jpg/440px-Wolfgang-amadeus-mozart_1.jpg" alt="Wolfgang Amadeus Mozart">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-classical); border-color: var(--accent-classical);">EL CLASICISMO EN GRACIA Y PSICOLOGÍA</span>
+          <h3>Wolfgang Amadeus Mozart</h3>
+          <div class="master-meta-row">
+            <span>Salzburgo, 1756 – Viena, 1791</span> • 
+            <strong style="color: var(--gold-primary);">El Genio Melódico Insuperable de la Humanidad</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Mozart no componía buscando la aprobación del futuro; componía como quien respira, con una perfección técnica y una fluidez melódica inmaculadas que brotaban en su mente con la partitura ya terminada sin una sola tachadura. 
+            Elevó la ópera a un estudio psicológico de pasiones humanas y fijó el modelo definitivo del concierto para solista. Murió con apenas 35 años, dejando más de 600 obras cumbres.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="mozart-nachtmusik">
+              <span>▶</span> Escuchar Serenata Nocturna (K. 525)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO: KÖCHEL -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Mozart? (El Catálogo Köchel: K. o KV)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Al morir prematuramente en 1791, las obras de Mozart quedaron en un estado de caos documental. En 1862, el botánico y mineralogista austríaco <strong>Ludwig von Köchel</strong> dedicó años a investigar manuscritos y cartas para establecer un <strong>catálogo cronológico estricto</strong>:
+          desde el <strong>K. 1</strong> (un minueto para teclado compuesto a los 5 años) hasta el <strong>K. 626</strong> (el legendario Requiem inconcluso). El prefijo <strong>KV</strong> (Köchel-Verzeichnis) o simplemente <strong>K.</strong> es hoy el sello universal de autenticidad mozartiana.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Mozart
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: El Niño Prodigio Itinerante (1762–1773)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Exhibido por su padre Leopold ante las cortes reales de París, Versalles, Londres, Viena y Roma, donde a los 14 años escuchó el 'Miserere' de Allegri y lo transcribió de memoria de oído tras una sola audición.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Asimilación mágica de todos los estilos europeos: la elegancia de Johann Christian Bach en Londres, la ópera italiana y el contrapunto alemán.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Resistencia en Salzburgo (1773–1781)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Atrapado como músico de corte bajo el despótico Arzobispo Hieronymus von Colloredo en Salzburgo, quien lo trataba como sirviente de cocina.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Maduración dramática en sus 5 conciertos de violín, sus sinfonías de madurez y la ópera 'Idomeneo'. Rompe con el arzobispo con una célebre patada en el trasero y huye a Viena como músico independiente.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Independencia y Gloria en Viena (1781–1791)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Matrimonio con Constanze Weber. Década febril de conciertos por suscripción, las grandes óperas con Lorenzo Da Ponte y el enigma final del encargo anónimo del Requiem.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La comedia humana total: el claroscuro donde la risa y el llanto trágico habitan el mismo compás armónico ('Don Giovanni', 'Las Bodas de Fígaro', Sinfonía Júpiter K. 551).
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Wolfgang Amadeus Mozart</h3>
+      <p class="section-desc">
+        Clasificación por género arquitectónico con número Köchel (K.), año y trascendencia:
+      </p>
+    </div>
+
+    <!-- 1. GRANDES SINFONÍAS -->
+    <h4 class="cat-genre-title">🎼 Grandes Sinfonías Clásicas</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">K. 183</span></td>
+            <td><strong>Sinfonía n.º 25 'Pequeña en Sol menor'</strong></td>
+            <td>Sol menor</td>
+            <td>1773</td>
+            <td>Su primera sinfonía en modo menor, influida por el 'Sturm und Drang'; famosa apertura de la película Amadeus.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 385</span></td>
+            <td><strong>Sinfonía n.º 35 'Haffner'</strong></td>
+            <td>Re mayor</td>
+            <td>1782</td>
+            <td>Brillantez aristocrática y energía luminosa concebida para la familia Haffner de Salzburgo.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 504</span></td>
+            <td><strong>Sinfonía n.º 38 'Praga'</strong></td>
+            <td>Re mayor</td>
+            <td>1786</td>
+            <td>En tres movimientos (sin minué); contiene una introducción lenta de una complejidad armónica portentosa.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 550</span></td>
+            <td><strong>Sinfonía n.º 40</strong></td>
+            <td>Sol menor</td>
+            <td>1788</td>
+            <td>La cumbre de la tragedia lírica mozartiana; melancolía apasionada y dramatismo contenido.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 551</span></td>
+            <td><strong>Sinfonía n.º 41 'Júpiter'</strong></td>
+            <td>Do mayor</td>
+            <td>1788</td>
+            <td>Su última sinfonía. El final culmina en una fuga quíntuple a 5 voces simultáneas: la cumbre del Clasicismo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. CONCIERTOS PARA PIANO Y SOLISTAS -->
+    <h4 class="cat-genre-title">🎹 Conciertos para Piano y Viento</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">K. 466</span></td>
+            <td><strong>Concierto para piano n.º 20</strong></td>
+            <td>Re menor</td>
+            <td>1785</td>
+            <td>El concierto favorito de Beethoven (quien compuso sus cadencias). Tensión oscura y tormenta dramática.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 467</span></td>
+            <td><strong>Concierto para piano n.º 21</strong></td>
+            <td>Do mayor</td>
+            <td>1785</td>
+            <td>Contiene el célebre Andante en Fa mayor con cuerdas sordas y pulsación suspendida de ensueño.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 488</span></td>
+            <td><strong>Concierto para piano n.º 23</strong></td>
+            <td>La mayor</td>
+            <td>1786</td>
+            <td>Su movimiento lento (Adagio en Fa sostenido menor) es la única obra que Mozart escribió en esta tonalidad de llanto íntimo.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 622</span></td>
+            <td><strong>Concierto para clarinete</strong></td>
+            <td>La mayor</td>
+            <td>1791</td>
+            <td>Escrito para Anton Stadler semanas antes de morir; elevó el clarinete a voz poética suprema.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ÓPERAS Y SACRO -->
+    <h4 class="cat-genre-title">🎭 Las Grandes Óperas y el Requiem</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">K. 492</span></td>
+            <td><strong>Las Bodas de Fígaro (Le nozze di Figaro)</strong></td>
+            <td>1786</td>
+            <td>Comedia social revolucionaria con libreto de Da Ponte; la servidumbre burla la arrogancia de la nobleza.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 527</span></td>
+            <td><strong>Don Giovanni (Il dissoluto punito)</strong></td>
+            <td>1787</td>
+            <td>Obra maestra universal: mezcla de farsa cómica y terror metafísico con la estatua del Comendador.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 620</span></td>
+            <td><strong>La Flauta Mágica (Die Zauberflöte)</strong></td>
+            <td>1791</td>
+            <td>Singspiel popular en alemán con simbolismo masónico y melodías que van del aria acrobática de la Reina de la Noche a la canción folclórica de Papageno.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">K. 626</span></td>
+            <td><strong>Requiem en Re menor</strong></td>
+            <td>1791</td>
+            <td>La despedida trágica de Mozart en su lecho de muerte. El 'Lacrimosa' se interrumpe tras sus primeros 8 compases autógrafos.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Mozart: Serenata Nocturna (K. 525)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Philip Glass — El Minimalismo Hipnótico & La Ópera Visual | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Philip Glass: El minimalismo musical, estructuras repetitivas aditivas, Einstein on the Beach, Glassworks, Koyaanisqatsi y sus bandas sonoras cinematográficas nominadas al Oscar.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      PHILIP GLASS • MINIMALISMO & ACTUALIDAD
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Philip_Glass_2008.jpg/440px-Philip_Glass_2008.jpg" alt="Philip Glass">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-contemporary); border-color: var(--accent-contemporary);">MINIMALISMO & MÚSICA CON ESTRUCTURAS REPETITIVAS</span>
+          <h3>Philip Glass</h3>
+          <div class="master-meta-row">
+            <span>Baltimore, 1937 – Presente</span> • 
+            <strong style="color: var(--gold-primary);">El Pionero del Minimalismo y el Arquitecto del Trance Polirrítmico</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Harto del hermetismo cerebral del serialismo académico europeo de posguerra que alejó al público de las salas de concierto, Philip Glass fundó una revolución sonora en el Nueva York de los años 60: 
+            música construida sobre patrones rítmicos aditivos y arpegios armónicos hipnóticos que mutan gradualmente a lo largo del tiempo, inspirados en sus viajes por la India con Ravi Shankar y su aprendizaje en París con Nadia Boulanger. 
+            Trabajó como taxista y fontanero hasta los 42 años mientras tocaba con su propio ensamble en galerías de arte; hoy sus óperas llenan el Metropolitan de Nueva York y sus bandas sonoras han marcado hitos cinematográficos (<em>Koyaanisqatsi</em>, <em>Las horas</em>, <em>El show de Truman</em>).
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="glass-minimalism">
+              <span>▶</span> Escuchar Glassworks (Opening)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Philip Glass? (Dunvagen Music Publishers Catalog)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Glass publica y preserva todo su catálogo a través de su propia editorial y sello discográfico independiente <strong>Dunvagen Music Publishers / Orange Mountain Music</strong>. Su catálogo supera las 15 sinfonías, más de 25 óperas, decenas de conciertos para solistas y una prolífica producción para cine y teatro.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Philip Glass
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Minimalismo Radical y Downtown neoyorquino (1968–1976)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Toca teclados amplificados con el Philip Glass Ensemble en lofts del SoHo. Compone 'Music in Twelve Parts' y la ópera de 5 horas sin argumento convencional 'Einstein on the Beach' (1976) con Robert Wilson.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Proceso aditivo: pequeños módulos rítmicos que se expanden y contraen mediante suma y resta matemática, provocando un estado de trance meditativo en el oyente.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Trilogía de Retratos y Glassworks (1977–1990)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Completa su trilogía de óperas sobre hombres que cambiaron el mundo: 'Einstein on the Beach' (la ciencia), 'Satyagraha' (la política y Gandhi) y 'Akhnaten' (la religión). Lanza el álbum 'Glassworks' y musicaliza el documental mudo 'Koyaanisqatsi'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La reconciliación del minimalismo con la gran orquesta lírica y el poder poético de la imagen cinematográfica.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Madurez Sinfónica y Cine Internacional (1991–Presente)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Ciclo monumental de más de 14 sinfonías, conciertos para violín, piano y violonchelo, y nominaciones al Oscar por 'Kundun', 'The Truman Show' y 'The Hours'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Un polifonismo expansivo que demuestra que el lenguaje modal repetitivo es una fuerza sinfónica de trascendencia universal comparable a la tradición clásica europea.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Philip Glass</h3>
+      <p class="section-desc">
+        Clasificación por género arquitectónico y trascendencia en la cultura contemporánea:
+      </p>
+    </div>
+
+    <!-- 1. ÓPERAS Y GRANDES PROYECTOS ESCÉNICOS -->
+    <h4 class="cat-genre-title">🎭 La Trilogía de Óperas de Retratos</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Obra</th>
+            <th>Duración</th>
+            <th>Año Estreno</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Einstein on the Beach</strong></td>
+            <td>Aprox. 5 horas continuas</td>
+            <td>1976</td>
+            <td>Hito absoluto de la vanguardia escénica; coro que canta exclusivamente números (1, 2, 3...) y notas de solfeo (Do, Re, Mi) con un violín solista vestido de Einstein.</td>
+          </tr>
+          <tr>
+            <td><strong>Satyagraha</strong></td>
+            <td>3 Actos</td>
+            <td>1980</td>
+            <td>Sobre la resistencia pacífica de Mahatma Gandhi en Sudáfrica; cantada íntegramente en sánscrito antiguo sobre textos del Bhagavad Gita.</td>
+          </tr>
+          <tr>
+            <td><strong>Akhnaten (Akenatón)</strong></td>
+            <td>3 Actos</td>
+            <td>1984</td>
+            <td>Sobre el faraón hereje que introdujo el monoteísmo solar en Egipto; orquesta sin violines que produce un timbre oscuro y arcaico misterioso.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. OBRAS DE CÁMARA Y PIANO SOLO -->
+    <h4 class="cat-genre-title">🎹 Piano Solo y Obras de Cámara Icónicas</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Glassworks (Opening, Floe, Islands, Façades)</strong></td>
+            <td>Piano y ensamble de cámara</td>
+            <td>1981</td>
+            <td>Su disco más popular; concebido para el flamante formato de casete de audio portátil Walkman con polirritmias de ensueño.</td>
+          </tr>
+          <tr>
+            <td><strong>Metamorphosis (I a V)</strong></td>
+            <td>Piano solo</td>
+            <td>1988</td>
+            <td>Inspirada en el relato de Franz Kafka; oscilaciones meditativas de acordes menores que se convirtieron en referencia del piano neoclásico.</td>
+          </tr>
+          <tr>
+            <td><strong>Cuarteto de cuerdas n.º 3 'Mishima'</strong></td>
+            <td>Cuarteto de cuerdas</td>
+            <td>1985</td>
+            <td>Compuesto para la película de Paul Schrader sobre el escritor japonés Yukio Mishima; energía rítmica implacable y belleza trágica.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. CINE Y SINFONÍAS -->
+    <h4 class="cat-genre-title">🎬 Cine Visionario y Ciclo Sinfónico</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Obra / Banda Sonora</th>
+            <th>Director / Género</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Koyaanisqatsi (Vida fuera de balance)</strong></td>
+            <td>Godfrey Reggio</td>
+            <td>1982</td>
+            <td>Piedra angular del cine no narrativo: el bajo pedal gutural y los arpegios desbocados retratan el choque entre la naturaleza virgen y la vorágine urbana tecnológica.</td>
+          </tr>
+          <tr>
+            <td><strong>The Hours (Las horas)</strong></td>
+            <td>Stephen Daldry</td>
+            <td>2002</td>
+            <td>Ganadora del premio BAFTA y nominada al Oscar; entrelaza las vidas de tres mujeres a lo largo de un siglo con un lirismo desgarrador de piano y cuerdas.</td>
+          </tr>
+          <tr>
+            <td><strong>Sinfonía n.º 1 'Low'</strong></td>
+            <td>Orquesta sinfónica</td>
+            <td>1992</td>
+            <td>Sinfonía orquestal basada en los temas vanguardistas del álbum Berlinés 'Low' de David Bowie y Brian Eno.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Philip Glass: Glassworks (Opening)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

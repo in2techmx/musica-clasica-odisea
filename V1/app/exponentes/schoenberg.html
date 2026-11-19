@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arnold Schoenberg — Catálogo Opus & El Dodecafonismo | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Arnold Schoenberg: El padre de la Segunda Escuela de Viena, la emancipación de la disonancia, el sistema dodecafónico de 12 tonos (Opus 1 al 50) y Pierrot Lunaire.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      ARNOLD SCHOENBERG • CATÁLOGO & DODECAFONISMO
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Arnold_Sch%C3%B6nberg_man_ray.jpg/440px-Arnold_Sch%C3%B6nberg_man_ray.jpg" alt="Arnold Schoenberg">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-modern); border-color: var(--accent-modern);">LA SEGUNDA ESCUELA DE VIENA & EL DODECAFONISMO</span>
+          <h3>Arnold Schoenberg</h3>
+          <div class="master-meta-row">
+            <span>Viena, 1874 – Los Ángeles, 1951</span> • 
+            <strong style="color: var(--gold-primary);">El Padre del Dodecafonismo y la Emancipación de la Disonancia</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            "He hecho un descubrimiento que garantizará la supremacía de la música alemana durante los próximos cien años", le dijo Schoenberg a su discípulo Josef Rufer en 1921. 
+            Ese descubrimiento fue el <strong>sistema de doce notas (dodecafonismo serial)</strong>: una técnica rigurosa donde las doce notas de la escala cromática occidental son tratadas con estricta igualdad democrática, sin que ninguna mande como tónica sobre las demás. 
+            Líder de la influyente <em>Segunda Escuela de Viena</em> junto a sus alumnos Alban Berg y Anton Webern, Schoenberg cruzó el abismo de la atonalidad y resistió la persecución nazi que tachó su música de 'arte degenerado', exiliándose en California.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="schoenberg-12tone">
+              <span>▶</span> Escuchar Suite para Piano (Serie de 12 Notas Op. 25)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Schoenberg? (Opus 1 al 50 & Catálogo Rufer)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Schoenberg utilizó números de <strong>Opus (Op. 1 al Op. 50C)</strong> para sus obras principales terminadas. En 1959, su discípulo <strong>Josef Rufer</strong> publicó el catálogo exhaustivo de manuscritos, bocetos teóricos y obras incompletas conservadas hoy en el Arnold Schönberg Center de Viena.
+        </p>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Schoenberg
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Post-Romanticismo Exacerbado (1899–1907)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Joven bohemio en Viena; admirador ferviente de Wagner y Brahms. Compone el sexteto 'Noche Transfigurada' (Op. 4), el poema sinfónico 'Pelleas und Melisande' (Op. 5) y los titánicos 'Gurre-Lieder' para cientos de músicos.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Llevar la armonía cromática poswagneriana a su tensión máxima absoluta antes de su colapso tonal inevitable.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Atonalismo Libre y Expresionismo (1908–1920)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Pintor amigo de Kandinsky y miembro de 'Der Blaue Reiter'. Su esposa Mathilde huye brevemente con el pintor Richard Gerstl (quien se suicida). Schoenberg 'emancipa la disonancia' en el Cuarteto n.º 2 Op. 10 y 'Pierrot Lunaire' Op. 21.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Atonalismo libre: la disonancia no necesita resolución consonante. Invención del <em>Sprechstimme</em> (canto hablado a medio camino entre la voz recitada y cantada).
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Invención del Dodecafonismo y Exilio (1921–1951)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Formula las leyes de la serie de 12 notas. En 1933, expulsado por las leyes raciales del Tercer Reich de la Academia de las Artes de Berlín, emigra a Boston y Los Ángeles (UCLA). Compone 'Un superviviente de Varsovia' tras el Holocausto.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El método de composición con doce tonos ordenados en serie (original, inversión, retrógrado e inversión retrógrada): un nuevo orden arquitectónico para el futuro sonoro.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Arnold Schoenberg</h3>
+      <p class="section-desc">
+        Clasificación por etapa evolutiva con número de Opus y aporte técnico a la historia:
+      </p>
+    </div>
+
+    <!-- 1. OBRAS MAESTRAS DEL EXPRESIONISMO -->
+    <h4 class="cat-genre-title">🎭 Obras Maestras del Expresionismo y el Atonalismo</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 4</span></td>
+            <td><strong>Noche Transfigurada (Verklärte Nacht)</strong></td>
+            <td>Sexteto de cuerdas (o orquesta de cuerdas)</td>
+            <td>1899</td>
+            <td>Basada en el poema de Dehmel; un hombre perdona y acoge a su amante embarazada de otro hombre bajo la luz de la luna. Rechazada inicialmente por la Sociedad de Conciertos de Viena por contener un acorde no clasificado.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 10</span></td>
+            <td><strong>Cuarteto de cuerdas n.º 2</strong></td>
+            <td>Cuarteto de cuerdas y Soprano solista</td>
+            <td>1908</td>
+            <td>En el último movimiento ('Entrückung'), la soprano canta el verso profético: <em>"Siento el aire de otro planeta"</em>, disolviendo por primera vez la armadura tonal.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 21</span></td>
+            <td><strong>Pierrot Lunaire (Tres veces siete poemas de Albert Giraud)</strong></td>
+            <td>Voz solista y quinteto instrumental mixto</td>
+            <td>1912</td>
+            <td>La biblia del expresionismo musical; uso sistemático del <em>Sprechstimme</em> en una atmósfera nocturna, alucinada y macabra.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. CUMBRES DEL MÉTODO DODECAFÓNICO -->
+    <h4 class="cat-genre-title">🔢 Cumbres del Método Dodecafónico Serial</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 25</span></td>
+            <td><strong>Suite para piano</strong></td>
+            <td>Piano solo (Prélude, Gavotte, Musette, Intermezzo, Menuett, Gigue)</td>
+            <td>1923</td>
+            <td>La primera obra de la historia de la música compuesta íntegramente a partir de una única serie estricta de 12 notas; utiliza formas de danza barrocas para estructurar el nuevo lenguaje.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 31</span></td>
+            <td><strong>Variaciones para orquesta</strong></td>
+            <td>Gran orquesta sinfónica</td>
+            <td>1928</td>
+            <td>Monumental despliegue de virtuosismo contrapuntístico serial; rinde tributo a J.S. Bach introduciendo el famoso criptograma musical B-A-C-H (Si bemol - La - Do - Si natural).</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 46</span></td>
+            <td><strong>Un superviviente de Varsovia (A Survivor from Warsaw)</strong></td>
+            <td>Narrador recitante, Coro masculino y Gran Orquesta</td>
+            <td>1947</td>
+            <td>Escrita en respuesta a la barbarie nazi en el gueto de Varsovia; concluye con los prisioneros judíos a punto de ser ejecutados cantando al unísono el 'Shemá Israel' en un clímax estremecedor.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Schoenberg: Suite para Piano (Op. 25)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

@@ -3,25 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Los Grandes Maestros: Catálogos, Etapas & Pensamiento Musical | IN2TECHMX</title>
-  <meta name="description" content="Guía monográfica exhaustiva de los titanes de la música clásica: sus catálogos propios, sus etapas creativas, qué proponían en cada periodo y su legado universal.">
+  <title>Los Grandes Maestros: Catálogos, Etapas &amp; Pensamiento Musical | IN2TECHMX</title>
+  <meta name="description" content="Guía monográfica de los titanes de la música clásica: catálogos propios, etapas creativas, qué proponían en cada periodo y su legado universal.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ===== HUB GRID DE COMPOSITORES ===== */
+    .hub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.6rem;
+      margin-top: 2rem;
+    }
+    .hub-composer-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .hub-composer-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(229, 184, 92, 0.3);
+      border-color: rgba(229, 184, 92, 0.4);
+    }
+    .hub-portrait-wrap {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #111827;
+      position: relative;
+    }
+    .hub-portrait-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .hub-composer-card:hover .hub-portrait-wrap img {
+      transform: scale(1.04);
+    }
+    .hub-portrait-fallback {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-serif-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      background: radial-gradient(ellipse at center, #1e293b 0%, #0b0f17 100%);
+    }
+    .hub-era-ribbon {
+      position: absolute;
+      top: 0.7rem;
+      left: 0.7rem;
+      background: rgba(11, 15, 23, 0.85);
+      border: 1px solid var(--border-gold);
+      color: var(--gold-light);
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      backdrop-filter: blur(8px);
+    }
+    .hub-card-body {
+      padding: 1rem 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      flex: 1;
+    }
+    .hub-composer-name {
+      font-family: var(--font-serif-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f8fafc;
+      line-height: 1.25;
+    }
+    .hub-composer-years {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+    }
+    .hub-composer-role {
+      font-size: 0.75rem;
+      color: var(--gold-light);
+      font-weight: 500;
+      margin-top: 0.1rem;
+    }
+    .hub-card-cta {
+      display: block;
+      margin-top: auto;
+      padding-top: 0.75rem;
+    }
+    .hub-card-cta a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      width: 100%;
+      padding: 0.55rem 0.8rem;
+      background: rgba(229, 184, 92, 0.08);
+      border: 1px solid rgba(229, 184, 92, 0.3);
+      border-radius: var(--radius-sm);
+      color: var(--gold-primary);
+      font-family: var(--font-serif-display);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.22s ease;
+    }
+    .hub-card-cta a:hover {
+      background: rgba(229, 184, 92, 0.18);
+      border-color: var(--gold-primary);
+      color: #fff;
+    }
+    .hub-card-no-page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 0.55rem 0.8rem;
+      border: 1px dashed rgba(229, 184, 92, 0.15);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: 0.72rem;
+      font-style: italic;
+    }
+
+    /* Era section headers en el hub */
+    .hub-era-section {
+      margin-bottom: 3.5rem;
+    }
+    .hub-era-heading {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.4rem;
+    }
+    .hub-era-heading h3 {
+      font-family: var(--font-serif-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #f8fafc;
+      margin: 0;
+    }
+    .hub-era-period-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      border: 1px solid currentColor;
+    }
+    .hub-era-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      max-width: 760px;
+      margin-bottom: 1.2rem;
+      line-height: 1.6;
+    }
+    .hub-divider {
+      height: 1px;
+      background: linear-gradient(to right, var(--border-gold), transparent);
+      margin: 3.5rem 0;
+      opacity: 0.4;
+    }
+  </style>
 </head>
 <body id="top">
 
   <!-- BARRA DE PROGRESO DE LECTURA SUPERIOR -->
   <div id="scroll-progress-bar"></div>
 
-  <!-- BANNER DE NAVEGACIÓN Y RETORNO A PORTALES -->
+  <!-- BANNER DE NAVEGACIÓN -->
   <nav class="section-nav-banner">
     <a href="index.html" class="btn-back-portal">
       <span>‹</span> Volver a la Odisea Principal
     </a>
     <div style="font-family: var(--font-serif-display); font-size: 0.95rem; color: var(--gold-light); font-weight: 700;">
-      LOS GRANDES MAESTROS • CATÁLOGOS & ETAPAS
+      LOS GRANDES MAESTROS • CATÁLOGOS &amp; ETAPAS
     </div>
     <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis Orquestal">
       <div class="audio-pulse-dot" id="header-audio-dot"></div>
@@ -29,19 +202,40 @@
     </div>
   </nav>
 
-  <!-- SECCIÓN HERO DE LA MONOGRAFÍA -->
-  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 3rem;">
+  <!-- ========================================================
+       SECCIÓN 1: HUB VISUAL — CUADRÍCULA DE COMPOSITORES
+       ======================================================== -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
     <div class="section-header">
-      <div class="editorial-badge">Dossier Monográfico de Autores • IN2TECHMX</div>
-      <h2 class="section-title">Los Máximos Exponentes y sus Universos Creativos</h2>
+      <div class="editorial-badge">Dossier Monográfico &amp; Hub de Catálogos • IN2TECHMX</div>
+      <h2 class="section-title">Los Máximos Exponentes y Sus Universos Creativos</h2>
       <p class="section-desc">
-        Ningún gran compositor nació sabiendo su estilo final ni escribió la misma música toda su vida. 
-        Aquí exploramos a fondo a cada titán: cómo funciona su <strong>catálogo propio</strong>, 
-        cuáles fueron las <strong>etapas de su evolución artística</strong> y qué <strong>propuesta filosófica y técnica</strong> defendía en cada una.
+        Selecciona a cualquier compositor para acceder a su catálogo dedicado: obras completas clasificadas por género,
+        etapas creativas explicadas, contexto histórico y el legado que dejó para la eternidad.
       </p>
     </div>
 
-    <!-- Barra de Filtros por Época -->
+    <!-- HUB GRID — generado dinámicamente por script inline -->
+    <div id="hub-grid-container"></div>
+  </section>
+
+  <div class="section-wrapper"><div class="hub-divider"></div></div>
+
+  <!-- ========================================================
+       SECCIÓN 2: FICHAS MONOGRÁFICAS DETALLADAS (dinámica)
+       ======================================================== -->
+  <section class="section-wrapper" style="padding-bottom: 5rem;">
+    <div class="section-header">
+      <div class="editorial-badge">Fichas Técnicas Completas</div>
+      <h2 class="section-title">Catálogos, Etapas &amp; Pensamiento Musical en Profundidad</h2>
+      <p class="section-desc">
+        Ningún gran compositor nació sabiendo su estilo final. Aquí exploramos cómo funciona
+        su <strong>catálogo propio</strong>, cuáles fueron las <strong>etapas de su evolución artística</strong>
+        y qué <strong>propuesta filosófica y técnica</strong> defendía en cada una.
+      </p>
+    </div>
+
+    <!-- Filtros por Época -->
     <div class="timeline-filter-bar" style="margin-bottom: 2.5rem;">
       <button class="timeline-filter-btn active" data-filter="all">Todos los Maestros</button>
       <button class="timeline-filter-btn" data-filter="medieval">Medieval</button>
@@ -53,7 +247,7 @@
       <button class="timeline-filter-btn" data-filter="contemporanea">Contemporánea</button>
     </div>
 
-    <!-- Contenedor Maestro de Fichas de Exponentes -->
+    <!-- Contenedor Monográfico Dinámico -->
     <div id="masters-full-container">
       <!-- Se genera dinámicamente mediante app.js a partir de MUSIC_DATA -->
     </div>
@@ -68,10 +262,7 @@
         <div class="deck-track-title" id="deck-track-title">Beethoven: Motivo del Destino (5ª Sinfonía)</div>
       </div>
     </div>
-
-    <!-- Visualizador de Espectro Canvas -->
     <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
-
     <div class="deck-controls">
       <button class="btn-deck-play" id="deck-play-btn" title="Reproducir / Pausar">▶</button>
       <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
@@ -87,11 +278,10 @@
       <div class="footer-brand">
         <h4>ODISEA DE LA MÚSICA CLÁSICA</h4>
         <p>
-          Portal monográfico de compositores, catálogos universales y análisis de etapas creativas. 
+          Portal monográfico de compositores, catálogos universales y análisis de etapas creativas.
           Desarrollado bajo el estándar <strong>IN2TECHMX Vanguard Web Craft (+10,000€ Standard)</strong>.
         </p>
       </div>
-
       <div class="footer-col">
         <h5>Navegación Rápida</h5>
         <ul>
@@ -102,7 +292,6 @@
           <li><a href="index.html#por-que-escuchar">¿Por qué Escucharla?</a></li>
         </ul>
       </div>
-
       <div class="footer-col">
         <h5>Gobernanza IN2TECHMX</h5>
         <ul>
@@ -112,7 +301,6 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <div>&copy; 2026 IN2TECHMX — Odisea de la Música Clásica. Todos los derechos reservados.</div>
       <div>Atajos: <strong>Espacio</strong> (Pausar/Reproducir) • <strong>Esc</strong> (Volver al Inicio)</div>
@@ -123,5 +311,101 @@
   <script src="data-music.js"></script>
   <script src="audio-synthesizer.js"></script>
   <script src="app.js"></script>
+
+  <!-- SCRIPT INLINE: Hub Grid visual construido desde MUSIC_DATA -->
+  <script>
+    (function buildHubGrid() {
+      const SUBPAGE_MAP = {
+        "guido-darezzo":          null,
+        "hildegarda-von-bingen":  "exponentes/hildegarda-von-bingen.html",
+        "leonin-perotin":         null,
+        "josquin-des-prez":       "exponentes/josquin-des-prez.html",
+        "palestrina":             "exponentes/palestrina.html",
+        "bach":                   "exponentes/bach.html",
+        "vivaldi":                "exponentes/vivaldi.html",
+        "handel":                 "exponentes/handel.html",
+        "haydn":                  "exponentes/haydn.html",
+        "mozart":                 "exponentes/mozart.html",
+        "beethoven":              "exponentes/beethoven.html",
+        "chopin":                 "exponentes/chopin.html",
+        "tchaikovsky":            "exponentes/tchaikovsky.html",
+        "wagner":                 "exponentes/wagner.html",
+        "debussy":                "exponentes/debussy.html",
+        "stravinsky":             "exponentes/stravinsky.html",
+        "schoenberg":             "exponentes/schoenberg.html",
+        "philip-glass":           "exponentes/philip-glass.html",
+        "arvo-part":              "exponentes/arvo-part.html",
+        "john-williams":          "exponentes/john-williams.html"
+      };
+
+      const container = document.getElementById("hub-grid-container");
+      if (!container || !window.MUSIC_DATA) return;
+
+      MUSIC_DATA.eras.forEach(era => {
+        const section = document.createElement("div");
+        section.className = "hub-era-section";
+
+        // Era heading
+        const heading = document.createElement("div");
+        heading.className = "hub-era-heading";
+        heading.innerHTML = `
+          <span class="hub-era-period-tag" style="color:${era.accent}; border-color:${era.accent}">${era.period}</span>
+          <h3>${era.name}</h3>
+        `;
+        section.appendChild(heading);
+
+        const desc = document.createElement("p");
+        desc.className = "hub-era-desc";
+        desc.textContent = era.tagline;
+        section.appendChild(desc);
+
+        // Cards grid
+        const grid = document.createElement("div");
+        grid.className = "hub-grid";
+
+        era.exponents.forEach(exp => {
+          const subpageUrl = SUBPAGE_MAP[exp.id];
+          const card = document.createElement("div");
+          card.className = "hub-composer-card";
+
+          card.innerHTML = `
+            <div class="hub-portrait-wrap">
+              <img
+                src="${exp.image}"
+                alt="Retrato de ${exp.name}"
+                loading="lazy"
+                onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'hub-portrait-fallback\\'>${exp.initials}</div>'"
+              >
+              <div class="hub-era-ribbon">${era.name}</div>
+            </div>
+            <div class="hub-card-body">
+              <div class="hub-composer-name">${exp.name}</div>
+              <div class="hub-composer-years">${exp.years}</div>
+              <div class="hub-composer-role">${exp.role}</div>
+              <div class="hub-card-cta">
+                ${subpageUrl
+                  ? `<a href="${subpageUrl}">📖 Ver Catálogo &amp; Etapas →</a>`
+                  : `<div class="hub-card-no-page">Dossier integrado en fichas</div>`
+                }
+              </div>
+            </div>
+          `;
+
+          // Si tiene subpágina, el clic en el retrato también navega
+          if (subpageUrl) {
+            card.querySelector(".hub-portrait-wrap").style.cursor = "pointer";
+            card.querySelector(".hub-portrait-wrap").addEventListener("click", () => {
+              window.location.href = subpageUrl;
+            });
+          }
+
+          grid.appendChild(card);
+        });
+
+        section.appendChild(grid);
+        container.appendChild(section);
+      });
+    })();
+  </script>
 </body>
 </html>

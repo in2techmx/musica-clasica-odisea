@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frédéric Chopin — Catálogo Opus & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Frédéric Chopin: Catálogos Opus, Brown y Kobylańska clasificados por géneros (Nocturnos, Baladas, Estudios, Polonesas, Mazurkas, Sonatas) y análisis de sus etapas Varsovia, París y Mallorca/Nohant.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      FRÉDÉRIC CHOPIN • CATÁLOGO & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Frederic_Chopin_photo.jpeg/440px-Frederic_Chopin_photo.jpeg" alt="Frédéric Chopin">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-romantic); border-color: var(--accent-romantic);">EL ROMANTICISMO PIANÍSTICO & EL LIRISMO POÉTICO</span>
+          <h3>Frédéric Chopin</h3>
+          <div class="master-meta-row">
+            <span>Żelazowa Wola, 1810 – París, 1849</span> • 
+            <strong style="color: var(--gold-primary);">El Poeta Íntimo del Piano & la Nostalgia Polaca</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            A diferencia de los titanes orquestales que necesitaban cien músicos para conmover, Chopin reinventó la música occidental con sus diez dedos frente al teclado de un piano Pleyel. 
+            Nacido en Polonia y exiliado en París tras la invasión zarista rusa, transformó el piano en un instrumento que canta con la flexibilidad de la voz humana mediante el <em>rubato</em>, 
+            convirtió formas populares de danza campesina (mazurkas y polonesas) en manifiestos de resistencia nacional y elevó el estudio técnico a poesía trascendental. Murió con 39 años; su cuerpo fue enterrado en el cementerio de Père-Lachaise de París, pero por su última voluntad, su corazón fue trasladado clandestinamente a Varsovia.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="chopin-nocturne">
+              <span>▶</span> Escuchar Nocturno Op. 9 n.º 2
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Chopin? (Opus, Brown B. y Kobylańska KK)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Chopin fue extremadamente meticuloso y perfeccionista: ordenó quemar todos los manuscritos que consideraba inacabados. Su catálogo se organiza en tres dimensiones:
+        </p>
+        <div style="font-size: 0.86rem; color: var(--gold-light);">
+          • <strong>Opus en Vida (Op. 1 al Op. 65):</strong> Obras publicadas bajo la rigurosa supervisión de Chopin (con ediciones simultáneas en París, Londres y Leipzig).<br>
+          • <strong>Opus Póstumos (Op. 66 al Op. 74):</strong> Publicados por su amigo Julian Fontana contra el deseo testamentario de Chopin, incluyendo la famosa <em>Fantaisie-Impromptu</em> (Op. 66).<br>
+          • <strong>Catálogo Maurice J.E. Brown (B.):</strong> Catálogo cronológico moderno que incluye piezas sin número de opus.<br>
+          • <strong>Catálogo Krystyna Kobylańska (KK):</strong> Publicado en 1977, clasifica minuciosamente manuscritos, hojas de álbum y variantes autógrafas (ej. Nocturno en Do sostenido menor KK IVa/16).
+        </div>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Chopin
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Juventud en Varsovia y Conciertos Clásicos (1817–1830)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Alumno prodigio de Józef Elsner en el Conservatorio de Varsovia. Absorbe el ritmo campesino de las mazurkas en las vacaciones rurales. Escribe sus dos grandes conciertos para piano (Op. 11 y Op. 21) antes de partir de Polonia a los 20 años días antes del estallido del alzamiento armado contra el Imperio Ruso.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            El 'Estilo Brillante' de virtuosismo virtuosístico post-clásico permeado por una melancolía eslava irrepetible (el <em>żal</em> polaco).
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: El Salón Íntimo de París y la Revolución Poética (1831–1838)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Llega a París y traba íntima amistad con Liszt, Berlioz, Delacroix y Heine. Aborrece las grandes salas de concierto comerciales y toca exclusivamente para la élite intelectual en salones privados. Publica sus dos colecciones de Estudios (Op. 10 y Op. 25).
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Invención de nuevos géneros pianísticos: la Balada instrumental basada en poemas épicos de Mickiewicz y el Estudio de concierto (donde la dificultad digital extrema sirve al lirismo puro).
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Madurez Trágica en Valldemossa y Nohant (1838–1849)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Tormentoso romance con la escritora pionera George Sand. El frío invierno de 1838 en la Cartuja de Valldemossa (Mallorca) agrava su tuberculosis. Los veranos en la finca de Nohant alumbran sus obras más profundas: la Sonata n.º 2 con la Marcha Fúnebre y la Polonesa Heroica Op. 53.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La disolución de la forma clásica tradicional en una arquitectura de rapsodia continua, cromatismos armónicos que anticipan a Wagner y dolor cósmico.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Frédéric Chopin</h3>
+      <p class="section-desc">
+        Clasificación por género arquitectónico con número Opus, catálogo moderno y trascendencia:
+      </p>
+    </div>
+
+    <!-- 1. NOCTURNOS Y PRELUDIOS -->
+    <h4 class="cat-genre-title">🌙 Nocturnos y Preludios Poéticos</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 9 n.º 2</span></td>
+            <td><strong>Nocturno en Mi bemol mayor</strong></td>
+            <td>Mi bemol mayor</td>
+            <td>1832</td>
+            <td>La melodía más universal de Chopin; bel canto italiano transportado al teclado con sutiles ornamentos y acordes en arpegio.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 27 n.º 2</span></td>
+            <td><strong>Nocturno en Re bemol mayor</strong></td>
+            <td>Re bemol mayor</td>
+            <td>1836</td>
+            <td>Polifonía de dos voces líricas superpuestas en terceras y sextas sobre un bajo ondulante de serenidad marina.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 48 n.º 1</span></td>
+            <td><strong>Nocturno en Do menor</strong></td>
+            <td>Do menor</td>
+            <td>1841</td>
+            <td>El más dramático y trágico de sus nocturnos; culmina en una sección central 'Doppio movimento' con acordes orquestales desgarradores.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">KK IVa/16</span></td>
+            <td><strong>Nocturno póstumo en Do sostenido menor (Lento con gran espressione)</strong></td>
+            <td>Do sostenido menor</td>
+            <td>1830</td>
+            <td>Dedicado a su hermana Ludwika para que practicara su 2º Concierto para piano; famoso tema central de la película 'El Pianista'.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 28 n.º 4</span></td>
+            <td><strong>Preludio en Mi menor (Largo)</strong></td>
+            <td>Mi menor</td>
+            <td>1839</td>
+            <td>Interpretado en el funeral de Chopin. Una sola melodía suspendida sobre acordes cromáticos descendentes que se desintegran lentamente.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 28 n.º 15</span></td>
+            <td><strong>Preludio en Re bemol mayor 'Gota de agua' (Raindrop)</strong></td>
+            <td>Re bemol mayor / Do sostenido menor</td>
+            <td>1839</td>
+            <td>Compuesto durante el temporal de lluvia en Mallorca; una nota La bemol repetida incesante como una gota que cae en el claustro.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. BALADAS, SCHERZOS Y SONATAS -->
+    <h4 class="cat-genre-title">⚡ Baladas, Scherzos y Grandes Sonatas</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 23</span></td>
+            <td><strong>Balada n.º 1 en Sol menor</strong></td>
+            <td>Sol menor</td>
+            <td>1835</td>
+            <td>La primera vez que la palabra 'Balada' se aplicó a una obra instrumental pura; poema sonoro de pasión épica y una coda 'Presto con fuoco' demoledora.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 52</span></td>
+            <td><strong>Balada n.º 4 en Fa menor</strong></td>
+            <td>Fa menor</td>
+            <td>1842</td>
+            <td>Considerada por pianistas y musicólogos como la obra maestra definitiva para piano solo del siglo XIX; contrapunto canónico sublime.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 31</span></td>
+            <td><strong>Scherzo n.º 2 en Si bemol menor</strong></td>
+            <td>Si bemol menor</td>
+            <td>1837</td>
+            <td>Arranca con un susurro siniestro y un acorde explosivo que Schumann comparó con un 'poema bañado en sangre de Byron'.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 35</span></td>
+            <td><strong>Sonata para piano n.º 2 en Si bemol menor</strong></td>
+            <td>Si bemol menor</td>
+            <td>1839</td>
+            <td>Contiene el tercer movimiento <em>Marche funèbre</em> (la marcha fúnebre más famosa del mundo) y un final fantasmal de octavas al unísono como el viento sobre tumbas.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 58</span></td>
+            <td><strong>Sonata para piano n.º 3 en Si menor</strong></td>
+            <td>Si menor</td>
+            <td>1844</td>
+            <td>Su última gran sonata; despliegue de arquitectura formal de madurez con un Largo conmovedor y un final rapsódico deslumbrante.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ESTUDIOS, POLONESAS Y MAZURKAS -->
+    <h4 class="cat-genre-title">🇵🇱 Estudios Trascendentales y la Resistencia Polaca</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Tonalidad</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">Op. 10 n.º 3</span></td>
+            <td><strong>Estudio en Mi mayor 'Tristesse' (Lento ma non troppo)</strong></td>
+            <td>Mi mayor</td>
+            <td>1832</td>
+            <td>Chopin confesó que jamás en su vida había compuesto una melodía tan bella; cantilena nostálgica de su patria perdida.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 10 n.º 12</span></td>
+            <td><strong>Estudio en Do menor 'Revolucionario'</strong></td>
+            <td>Do menor</td>
+            <td>1831</td>
+            <td>Compuesto al enterarse de la caída de Varsovia y la masacre rusa; tempestuosos pasajes de mano izquierda que desafían la anatomía de los dedos.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 25 n.º 11</span></td>
+            <td><strong>Estudio en La menor 'Viento de invierno' (Winter Wind)</strong></td>
+            <td>La menor</td>
+            <td>1836</td>
+            <td>Comienza con cuatro compases inocentes de marcha y detona en un vendaval de arpegios cromáticos vertiginosos de mano derecha.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 53</span></td>
+            <td><strong>Polonesa en La bemol mayor 'Heroica'</strong></td>
+            <td>La bemol mayor</td>
+            <td>1842</td>
+            <td>El himno inquebrantable de la nación polaca; célebre por su sección central con octavas veloces continuas en la mano izquierda como una carga de caballería.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">Op. 66</span></td>
+            <td><strong>Fantaisie-Impromptu en Do sostenido menor</strong></td>
+            <td>Do sostenido menor</td>
+            <td>1834</td>
+            <td>Polirritmia endiablada (4 semicorcheas en mano derecha contra 3 en mano izquierda) con un canto central nostálgico inolvidable.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Chopin: Nocturno en Mi bemol mayor (Op. 9 n.º 2)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

@@ -861,6 +861,42 @@ body::before {
   transform: scale(1.02);
 }
 
+/* --------------------------------------------------------------------------
+   BOTÓN: VER CATÁLOGO COMPLETO (enlace a subpáginas de compositores)
+   -------------------------------------------------------------------------- */
+.btn-catalog-subpage {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(229, 184, 92, 0.07);
+  color: var(--gold-primary);
+  border: 1px solid rgba(229, 184, 92, 0.45);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-serif-display);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.btn-catalog-subpage:hover {
+  background: rgba(229, 184, 92, 0.18);
+  color: #ffffff;
+  border-color: var(--gold-primary);
+  transform: scale(1.02);
+}
+.btn-catalog-cta {
+  display: block !important;
+  text-align: center;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.85rem;
+  border-width: 1.5px;
+  margin-top: 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
 /* ==========================================================================
    SECCIÓN 3: NOMENCLATURA & CATALOGACIÓN INTERACTIVA
    ========================================================================== */

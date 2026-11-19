@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Johann Sebastian Bach — Catálogo BWV & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Johann Sebastian Bach: Catálogo BWV clasificado por géneros (Órgano, El Clave Bien Temperado, Conciertos de Brandeburgo, Suites de Cello, Pasión según San Mateo) y análisis de sus etapas Weimar, Cöthen y Leipzig.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <!-- BARRA DE LECTURA SUPERIOR -->
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA DE RETORNO -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      JOHANN SEBASTIAN BACH • CATÁLOGO & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Johann_Sebastian_Bach.jpg/440px-Johann_Sebastian_Bach.jpg" alt="Johann Sebastian Bach">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-baroque); border-color: var(--accent-baroque);">EL BARROCO EN SU CÚSPIDE SUPREMA</span>
+          <h3>Johann Sebastian Bach</h3>
+          <div class="master-meta-row">
+            <span>Eisenach, 1685 – Leipzig, 1750</span> • 
+            <strong style="color: var(--gold-primary);">La Cumbre Matemática y Espiritual de la Música</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            Johann Sebastian Bach es el arquitecto definitivo de la civilización musical occidental. 
+            En su mente, la proporción matemática pitagórica, la ingeniería del contrapunto y la fe espiritual más sincera 
+            se fundieron en una sola catedral sonora. Llevó todas las formas de su época (fugas, corales, pasiones, conciertos) 
+            a una cima tan insuperable que su muerte en 1750 marca simbólicamente el fin de la era Barroca.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="bach-toccata">
+              <span>▶</span> Escuchar Toccata y Fuga en Re menor (BWV 565)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO: BWV -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Bach? (El Catálogo BWV)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Bach apenas publicó un puñado de obras en vida y jamás empleó números de Opus. Tras su redescubrimiento en el siglo XIX, el musicólogo alemán <strong>Wolfgang Schmieder</strong> publicó en 1950 el <strong>BWV (Bach-Werke-Verzeichnis: 'Catálogo de Obras de Bach')</strong>. 
+          A diferencia de los catálogos cronológicos, el BWV está ordenado <strong>temáticamente por géneros musicales</strong> en más de 1,100 obras:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0.8rem; font-size: 0.82rem; color: var(--gold-light);">
+          <div>• <strong>BWV 1–224:</strong> Cantatas sacras y seculares</div>
+          <div>• <strong>BWV 225–249:</strong> Pasiones, oratorios y motetes</div>
+          <div>• <strong>BWV 525–771:</strong> Obras magnas para órgano de tubos</div>
+          <div>• <strong>BWV 772–994:</strong> Obras para clavecín y teclado</div>
+          <div>• <strong>BWV 1001–1013:</strong> Cuerda solista (violín y cello)</div>
+          <div>• <strong>BWV 1041–1069:</strong> Conciertos y suites orquestales</div>
+          <div>• <strong>BWV 1079–1080:</strong> Cumbres del contrapunto teórico</div>
+        </div>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de J.S. Bach
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Weimar (1708–1717) — El Virtuoso del Órgano</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Organista y músico de corte del Duque Guillermo Ernesto de Sajonia-Weimar. Descubre las partituras italianas de Vivaldi y las copia a mano nota por nota.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Apropiación de la vivacidad rítmica y concisión melódica italiana integrada en la monumental polifonía de órgano alemana (las tocatas y preludios juveniles).
+          </div>
+          <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--gold-light);">
+            <strong>Obras Maestras:</strong> Toccata y Fuga en Re menor BWV 565, Pasacalle y Fuga BWV 582, Orgelbüchlein.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Cöthen (1717–1723) — La Explosión Instrumental</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Maestro de capilla para el príncipe Leopold de Anhalt-Cöthen, un apasionado melómano calvinista que no requería música sacra. Bach compone música de cámara pura.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Demostrar la afinación moderna universal con <em>El Clave Bien Temperado</em> (Libro I) y probar que un instrumento solista como el violín o el violonchelo puede sostener una arquitectura polifónica completa.
+          </div>
+          <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--gold-light);">
+            <strong>Obras Maestras:</strong> 6 Conciertos de Brandeburgo BWV 1046–1051, 6 Suites para Cello BWV 1007–1012, Sonatas y Partitas para violín BWV 1001–1006.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: Leipzig (1723–1750) — El Cantor de Santo Tomás</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Director musical de las iglesias de Leipzig. Escribe una cantata sacra semanal para cada domingo del año litúrgico y en sus últimos años se sumerge en el contrapunto abstracto puro.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La síntesis metafísica universal: la Pasión coral como drama cósmico y la exploración de las infinitas posibilidades geométricas de un solo tema en <em>El Arte de la Fuga</em>.
+          </div>
+          <div style="margin-top: 0.8rem; font-size: 0.85rem; color: var(--gold-light);">
+            <strong>Obras Maestras:</strong> Pasión según San Mateo BWV 244, Misa en Si menor BWV 232, Variaciones Goldberg BWV 988, El Arte de la Fuga BWV 1080.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Johann Sebastian Bach</h3>
+      <p class="section-desc">
+        Clasificación temática de las obras cumbres con número BWV, instrumentación y aporte musicológico:
+      </p>
+    </div>
+
+    <!-- 1. OBRAS PARA CLAVE Y TECLADO -->
+    <h4 class="cat-genre-title">🎹 Obras para Clavecín y Teclado</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">BWV 846–869</span></td>
+            <td><strong>El Clave Bien Temperado (Libro I)</strong></td>
+            <td>1722</td>
+            <td>24 Preludios y Fugas que recorren todas las tonalidades mayores y menores demostrando la viabilidad de la afinación temperada.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 870–893</span></td>
+            <td><strong>El Clave Bien Temperado (Libro II)</strong></td>
+            <td>1742</td>
+            <td>Segunda serie de 24 preludios y fugas con una sofisticación armónica y madurez contrapuntística aún más profunda.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 988</span></td>
+            <td><strong>Variaciones Goldberg</strong></td>
+            <td>1741</td>
+            <td>Un Aria y 30 variaciones construidas sobre la línea del bajo continuo; cada tres variaciones introduce un canon a un intervalo superior sucesivo.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 971</span></td>
+            <td><strong>Concierto Italiano</strong></td>
+            <td>1735</td>
+            <td>Simula el diálogo orquestal entre solo y tutti en un clavecín de dos teclados sin necesidad de orquesta.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 772–801</span></td>
+            <td><strong>Invenciones y Sinfonías (a 2 y 3 voces)</strong></td>
+            <td>1723</td>
+            <td>Manual pedagógico supremo para aprender a cantar con el teclado y desarrollar ideas motívicas con limpieza absoluta.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. CONCIERTOS Y MÚSICA ORQUESTAL -->
+    <h4 class="cat-genre-title">🎺 Conciertos Orquestales y Suites</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">BWV 1046–1051</span></td>
+            <td><strong>Conciertos de Brandeburgo (1 al 6)</strong></td>
+            <td>1721</td>
+            <td>La cumbre del Concerto Grosso europeo. Cada concierto combina una instrumentación solista única e inusual (trompeta marina, flautas, violas da gamba).</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 1068</span></td>
+            <td><strong>Suite Orquestal n.º 3 en Re mayor</strong></td>
+            <td>1731</td>
+            <td>Contiene el inmortal segundo movimiento 'Air' (famoso como 'Aria para la cuerda de Sol'), un remanso de serenidad infinita.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 1043</span></td>
+            <td><strong>Concierto para dos violines en Re menor</strong></td>
+            <td>1730</td>
+            <td>El doble concierto barroco por excelencia: diálogo polifónico acrobático y conmovedor entre dos violines solistas.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. CUERDA SOLA Y OBRAS VOCALES MAGNAS -->
+    <h4 class="cat-genre-title">🕯️ Cuerda Solista, Obras Vocales y Síntesis Teórica</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">BWV 1007–1012</span></td>
+            <td><strong>6 Suites para Violonchelo Solo</strong></td>
+            <td>c. 1720</td>
+            <td>La biblia universal del violonchelo. Bach crea la ilusión de una polifonía completa a 4 voces en un instrumento melódico solista.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 1004</span></td>
+            <td><strong>Partita para violín solo n.º 2 (con la 'Chacona')</strong></td>
+            <td>1720</td>
+            <td>Brahms dijo de su Chacona: 'Si yo hubiera podido escribir o crear esta pieza, estoy seguro de que la excitación me habría vuelto loco'.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 244</span></td>
+            <td><strong>Pasión según San Mateo</strong></td>
+            <td>1727</td>
+            <td>Doble coro, doble orquesta y solistas. El drama espiritual más monumental de Occidente; el coro de apertura cuestiona al oyente sobre la culpa y el dolor.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 232</span></td>
+            <td><strong>Misa en Si menor</strong></td>
+            <td>1749</td>
+            <td>Su testamento sacro: una misa católica completa escrita por un devoto luterano como síntesis de toda la música vocal europea.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">BWV 1080</span></td>
+            <td><strong>El Arte de la Fuga (Die Kunst der Fuge)</strong></td>
+            <td>1750</td>
+            <td>Obra cumbre sin indicación de instrumento: 14 fugas y 4 cánones basados en un solo tema en Re menor. Quedó inconclusa en el compás donde Bach deletreaba su propio nombre: B-A-C-H (Si bemol - La - Do - Si natural).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK FLOTANTE DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">J.S. Bach: Toccata en Re menor (BWV 565)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <!-- SCRIPTS -->
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

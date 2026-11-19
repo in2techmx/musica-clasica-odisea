@@ -33,6 +33,32 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPlayingMotif = "beethoven-5th";
 
   // ==========================================================================
+  // 0. MAPA DE SUBPÁGINAS — Ruta relativa desde la carpeta app/
+  // ==========================================================================
+  const SUBPAGE_MAP = {
+    "guido-darezzo":        null, // sin subpágina individual
+    "hildegarda-von-bingen": "exponentes/hildegarda-von-bingen.html",
+    "leonin-perotin":       null, // sin subpágina individual
+    "josquin-des-prez":     "exponentes/josquin-des-prez.html",
+    "palestrina":           "exponentes/palestrina.html",
+    "bach":                 "exponentes/bach.html",
+    "vivaldi":              "exponentes/vivaldi.html",
+    "handel":               "exponentes/handel.html",
+    "haydn":                "exponentes/haydn.html",
+    "mozart":               "exponentes/mozart.html",
+    "beethoven":            "exponentes/beethoven.html",
+    "chopin":               "exponentes/chopin.html",
+    "tchaikovsky":          "exponentes/tchaikovsky.html",
+    "wagner":               "exponentes/wagner.html",
+    "debussy":              "exponentes/debussy.html",
+    "stravinsky":           "exponentes/stravinsky.html",
+    "schoenberg":           "exponentes/schoenberg.html",
+    "philip-glass":         "exponentes/philip-glass.html",
+    "arvo-part":            "exponentes/arvo-part.html",
+    "john-williams":        "exponentes/john-williams.html"
+  };
+
+  // ==========================================================================
   // 1. SCROLL PROGRESS BAR & ACTIVE NAV OBSERVER
   // ==========================================================================
   window.addEventListener("scroll", () => {
@@ -109,7 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
       eraEl.dataset.eraId = era.id;
       eraEl.style.setProperty("--era-accent", era.accent);
 
-      let exponentsHtml = era.exponents.map(exp => `
+      let exponentsHtml = era.exponents.map(exp => {
+        const subpageUrl = SUBPAGE_MAP[exp.id];
+        const catalogBtn = subpageUrl
+          ? `<a href="${subpageUrl}" class="btn-catalog-subpage">Ver Catálogo Completo &amp; Obras →</a>`
+          : "";
+        return `
         <div class="exponent-pill">
           <div class="exponent-header">
             <div class="exponent-portrait-box">
@@ -122,11 +153,14 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
           <p class="exponent-why">${exp.whyExponent}</p>
-          <button class="btn-audio-motif" data-motif="${exp.motifKey}">
-            <span>▶</span> Escuchar Motivo (${exp.masterpiece.split("/")[0].trim()})
-          </button>
-        </div>
-      `).join("");
+          <div style="display:flex; gap:0.8rem; flex-wrap:wrap; margin-top:0.6rem;">
+            <button class="btn-audio-motif" data-motif="${exp.motifKey}">
+              <span>▶</span> Escuchar Motivo (${exp.masterpiece.split("/")[0].trim()})
+            </button>
+            ${catalogBtn}
+          </div>
+        </div>`;
+      }).join("");
 
       eraEl.innerHTML = `
         <div class="era-node-dot"></div>
@@ -269,7 +303,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      titansContainer.innerHTML = allTitans.map(titan => `
+      titansContainer.innerHTML = allTitans.map(titan => {
+        const subpageUrl = SUBPAGE_MAP[titan.id];
+        const catalogCTA = subpageUrl
+          ? `<a href="${subpageUrl}" class="btn-catalog-subpage btn-catalog-cta" style="display:block; text-align:center; margin-top:0.6rem;">📖 Ver Catálogo Completo & Obras →</a>`
+          : "";
+        return `
         <div class="titan-card card-tilt" style="--card-accent: ${titan.eraAccent}">
           <div class="card-tilt-inner">
             <div class="titan-top">
@@ -303,9 +342,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span>▶</span> Escuchar Motivo
               </button>
             </div>
+            ${catalogCTA}
           </div>
-        </div>
-      `).join("");
+        </div>`;
+      }).join("");
     }
   }
 
@@ -378,10 +418,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p style="color:var(--text-secondary); font-size:0.92rem; line-height:1.55; max-width:850px;">
                   ${master.whyExponent}
                 </p>
-                <div style="margin-top:1rem;">
+                <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap; align-items:center;">
                   <button class="btn-audio-motif" data-motif="${master.motifKey}">
                     <span>▶</span> Escuchar Motivo Orquestal (${master.masterpiece.split("/")[0].trim()})
                   </button>
+                  ${SUBPAGE_MAP[master.id] ? `<a href="${SUBPAGE_MAP[master.id]}" class="btn-catalog-subpage">📖 Ver Catálogo Dedicado →</a>` : ""}
                 </div>
               </div>
             </div>

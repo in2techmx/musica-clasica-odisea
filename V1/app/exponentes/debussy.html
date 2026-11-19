@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Debussy — Catálogo Lesure (L.) & Etapas Creativas | Odisea Clásica</title>
+  <meta name="description" content="Monografía integral de Claude Debussy: Catálogo Lesure (L.) clasificado por géneros (Claro de Luna, Preludio a la siesta de un fauno, La Mer, Preludios de piano) y análisis de su estética impresionista y simbolista.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .catalog-table-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      margin-bottom: 3.5rem;
+      overflow-x: auto;
+    }
+    .catalog-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .catalog-table th {
+      padding: 1rem 1.2rem;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .catalog-table td {
+      padding: 1.1rem 1.2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: #cbd5e1;
+    }
+    .catalog-table tr:hover td {
+      background: rgba(229, 184, 92, 0.05);
+      color: #ffffff;
+    }
+    .cat-badge {
+      font-family: var(--font-serif-display);
+      font-weight: 700;
+      color: var(--gold-light);
+      background: rgba(229, 184, 92, 0.12);
+      padding: 0.25rem 0.6rem;
+      border-radius: var(--radius-sm);
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .cat-genre-title {
+      font-family: var(--font-serif-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin: 3rem 0 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .cat-genre-title::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), transparent);
+    }
+  </style>
+</head>
+<body id="top">
+
+  <div id="scroll-progress-bar"></div>
+
+  <!-- NAVEGACIÓN PEGADOJA -->
+  <nav class="section-nav-banner">
+    <div style="display:flex; gap:0.8rem; align-items:center;">
+      <a href="../index.html" class="btn-back-portal"><span>‹</span> Odisea Principal</a>
+      <a href="../exponentes.html" class="btn-back-portal" style="background:transparent; border-color:var(--border-subtle);">Directorio de Maestros</a>
+    </div>
+    <div style="font-family: var(--font-serif-display); font-size: 1rem; color: var(--gold-light); font-weight: 700;">
+      CLAUDE DEBUSSY • CATÁLOGO LESURE & ETAPAS
+    </div>
+    <div class="header-audio-pill" id="header-audio-pill" title="Activar/Detener Síntesis">
+      <div class="audio-pulse-dot" id="header-audio-dot"></div>
+      <span class="header-audio-text">Audio Web API</span>
+    </div>
+  </nav>
+
+  <!-- HERO DEL COMPOSITOR -->
+  <section class="section-wrapper" style="padding-top: 4rem; padding-bottom: 2rem;">
+    <div class="master-composer-card" style="border-color: var(--border-gold); background: linear-gradient(135deg, rgba(16,24,40,0.95), rgba(11,17,30,0.98));">
+      <div class="master-header">
+        <div class="master-big-portrait" style="width: 130px; height: 130px;">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Claude_Debussy_atelier_Nadar.jpg/440px-Claude_Debussy_atelier_Nadar.jpg" alt="Claude Debussy">
+        </div>
+        <div class="master-title-box">
+          <span class="editorial-badge" style="color: var(--accent-modern); border-color: var(--accent-modern);">IMPRESIONISMO, SIMBOLISMO & EL COLOR TÍMBRICO</span>
+          <h3>Claude Debussy</h3>
+          <div class="master-meta-row">
+            <span>Saint-Germain-en-Laye, 1862 – París, 1918</span> • 
+            <strong style="color: var(--gold-primary);">El Alquimista del Sonido y el Fundador de la Modernidad</strong>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 1rem; line-height: 1.7; max-width: 900px;">
+            "La música empieza allí donde la palabra es impotente para expresar", sentenciaba Debussy. 
+            Cansado de la retórica pesada del romanticismo germánico y de las leyes dogmáticas del Conservatorio de París, liberó el acorde musical de su obligación de resolverse según la armonía tradicional. 
+            Introdujo la escala de tonos enteros, las escalas pentatónicas asiáticas y una paleta tímbrica etérea donde el sonido vale por su propio color, atmósfera y luz sensual. Con su <em>Prélude à l'après-midi d'un faune</em> (1894), la flauta solista despertó oficialmente a la música del siglo XX.
+          </p>
+          <div style="margin-top: 1.2rem;">
+            <button class="btn-audio-motif" data-motif="debussy-clair">
+              <span>▶</span> Escuchar Claro de Luna (Suite Bergamasque)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SISTEMA DE CATALOGACIÓN PROPIO -->
+      <div class="master-catalog-section">
+        <h5>📚 ¿Cómo se Cataloga la Obra de Debussy? (El Catálogo Lesure: L.)</h5>
+        <p style="font-size: 0.92rem; color: #cbd5e1; line-height: 1.7; margin-bottom: 1rem;">
+          Debussy raramente utilizó números de opus formales. Para organizar sus manuscritos, cuadernos de bocetos y partituras dispersas, el musicólogo francés <strong>François Lesure</strong> publicó en 1977 (y revisó en 2001) el catálogo cronológico canónico <strong>L. (Catalogue de l'œuvre de Claude Debussy)</strong>, abarcando 141 números de catálogo:
+        </p>
+        <div style="font-size: 0.86rem; color: var(--gold-light);">
+          • <strong>L. 1 al L. 60:</strong> Canciones tempranas, cantatas del Premio de Roma y primeras piezas de juventud.<br>
+          • <strong>L. 75 al L. 109:</strong> Obras revolucionarias maestras (Suite Bergamasque L. 75, Fauno L. 86, Pelléas et Mélisande L. 88, La Mer L. 109).<br>
+          • <strong>L. 110 al L. 141:</strong> Las grandes colecciones pianísticas maduras (Images, Preludios Libros I y II, Estudios) y las tres sonatas finales de la Primera Guerra Mundial.
+        </div>
+      </div>
+
+      <!-- LAS 3 GRANDES ETAPAS CREATIVAS -->
+      <h4 style="font-family: var(--font-serif-display); font-size: 1.6rem; color: #ffffff; margin-bottom: 1rem;">
+        Las Tres Grandes Etapas Creativas de Debussy
+      </h4>
+      <div class="master-periods-grid">
+        <div class="master-period-card">
+          <div class="period-name">Etapa 1: Formación y Ruptura con la Academia (1884–1894)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Gana el codiciado Premio de Roma con la cantata 'L'enfant prodigue'. En la Exposición Universal de París de 1889 queda conmocionado al escuchar por primera vez la orquesta de gamelán de Java y el teatro vietnamita.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Dinamitar la tiranía de la tonalidad mayor/menor incorporando afinaciones no occidentales y acordes paralelos de novena sin resolver.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 2: Simbolismo e Impresionismo Pleno (1894–1905)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Frecuenta los 'martes de Mallarmé' con los poetas simbolistas. Estrena el 'Preludio a la siesta de un fauno' y trabaja durante diez extenuantes años en su ópera 'Pelléas et Mélisande'. Viajes a la costa normanda donde compone 'La Mer'.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            La orquesta tratada como un lienzo impresionista de Monet: el ritmo se vuelve flotante y libre, y la tímbrica se convierte en el argumento principal de la obra.
+          </div>
+        </div>
+
+        <div class="master-period-card">
+          <div class="period-name">Etapa 3: El Universo del Piano y el Dolor de la Guerra (1906–1918)</div>
+          <p class="period-focus">
+            <strong>Contexto Vital:</strong> Paternidad con su hija adorada Claude-Emma ('Chouchou'). Década prodigiosa de creación para piano con los dos libros de Preludios. Padece cáncer de colon mientras los cañones alemanes bombardean París en 1918. Firma con orgullo sus últimas sonatas: <em>Claude Debussy, musicien français</em>.
+          </p>
+          <div class="period-proposal-box">
+            <strong>¿Qué propone en esta etapa?</strong>
+            Depuración austera y vuelta al espíritu de los clavecinistas franceses del siglo XVIII (Rameau y Couperin), adelantándose al Neoclasicismo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO CLASIFICADO POR GÉNEROS -->
+  <section class="section-wrapper" style="padding-top: 0;">
+    <div class="section-header">
+      <div class="editorial-badge">Archivo Canónico Exhaustivo</div>
+      <h3 class="section-title">El Catálogo Maestro de Claude Debussy</h3>
+      <p class="section-desc">
+        Clasificación por dotación arquitectónica con número Lesure (L.), año y aporte sensorial:
+      </p>
+    </div>
+
+    <!-- 1. OBRAS ORQUESTALES REVOLUCIONARIAS -->
+    <h4 class="cat-genre-title">🌊 Obras Orquestales Revolucionarias</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">L. 86</span></td>
+            <td><strong>Prélude à l'après-midi d'un faune</strong></td>
+            <td>Orquesta sinfónica con crótalos antiguos</td>
+            <td>1894</td>
+            <td>Inspirado en el poema de Mallarmé; la flauta abre en solo con un tritono sinuoso y vago. Según Pierre Boulez, 'la flauta del fauno trajo el aliento de la música moderna'.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 91</span></td>
+            <td><strong>Nocturnes (Nuages, Fêtes, Sirènes)</strong></td>
+            <td>Orquesta y coro femenino a 8 voces sin palabras</td>
+            <td>1899</td>
+            <td>Inspirado en los cuadros de Whistler. 'Nuages' retrata el paso inmutable de nubes grises; 'Sirènes' utiliza las voces de mujeres como instrumentos tímbricos puros que cantan sobre el oleaje.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 109</span></td>
+            <td><strong>La Mer (Trois esquisses symphoniques)</strong></td>
+            <td>Gran orquesta sinfónica</td>
+            <td>1905</td>
+            <td>La partitura marina más colosal jamás compuesta: desde el amanecer tranquilo hasta el diálogo violento entre el viento y el mar en un marasmo de arpas y metales.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 122</span></td>
+            <td><strong>Images pour orchestre (Gigues, Ibéria, Rondes de printemps)</strong></td>
+            <td>Gran orquesta sinfónica</td>
+            <td>1912</td>
+            <td>En 'Ibéria', Debussy recrea la noche andaluza con castañuelas, violines con sordina y perfumes de jazmín con una autenticidad que deslumbró al propio Manuel de Falla.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 2. LA OBRA CÚSPIDE PARA PIANO SOLO -->
+    <h4 class="cat-genre-title">🎹 La Obra Cúspide para Piano Solo</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Movimientos Clave</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">L. 75</span></td>
+            <td><strong>Suite bergamasque</strong></td>
+            <td>Prélude, Menuet, <strong>Clair de lune</strong>, Passepied</td>
+            <td>1890/1905</td>
+            <td>Inspirada en el poema de Verlaine; el tercer movimiento (Clair de lune) es una de las páginas líricas más hermosas, serenas y universalmente reconocibles de la humanidad.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 100</span></td>
+            <td><strong>Estampes</strong></td>
+            <td>Pagodes, La soirée dans Grenade, Jardins sous la pluie</td>
+            <td>1903</td>
+            <td>Uso magistral de campanas gamelán en 'Pagodes', ritmos de habanera española y el repiqueteo implacable de las gotas de lluvia en un jardín parisino.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 117</span></td>
+            <td><strong>Préludes, Premier livre (Libro I)</strong></td>
+            <td>La fille aux cheveux de lin, La cathédrale engloutie, Voiles</td>
+            <td>1910</td>
+            <td>12 preludios visionarios donde Debussy colocó los títulos deliberadamente al final de la partitura entre paréntesis '(...)' para no condicionar la imaginación del oyente.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 123</span></td>
+            <td><strong>Préludes, Deuxième livre (Libro II)</strong></td>
+            <td>Feux d'artifice, Brouillards, Ondine, Feuillets d'album</td>
+            <td>1913</td>
+            <td>Exploración de sonoridades alucinantes: 'Feux d'artifice' recrea el estallido lumínico de fuegos artificiales el 14 de julio con una cita final lejana de La Marsellesa.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 113</span></td>
+            <td><strong>Children's Corner (El rincón de los niños)</strong></td>
+            <td>Doctor Gradus ad Parnassum, Golliwogg's Cakewalk</td>
+            <td>1908</td>
+            <td>Dedicado a su hija Chouchou; combina la parodia de ejercicios secos de piano con la primera incorporación del ritmo sincopado del proto-jazz norteamericano (ragtime).</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3. ÓPERA Y MÚSICA DE CÁMARA -->
+    <h4 class="cat-genre-title">🎭 Ópera Simbolista y Música de Cámara</h4>
+    <div class="catalog-table-wrap">
+      <table class="catalog-table">
+        <thead>
+          <tr>
+            <th>Catálogo</th>
+            <th>Título de la Obra</th>
+            <th>Dotación</th>
+            <th>Año</th>
+            <th>Aporte & Significado Conceptual</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="cat-badge">L. 88</span></td>
+            <td><strong>Ópera 'Pelléas et Mélisande'</strong></td>
+            <td>Solistas vocales y Gran Orquesta</td>
+            <td>1902</td>
+            <td>Drama lírico sobre el texto de Maeterlinck; sustituye las arias operísticas por un recitativo entonado en susurro íntimo, envuelto en una atmósfera brumosa de silencio y misterio.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 85</span></td>
+            <td><strong>Cuarteto de cuerdas en Sol menor (Op. 10)</strong></td>
+            <td>2 Violines, Viola y Violonchelo</td>
+            <td>1893</td>
+            <td>El único cuarteto de Debussy; célebre por su segundo movimiento con un uso revolucionario de pizzicatos rítmicos que evocan instrumentos de cuerda exóticos.</td>
+          </tr>
+          <tr>
+            <td><span class="cat-badge">L. 135</span></td>
+            <td><strong>Sonata para violonchelo y piano</strong></td>
+            <td>Violonchelo y Piano</td>
+            <td>1915</td>
+            <td>Escrita en plena guerra; el violonchelo imita a Pierrot enfadado con la luna mediante glissandos, pizzicatos de mano izquierda y una ironía moderna desoladora.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- DOCK DE AUDIO -->
+  <aside class="floating-audio-deck" id="floating-audio-deck">
+    <div class="deck-info">
+      <div class="deck-icon-badge">𝄞</div>
+      <div class="deck-text-box">
+        <div class="deck-status-label" id="deck-status-label">ESTACIÓN EN ESPERA</div>
+        <div class="deck-track-title" id="deck-track-title">Debussy: Claro de Luna (L. 75)</div>
+      </div>
+    </div>
+    <canvas id="audio-visualizer" class="deck-visualizer-canvas" width="140" height="34"></canvas>
+    <div class="deck-controls">
+      <button class="btn-deck-play" id="deck-play-btn" title="Reproducir">▶</button>
+      <button class="btn-deck-stop" id="deck-stop-btn" title="Detener">⏹</button>
+    </div>
+  </aside>
+
+  <script src="../data-music.js"></script>
+  <script src="../audio-synthesizer.js"></script>
+  <script src="../app.js"></script>
+</body>
+</html>

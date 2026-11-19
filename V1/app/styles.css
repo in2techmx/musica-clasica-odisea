@@ -2790,3 +2790,62 @@ body::before {
   color: #a7f3d0;
   box-shadow: 0 0 16px rgba(16, 185, 129, 0.32);
 }
+
+
+/* ==========================================================================
+   BOTÓN BUY ME A COFFEE — ACABADO EDITORIAL DORADO IN2TECHMX
+   ========================================================================== */
+.btn-bmc {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  padding: 0.58rem 1.15rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(251, 191, 36, 0.2), rgba(229, 184, 92, 0.08));
+  border: 1px solid rgba(251, 191, 36, 0.55);
+  color: #fef3c7;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.25s var(--transition-smooth);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+.btn-bmc:hover {
+  background: linear-gradient(135deg, #fbbf24, #d97706);
+  border-color: #fde68a;
+  color: #0b0f17;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(251, 191, 36, 0.35);
+}
+
+.btn-bmc svg {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+.subpage-support-bar {
+  max-width: 1200px;
+  margin: 0 auto 5.5rem;
+  padding: 1.4rem 2rem;
+  border-top: 1px solid rgba(229, 184, 92, 0.16);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.subpage-support-bar .btn-bmc {
+  margin-top: 0;
+}
